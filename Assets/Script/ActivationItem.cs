@@ -16,7 +16,7 @@ public class ActivationItem : MonoBehaviour
         if(IsSelected)
         {
             Destroy(gameObject);
-            //Bouton.SetActive(false);
+            Bouton.SetActive(false);
             Debug.Log("Objet" + item.name + "est détruit");
         }
     }
