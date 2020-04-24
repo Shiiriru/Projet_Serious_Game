@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b66aa57d4f45fb945aef87892fd328ad, type: 3}
+  m_Name: Button_Telephone
+  m_EditorClassIdentifier: 
+  name: "T\xE9l\xE9phone"
+  icon: {fileID: 21300000, guid: ac83a9ac045ed6342898c1f4d6464c87, type: 3}
+  image: {fileID: 21300000, guid: ac83a9ac045ed6342898c1f4d6464c87, type: 3}
+  Photo: {fileID: 21300000, guid: cb33477ae33d30442a59e900c2d4b90d, type: 3}
+  TexteObject: {fileID: 4900000, guid: a48dfe8331c7b9747b9ae546f1821829, type: 3}
+  isDefaultItem: 0
+  Fichetech: {fileID: 0}

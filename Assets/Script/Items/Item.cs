@@ -7,12 +7,14 @@ public class Item : ScriptableObject
 {
     new public string name = "New item";
     public Sprite icon = null;
+    public Sprite image = null;
+    public Sprite Photo = null;
+    public TextAsset TexteObject = null;
     public bool isDefaultItem = false;
     public GameObject Fichetech;
 
     public void Use()
     {
-        Fichetech.SetActive(true);
         Debug.Log("Using" + name);
     }
 }

@@ -7,10 +7,12 @@ public class ItemList : MonoBehaviour
 
     public enum ItemType
     {
-        Masque,
+        Telephone,
+        Gramophone,
         Photo,
         Journal,
         Map,
+        Lettre,
     }
 
     public ItemType itemList;
@@ -21,10 +23,12 @@ public class ItemList : MonoBehaviour
         switch (itemList)
         {
             default:
-            case ItemType.Masque: return SpriteManager.Instance.MasqueSprite;
+            case ItemType.Telephone: return SpriteManager.Instance.TelephoneSprite;
+            case ItemType.Gramophone: return SpriteManager.Instance.GramophoneSprite;
             case ItemType.Photo: return SpriteManager.Instance.PhotoSprite;
             case ItemType.Journal: return SpriteManager.Instance.JournalSprite;
             case ItemType.Map: return SpriteManager.Instance.MapSprite;
+            case ItemType.Lettre: return SpriteManager.Instance.LettreSprite;
         }
     }
 }

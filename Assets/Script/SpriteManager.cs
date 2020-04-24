@@ -13,9 +13,11 @@ public class SpriteManager : MonoBehaviour
         Instance = this;
     }
 
-    public Sprite MasqueSprite;
+    public Sprite TelephoneSprite;
+    public Sprite GramophoneSprite;
     public Sprite PhotoSprite;
     public Sprite JournalSprite;
     public Sprite MapSprite;
+    public Sprite LettreSprite;
 
 }

@@ -9,6 +9,7 @@ public class InventorySlot : MonoBehaviour
     GameObject Fichetech;
 
     Item item;
+    ButtonManager activation;
 
     public void AddItem (Item newItem)
     {
@@ -33,6 +34,8 @@ public class InventorySlot : MonoBehaviour
         if(item != null)
         {
             item.Use();
+            activation.ActiveChamp();
+
         }
     }
 }

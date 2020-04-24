@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b66aa57d4f45fb945aef87892fd328ad, type: 3}
+  m_Name: Button_Gramophone
+  m_EditorClassIdentifier: 
+  name: Gramophone
+  icon: {fileID: 21300000, guid: cfd5d7eb9549a504cb161928aacc3ca3, type: 3}
+  image: {fileID: 21300000, guid: cfd5d7eb9549a504cb161928aacc3ca3, type: 3}
+  Photo: {fileID: 21300000, guid: 9f949182e375f4949b774069f54d2448, type: 3}
+  isDefaultItem: 0
+  Fichetech: {fileID: 0}
