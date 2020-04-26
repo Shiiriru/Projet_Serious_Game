@@ -19,5 +19,6 @@ public class SpriteManager : MonoBehaviour
     public Sprite JournalSprite;
     public Sprite MapSprite;
     public Sprite LettreSprite;
+    public Sprite PholettreSprite;
 
 }

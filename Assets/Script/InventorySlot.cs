@@ -8,14 +8,15 @@ public class InventorySlot : MonoBehaviour
     public Image icon;
     GameObject Fichetech;
 
-    Item item;
-    ButtonManager activation;
+    Item infoItem;
+    InfoItemBouton activation;
+    public FicheTemplate RecupInfo;
 
     public void AddItem (Item newItem)
     {
-        item = newItem;
+        infoItem = newItem;
 
-        icon.sprite = item.icon;
+        icon.sprite = infoItem.icon;
         icon.enabled = true;
 
 
@@ -23,7 +24,7 @@ public class InventorySlot : MonoBehaviour
 
     public void Clearslot()
     {
-        item = null;
+        infoItem = null;
 
         icon.sprite = null;
         icon.enabled = false;
@@ -31,11 +32,9 @@ public class InventorySlot : MonoBehaviour
 
     public void UseItem()
     {
-        if(item != null)
+        if(infoItem != null)
         {
-            item.Use();
-            activation.ActiveChamp();
-
+            RecupInfo.OpenPageObj(infoItem, false);
         }
     }
 }

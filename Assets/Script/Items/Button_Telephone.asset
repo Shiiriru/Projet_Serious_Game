@@ -15,7 +15,8 @@ MonoBehaviour:
   name: "T\xE9l\xE9phone"
   icon: {fileID: 21300000, guid: ac83a9ac045ed6342898c1f4d6464c87, type: 3}
   image: {fileID: 21300000, guid: ac83a9ac045ed6342898c1f4d6464c87, type: 3}
-  Photo: {fileID: 21300000, guid: cb33477ae33d30442a59e900c2d4b90d, type: 3}
-  TexteObject: {fileID: 4900000, guid: a48dfe8331c7b9747b9ae546f1821829, type: 3}
+  photo: {fileID: 21300000, guid: cb33477ae33d30442a59e900c2d4b90d, type: 3}
+  TexteObject: {fileID: 4900000, guid: 9fdcd6f3280cd2b4a964b4fa87cdcc85, type: 3}
+  TexteWiki: {fileID: 4900000, guid: b254ab5d3d5d9794c8ec13f692a0db25, type: 3}
   isDefaultItem: 0
   Fichetech: {fileID: 0}

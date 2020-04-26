@@ -8,8 +8,9 @@ public class Item : ScriptableObject
     new public string name = "New item";
     public Sprite icon = null;
     public Sprite image = null;
-    public Sprite Photo = null;
+    public Sprite photo = null;
     public TextAsset TexteObject = null;
+    public TextAsset TexteWiki = null;
     public bool isDefaultItem = false;
     public GameObject Fichetech;
 

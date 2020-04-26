@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66aa57d4f45fb945aef87892fd328ad, type: 3}
   m_Name: Button_Journal
   m_EditorClassIdentifier: 
-  name: Journal
+  name: "Journal de tranch\xE9es"
   icon: {fileID: 21300000, guid: 2062810b774de544a9e4c2fd09577867, type: 3}
   image: {fileID: 21300000, guid: 2062810b774de544a9e4c2fd09577867, type: 3}
-  Photo: {fileID: 0}
+  photo: {fileID: 21300000, guid: dfc1cfc0066799845995afc72853385c, type: 3}
+  TexteObject: {fileID: 4900000, guid: 8bff88a0144afe8409e403bdc6e3421f, type: 3}
+  TexteWiki: {fileID: 4900000, guid: ca587c4da50f72948b30acedd0d7e452, type: 3}
   isDefaultItem: 0
   Fichetech: {fileID: 0}

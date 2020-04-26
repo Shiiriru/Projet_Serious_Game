@@ -13,6 +13,7 @@ public class ItemList : MonoBehaviour
         Journal,
         Map,
         Lettre,
+        Pholettre,
     }
 
     public ItemType itemList;
@@ -29,6 +30,7 @@ public class ItemList : MonoBehaviour
             case ItemType.Journal: return SpriteManager.Instance.JournalSprite;
             case ItemType.Map: return SpriteManager.Instance.MapSprite;
             case ItemType.Lettre: return SpriteManager.Instance.LettreSprite;
+            case ItemType.Pholettre: return SpriteManager.Instance.PholettreSprite;
         }
     }
 }

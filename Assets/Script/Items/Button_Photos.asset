@@ -15,6 +15,8 @@ MonoBehaviour:
   name: Photos
   icon: {fileID: 21300000, guid: de070c8dfe143794aa3f30e2742c2ece, type: 3}
   image: {fileID: 21300000, guid: de070c8dfe143794aa3f30e2742c2ece, type: 3}
-  Photo: {fileID: 0}
+  photo: {fileID: 21300000, guid: 700440c1fe0270a4d9f94dac3e406353, type: 3}
+  TexteObject: {fileID: 4900000, guid: 73e3fb6243adfbf46aea5c44dc969fa4, type: 3}
+  TexteWiki: {fileID: 4900000, guid: 59aea25e8dd63294cb393e49ee5b6415, type: 3}
   isDefaultItem: 0
   Fichetech: {fileID: 0}
