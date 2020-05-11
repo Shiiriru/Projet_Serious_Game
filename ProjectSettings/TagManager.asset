@@ -44,3 +44,6 @@ TagManager:
   - name: Inventaire
     uniqueID: 1262920533
     locked: 0
+  - name: OnBoarding
+    uniqueID: 1813704019
+    locked: 0
