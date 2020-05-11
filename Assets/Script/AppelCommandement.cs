@@ -14,6 +14,8 @@ public class AppelCommandement : MonoBehaviour
 
     float NbMessage = 0;
 
+    bool CmdMessageStarted = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,7 @@ public class AppelCommandement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(OnBoarding.FirstSpeechDone == true)
+        if(OnBoarding.FirstSpeechDone == true && CmdMessageStarted == true)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -31,6 +33,13 @@ public class AppelCommandement : MonoBehaviour
                 NbMessage += 1;
             }
         }
+    }
+
+    public void StartTextCmd()
+    {
+        SwitchTexteCmd();
+        NbMessage += 1;
+        CmdMessageStarted = true;
     }
 
     public void SwitchTexteCmd()

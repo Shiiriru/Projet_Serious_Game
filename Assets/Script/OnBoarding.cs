@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class OnBoarding : MonoBehaviour
 {
     public Text TexteOnboarding;
+    public Animator FadeInScreen;
 
     public GameObject SupportTexteOnboarding;
 
@@ -54,6 +55,8 @@ public class OnBoarding : MonoBehaviour
         {
             SupportTexteOnboarding.SetActive(false);
             FirstSpeechDone = true;
+
+            FadeInScreen.SetTrigger("FirstSpeechDone");
         }
     }
 }

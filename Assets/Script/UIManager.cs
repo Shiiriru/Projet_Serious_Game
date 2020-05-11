@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject InteractibleObjectSac;
-    public GameObject InteractibleObjectNote;
+    public GameObject BoutonSacOuverture;
+    public GameObject BoutonNoteOuverture;
     public GameObject SacDeployed;
     public GameObject NoteDeployed;
 
@@ -19,26 +19,26 @@ public class UIManager : MonoBehaviour
     public void DeployObjectSac()
     {
         SacDeployed.SetActive(true);
-        InteractibleObjectSac.SetActive(false);
+        BoutonSacOuverture.SetActive(false);
         //SacIsDeployed = true;
 
         if (NoteDeployed == true)
         {
             NoteDeployed.SetActive(false);
-            InteractibleObjectNote.SetActive(true);
+            BoutonNoteOuverture.SetActive(true);
         }
     }
 
     public void DeployObjectNote()
     {
         NoteDeployed.SetActive(true);
-        InteractibleObjectNote.SetActive(false);
+        BoutonNoteOuverture.SetActive(false);
         //NoteIsDeployed = true;
 
         if (SacDeployed == true)
         {
             SacDeployed.SetActive(false);
-            InteractibleObjectSac.SetActive(true);
+            BoutonSacOuverture.SetActive(true);
         }
     }
 
@@ -47,10 +47,10 @@ public class UIManager : MonoBehaviour
         if(SacDeployed == true || NoteDeployed == true)
         {
             NoteDeployed.SetActive(false);
-            InteractibleObjectNote.SetActive(true);
+            BoutonNoteOuverture.SetActive(true);
 
             SacDeployed.SetActive(false);
-            InteractibleObjectSac.SetActive(true);
+            BoutonSacOuverture.SetActive(true);
         }
     }
 }
