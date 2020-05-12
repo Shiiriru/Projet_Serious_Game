@@ -35,5 +35,6 @@ public class ButonTelephone : ButtonBase
     public void CloseList()
     {
         ListCall.SetActive(false);
+        //ButtonCall.SetActive(false);
     }
 }

@@ -10,6 +10,7 @@ public class FicheTemplate : MonoBehaviour
     public GameObject PageWiki;
     public GameObject PageObjet;
 
+    [SerializeField] GameObject ButtonPhoneCall;
     public GameObject BoutonInventaire;
 
     public Image illustration;
@@ -59,5 +60,6 @@ public class FicheTemplate : MonoBehaviour
     public void ExitFiche()
     {
         gameObject.SetActive(false);
+        ButtonPhoneCall.SetActive(false);
     }
 }

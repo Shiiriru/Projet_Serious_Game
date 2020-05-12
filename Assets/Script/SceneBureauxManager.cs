@@ -20,33 +20,44 @@ public class SceneBureauxManager : MonoBehaviour
         BoutonMap.OnChecked += CheckMapBoolean; //on fait appel à la variable, on ne l'ajoute pas. Permet d'ajouter plusieurs actions ensemble
         BoutonLetter.OnChecked += CheckLetterBoolean;
         BoutonArtilery.OnChecked += CheckArtileryBoolean;
-
-        if (MapIsChecked == true && LetterIsChecked == true && ArtileryIsChecked == true)
-        {
-            ExitLevel();
-        }
     }
 
     private void CheckMapBoolean()
     {
         MapIsChecked = true;
         Debug.Log(MapIsChecked);
+
+        if (LetterIsChecked == true && ArtileryIsChecked == true)
+        {
+            ExitLevel();
+        }
     }
 
     private void CheckLetterBoolean()
     {
         LetterIsChecked = true;
         Debug.Log(LetterIsChecked);
+
+        if (MapIsChecked == true && ArtileryIsChecked == true)
+        {
+            ExitLevel();
+        }
     }
 
     private void CheckArtileryBoolean()
     {
         ArtileryIsChecked = true;
         Debug.Log(ArtileryIsChecked);
+
+        if (MapIsChecked == true && LetterIsChecked == true)
+        {
+            ExitLevel();
+        }
     }
 
     private void ExitLevel()
     {
         ButtonExit.SetActive(true);
+        Debug.Log("Bouton loaded");
     }
 }

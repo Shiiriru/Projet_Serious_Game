@@ -1973,7 +1973,7 @@ GameObject:
   - component: {fileID: 209675530}
   - component: {fileID: 209675529}
   m_Layer: 5
-  m_Name: Bouton_Carnet_Open
+  m_Name: Button_Open Note
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2020,8 +2020,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49fa069489c946b4185cabeefcf8fd24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoutonSacOuverture: {fileID: 0}
-  BoutonNoteOuverture: {fileID: 0}
+  BoutonSacOuverture: {fileID: 1370978029}
+  BoutonNoteOuverture: {fileID: 209675527}
   SacDeployed: {fileID: 32315874}
   NoteDeployed: {fileID: 218304293}
 --- !u!114 &209675530
@@ -5223,7 +5223,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -94.17497, y: -430.00003}
+  m_AnchoredPosition: {x: -94.17496, y: -430}
   m_SizeDelta: {x: 170, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &576457153
@@ -10881,7 +10881,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -176.4, y: -288.2}
+  m_AnchoredPosition: {x: -20, y: -299}
   m_SizeDelta: {x: 452.8, y: 125.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1115187746
@@ -13076,7 +13076,7 @@ GameObject:
   - component: {fileID: 1370978032}
   - component: {fileID: 1370978031}
   m_Layer: 5
-  m_Name: Bouton_Sac_Open
+  m_Name: Button_Open Bag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13113,8 +13113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49fa069489c946b4185cabeefcf8fd24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoutonSacOuverture: {fileID: 0}
-  BoutonNoteOuverture: {fileID: 0}
+  BoutonSacOuverture: {fileID: 1370978029}
+  BoutonNoteOuverture: {fileID: 209675527}
   SacDeployed: {fileID: 32315874}
   NoteDeployed: {fileID: 218304293}
 --- !u!114 &1370978032
@@ -13333,7 +13333,7 @@ GameObject:
   - component: {fileID: 1398937337}
   - component: {fileID: 1398937336}
   m_Layer: 5
-  m_Name: Bouton_Carnet_Close
+  m_Name: Button_Close Note
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13370,8 +13370,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49fa069489c946b4185cabeefcf8fd24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoutonSacOuverture: {fileID: 0}
-  BoutonNoteOuverture: {fileID: 0}
+  BoutonSacOuverture: {fileID: 1370978029}
+  BoutonNoteOuverture: {fileID: 209675527}
   SacDeployed: {fileID: 32315874}
   NoteDeployed: {fileID: 218304293}
 --- !u!114 &1398937337
@@ -14128,7 +14128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1567070829
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15631,7 +15631,7 @@ GameObject:
   - component: {fileID: 1759776308}
   - component: {fileID: 1759776307}
   m_Layer: 5
-  m_Name: Bouton_Sac_Close
+  m_Name: Button_Close Bag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15653,7 +15653,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -370, y: -75}
+  m_AnchoredPosition: {x: -370, y: -246}
   m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1759776307
@@ -15668,8 +15668,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49fa069489c946b4185cabeefcf8fd24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoutonSacOuverture: {fileID: 0}
-  BoutonNoteOuverture: {fileID: 0}
+  BoutonSacOuverture: {fileID: 1370978029}
+  BoutonNoteOuverture: {fileID: 209675527}
   SacDeployed: {fileID: 32315874}
   NoteDeployed: {fileID: 218304293}
 --- !u!114 &1759776308
@@ -18976,6 +18976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PageWiki: {fileID: 1138933862}
   PageObjet: {fileID: 2024482576}
+  ButtonPhoneCall: {fileID: 555555301}
   BoutonInventaire: {fileID: 633372283}
   illustration: {fileID: 626013061}
   photoarchive: {fileID: 240071233}
@@ -18996,7 +18997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2108868395
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19692,7 +19693,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -494.9, y: -276.3}
+  m_AnchoredPosition: {x: -543, y: -319}
   m_SizeDelta: {x: 125, y: 69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6306057252678689142
