@@ -9,6 +9,7 @@ public class FicheTemplate : MonoBehaviour
 
     public GameObject PageWiki;
     public GameObject PageObjet;
+
     public GameObject BoutonInventaire;
 
     public Image illustration;

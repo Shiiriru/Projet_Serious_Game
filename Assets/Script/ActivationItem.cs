@@ -7,7 +7,7 @@ public class ActivationItem : MonoBehaviour
 {
     public Item item;
 
-    public GameObject Bouton;
+    public GameObject TargetObject;
     public GameObject FicheTech;
 
     public void SelectionItem()
@@ -17,8 +17,8 @@ public class ActivationItem : MonoBehaviour
 
         if(IsSelected)
         {
-            Destroy(gameObject);
-            Bouton.SetActive(false);
+            gameObject.SetActive(false);
+            TargetObject.SetActive(false);
             Debug.Log("Objet" + item.name + "est détruit");
         }
     }
