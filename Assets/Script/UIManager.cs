@@ -6,6 +6,11 @@ public class UIManager : MonoBehaviour
 {
     public GameObject BoutonSacOuverture;
     public GameObject BoutonNoteOuverture;
+
+    public GameObject SoundOpenInventory;
+    public GameObject SoundCloseInventory;
+    public GameObject SoundOpenNote;
+
     public GameObject SacDeployed;
     public GameObject NoteDeployed;
 
@@ -20,7 +25,10 @@ public class UIManager : MonoBehaviour
     {
         SacDeployed.SetActive(true);
         BoutonSacOuverture.SetActive(false);
-        //SacIsDeployed = true;
+
+        SoundOpenInventory.SetActive(true);
+        SoundCloseInventory.SetActive(false);
+
 
         if (NoteDeployed == true)
         {
@@ -33,12 +41,17 @@ public class UIManager : MonoBehaviour
     {
         NoteDeployed.SetActive(true);
         BoutonNoteOuverture.SetActive(false);
-        //NoteIsDeployed = true;
+
+        SoundOpenNote.SetActive(true);
+
 
         if (SacDeployed == true)
         {
             SacDeployed.SetActive(false);
             BoutonSacOuverture.SetActive(true);
+
+            SoundOpenInventory.SetActive(false);
+            SoundCloseInventory.SetActive(true);
         }
     }
 
@@ -51,6 +64,11 @@ public class UIManager : MonoBehaviour
 
             SacDeployed.SetActive(false);
             BoutonSacOuverture.SetActive(true);
+
+            SoundOpenNote.SetActive(false);
+
+            SoundCloseInventory.SetActive(true);
+            SoundOpenInventory.SetActive(false);
         }
     }
 }

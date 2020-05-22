@@ -8,11 +8,15 @@ public class InfoItemBouton : ButtonBase
     public Item Infoitem;
     public FicheTemplate ficheTemplate;
 
+    public GameObject SoundObject;
+
     public bool GoToInventory;
 
     public override void OnClickButton()
     {
         base.OnClickButton(); //fonction basique + fonction particulière
         ficheTemplate.OpenPageObj(Infoitem, GoToInventory); //Je lie ce que j'avais déclaré dans ma parenthèse et je les lie avec ce que j'ai déclaré ici
+
+        SoundObject.SetActive(true);
     }
 }

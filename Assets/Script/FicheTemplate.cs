@@ -18,6 +18,7 @@ public class FicheTemplate : MonoBehaviour
     public Text Titre;
 
     public FicheTechManager ContenuTexte;
+    public InfoItemBouton SoundManager;
 
     public void OpenPageObj(Item item, bool gotoinventory) //(Je récupère toutes les valeurs lié à item et je récupère la valeur du bool, j'indique ici les éléments que je souhaite envoyer. Tout ce qui est entre parenthèse sont mes variables en local)
     {
@@ -42,6 +43,7 @@ public class FicheTemplate : MonoBehaviour
         }
 
         photoarchive.sprite = item.photo;
+
     }
 
 

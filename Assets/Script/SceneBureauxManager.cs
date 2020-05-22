@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SceneBureauxManager : MonoBehaviour
 {
-    [SerializeField] InfoItemBouton BoutonMap;
+    [SerializeField] ButtonBase BoutonMap;
     [SerializeField] InfoItemBouton BoutonLetter;
     [SerializeField] ButtonBase BoutonArtilery;
 

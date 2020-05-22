@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButonTelephone : ButtonBase
+public class ButtonMap : ButtonBase
 {
-    [SerializeField] GameObject ListCall;
-    [SerializeField] GameObject ButtonCall;
-    [SerializeField] GameObject ButtonArtilery;
+    [SerializeField] GameObject MapDeployed;
+    [SerializeField] GameObject ButtonDeployMap;
     [SerializeField] GameObject SoundObject;
 
     [SerializeField] FicheTemplate ficheTemplate;
@@ -18,25 +17,19 @@ public class ButonTelephone : ButtonBase
     {
         base.OnClickButton();
         ficheTemplate.OpenPageObj(Infoitem, false);
-        ButtonCall.SetActive(true);
+        ButtonDeployMap.SetActive(true);
         SoundObject.SetActive(true);
     }
 
-    public void CallPhone()
+    public void DeployMap()
     {
         ficheTemplate.ExitFiche();
-        ListCall.SetActive(true);
-        ButtonCall.SetActive(false);
-
-        if (sceneBureaux.MapIsChecked)
-        {
-            ButtonArtilery.SetActive(true);
-        }
+        MapDeployed.SetActive(true);
+        ButtonDeployMap.SetActive(false);
     }
 
     public void CloseList()
     {
-        ListCall.SetActive(false);
-        //ButtonCall.SetActive(false);
+        MapDeployed.SetActive(false);
     }
 }
