@@ -7,6 +7,7 @@ public class ButonTelephone : ButtonBase
     [SerializeField] GameObject ListCall;
     [SerializeField] GameObject ButtonCall;
     [SerializeField] GameObject ButtonArtilery;
+    [SerializeField] GameObject SoundObject;
 
     [SerializeField] FicheTemplate ficheTemplate;
     [SerializeField] Item Infoitem;
@@ -18,6 +19,7 @@ public class ButonTelephone : ButtonBase
         base.OnClickButton();
         ficheTemplate.OpenPageObj(Infoitem, false);
         ButtonCall.SetActive(true);
+        SoundObject.SetActive(true);
     }
 
     public void CallPhone()
