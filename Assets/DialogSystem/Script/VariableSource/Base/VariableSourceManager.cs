@@ -23,6 +23,6 @@ namespace DialogSystem
 
 		public virtual void SetValue(VariableObject variable) { }
 
-		public virtual void PlayMethod(MethodObject method){}
+		public virtual void PlayMethod(MethodObject methodObj){}
 	}
 }

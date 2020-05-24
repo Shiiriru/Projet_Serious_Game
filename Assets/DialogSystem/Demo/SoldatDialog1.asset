@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f671e08ec3ebcd3408e177c1e1fe96ca, type: 3}
+  m_Name: SoldatDialog1
+  m_EditorClassIdentifier: 
+  id: SoldatDialog1
+  variableSource: {fileID: 114153765595524488}
+  activeConditions: []
+  dialogList:
+  - {fileID: 114215283688978890}
+  - {fileID: 114652163516894080}
+  - {fileID: 114153302517802588}
+--- !u!114 &114153302517802588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog Item 2
+  m_EditorClassIdentifier: 
+  characterName: Soldat
+  text: Do your choice
+  branches:
+  - text: Bread
+    onSelect:
+      vType: 0
+      variable:
+        vType: 0
+        valueStr: 
+        name: 
+      method:
+        fullMethod: 
+        name: 
+        hasParameter: 0
+        parameter:
+          vType: 0
+          valueStr: 
+    activeConditions:
+    - vType: 0
+      valueStr: 
+      name: 
+    showActiveCondition: 1
+  - text: Meat
+    onSelect:
+      vType: 0
+      variable:
+        vType: 0
+        valueStr: 
+        name: 
+      method:
+        fullMethod: 
+        name: 
+        hasParameter: 0
+        parameter:
+          vType: 0
+          valueStr: 
+    activeConditions: []
+    showActiveCondition: 0
+  targetGroup: {fileID: 11400000}
+--- !u!114 &114153765595524488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade30b22095c1e44c98258f91831cd8f, type: 3}
+  m_Name: Variable Source Object
+  m_EditorClassIdentifier: 
+--- !u!114 &114215283688978890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog Item 0
+  m_EditorClassIdentifier: 
+  characterName: Soldat
+  text: Hello !!
+  branches: []
+  targetGroup: {fileID: 11400000}
+--- !u!114 &114652163516894080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog Item 1
+  m_EditorClassIdentifier: 
+  characterName: Soldat
+  text: Welcome !!
+  branches: []
+  targetGroup: {fileID: 11400000}

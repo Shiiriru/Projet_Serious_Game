@@ -43,6 +43,16 @@ namespace DialogSystem
 			}
 		}
 
+		public void PlayDialog()
+		{
+			if (targetDialog == null)
+				return;
+
+			startPlayDialog = true;
+			nowPlayIndex = -1;
+			nextPlayIndex = 0;
+		}
+
 		// Update is called once per frame
 		void Update()
 		{

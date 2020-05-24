@@ -175,7 +175,6 @@ GameObject:
   - component: {fileID: 989977466}
   - component: {fileID: 989977471}
   - component: {fileID: 989977470}
-  - component: {fileID: 989977469}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -247,23 +246,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &989977469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 989977465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60f0f49eeef7a8b48a6c96fa709bf213, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogList:
-  - {fileID: 11400000, guid: cbf151f4298823c4b9b88be9c26d62de, type: 2}
-  - {fileID: 11400000, guid: 845da7dd5047d124a8977ad6c4b7738e, type: 2}
-  - {fileID: 11400000, guid: 8764b9e01a22ffa4dade243a59f227f5, type: 2}
-  - {fileID: 11400000, guid: 0d6f0a2feacb0f14dbe3ed2d5053abbb, type: 2}
 --- !u!114 &989977470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,6 +270,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fe799bfdb3b9a8418c8d7ac5d9f5537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1019035052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1019035054}
+  - component: {fileID: 1019035053}
+  m_Layer: 0
+  m_Name: soldat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1019035053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019035052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f0f49eeef7a8b48a6c96fa709bf213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogList:
+  - {fileID: 11400000, guid: 2cdee60a976adfc49b3f07605ba1ab2a, type: 2}
+--- !u!4 &1019035054
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019035052}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1046793247
 GameObject:
   m_ObjectHideFlags: 0

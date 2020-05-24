@@ -7,33 +7,36 @@ using UnityEngine;
 
 namespace DialogSystem.Demo
 {
-	public class DemoVariableSourceMgr : VariableSourceManager, ITestConditionMethodSource
+	//monobehavior
+	//runtime
+	public class DemoVariableSourceMgr : VariableSourceManager, ISoldatVariableSource
 	{
-		public TestVariableSource variableSource = new TestVariableSource();
+		SoldatVariableSource source = new SoldatVariableSource();
 
 		private void Start()
 		{
-			variableSource.testBool = true;
+			source.activeChoice1 = true;
 		}
 
+		#region Values function
 		public override FieldInfo[] GetSourceFieldInfo()
 		{
-			return variableSource.GetFieldInfos();
+			return source.GetFieldInfos();
 		}
 
 		public override object GetValue(string name)
 		{
-			return variableSource.GetValue(name);
+			return source.GetValue(name);
 		}
 
 		public override object GetValue(object obj)
 		{
-			return variableSource.GetValue(obj);
+			return source.GetValue(obj);
 		}
 
 		public override void SetValue(VariableObject variable)
 		{
-			variableSource.SetValue(variable.name, variable.valueStr);
+			source.SetValue(variable.name, variable.valueStr);
 		}
 
 		public override void PlayMethod(MethodObject methodObj)
@@ -46,8 +49,9 @@ namespace DialogSystem.Demo
 			else
 				method.Invoke(this, null);
 		}
+		#endregion
 
-		public void OnSelectPlayChoice(int index)
+		public void MakeChoice(int index)
 		{
 			Debug.Log(index);
 		}
