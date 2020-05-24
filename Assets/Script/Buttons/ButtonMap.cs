@@ -7,6 +7,8 @@ public class ButtonMap : ButtonBase
     [SerializeField] GameObject MapDeployed;
     [SerializeField] GameObject ButtonDeployMap;
     [SerializeField] GameObject SoundObject;
+    [SerializeField] GameObject IconActive;
+    [SerializeField] GameObject IconNoActive;
 
     [SerializeField] FicheTemplate ficheTemplate;
     [SerializeField] Item Infoitem;
@@ -27,6 +29,13 @@ public class ButtonMap : ButtonBase
         MapDeployed.SetActive(true);
         ButtonDeployMap.SetActive(false);
     }
+
+    public void SwitchMap()
+    {
+        IconActive.SetActive(false);
+        IconNoActive.SetActive(true);
+    }
+
 
     public void CloseList()
     {

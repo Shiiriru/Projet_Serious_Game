@@ -6,7 +6,9 @@ public class ButonTelephone : ButtonBase
 {
     [SerializeField] GameObject ListCall;
     [SerializeField] GameObject ButtonCall;
-    [SerializeField] GameObject ButtonArtilery;
+    [SerializeField] GameObject ButtonCallRegiment;
+    [SerializeField] GameObject ButtonCallArtilery;
+
     [SerializeField] GameObject SoundObject;
 
     [SerializeField] FicheTemplate ficheTemplate;
@@ -30,8 +32,14 @@ public class ButonTelephone : ButtonBase
 
         if (sceneBureaux.MapIsChecked)
         {
-            ButtonArtilery.SetActive(true);
+            ButtonCallRegiment.SetActive(true);
         }
+    }
+
+    public void SwitchButton()
+    {
+        ButtonCallRegiment.SetActive(false);
+        ButtonCallArtilery.SetActive(true);
     }
 
     public void CloseList()
