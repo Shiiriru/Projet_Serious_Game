@@ -11,6 +11,7 @@ public class FicheTemplate : MonoBehaviour
     public GameObject PageObjet;
 
     [SerializeField] GameObject ButtonPhoneCall;
+    [SerializeField] GameObject ButtonDeployMap;
     public GameObject BoutonInventaire;
 
     public Image illustration;
@@ -63,5 +64,6 @@ public class FicheTemplate : MonoBehaviour
     {
         gameObject.SetActive(false);
         ButtonPhoneCall.SetActive(false);
+        ButtonDeployMap.SetActive(false);
     }
 }
