@@ -48,27 +48,27 @@ public class AppelCommandement : MonoBehaviour
 
         if (NbMessage == 0)
         {
-            TexteOnboarding.text = "Capitaine Favourier, bienvenue au front !Vous arrivez juste à temps avant la bataille !";
+            TexteOnboarding.text = "Capitaine Favourier, de la part du général Huguenot, bienvenue au front ! Vous arrivez à temps pour prendre le commandement de la 4eme compagnie du 122eme avant notre assaut sur Vermandovillers.";
         }
 
         if (NbMessage == 1)
         {
-            TexteOnboarding.text = "Cependant, je dois vous avouez que je ne suis pas forcément confiant envers vos capacités, vous débarquez direct de l'école et vous n'y connaissez rien au combat ...";
+            TexteOnboarding.text = "Cependant, je dois vous avouez que je n'ai guère confiance envers vos capacités, vous débarquez direct depuis votre l'école et vous n'y connaissez rien au combat ...";
         }
 
         if (NbMessage == 2)
         {
-            TexteOnboarding.text = "Nos troupes ici sont cruciales, et la bataille importante. Cependant, nous n'avons aucune visibilité sur votre situation. Il va falloir que vous nous fassiez le bilan vous même, ça va nous permettre de voir si vous êtes au point !";
+            TexteOnboarding.text = "Nos troupes ici sont cruciales, et la bataille importante. Cependant, vous avez encore un peu de temps devant vous pour vous familiariser avec votre compagnie.";
         }
 
         if (NbMessage == 3)
         {
-            TexteOnboarding.text = "Tout d'abord, veillez consulter la carte de bataille et prendre contact l'artillerie, ce serait dommage de ne pas profiter d'eux n'est ce pas ? Aussi, si vous sortez, n'oubliez pas de prendre la lettre de renseignement pour nos amis anglais.";
+            TexteOnboarding.text = "Pour vous aidez, veillez consulter la carte de bataille puis mettez la à jour, prenez aussi contact avec l'artillerie la plus proche du régiment ! Aussi, si vous sortez, n'oubliez pas de prendre la lettre de renseignement pour nos amis anglais.";
         }
 
         if (NbMessage == 4)
         {
-            TexteOnboarding.text = "Quand vous serez prêts, recontactez moi ! Fin de transmission.";
+            TexteOnboarding.text = "Si vous rencontrez un problème, recontactez moi. Bon courage à vous !";
         }
 
         if (NbMessage == 5)
