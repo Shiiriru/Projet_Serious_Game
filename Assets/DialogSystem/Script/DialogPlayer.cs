@@ -60,14 +60,7 @@ namespace DialogSystem
 				return;
 
 			if (nextPlayIndex >= targetDialog.dialogList.Count)
-			{
-				startPlayDialog = false;
-				if (onPlayNextDialogAction != null)
-				{
-					onPlayNextDialogAction();
-					if (autoClearAction) onPlayNextDialogAction = null;
-				}
-			}
+				CurrentDialogFinshed();
 
 			Play();
 			MouseController();
@@ -87,14 +80,14 @@ namespace DialogSystem
 
 		void Play()
 		{
-			if (nowPlayIndex == nextPlayIndex)
+			if (nowPlayIndex == nextPlayIndex || nextPlayIndex >= targetDialog.dialogList.Count)
 				return;
 
 			nowPlayIndex = nextPlayIndex;
 			var dialog = targetDialog.dialogList[nowPlayIndex];
 
-			characterNameContent.text = dialog.characterName;
-			dialogContent.text = dialog.text;
+			characterNameContent.text = string.IsNullOrEmpty(dialog.characterName) ? "" : dialog.characterName;
+			dialogContent.text = string.IsNullOrEmpty(dialog.text) ? "" : dialog.text;
 
 			//has branch
 			if (dialog.branches.Count > 0)
@@ -110,9 +103,9 @@ namespace DialogSystem
 						foreach (var condition in b.activeConditions)
 						{
 							//finish check when one condition isn't correct
-							var val1 = condition.valueStr.ToValue(condition.vType.ToType()).ToString();
-							var val2 = variableSourceMgr.GetValue(condition.name).ToString();
-							if (val1 != val2)
+							var val1 = condition.valueStr.ToValue(condition.vType.ToType());
+							var val2 = variableSourceMgr.GetValue(condition.name);
+							if (val1 != null && val2 != null && val1.ToString() != val2.ToString())
 							{
 								active = false;
 								continue;
@@ -125,6 +118,17 @@ namespace DialogSystem
 					else
 						SetupBrancheButton(b, i);
 				}
+			}
+		}
+
+		void CurrentDialogFinshed()
+		{
+			characterNameContent.text = dialogContent.text = "";
+			startPlayDialog = false;
+			if (onPlayNextDialogAction != null)
+			{
+				onPlayNextDialogAction();
+				if (autoClearAction) onPlayNextDialogAction = null;
 			}
 		}
 

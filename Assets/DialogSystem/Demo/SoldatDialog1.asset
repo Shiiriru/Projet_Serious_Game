@@ -36,37 +36,37 @@ MonoBehaviour:
   branches:
   - text: Bread
     onSelect:
-      vType: 0
+      vType: 5
       variable:
         vType: 0
         valueStr: 
         name: 
       method:
-        fullMethod: 
-        name: 
-        hasParameter: 0
+        fullMethod: MakeChoice(System.Int32 index)
+        name: MakeChoice
+        hasParameter: 1
         parameter:
-          vType: 0
-          valueStr: 
+          vType: 2
+          valueStr: 0
     activeConditions:
-    - vType: 0
-      valueStr: 
-      name: 
+    - vType: 4
+      valueStr: True
+      name: activeChoice1
     showActiveCondition: 1
   - text: Meat
     onSelect:
-      vType: 0
+      vType: 5
       variable:
         vType: 0
         valueStr: 
         name: 
       method:
-        fullMethod: 
-        name: 
-        hasParameter: 0
+        fullMethod: MakeChoice(System.Int32 index)
+        name: MakeChoice
+        hasParameter: 1
         parameter:
-          vType: 0
-          valueStr: 
+          vType: 2
+          valueStr: 10
     activeConditions: []
     showActiveCondition: 0
   targetGroup: {fileID: 11400000}

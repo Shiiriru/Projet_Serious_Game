@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace DialogSystem
 {
-	[Serializable]
 	public class DialogItem : ScriptableObject
 	{
 		public string characterName;

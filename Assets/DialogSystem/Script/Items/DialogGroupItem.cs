@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace DialogSystem
 {
-	[Serializable]
 	[CreateAssetMenu(fileName = "DialogGroup", menuName = "Dialog/Create new group", order = 1)]
 	public class DialogGroupItem : ScriptableObject
 	{

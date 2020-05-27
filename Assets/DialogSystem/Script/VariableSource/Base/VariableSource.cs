@@ -29,12 +29,14 @@ namespace DialogSystem
 
 		public object GetValue(string name)
 		{
-			return this.GetType().GetFields().Where(f => f.Name == name).FirstOrDefault().GetValue(this);
+			var variable = this.GetType().GetFields().Where(f => f.Name == name).FirstOrDefault();
+			return variable != null ? variable.GetValue(this) : null;
 		}
 
 		public object GetValue(object obj)
 		{
-			return this.GetType().GetFields().Where(f => f.Name == nameof(obj) && f.FieldType == obj.GetType()).FirstOrDefault().GetValue(this);
+			var variable = this.GetType().GetFields().Where(f => f.Name == nameof(obj) && f.FieldType == obj.GetType()).FirstOrDefault();
+			return variable != null ? variable.GetValue(this) : null;
 		}
 
 		//public void SetValue(object target, string value)

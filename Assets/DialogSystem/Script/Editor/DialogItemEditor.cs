@@ -90,7 +90,7 @@ namespace DialogSystem
 			GUILayout.EndVertical();
 			GUILayout.Space(5);
 
-			serializedObject.ApplyModifiedProperties();
+			EditorUtility.SetDirty(item);
 		}
 
 		void OnGUIBranches()
@@ -112,7 +112,7 @@ namespace DialogSystem
 				if (item.targetGroup.variableSource == null)
 				{
 					GUI.color = Color.yellow;
-					GUILayout.Label("No condition object :/");
+					GUILayout.Label("No variable object :/");
 					GUI.color = Color.white;
 
 				}

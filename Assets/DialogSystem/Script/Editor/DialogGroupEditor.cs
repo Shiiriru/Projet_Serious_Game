@@ -14,7 +14,7 @@ namespace DialogSystem
 		DialogGroupItem groupItem;
 
 		SerializedProperty activeConditionProperty;
-		bool showActiveCondition = true;
+		bool showVriableObject = true;
 
 		SerializedProperty dialogListProperty;
 
@@ -80,8 +80,8 @@ namespace DialogSystem
 
 			GUILayout.BeginVertical("box");
 
-			showActiveCondition = EditorGUILayout.Foldout(showActiveCondition, $"Active Conditions ({groupItem.activeConditions.Count})");
-			if (showActiveCondition)
+			showVriableObject = EditorGUILayout.Foldout(showVriableObject, $"Variable Objects ({groupItem.activeConditions.Count})");
+			if (showVriableObject)
 			{
 				var valueList = groupItem.variableSource.GetSourceFieldInfos().ToList();
 				var strList = valueList.Select(v => v.Name).ToList();
