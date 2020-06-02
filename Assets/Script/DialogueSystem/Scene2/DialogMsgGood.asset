@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f671e08ec3ebcd3408e177c1e1fe96ca, type: 3}
+  m_Name: DialogMsgGood
+  m_EditorClassIdentifier: 
+  id: DialogMsgGood
+  variableSource: {fileID: 114481692062674828}
+  activeConditions: []
+  dialogList:
+  - {fileID: 114810751406865716}
+  - {fileID: 114497271689907918}
+  - {fileID: 114072501673075090}
+  - {fileID: 114488138654354532}
+--- !u!114 &114072501673075090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog Item 2
+  m_EditorClassIdentifier: 
+  characterName: Caporal Levesques
+  text: "Vous avez bien raison mon capitaine, un peu d'air frais fait le plus grand
+    bien ! En tout cas, rien \xE0 signaler dans la tranch\xE9e, c'est m\xEAme un p'tit
+    peu louche."
+  branches: []
+  targetGroup: {fileID: 11400000}
+--- !u!114 &114481692062674828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7ebef9bdc983a543b513c76c7488f3f, type: 3}
+  m_Name: Variable Source Object
+  m_EditorClassIdentifier: 
+--- !u!114 &114488138654354532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog Item 3
+  m_EditorClassIdentifier: 
+  characterName: Caporal Levesques
+  text: "Une lettre pour les british hein ? Pas de soucis je fais partir \xE7a tout
+    de suite, juste le temps de pr\xE9parer le pigeon. Ca serait bien qu'on nous branche
+    une ligne directe avec eux la prochaine fois !"
+  branches: []
+  targetGroup: {fileID: 11400000}
+--- !u!114 &114497271689907918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog Item 1
+  m_EditorClassIdentifier: 
+  characterName: Caporal Levesques
+  text: Comment puis je vous aidez aujourd'hui ?
+  branches:
+  - text: Je ne fais que passer, caporal.
+    onSelect:
+      vType: 5
+      variable:
+        vType: 0
+        valueStr: 
+        name: 
+      method:
+        fullMethod: SelectTextChoice(System.Int32 index)
+        name: SelectTextChoice
+        hasParameter: 1
+        parameter:
+          vType: 2
+          valueStr: 0
+    activeConditions: []
+    showActiveCondition: 1
+  - text: "J'ai un message prioritaire \xE0 transmettre !"
+    onSelect:
+      vType: 5
+      variable:
+        vType: 0
+        valueStr: 
+        name: 
+      method:
+        fullMethod: SelectTextChoice(System.Int32 index)
+        name: SelectTextChoice
+        hasParameter: 1
+        parameter:
+          vType: 2
+          valueStr: 1
+    activeConditions: []
+    showActiveCondition: 0
+  targetGroup: {fileID: 11400000}
+--- !u!114 &114810751406865716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog Item 0
+  m_EditorClassIdentifier: 
+  characterName: Caporal Levesques
+  text: Responsable des transmissions Caporal Henry Levesques, au rapport mon capitaine
+    ! Ravi de vous voir en pleine forme.
+  branches: []
+  targetGroup: {fileID: 11400000}

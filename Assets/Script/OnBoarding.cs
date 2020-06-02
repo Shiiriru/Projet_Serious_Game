@@ -21,10 +21,6 @@ public class OnBoarding : MonoBehaviour
     public Text TexteOnboarding;
     public Animator FadeInScreen;
 
-    private float waitTime = 2.0f;
-    private float timer = 0.0f;
-    private float conteur = 0f;
-
     public GameObject SupportTexteOnboarding;
     public GameObject PanelDate;
 
@@ -55,37 +51,23 @@ public class OnBoarding : MonoBehaviour
         SpriteSerious.SetActive(false);
         SpriteHappy.SetActive(false);
 
-        //faire une couroutine ici
 
-        if (LancementPanelDate == true && conteur == 0)
+        if (LancementPanelDate == true)
         {
-            timer += Time.deltaTime;
-
-            if (timer > waitTime)
-            {
-                timer = timer - waitTime;
-                ApparitionPanel();
-                conteur += 1;
-            }
+            StartCoroutine(LaunchPanelInfo());
         }
 
-        if (FinPanelDate == true)
+        /*if (FinPanelDate == true)
         {
-            timer += Time.deltaTime;
+            Debug.Log("papon");
+            StartCoroutine(LaunchEndOnboarding());
+        }*/
+    }
 
-            if (timer > waitTime)
-            {
-                timer = timer - waitTime;
-
-                PanelDate.SetActive(false);
-                FadeInScreen.SetTrigger("FirstSpeechDone");
-                FinPanelDate = false;
-
-                SonDiapo.SetActive(false);
-
-                LancementScene1 = true;
-            }
-        }
+    IEnumerator LaunchPanelInfo()
+    {
+        yield return new WaitForSeconds(2f);
+        ApparitionPanel();
     }
 
     void ApparitionPanel()
@@ -93,7 +75,26 @@ public class OnBoarding : MonoBehaviour
         PanelDate.SetActive(true);
 
         FinPanelDate = true;
+
+        if (FinPanelDate == true)
+        {
+            StartCoroutine(LaunchEndOnboarding());
+        }
     }
+
+    IEnumerator LaunchEndOnboarding()
+    {
+        yield return new WaitForSeconds(2f);
+
+        PanelDate.SetActive(false);
+        FadeInScreen.SetTrigger("FirstSpeechDone");
+        FinPanelDate = false;
+
+        SonDiapo.SetActive(false);
+
+        LancementScene1 = true;
+    }
+
 
     /*private void Update()
     {
