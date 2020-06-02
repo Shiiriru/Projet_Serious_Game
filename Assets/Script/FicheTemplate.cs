@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using FMODUnity;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,7 +13,10 @@ public class FicheTemplate : MonoBehaviour
 
     [SerializeField] GameObject ButtonPhoneCall;
     [SerializeField] GameObject ButtonDeployMap;
+    
     public GameObject BoutonInventaire;
+
+    StudioEventEmitter soundEmitter;
 
     public Image illustration;
     public Image photoarchive;
@@ -21,10 +25,16 @@ public class FicheTemplate : MonoBehaviour
     public FicheTechManager ContenuTexte;
     public InfoItemBouton SoundManager;
 
-    public void OpenPageObj(Item item, bool gotoinventory) //(Je récupère toutes les valeurs lié à item et je récupère la valeur du bool, j'indique ici les éléments que je souhaite envoyer. Tout ce qui est entre parenthèse sont mes variables en local)
+    public void OpenPageObj(Item item, bool gotoinventory, StudioEventEmitter emitter) //(Je récupère toutes les valeurs lié à item et je récupère la valeur du bool, j'indique ici les éléments que je souhaite envoyer. Tout ce qui est entre parenthèse sont mes variables en local)
     {
         gameObject.SetActive(true);
         RetourPageObjet();
+        soundEmitter = emitter;
+
+        if (soundEmitter != null)
+        {
+            soundEmitter.Play();
+        }
 
         ContenuTexte.LectureTexte(item.TexteObject); //Je récupère le texte dans le script Item 
         ContenuTexte.LectureWiki(item.TexteWiki);
@@ -65,5 +75,10 @@ public class FicheTemplate : MonoBehaviour
         gameObject.SetActive(false);
         ButtonPhoneCall.SetActive(false);
         ButtonDeployMap.SetActive(false);
+
+        if (soundEmitter != null)
+        {
+            soundEmitter.Stop();
+        }
     }
 }

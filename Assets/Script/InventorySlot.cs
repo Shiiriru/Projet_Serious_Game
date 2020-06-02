@@ -34,7 +34,7 @@ public class InventorySlot : MonoBehaviour
     {
         if(infoItem != null)
         {
-            RecupInfo.OpenPageObj(infoItem, false);
+            RecupInfo.OpenPageObj(infoItem, false, null);
         }
     }
 }

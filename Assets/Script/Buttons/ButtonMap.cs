@@ -6,7 +6,7 @@ public class ButtonMap : ButtonBase
 {
     [SerializeField] GameObject MapDeployed;
     [SerializeField] GameObject ButtonDeployMap;
-    [SerializeField] GameObject SoundObject;
+
     [SerializeField] GameObject IconActive;
     [SerializeField] GameObject IconNoActive;
 
@@ -18,9 +18,8 @@ public class ButtonMap : ButtonBase
     public override void OnClickButton()
     {
         base.OnClickButton();
-        ficheTemplate.OpenPageObj(Infoitem, false);
+        ficheTemplate.OpenPageObj(Infoitem, false, soundEmitter);
         ButtonDeployMap.SetActive(true);
-        SoundObject.SetActive(true);
     }
 
     public void DeployMap()

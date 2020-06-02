@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
 
 [RequireComponent(typeof(Button))]
 public class ButtonBase : MonoBehaviour
 {
     public event System.Action OnChecked;
     public event System.Action OnCompleted;
+
+    public StudioEventEmitter soundEmitter;
 
     Button bouton;
 

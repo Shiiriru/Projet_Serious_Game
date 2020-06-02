@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
 
 public class AppelCommandement : MonoBehaviour
 {
@@ -10,7 +11,10 @@ public class AppelCommandement : MonoBehaviour
     public GameObject SupportTexteOnboarding;
     public GameObject Objets_Onboard;
     public GameObject Objets_Active;
+
     public GameObject MusiqueFond;
+    public GameObject SonTelephone;
+    public GameObject DecrocheTelephone;
 
     float NbMessage = 0;
 
@@ -25,8 +29,14 @@ public class AppelCommandement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(OnBoarding.FirstSpeechDone == true && CmdMessageStarted == true)
+        if (OnBoarding.LancementScene1 == true && CmdMessageStarted == false)
         {
+            SonTelephone.SetActive(true);
+        }
+
+        if (OnBoarding.FirstSpeechDone == true && CmdMessageStarted == true)
+        {
+
             if (Input.GetMouseButtonDown(0))
             {
                 SwitchTexteCmd();
@@ -40,6 +50,9 @@ public class AppelCommandement : MonoBehaviour
         SwitchTexteCmd();
         NbMessage += 1;
         CmdMessageStarted = true;
+
+        SonTelephone.SetActive(false);
+        DecrocheTelephone.SetActive(true);
     }
 
     public void SwitchTexteCmd()
@@ -48,11 +61,12 @@ public class AppelCommandement : MonoBehaviour
 
         if (NbMessage == 0)
         {
-            TexteOnboarding.text = "Capitaine Favourier, de la part du général Huguenot, bienvenue au front ! Vous arrivez à temps pour prendre le commandement de la 4eme compagnie du 122eme avant notre assaut sur Vermandovillers.";
+            TexteOnboarding.text = "Capitaine Favourier, de la part du général Huguenot, bienvenue au front ! Vous arrivez à temps pour prendre le commandement de la 4eme compagnie du 366eme avant la prochaine grande offensive !";
         }
 
         if (NbMessage == 1)
         {
+            DecrocheTelephone.SetActive(false);
             TexteOnboarding.text = "Cependant, je dois vous avouez que je n'ai guère confiance envers vos capacités, vous débarquez direct depuis votre l'école et vous n'y connaissez rien au combat ...";
         }
 
