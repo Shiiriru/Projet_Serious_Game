@@ -86,7 +86,39 @@ MonoBehaviour:
   text: "Avant de partir pour le front, on nous demand\xE9 de poser pour la photo,
     pour la post\xE9rit\xE9 qu'ils disaient. La photo montre bien mon ressentit, j'\xE9tais
     ..."
-  branches: []
+  branches:
+  - text: Fier, content de partit au combat
+    onSelect:
+      vType: 5
+      variable:
+        vType: 0
+        valueStr: 
+        name: 
+      method:
+        fullMethod: SelectPhotoFace(System.Int32 index)
+        name: SelectPhotoFace
+        hasParameter: 1
+        parameter:
+          vType: 2
+          valueStr: 0
+    activeConditions: []
+    showActiveCondition: 0
+  - text: "S\xE9rieux, montrant l'exemple"
+    onSelect:
+      vType: 5
+      variable:
+        vType: 0
+        valueStr: 
+        name: 
+      method:
+        fullMethod: SelectPhotoFace(System.Int32 index)
+        name: SelectPhotoFace
+        hasParameter: 1
+        parameter:
+          vType: 2
+          valueStr: 1
+    activeConditions: []
+    showActiveCondition: 0
   targetGroup: {fileID: 11400000}
 --- !u!114 &114713185253684636
 MonoBehaviour:

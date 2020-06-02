@@ -6,15 +6,16 @@ using UnityEngine;
 
 public class VariableObjectOnboarding : VariableSourceObject
 {
-    // Start is called before the first frame update
-    void Start()
+    OnboardingVariableSource source = new OnboardingVariableSource();
+
+    //can only support int, float, bool, string
+    public override FieldInfo[] GetSourceFieldInfos()
     {
-        
+        return source.GetFieldInfos();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override string[] GetSourceMethods()
     {
-        
+        return source.GetMethods();
     }
 }
