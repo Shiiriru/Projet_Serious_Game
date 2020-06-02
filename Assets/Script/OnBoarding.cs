@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DialogSystem;
 
 public class OnBoarding : MonoBehaviour
 {
@@ -34,19 +35,27 @@ public class OnBoarding : MonoBehaviour
     private bool LancementPanelDate = false;
     private bool FinPanelDate = false;
 
+    [SerializeField] DialogListManager dialogList;
+    [SerializeField] DialogPlayer dialogPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
-        TexteOnboarding.text = "La Grande Guerre ... C'est le 3 septembre 1914, tout à basculé : notre vie, notre destin, celle de notre nation, celle de l'Europe ... Il a suffit d'un meutre dans une ville perdue des Balkans et tout s'est enchainé très vite, une escalade de tension.";
+        dialogPlayer.SetDialog(dialogList.dialogList[0]);
+        dialogPlayer.onPlayNextDialogAction += OnboardingFinished;
     }
 
-    private void Update()
+    private void OnboardingFinished() //fin de dialogue
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            SwitchTexte();
-            NbMessage += 1;
-        }
+        SupportTexteOnboarding.SetActive(false);
+        FirstSpeechDone = true;
+        LancementPanelDate = true;
+
+        PhotoCompagnie.SetActive(false);
+        SpriteSerious.SetActive(false);
+        SpriteHappy.SetActive(false);
+
+        //faire une couroutine ici
 
         if (LancementPanelDate == true && conteur == 0)
         {
@@ -79,6 +88,22 @@ public class OnBoarding : MonoBehaviour
         }
     }
 
+    void ApparitionPanel()
+    {
+        PanelDate.SetActive(true);
+
+        FinPanelDate = true;
+    }
+
+    /*private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            SwitchTexte();
+            NbMessage += 1;
+        }
+    }*/
+
     void SwitchTexte()
     {
         if (NbMessage == 0)
@@ -107,8 +132,6 @@ public class OnBoarding : MonoBehaviour
         {
             TexteOnboarding.text = "Avant de partir pour le front, on nous demandé de poser pour la photo, pour la postérité qu'ils disaient. La photo montre bien mon ressentit, j'étais ...";
 
-            afficherPhoto(int index);
-
             SonDiapo.SetActive(true);
         }
 
@@ -121,49 +144,14 @@ public class OnBoarding : MonoBehaviour
 
         if (NbMessage == 5)
         {
-            SupportTexteOnboarding.SetActive(false);
-            FirstSpeechDone = true;
-            LancementPanelDate = true;
-
-            PhotoCompagnie.SetActive(false);
-            SpriteSerious.SetActive(false);
-            SpriteHappy.SetActive(false);
+            
 
         }
     }
 
-    void ApparitionPanel()
-    {
-        PanelDate.SetActive(true);
-
-        FinPanelDate = true;
-    }
-
-
-    void AffichagePhotoCompagnieHappy()
-    {
-        ImageFond2.SetActive(false);
-        PhotoCompagnie.SetActive(true);
-        SpriteHappy.SetActive(true);
-
-
-        ButtonHappy.SetActive(false);
-        ButtonSerious.SetActive(false);
-    }
-
-    void AffichagePhotoCompagnieSerious()
-    {
-        ImageFond2.SetActive(false);
-        PhotoCompagnie.SetActive(true);
-        SpriteSerious.SetActive(true);
-
-        ButtonHappy.SetActive(false);
-        ButtonSerious.SetActive(false);
-    }
-
     public void afficherPhoto(int index)
     {
-        ImageFond2.SetActive(false);
+        ImageFond1.SetActive(false);
         PhotoCompagnie.SetActive(true);
 
         if (index == 0)

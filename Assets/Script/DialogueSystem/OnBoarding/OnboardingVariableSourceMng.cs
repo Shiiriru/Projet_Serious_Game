@@ -47,10 +47,11 @@ public class OnboardingVariableSourceMng : VariableSourceManager, IOnboardingVar
         else
             method.Invoke(this, null);
     }
+    #endregion
 
     public void SelectPhotoFace(int index)
     {
         onboardingscript.afficherPhoto(index);
+        Debug.Log("Ca entre");
     }
-    #endregion
 }
