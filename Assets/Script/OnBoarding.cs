@@ -5,9 +5,15 @@ using UnityEngine.UI;
 
 public class OnBoarding : MonoBehaviour
 {
-    public GameObject ImageFond1;
-    public GameObject ImageFond2;
-    public GameObject ImageFond3;
+    [SerializeField] GameObject ImageFond1;
+    [SerializeField] GameObject ImageFond2;
+
+    [SerializeField] GameObject PhotoCompagnie;
+    [SerializeField] GameObject SpriteHappy;
+    [SerializeField] GameObject SpriteSerious;
+
+    [SerializeField] GameObject ButtonHappy;
+    [SerializeField] GameObject ButtonSerious;
 
     public GameObject SonDiapo;
 
@@ -98,21 +104,30 @@ public class OnBoarding : MonoBehaviour
 
             if (NbMessage == 3)
             {
-                TexteOnboarding.text = "Je me présente, Anatole Favourier, jeune capitaine du 366eme Régiment d'Infanterie de l'armée française. Je viens tout juste d'arriver sur le front ... Et ceci est mon histoire.";
+                TexteOnboarding.text = "Avant de partir pour le front, on nous demandé de poser pour la photo, pour la postérité qu'ils disaient. La photo montre bien mon ressentit, j'étais ...";
 
-                ImageFond2.SetActive(false);
-                ImageFond3.SetActive(true);
+                ButtonHappy.SetActive(true);
+                ButtonSerious.SetActive(true);
 
                 SonDiapo.SetActive(true);
             }
 
             if (NbMessage == 4)
             {
+                TexteOnboarding.text = "Je me présente, Anatole Favourier, jeune capitaine du 366eme Régiment d'Infanterie de l'armée française. Je viens tout juste d'arriver sur le front ... Et ceci est l'histoire de moi et ma compagnie.";
+
+                SonDiapo.SetActive(true);
+            }
+
+            if (NbMessage == 5)
+            {
                 SupportTexteOnboarding.SetActive(false);
                 FirstSpeechDone = true;
                 LancementPanelDate = true;
 
-                ImageFond3.SetActive(false);
+                PhotoCompagnie.SetActive(false);
+                SpriteSerious.SetActive(false);
+                SpriteHappy.SetActive(false);
 
             }
         }
@@ -122,6 +137,27 @@ public class OnBoarding : MonoBehaviour
             PanelDate.SetActive(true);
 
             FinPanelDate = true;
+        }
+
+        void AffichagePhotoCompagnieHappy()
+        {
+            ImageFond2.SetActive(false);
+            PhotoCompagnie.SetActive(true);
+            SpriteHappy.SetActive(true);
+
+
+            ButtonHappy.SetActive(false);
+            ButtonSerious.SetActive(false);
+        }
+
+        void AffichagePhotoCompagnieSerious()
+        {
+            ImageFond2.SetActive(false);
+            PhotoCompagnie.SetActive(true);
+            SpriteSerious.SetActive(true);
+
+            ButtonHappy.SetActive(false);
+            ButtonSerious.SetActive(false);
         }
     }
 }

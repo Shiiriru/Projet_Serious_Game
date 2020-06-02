@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f671e08ec3ebcd3408e177c1e1fe96ca, type: 3}
+  m_Name: DialogOnboarding
+  m_EditorClassIdentifier: 
+  id: DialogOnboarding
+  variableSource: {fileID: 114278220164846446}
+  activeConditions: []
+  dialogList:
+  - {fileID: 114723129297706372}
+  - {fileID: 114325945321868590}
+  - {fileID: 114713185253684636}
+  - {fileID: 114328109860931856}
+  - {fileID: 114343685156844032}
+  - {fileID: 114928195200241800}
+--- !u!114 &114278220164846446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12a7aeaafeece9f4ab6f7497f5794fa9, type: 3}
+  m_Name: Variable Source Object
+  m_EditorClassIdentifier: 
+--- !u!114 &114325945321868590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog Item 1
+  m_EditorClassIdentifier: 
+  characterName: 
+  text: "Du jour au lendemain, des hommes de 20 \xE0 45 ans abandonnent tout. Ils
+    partent par devoir, dans l'espoir d'une guerre rapide ... Le temps de sortir le
+    fusil puis de rentrer. C'est l'histoire d'une escapade, qui tourne au cauchemar."
+  branches: []
+  targetGroup: {fileID: 11400000}
+--- !u!114 &114328109860931856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog Item 3
+  m_EditorClassIdentifier: 
+  characterName: 
+  text: "Trimbal\xE9 un peu partout de bureaux en bureaux, j'ai fini par me retrouver
+    \ \xE0 la t\xEAte d'une compagnie en premi\xE8re ligne, dans un coin paum\xE9
+    de la Somme, par un bel \xE9t\xE9 1916."
+  branches: []
+  targetGroup: {fileID: 11400000}
+--- !u!114 &114343685156844032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog Item 4
+  m_EditorClassIdentifier: 
+  characterName: 
+  text: "Avant de partir pour le front, on nous demand\xE9 de poser pour la photo,
+    pour la post\xE9rit\xE9 qu'ils disaient. La photo montre bien mon ressentit, j'\xE9tais
+    ..."
+  branches: []
+  targetGroup: {fileID: 11400000}
+--- !u!114 &114713185253684636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog Item 2
+  m_EditorClassIdentifier: 
+  characterName: 
+  text: "C'\xE9tait aussi mon cas. J'\xE9tais instituteur dans une \xE9cole de la
+    r\xE9gion de la Marne. Malheuresment, il fallait des cadres pour g\xE9rer tout
+    ce petit monde. Mes \xE9tudes m'ont permis d'etre officer, et que ce soit g\xE9rer
+    des \xE9l\xE8ves ou des soldats, je suppose que c'est pareil."
+  branches: []
+  targetGroup: {fileID: 11400000}
+--- !u!114 &114723129297706372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog Item 0
+  m_EditorClassIdentifier: 
+  characterName: 
+  text: "La Grande Guerre ... C'est le 3 septembre 1914, tout \xE0 bascul\xE9 : notre
+    vie, notre destin, celle de notre nation, celle de l'Europe ... Il a suffit d'un
+    meutre dans une ville perdue des Balkans et tout s'est enchain\xE9 tr\xE8s vite,
+    une escalade de tension."
+  branches: []
+  targetGroup: {fileID: 11400000}
+--- !u!114 &114928195200241800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog Item 5
+  m_EditorClassIdentifier: 
+  characterName: 
+  text: "Je me pr\xE9sente, Anatole Favourier, jeune capitaine du 366eme R\xE9giment
+    d'Infanterie de l'arm\xE9e fran\xE7aise. Je viens tout juste d'arriver sur le
+    front ... Et ceci est l'histoire de moi et ma compagnie."
+  branches: []
+  targetGroup: {fileID: 11400000}
