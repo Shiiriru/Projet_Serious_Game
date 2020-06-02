@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class ButonTelephone : ButtonBase
 {
@@ -8,8 +9,6 @@ public class ButonTelephone : ButtonBase
     [SerializeField] GameObject ButtonCall;
     [SerializeField] GameObject ButtonCallRegiment;
     [SerializeField] GameObject ButtonCallArtilery;
-
-    [SerializeField] GameObject SoundObject;
 
     [SerializeField] FicheTemplate ficheTemplate;
     [SerializeField] Item Infoitem;
@@ -19,9 +18,8 @@ public class ButonTelephone : ButtonBase
     public override void OnClickButton()
     {
         base.OnClickButton();
-        ficheTemplate.OpenPageObj(Infoitem, false);
+        ficheTemplate.OpenPageObj(Infoitem, false, soundEmitter);
         ButtonCall.SetActive(true);
-        SoundObject.SetActive(true);
     }
 
     public void CallPhone()
@@ -29,17 +27,15 @@ public class ButonTelephone : ButtonBase
         ficheTemplate.ExitFiche();
         ListCall.SetActive(true);
         ButtonCall.SetActive(false);
-
-        if (sceneBureaux.MapIsChecked)
-        {
-            ButtonCallRegiment.SetActive(true);
-        }
     }
 
     public void SwitchButton()
     {
-        ButtonCallRegiment.SetActive(false);
-        ButtonCallArtilery.SetActive(true);
+        if (sceneBureaux.MapIsChecked)
+        {
+            ButtonCallRegiment.SetActive(false);
+            ButtonCallArtilery.SetActive(true);
+        }
     }
 
     public void CloseList()

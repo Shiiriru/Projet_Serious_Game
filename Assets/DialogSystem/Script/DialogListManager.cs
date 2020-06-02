@@ -7,7 +7,7 @@ namespace DialogSystem
 {
 	public class DialogListManager : MonoBehaviour
 	{
-		public List<DialogGroupItem> dialogList;
+		public List<DialogGroupItem> dialogList = new List<DialogGroupItem>();
 
 		public DialogGroupItem AddGroup()
 		{

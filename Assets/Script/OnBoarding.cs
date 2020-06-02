@@ -19,13 +19,14 @@ public class OnBoarding : MonoBehaviour
     private float conteur = 0f;
 
     public GameObject SupportTexteOnboarding;
-    public GameObject PanelInfo;
+    public GameObject PanelDate;
 
     float NbMessage = 0;
 
     public static bool FirstSpeechDone = false;
-    private bool LancementPanelInfo = false;
-    private bool FinPanelInfo = false;
+    public static bool LancementScene1 = false;
+    private bool LancementPanelDate = false;
+    private bool FinPanelDate = false;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +42,7 @@ public class OnBoarding : MonoBehaviour
             NbMessage += 1;
         }
 
-        if (LancementPanelInfo == true && conteur == 0)
+        if (LancementPanelDate == true && conteur == 0)
         {
             timer += Time.deltaTime;
 
@@ -53,7 +54,7 @@ public class OnBoarding : MonoBehaviour
             }
         }
 
-        if (FinPanelInfo == true)
+        if (FinPanelDate == true)
         {
             timer += Time.deltaTime;
 
@@ -61,9 +62,13 @@ public class OnBoarding : MonoBehaviour
             {
                 timer = timer - waitTime;
 
-                PanelInfo.SetActive(false);
+                PanelDate.SetActive(false);
                 FadeInScreen.SetTrigger("FirstSpeechDone");
-                FinPanelInfo = false;
+                FinPanelDate = false;
+
+                SonDiapo.SetActive(false);
+
+                LancementScene1 = true;
             }
         }
 
@@ -81,21 +86,19 @@ public class OnBoarding : MonoBehaviour
 
             if (NbMessage == 1)
             {
-                TexteOnboarding.text = "Ainsi, depuis 2 ans, nos bifins se battent partout, se sacrifiant pour bloquer la progression des germains : La Marne, Verdun ... Que de grandes batailles qui ont montré notre détermination à dégager l'envahisseur hors de notre patrie !";
+                TexteOnboarding.text = "C'était aussi mon cas. J'étais instituteur dans une école de la région de la Marne. Malheuresment, il fallait des cadres pour gérer tout ce petit monde. Mes études m'ont permis d'etre officer, et que ce soit gérer des élèves ou des soldats, je suppose que c'est pareil.";
 
                 SonDiapo.SetActive(false);
-
-
             }
 
             if (NbMessage == 2)
             {
-                TexteOnboarding.text = "Cependant depuis 1915, nous sommes bloqués dans les tranchées et la boue, livrant une sale guerre de position. On reste ici à attendre péniblement le moment de l'assaut ... et du massacre. Celui qui dit qu'il sort hors de la tranchée pour charger sans peur est un menteur.";
+                TexteOnboarding.text = "Trimbalé un peu partout de bureaux en bureaux, j'ai fini par me retrouver  à la tête d'une compagnie en première ligne, dans un coin paumé de la Somme, par un bel été 1916.";
             }
 
             if (NbMessage == 3)
             {
-                TexteOnboarding.text = "1916, Verdun tue des miliers d'hommes, français et allemands. Ils voulaient nous saigner à blanc, c'est raté. Malgré tout, une autre bataille est sur le point de se dérouler : celle de la Somme, pour soulager les copains de Verdun. Cette bataille, c'est la mienne.";
+                TexteOnboarding.text = "Je me présente, Anatole Favourier, jeune capitaine du 366eme Régiment d'Infanterie de l'armée française. Je viens tout juste d'arriver sur le front ... Et ceci est mon histoire.";
 
                 ImageFond2.SetActive(false);
                 ImageFond3.SetActive(true);
@@ -105,28 +108,20 @@ public class OnBoarding : MonoBehaviour
 
             if (NbMessage == 4)
             {
-                TexteOnboarding.text = "Je me présente, Anatole Favourier, jeune capitaine du 122eme Régiment d'Infanterie de l'armée française. Je viens tout juste d'arriver sur le front ... Et ceci est mon histoire.";
-
-                SonDiapo.SetActive(false);
-            }
-
-            if (NbMessage == 5)
-            {
                 SupportTexteOnboarding.SetActive(false);
                 FirstSpeechDone = true;
-                LancementPanelInfo = true;
+                LancementPanelDate = true;
 
                 ImageFond3.SetActive(false);
-                SonDiapo.SetActive(true);
 
             }
         }
 
         void ApparitionPanel()
         {
-            PanelInfo.SetActive(true);
+            PanelDate.SetActive(true);
 
-            FinPanelInfo = true;
+            FinPanelDate = true;
         }
     }
 }
