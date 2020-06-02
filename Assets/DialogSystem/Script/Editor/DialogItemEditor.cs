@@ -90,6 +90,7 @@ namespace DialogSystem
 			GUILayout.EndVertical();
 			GUILayout.Space(5);
 
+			serializedObject.ApplyModifiedProperties();
 			EditorUtility.SetDirty(item);
 		}
 
