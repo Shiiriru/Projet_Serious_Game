@@ -86,8 +86,10 @@ namespace DialogSystem
 			nowPlayIndex = nextPlayIndex;
 			var dialog = targetDialog.dialogList[nowPlayIndex];
 
-			characterNameContent.text = string.IsNullOrEmpty(dialog.characterName) ? "" : dialog.characterName;
-			dialogContent.text = string.IsNullOrEmpty(dialog.text) ? "" : dialog.text;
+			if (characterNameContent != null)
+				characterNameContent.text = string.IsNullOrEmpty(dialog.characterName) ? "" : dialog.characterName;
+			if (dialogContent != null)
+				dialogContent.text = string.IsNullOrEmpty(dialog.text) ? "" : dialog.text;
 
 			//has branch
 			if (dialog.branches.Count > 0)
@@ -123,7 +125,11 @@ namespace DialogSystem
 
 		void CurrentDialogFinshed()
 		{
-			characterNameContent.text = dialogContent.text = "";
+			if (characterNameContent != null)
+				characterNameContent.text = "";
+			if (dialogContent != null)
+				dialogContent.text = "";
+
 			startPlayDialog = false;
 			if (onPlayNextDialogAction != null)
 			{
