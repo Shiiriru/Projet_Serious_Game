@@ -11,5 +11,6 @@ public class SoldatDialogDemo : MonoBehaviour
 	public void OnClickPlayDialog()
 	{
 		dialogPlayer.SetDialog(dialogListMgr.dialogList[0]);
+		((VariableSourceManager)(dialogPlayer.VariableSourceMgr)).enabled = true;
 	}
 }

@@ -8,8 +8,8 @@ namespace DialogSystem
 {
 	public class DialogPlayer : MonoBehaviour
 	{
-		[SerializeField] Text characterNameContent;
-		[SerializeField] Text dialogContent;
+		[SerializeField] TextContent characterNameContent;
+		[SerializeField] TextContent dialogContent;
 		[SerializeField] Image cgContent;
 
 		[SerializeField] Transform brancheParent;
@@ -40,21 +40,22 @@ namespace DialogSystem
 		private void Awake()
 		{
 			Reset();
+
+			DontDestroyOnLoad(gameObject);
 		}
 
 		void Reset()
 		{
 			if (characterNameContent != null)
-				characterNameContent.text = "";
+				characterNameContent.Show(false);
 			if (dialogContent != null)
-				dialogContent.text = "";
+				dialogContent.Show(false);
 
 			if (cgContent != null)
 			{
 				cgContent.color = new Color(1, 1, 1, 0);
 				cgContent.raycastTarget = false;
 			}
-
 		}
 
 		public void SetDialog(DialogGroupItem target, bool autoPlay = true)
@@ -131,9 +132,27 @@ namespace DialogSystem
 			var dialog = currentItem as DialogItem;
 
 			if (characterNameContent != null)
-				characterNameContent.text = string.IsNullOrEmpty(dialog.characterName) ? "" : dialog.characterName;
+			{
+				if (string.IsNullOrEmpty(dialog.characterName))
+					characterNameContent.Show(false);
+				else
+				{
+					characterNameContent.Show(true);
+					characterNameContent.SetText(dialog.characterName);
+				}
+			}
+
 			if (dialogContent != null)
-				dialogContent.text = string.IsNullOrEmpty(dialog.text) ? "" : dialog.text;
+			{
+				if (string.IsNullOrEmpty(dialog.text))				
+					dialogContent.Show(false);			
+				else
+				{
+					dialogContent.Show(true);
+					dialogContent.SetText(dialog.text);
+				}
+			}
+
 
 			//has branch
 			if (dialog.branches.Count > 0)
@@ -169,10 +188,7 @@ namespace DialogSystem
 
 		void CurrentDialogFinshed()
 		{
-			if (characterNameContent != null)
-				characterNameContent.text = "";
-			if (dialogContent != null)
-				dialogContent.text = "";
+			Reset();
 
 			startPlayDialog = false;
 			if (onDialogFinished != null)
