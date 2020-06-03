@@ -41,9 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: beforeDialog
+    uniqueID: 1813704019
+    locked: 0
+  - name: Dialog
+    uniqueID: 1016767465
+    locked: 0
   - name: Inventaire
     uniqueID: 1262920533
-    locked: 0
-  - name: OnBoarding
-    uniqueID: 1813704019
     locked: 0
