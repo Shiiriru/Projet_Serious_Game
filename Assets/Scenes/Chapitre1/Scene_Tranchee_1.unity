@@ -6475,8 +6475,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogList:
-  - {fileID: 11400000, guid: 554f895f8e3ddac4baf290c4b772af42, type: 2}
-  - {fileID: 11400000, guid: f0cf897c96908cf4a90980c15c095a72, type: 2}
+  - {fileID: 11400000, guid: df2cc7e8a9119d84a8bd516231e890af, type: 2}
+  - {fileID: 11400000, guid: 7d5c426aca65e18429a9512e7a88ee8c, type: 2}
 --- !u!114 &623644631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12531,6 +12531,7 @@ MonoBehaviour:
   BoutonArtilery: {fileID: 283114293}
   BoutonPhoto: {fileID: 0}
   ButtonExit: {fileID: 0}
+  dialogplayer: {fileID: 0}
 --- !u!1 &1167430526
 GameObject:
   m_ObjectHideFlags: 0
@@ -20413,6 +20414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterNameContent: {fileID: 333052377}
   dialogContent: {fileID: 1541576064}
+  cgContent: {fileID: 0}
   brancheParent: {fileID: 56690530}
   branchBtnPrefab: {fileID: 3078678850473469185, guid: 0698598d5f7e42944a143ad0091adb61,
     type: 3}

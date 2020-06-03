@@ -19,29 +19,12 @@ public class ScriptLouis : MonoBehaviour
     void Start()
     {
         dialogPlayer.SetDialog(dialogList.dialogList[0]);
-        dialogPlayer.onPlayNextDialogAction += GoodSpeechFinished;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        dialogPlayer.onDialogFinished += GoodSpeechFinished;
     }
 
     private void GoodSpeechFinished() //fin de dialogue
     {
         TextBox.SetActive(false);
         ObjectMask.SetActive(true);
-    }
-
-        public void ModificationTxt(int index)
-    {
-        /*if(sceneBureaux.PhotoIsChecked)
-        {
-            index = 1;
-        }else
-        {
-            index = 0;
-        }*/
     }
 }

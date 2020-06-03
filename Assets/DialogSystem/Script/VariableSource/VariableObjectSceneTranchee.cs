@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
-public class VariableObjectLouisGood : VariableSourceObject
+public class VariableObjectSceneTranchee : VariableSourceObject
 {
-    LouisGoodVariableSource source = new LouisGoodVariableSource();
+    SceneTrancheeVariableSource source = new SceneTrancheeVariableSource();
 
     public override FieldInfo[] GetSourceFieldInfos()
     {

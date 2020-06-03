@@ -5,16 +5,11 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
-public class LouisGoodVariableSourceMng : VariableSourceManager, ILouisGoodVariableSource
+public class SceneTrancheeVariableSourceMng : VariableSourceManager, ISceneTrancheeVariableSource
 {
     [SerializeField] ScriptLouis soldatlouisScript;
 
-    SoldatVariableSource source = new SoldatVariableSource();
-
-    private void Start()
-    {
-        source.activeChoice1 = true;
-    }
+    public SceneTrancheeVariableSource source = new SceneTrancheeVariableSource();
 
     #region Values function
     public override FieldInfo[] GetSourceFieldInfo()
@@ -48,9 +43,4 @@ public class LouisGoodVariableSourceMng : VariableSourceManager, ILouisGoodVaria
             method.Invoke(this, null);
     }
     #endregion
-
-    public void SelectTextChoice (int index)
-    {
-        soldatlouisScript.ModificationTxt(index);
-    }
 }

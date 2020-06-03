@@ -1,5 +1,8 @@
-﻿using System.Collections;
+﻿using DialogSystem;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 public class SceneBureauxManager : MonoBehaviour
@@ -10,6 +13,7 @@ public class SceneBureauxManager : MonoBehaviour
     [SerializeField] InfoItemBouton BoutonPhoto;
 
     [SerializeField] GameObject ButtonExit;
+    [SerializeField] DialogPlayer dialogplayer;
 
     public bool MapIsChecked { get; private set; } //get le bool mais on ne peut pas le modifier ailleurs
     private bool LetterIsChecked;
@@ -60,8 +64,7 @@ public class SceneBureauxManager : MonoBehaviour
 
     private void CheckPhotoBoolean()
     {
-        PhotoIsChecked = true;
-        Debug.Log(PhotoIsChecked);
+        ((SceneTrancheeVariableSourceMng)(dialogplayer.VariableSourceMgr)).source.LetterChecked = true;
     }
 
     private void ExitLevel()

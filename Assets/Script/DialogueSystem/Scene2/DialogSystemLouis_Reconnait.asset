@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f671e08ec3ebcd3408e177c1e1fe96ca, type: 3}
+  m_Name: DialogSystemLouis_Reconnait
+  m_EditorClassIdentifier: 
+  id: DialogSystemLouis_Reconnait
+  variableSource: {fileID: 114586663477072752}
+  activeConditions: []
+  dialogList: []
+  itemList:
+  - {fileID: 114382759747062836}
+  - {fileID: 114279056802896698}
+  - {fileID: 114451504696448806}
+  - {fileID: 114297924101079234}
+--- !u!114 &114279056802896698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  index: 1
+  targetGroup: {fileID: 11400000}
+  characterName: Louis
+  text: Si fait mon captitaine ! Comment le savez ... Attendez ... Anatole Favourier
+    ? C'est toi ?
+  branches: []
+--- !u!114 &114297924101079234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  index: 3
+  targetGroup: {fileID: 11400000}
+  characterName: Louis
+  text: "Tiens, j'avais cach\xE9 un filtre en r\xE9serve pour mon masque au cas ou
+    ... Je pr\xE9f\xE8re t'en faire cadeau, moi je me d\xE9brouillerai ! "
+  branches: []
+--- !u!114 &114382759747062836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  index: 0
+  targetGroup: {fileID: 11400000}
+  characterName: Louis
+  text: 1ere classe Louis Perret, au rapport mon capitaine !
+  branches:
+  - text: Tout va bien dans le secteur ?
+    onSelect:
+      vType: 0
+      variable:
+        vType: 0
+        valueStr: 
+        name: 
+      method:
+        fullMethod: 
+        name: 
+        hasParameter: 0
+        parameter:
+          vType: 0
+          valueStr: 
+    activeConditions: []
+    showActiveCondition: 0
+  - text: Louis Perret ... Du village de Bagneux ?
+    onSelect:
+      vType: 0
+      variable:
+        vType: 0
+        valueStr: 
+        name: 
+      method:
+        fullMethod: 
+        name: 
+        hasParameter: 0
+        parameter:
+          vType: 0
+          valueStr: 
+    activeConditions:
+    - vType: 4
+      valueStr: True
+      name: LetterChecked
+    showActiveCondition: 1
+--- !u!114 &114451504696448806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  index: 2
+  targetGroup: {fileID: 11400000}
+  characterName: Louis
+  text: "Cr\xE9nom je suis bien content de te voir ici ! Ravi de savoir que tu es
+    encore en vie, encore plus de savoir qu'on est dans la m\xEAme tranch\xE9e !"
+  branches: []
+--- !u!114 &114586663477072752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e42e963c5726cd341894dc0532de5445, type: 3}
+  m_Name: Variable Source Object
+  m_EditorClassIdentifier: 
