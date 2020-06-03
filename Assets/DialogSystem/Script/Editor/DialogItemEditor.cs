@@ -18,7 +18,6 @@ namespace DialogSystem
 		SerializedProperty bracheProperty;
 		bool showBranches;
 
-		GUIStyle brancheBoxStyle;
 		const string methodPattern = @"(?<name>\w+)\(((?<vType>System.(Int32|Single|Boolean|String)) (?<vName>\w+))?\)";
 
 		private void OnEnable()
@@ -31,27 +30,16 @@ namespace DialogSystem
 			}
 		}
 
+		protected GUIStyle brancheBoxStyle;
+
 		void InitStyles()
 		{
 			if (brancheBoxStyle == null)
 			{
 				brancheBoxStyle = new GUIStyle(GUI.skin.box);
-				brancheBoxStyle.normal.background = MakeBoxTexture(1, 1, new Color(1f, 1f, 0.7f, 0.1f));
+				brancheBoxStyle.normal.background = EditorTools.MakeBoxTexture(1, 1, new Color(1f, 1f, 0.7f, 0.1f));
 				brancheBoxStyle.normal.textColor = Color.clear;
 			}
-		}
-
-		private Texture2D MakeBoxTexture(int width, int height, Color col)
-		{
-			Color[] pix = new Color[width * height];
-			for (int i = 0; i < pix.Length; ++i)
-			{
-				pix[i] = col;
-			}
-			Texture2D result = new Texture2D(width, height);
-			result.SetPixels(pix);
-			result.Apply();
-			return result;
 		}
 
 		public override void OnInspectorGUI()
@@ -60,18 +48,6 @@ namespace DialogSystem
 				return;
 
 			InitStyles();
-
-			GUILayout.BeginVertical("Box");
-
-			GUILayout.BeginHorizontal();
-			EditorGUILayout.PropertyField(serializedObject.FindProperty("m_Name"), GUIContent.none);
-			GUILayout.Space(5);
-
-			GUI.backgroundColor = Color.red;
-			if (GUILayout.Button("x", GUILayout.Width(25)))
-				RemoveDialogItem();
-			GUI.backgroundColor = Color.white;
-			GUILayout.EndHorizontal();
 
 			isShow = EditorGUILayout.Foldout(isShow, "");
 			if (isShow)
@@ -85,10 +61,6 @@ namespace DialogSystem
 
 				OnGUIBranches();
 			}
-
-			GUILayout.Space(5);
-			GUILayout.EndVertical();
-			GUILayout.Space(5);
 
 			serializedObject.ApplyModifiedProperties();
 			EditorUtility.SetDirty(item);
@@ -316,15 +288,6 @@ namespace DialogSystem
 			}
 			else
 				GUILayout.FlexibleSpace();
-		}
-
-		void RemoveDialogItem()
-		{
-			item.targetGroup.RemoveDialogItem(item);
-			DestroyImmediate(item, true);
-
-			item = null;
-			AssetDatabase.SaveAssets();
 		}
 	}
 }

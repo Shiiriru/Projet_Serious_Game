@@ -18,6 +18,7 @@ MonoBehaviour:
   dialogList:
   - {fileID: 114347986907686542}
   - {fileID: 114902410911260818}
+  itemList: []
 --- !u!114 &114147597540919594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,10 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
   m_Name: Dialog Item 1
   m_EditorClassIdentifier: 
+  index: 0
+  targetGroup: {fileID: 11400000}
   characterName: 
   text: LONG TESTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   branches: []
-  targetGroup: {fileID: 11400000}
 --- !u!114 &114902410911260818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,6 +60,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
   m_Name: Dialog Item 1
   m_EditorClassIdentifier: 
+  index: 0
+  targetGroup: {fileID: 11400000}
   characterName: 
   text: WITH BRANCHES
   branches:
@@ -72,6 +76,9 @@ MonoBehaviour:
         fullMethod: OnSelectPlayChoice(System.Int32 index)
         name: OnSelectPlayChoice
         hasParameter: 1
+        parameter:
+          vType: 0
+          valueStr: 
     activeConditions:
     - vType: 4
       valueStr: True
@@ -88,6 +95,8 @@ MonoBehaviour:
         fullMethod: OnSelectPlayChoice(System.Int32 index)
         name: OnSelectPlayChoice
         hasParameter: 1
+        parameter:
+          vType: 0
+          valueStr: 
     activeConditions: []
     showActiveCondition: 0
-  targetGroup: {fileID: 11400000}

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,7 @@ namespace DialogSystem
 	{
 		[SerializeField] Text characterNameContent;
 		[SerializeField] Text dialogContent;
+		[SerializeField] Image cgContent;
 
 		[SerializeField] Transform brancheParent;
 		List<BranchButton> brancheBtnList = new List<BranchButton>();
@@ -18,11 +20,14 @@ namespace DialogSystem
 		[SerializeField] VariableSourceManager variableSourceMgr;
 		public VariableSourceManager VariableSourceMgr { get { return variableSourceMgr; } }
 
-		DialogGroupItem targetDialog;
+		DialogGroupItem currentGroup;
+		DialogItemBase currentItem;
 
 		[SerializeField] bool autoClearAction;
-		public event System.Action onPlayNextDialogAction;
-		public event System.Action<BrancheItem> onSelectBrancheAction;
+
+		public event System.Action<DialogItemBase> onPlayItem;
+		public event System.Action onDialogFinished;
+		public event System.Action<BrancheItem> onSelectBranche;
 
 		bool startPlayDialog;
 		//for play dialog one by one
@@ -30,10 +35,31 @@ namespace DialogSystem
 		int nextPlayIndex;
 
 		bool showBranches;
+		Coroutine waitingCoroutine;
+
+		private void Awake()
+		{
+			Reset();
+		}
+
+		void Reset()
+		{
+			if (characterNameContent != null)
+				characterNameContent.text = "";
+			if (dialogContent != null)
+				dialogContent.text = "";
+
+			if (cgContent != null)
+			{
+				cgContent.color = new Color(1, 1, 1, 0);
+				cgContent.raycastTarget = false;
+			}
+
+		}
 
 		public void SetDialog(DialogGroupItem target, bool autoPlay = true)
 		{
-			targetDialog = target;
+			currentGroup = target;
 
 			if (autoPlay)
 			{
@@ -45,7 +71,7 @@ namespace DialogSystem
 
 		public void PlayDialog()
 		{
-			if (targetDialog == null)
+			if (currentGroup == null)
 				return;
 
 			startPlayDialog = true;
@@ -59,7 +85,7 @@ namespace DialogSystem
 			if (!startPlayDialog)
 				return;
 
-			if (nextPlayIndex >= targetDialog.dialogList.Count)
+			if (nextPlayIndex >= currentGroup.itemList.Count)
 				CurrentDialogFinshed();
 
 			Play();
@@ -69,22 +95,40 @@ namespace DialogSystem
 		private void MouseController()
 		{
 			//cannot pass dialog when has branch
-			if (showBranches)
+			if (showBranches || waitingCoroutine != null || !(currentItem is DialogItem))
 				return;
 
 			if (Input.GetMouseButtonDown(0))
-			{
 				nextPlayIndex += 1;
-			}
 		}
 
 		void Play()
 		{
-			if (nowPlayIndex == nextPlayIndex || nextPlayIndex >= targetDialog.dialogList.Count)
+			if (nowPlayIndex == nextPlayIndex || nextPlayIndex >= currentGroup.itemList.Count)
 				return;
 
 			nowPlayIndex = nextPlayIndex;
-			var dialog = targetDialog.dialogList[nowPlayIndex];
+			currentItem = currentGroup.itemList[nowPlayIndex];
+
+			if (onPlayItem != null)
+			{
+				onPlayItem(currentItem);
+				if (autoClearAction) onPlayItem = null;
+			}
+
+			if (currentItem is DialogItem)
+				PlayDialogItem();
+			if (currentItem is CGItem)
+				CGIn();
+			if (currentItem is CGOutItem)
+				CGOut();
+			if (currentItem is DelayItem)
+				DoDelay();
+		}
+
+		void PlayDialogItem()
+		{
+			var dialog = currentItem as DialogItem;
 
 			if (characterNameContent != null)
 				characterNameContent.text = string.IsNullOrEmpty(dialog.characterName) ? "" : dialog.characterName;
@@ -131,10 +175,10 @@ namespace DialogSystem
 				dialogContent.text = "";
 
 			startPlayDialog = false;
-			if (onPlayNextDialogAction != null)
+			if (onDialogFinished != null)
 			{
-				onPlayNextDialogAction();
-				if (autoClearAction) onPlayNextDialogAction = null;
+				onDialogFinished();
+				if (autoClearAction) onDialogFinished = null;
 			}
 		}
 
@@ -172,10 +216,10 @@ namespace DialogSystem
 					variableSourceMgr.SetValue(returnVal.variable);
 			}
 
-			if (onSelectBrancheAction != null)
+			if (onSelectBranche != null)
 			{
-				onSelectBrancheAction(branch);
-				if (autoClearAction) onSelectBrancheAction = null;
+				onSelectBranche(branch);
+				if (autoClearAction) onSelectBranche = null;
 			}
 		}
 
@@ -186,6 +230,86 @@ namespace DialogSystem
 
 			brancheBtnList.Add(btn);
 			return btn;
+		}
+
+		void CGIn()
+		{
+			if (cgContent == null)
+			{
+				nextPlayIndex += 1;
+				return;
+			}
+
+			var item = currentItem as CGItem;
+
+			var duration = item.duration;
+			if (item.duration > 0)
+			{
+				DOTween.Kill(cgContent);
+				if (cgContent.color.a > 0)
+					cgContent.DOColor(Color.black, duration * 0.5f).OnComplete(() =>
+					{
+						cgContent.sprite = item.sprite;
+						cgContent.DOColor(Color.white, duration * 0.5f);
+					});
+				else
+				{
+					cgContent.sprite = item.sprite;
+					cgContent.DOColor(Color.white, duration);
+				}
+
+			}
+			else
+			{
+				cgContent.DOColor(Color.white, duration);
+				cgContent.color = Color.white;
+			}
+			cgContent.raycastTarget = true;
+
+			PlayNextItem(item.waitFade, item.duration);
+		}
+
+		void CGOut()
+		{
+			if (cgContent == null)
+			{
+				nextPlayIndex += 1;
+				return;
+			}
+
+			var item = currentItem as CGOutItem;
+
+			DOTween.Kill(cgContent);
+			cgContent.DOColor(new Color(1, 1, 1, 0), item.duration);
+			cgContent.raycastTarget = false;
+
+			PlayNextItem(item.waitFade, item.duration);
+		}
+
+		void PlayNextItem(bool wait, float duration)
+		{
+			if (wait)
+				waitingCoroutine = StartCoroutine(WaitingCorou(duration));
+			else
+				nextPlayIndex += 1;
+		}
+
+		void DoDelay()
+		{
+			var item = currentItem as DelayItem;
+			waitingCoroutine = StartCoroutine(WaitingCorou(item.duration));
+		}
+
+		public void SetVariableManger(VariableSourceManager mgr)
+		{
+			variableSourceMgr = mgr;
+		}
+
+		IEnumerator WaitingCorou(float time)
+		{
+			yield return new WaitForSeconds(time);
+			nextPlayIndex += 1;
+			waitingCoroutine = null;
 		}
 	}
 }

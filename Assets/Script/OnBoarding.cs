@@ -42,7 +42,7 @@ public class OnBoarding : MonoBehaviour
     void Start()
     {
         dialogPlayer.SetDialog(dialogList.dialogList[0]);
-        dialogPlayer.onPlayNextDialogAction += OnboardingFinished;
+        dialogPlayer.onDialogFinished += OnboardingFinished;
     }
 
     private void OnboardingFinished() //fin de dialogue

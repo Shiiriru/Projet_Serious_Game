@@ -18,10 +18,21 @@ namespace DialogSystem
 
 		SerializedProperty dialogListProperty;
 
-		Dictionary<DialogItem, Editor> dialogItemEditorMap = new Dictionary<DialogItem, Editor>();
+		Dictionary<DialogItemBase, Editor> itemEditorMap = new Dictionary<DialogItemBase, Editor>();
 
 		string variableSourcePath;
 		Dictionary<string, System.Type> conditionObjList = new Dictionary<string, System.Type>();
+
+		protected GUIStyle dialogItemStyle;
+		void InitStyles()
+		{
+			if (dialogItemStyle == null)
+			{
+				dialogItemStyle = new GUIStyle(GUI.skin.box);
+				dialogItemStyle.normal.background = EditorTools.MakeBoxTexture(1, 1, new Color(1, 1, 1, 0.15f));
+				dialogItemStyle.normal.textColor = Color.clear;
+			}
+		}
 
 		private void OnEnable()
 		{
@@ -34,12 +45,16 @@ namespace DialogSystem
 
 		public override void OnInspectorGUI()
 		{
-			//base.OnInspectorGUI();
-			EditorGUILayout.PropertyField(serializedObject.FindProperty("id"));
+			InitStyles();
+
+			//EditorGUILayout.PropertyField(serializedObject.FindProperty("id"));
+			if (GUILayout.Button("Add old dialogs"))
+				groupItem.AddOldDialogsToList();
+
+			GUILayout.Space(10);
 
 			OnGuiActiveCondition();
 			OnGUIDialogList();
-			//EditorGUILayout.PropertyField(serializedObject.FindProperty("dialogList"), true);
 
 			serializedObject.ApplyModifiedProperties();
 
@@ -68,7 +83,7 @@ namespace DialogSystem
 			GUI.backgroundColor = Color.white;
 			GUILayout.EndHorizontal();
 
-			OnGUIEditActiveConditions();
+			//OnGUIEditActiveConditions();
 
 			GUILayout.Space(5);
 		}
@@ -170,21 +185,71 @@ namespace DialogSystem
 
 			try
 			{
-				foreach (var dialog in groupItem.dialogList)
-					GetDialogItemEditor(dialog).OnInspectorGUI();
+				foreach (var item in groupItem.itemList)
+				{
+					if (item.index.IsOdd())
+						GUILayout.BeginVertical("Box", dialogItemStyle);
+					else
+						GUILayout.BeginVertical("Box");
+
+					OnItemHeaderGUI(item);
+
+					GetDialogItemEditor(item).OnInspectorGUI();
+
+					GUILayout.Space(5);
+					GUILayout.EndVertical();
+					GUILayout.Space(5);
+				}
+
 			}
 			catch { }
 
 			if (GUILayout.Button("+"))
-				CreateDialogItem();
+				ShowCreateItemMenu();
 		}
 
-		private Editor GetDialogItemEditor(DialogItem item)
+		private void OnItemHeaderGUI(DialogItemBase item)
+		{
+			GUILayout.BeginVertical();
+
+			GUILayout.Label($"{item.index}.  {item.name}");
+
+			GUILayout.BeginHorizontal();
+
+			if (GUILayout.Button("^", GUILayout.Width(25)))
+				groupItem.SwapItems(item.index, item.index - 1);
+
+			if (GUILayout.Button("v", GUILayout.Width(25)))
+				groupItem.SwapItems(item.index, item.index + 1);
+
+			GUILayout.FlexibleSpace();
+
+			GUI.backgroundColor = Color.red;
+			if (GUILayout.Button("x", GUILayout.Width(25)))
+			{
+				groupItem.RemoveItem(item);
+				DestroyImmediate(item, true);
+
+				AssetDatabase.SaveAssets();
+			}
+			GUI.backgroundColor = Color.white;
+
+			GUILayout.EndHorizontal();
+			GUILayout.EndVertical();
+
+			Event current = Event.current;
+			if (GUILayoutUtility.GetLastRect().Contains(current.mousePosition) && current.type == EventType.ContextClick)
+				ShowCreateItemMenu(item.index);
+
+			EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+		}
+
+		private Editor GetDialogItemEditor(DialogItemBase item)
 		{
 			Editor editor;
 
-			if (!dialogItemEditorMap.TryGetValue(item, out editor))
-				dialogItemEditorMap[item] = editor = Editor.CreateEditor(item);
+			if (!itemEditorMap.TryGetValue(item, out editor))
+				itemEditorMap[item] = editor = Editor.CreateEditor(item);
 
 			Editor.CreateCachedEditor(item, null, ref editor);
 			editor.serializedObject.UpdateIfRequiredOrScript();
@@ -192,20 +257,48 @@ namespace DialogSystem
 			return editor;
 		}
 
-		void CreateDialogItem()
+		void ShowCreateItemMenu(int insertIndex = -1)
 		{
-			var dialog = groupItem.AddDialogItem();
+			Event currentEvent = Event.current;
 
-			if (string.IsNullOrEmpty(dialog.name))
+			Vector2 mousePos = currentEvent.mousePosition;
+
+			// Now create the menu, add items and show it
+			GenericMenu menu = new GenericMenu();
+			if (insertIndex >= 0)
 			{
-				string typeName = typeof(DialogItem).Name + (groupItem.dialogList.Count - 1);
-				dialog.name = ObjectNames.NicifyVariableName(typeName);
+				menu.AddDisabledItem(new GUIContent("INSERT"));
+				menu.AddSeparator("");
 			}
-			AssetDatabase.AddObjectToAsset(dialog, target);
+
+			menu.AddItem(new GUIContent("dialog"), false, () => CreateNewItem(typeof(DialogItem), insertIndex));
+			menu.AddItem(new GUIContent("CG"), false, () => CreateNewItem(typeof(CGItem), insertIndex));
+			menu.AddItem(new GUIContent("CG out"), false, () => CreateNewItem(typeof(CGOutItem), insertIndex));
+			menu.AddItem(new GUIContent("Delay"), false, () => CreateNewItem(typeof(DelayItem), insertIndex));
+			menu.ShowAsContext();
+			currentEvent.Use();
+		}
+
+		void CreateNewItem(Type type, int insertIndex)
+		{
+			var item = groupItem.CreateItem(type);
+			if (item == null)
+				return;
+
+			if (insertIndex < 0)
+				groupItem.AddItemToList(item);
+			else
+				groupItem.InsertItemToList(item, insertIndex);
+
+			if (string.IsNullOrEmpty(item.name))
+			{
+				string typeName = type.Name.Replace("Item", "");
+				item.name = ObjectNames.NicifyVariableName(typeName);
+			}
+			AssetDatabase.AddObjectToAsset(item, target);
 			AssetDatabase.SaveAssets();
 
 			Repaint();
-
 			//return dialog;
 		}
 

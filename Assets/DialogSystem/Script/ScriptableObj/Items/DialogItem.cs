@@ -5,12 +5,10 @@ using UnityEngine;
 
 namespace DialogSystem
 {
-	public class DialogItem : ScriptableObject
+	public class DialogItem : DialogItemBase
 	{
 		public string characterName;
 		public string text;
 		public List<BrancheItem> branches = new List<BrancheItem>();
-
-		[HideInInspector] public DialogGroupItem targetGroup;
 	}
 }
