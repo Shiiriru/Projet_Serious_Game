@@ -1,0 +1,185 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f671e08ec3ebcd3408e177c1e1fe96ca, type: 3}
+  m_Name: DialogLouisGood
+  m_EditorClassIdentifier: 
+  id: DialogLouis1
+  variableSource: {fileID: 114975345722080792}
+  activeConditions: []
+  dialogList:
+  - {fileID: 114713838841495248}
+  - {fileID: 114722794744738880}
+  - {fileID: 114491570370011974}
+  - {fileID: 114275578334475840}
+  - {fileID: 114341345184859510}
+  - {fileID: 114799291350621526}
+  - {fileID: 114206892841376382}
+--- !u!114 &114206892841376382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog Item 6
+  m_EditorClassIdentifier: 
+  characterName: Soldat Louis
+  text: "Tiens, j'avais cach\xE9 un filtre en r\xE9serve pour mon masque au cas ou
+    ... Je pr\xE9f\xE8re t'en faire cadeau, moi je me d\xE9brouillerai ! "
+  branches: []
+  targetGroup: {fileID: 11400000}
+--- !u!114 &114275578334475840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog Item 3
+  m_EditorClassIdentifier: 
+  characterName: Capitaine Favourier
+  text: Vous ne viendriez pas du petit village de Bagneux par hasard ?
+  branches: []
+  targetGroup: {fileID: 11400000}
+--- !u!114 &114341345184859510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog Item 4
+  m_EditorClassIdentifier: 
+  characterName: Soldat Louis
+  text: Si fait mon captitaine ! Comment le savez ... Attendez ... Anatole Favourier
+    ? C'est toi ?
+  branches: []
+  targetGroup: {fileID: 11400000}
+--- !u!114 &114491570370011974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog Item 2
+  m_EditorClassIdentifier: 
+  characterName: Soldat Louis
+  text: "Tout va bien jusque l\xE0 mon capitaine, l'horizon est bien calme pour ce
+    debut d'\xE9t\xE9."
+  branches: []
+  targetGroup: {fileID: 11400000}
+--- !u!114 &114713838841495248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog Item 0
+  m_EditorClassIdentifier: 
+  characterName: Soldat Louis
+  text: 1ere classe Louis Perret, au rapport mon capitaine !
+  branches: []
+  targetGroup: {fileID: 11400000}
+--- !u!114 &114722794744738880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog Item 1
+  m_EditorClassIdentifier: 
+  characterName: 
+  text: 
+  branches:
+  - text: Tout va bien dans le secteur ?
+    onSelect:
+      vType: 5
+      variable:
+        vType: 0
+        valueStr: 
+        name: 
+      method:
+        fullMethod: SelectTextChoice(System.Int32 index)
+        name: SelectTextChoice
+        hasParameter: 1
+        parameter:
+          vType: 2
+          valueStr: 0
+    activeConditions: []
+    showActiveCondition: 0
+  - text: "J'aivais un ami du m\xEAme nom ..."
+    onSelect:
+      vType: 5
+      variable:
+        vType: 0
+        valueStr: 
+        name: 
+      method:
+        fullMethod: SelectTextChoice(System.Int32 index)
+        name: SelectTextChoice
+        hasParameter: 1
+        parameter:
+          vType: 2
+          valueStr: 1
+    activeConditions: []
+    showActiveCondition: 0
+  targetGroup: {fileID: 11400000}
+--- !u!114 &114799291350621526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471108bbc3d86040a53e19e90348f33, type: 3}
+  m_Name: Dialog Item 5
+  m_EditorClassIdentifier: 
+  characterName: Soldat Louis
+  text: "Cr\xE9nom je suis bien content de te voir ici ! Ravi de savoir que tu es
+    encore en vie, encore plus de savoir qu'on est dans la m\xEAme tranch\xE9e !"
+  branches: []
+  targetGroup: {fileID: 11400000}
+--- !u!114 &114975345722080792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e42e963c5726cd341894dc0532de5445, type: 3}
+  m_Name: Variable Source Object
+  m_EditorClassIdentifier: 
