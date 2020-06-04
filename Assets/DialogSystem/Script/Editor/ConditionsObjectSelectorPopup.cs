@@ -7,11 +7,11 @@ namespace DialogSystem
 {
 	public class ConditionsObjectSelectorPopup : PopupWindowContent
 	{
-		DialogGroupItem group;
+		DialogGraph graph;
 		Dictionary<string, Type> objList;
-		public void Init(DialogGroupItem _group, Dictionary<string, Type> _objList)
+		public void Init(DialogGraph _graph, Dictionary<string, Type> _objList)
 		{
-			group = _group;
+			graph = _graph;
 			objList = _objList;
 		}
 
@@ -29,14 +29,14 @@ namespace DialogSystem
 
 		void CreateConditionsObject(Type type)
 		{
-			var conditionObj = group.AddConditionObject(type);
+			var conditionObj = graph.AddVariableSource(type);
 
 			if (string.IsNullOrEmpty(conditionObj.name))
 			{
 				string typeName = typeof(VariableSourceObject).Name;
 				conditionObj.name = ObjectNames.NicifyVariableName(typeName);
 			}
-			AssetDatabase.AddObjectToAsset(conditionObj, group);
+			AssetDatabase.AddObjectToAsset(conditionObj, graph);
 			AssetDatabase.SaveAssets();
 		}
 	}

@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 234525243}
   - component: {fileID: 234525242}
+  - component: {fileID: 234525244}
   m_Layer: 0
   m_Name: DialogSystem
   m_TagString: Untagged
@@ -141,13 +142,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d17a681e900014e45a7d784ce548baf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterNameContent: {fileID: 2076521351}
-  dialogContent: {fileID: 1691287873}
+  characterNameContent: {fileID: 1331078123}
+  dialogContent: {fileID: 1568784500}
   cgContent: {fileID: 1399340940}
   brancheParent: {fileID: 1046793248}
   branchBtnPrefab: {fileID: 5837263894066847585, guid: 032c9d2fa549d3744938d01a4c34a288,
     type: 3}
-  variableSourceMgr: {fileID: 1019035054}
+  variableSourceMgr: {fileID: 234525244}
   autoClearAction: 0
 --- !u!4 &234525243
 Transform:
@@ -163,6 +164,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &234525244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234525241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fe799bfdb3b9a8418c8d7ac5d9f5537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &989977465
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +269,6 @@ GameObject:
   - component: {fileID: 1019035059}
   - component: {fileID: 1019035058}
   - component: {fileID: 1019035057}
-  - component: {fileID: 1019035054}
   - component: {fileID: 1019035053}
   - component: {fileID: 1019035056}
   - component: {fileID: 1019035055}
@@ -280,19 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogList:
-  - {fileID: 11400000, guid: 2cdee60a976adfc49b3f07605ba1ab2a, type: 2}
---- !u!114 &1019035054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019035052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fe799bfdb3b9a8418c8d7ac5d9f5537, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  - {fileID: 11400000, guid: 0cd62c9e63c60464ab9ec1d15c9086f2, type: 2}
 --- !u!114 &1019035055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,7 +445,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1478515035}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -486,6 +486,8 @@ GameObject:
   - component: {fileID: 1331078119}
   - component: {fileID: 1331078121}
   - component: {fileID: 1331078120}
+  - component: {fileID: 1331078122}
+  - component: {fileID: 1331078123}
   m_Layer: 5
   m_Name: CharaName
   m_TagString: Untagged
@@ -505,12 +507,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2076521349}
-  m_Father: {fileID: 1568784496}
-  m_RootOrder: 1
+  m_Father: {fileID: 1478515035}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 56.800003, y: 29.699997}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 156.80002, y: 145}
   m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1331078120
@@ -550,6 +552,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331078118}
   m_CullTransparentMesh: 0
+--- !u!225 &1331078122
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331078118}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1331078123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331078118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b58cafdb7a726b4b98b1f9b5986d2fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 2076521351}
 --- !u!1 &1399340937
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,6 +743,7 @@ RectTransform:
   m_Children:
   - {fileID: 1019035059}
   - {fileID: 1399340938}
+  - {fileID: 1331078119}
   - {fileID: 1568784496}
   - {fileID: 1046793248}
   m_Father: {fileID: 0}
@@ -737,6 +765,8 @@ GameObject:
   - component: {fileID: 1568784496}
   - component: {fileID: 1568784498}
   - component: {fileID: 1568784497}
+  - component: {fileID: 1568784499}
+  - component: {fileID: 1568784500}
   m_Layer: 5
   m_Name: dialog
   m_TagString: Untagged
@@ -756,9 +786,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1691287872}
-  - {fileID: 1331078119}
   m_Father: {fileID: 1478515035}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -802,6 +831,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1568784495}
   m_CullTransparentMesh: 0
+--- !u!225 &1568784499
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568784495}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1568784500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568784495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b58cafdb7a726b4b98b1f9b5986d2fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1691287873}
 --- !u!1 &1691287871
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,7 +920,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

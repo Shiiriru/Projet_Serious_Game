@@ -20,7 +20,7 @@ public class OnBoardingMain : MonoBehaviour
 		dialogPlayer = FindObjectOfType<DialogPlayer>();
 		dialogList = GetComponent<DialogListManager>();
 
-		dialogPlayer.SetDialog(dialogList.dialogList[0]);
+		//dialogPlayer.SetDialog(dialogList.dialogList[0]);
 		dialogPlayer.onDialogFinished += OnboardingFinished;
 	}
 
