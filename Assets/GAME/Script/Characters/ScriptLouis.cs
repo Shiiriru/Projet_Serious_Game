@@ -18,7 +18,7 @@ public class ScriptLouis : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dialogPlayer.SetDialog(dialogList.dialogList[0]);
+        //dialogPlayer.SetDialog(dialogList.dialogList[0]);
         dialogPlayer.onDialogFinished += GoodSpeechFinished;
     }
 

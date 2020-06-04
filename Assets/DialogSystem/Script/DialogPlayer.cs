@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DialogSystem.Nodes;
+using XNode;
+using System.Linq;
 
 namespace DialogSystem
 {
@@ -20,21 +23,17 @@ namespace DialogSystem
 		[SerializeField] VariableSourceManager variableSourceMgr;
 		public VariableSourceManager VariableSourceMgr { get { return variableSourceMgr; } }
 
-		DialogGroupItem currentGroup;
-		DialogItemBase currentItem;
+		DialogGraph currentDialogGraph;
+		Node currentNode;
 
 		[SerializeField] bool autoClearAction;
 
-		public event System.Action<DialogItemBase> onPlayItem;
+		public event System.Action<Node> onPlayNode;
 		public event System.Action onDialogFinished;
 		public event System.Action<BrancheItem> onSelectBranche;
 
 		bool startPlayDialog;
-		//for play dialog one by one
-		int nowPlayIndex;
-		int nextPlayIndex;
 
-		bool showBranches;
 		Coroutine waitingCoroutine;
 
 		private void Awake()
@@ -58,132 +57,22 @@ namespace DialogSystem
 			}
 		}
 
-		public void SetDialog(DialogGroupItem target, bool autoPlay = true)
+		public void SetDialog(DialogGraph target, bool autoPlay = true)
 		{
-			currentGroup = target;
+			currentDialogGraph = target;
 
 			if (autoPlay)
-			{
-				startPlayDialog = true;
-				nowPlayIndex = -1;
-				nextPlayIndex = 0;
-			}
+				PlayDialog();
 		}
 
 		public void PlayDialog()
 		{
-			if (currentGroup == null)
+			if (currentDialogGraph == null)
 				return;
 
 			startPlayDialog = true;
-			nowPlayIndex = -1;
-			nextPlayIndex = 0;
-		}
-
-		// Update is called once per frame
-		void Update()
-		{
-			if (!startPlayDialog)
-				return;
-
-			if (nextPlayIndex >= currentGroup.itemList.Count)
-				CurrentDialogFinshed();
-
-			Play();
-			MouseController();
-		}
-
-		private void MouseController()
-		{
-			//cannot pass dialog when has branch
-			if (showBranches || waitingCoroutine != null || !(currentItem is DialogItem))
-				return;
-
-			if (Input.GetMouseButtonDown(0))
-				nextPlayIndex += 1;
-		}
-
-		void Play()
-		{
-			if (nowPlayIndex == nextPlayIndex || nextPlayIndex >= currentGroup.itemList.Count)
-				return;
-
-			nowPlayIndex = nextPlayIndex;
-			currentItem = currentGroup.itemList[nowPlayIndex];
-
-			if (onPlayItem != null)
-			{
-				onPlayItem(currentItem);
-				if (autoClearAction) onPlayItem = null;
-			}
-
-			if (currentItem is DialogItem)
-				PlayDialogItem();
-			if (currentItem is CGItem)
-				CGIn();
-			if (currentItem is CGOutItem)
-				CGOut();
-			if (currentItem is DelayItem)
-				DoDelay();
-		}
-
-		void PlayDialogItem()
-		{
-			var dialog = currentItem as DialogItem;
-
-			if (characterNameContent != null)
-			{
-				if (string.IsNullOrEmpty(dialog.characterName))
-					characterNameContent.Show(false);
-				else
-				{
-					characterNameContent.Show(true);
-					characterNameContent.SetText(dialog.characterName);
-				}
-			}
-
-			if (dialogContent != null)
-			{
-				if (string.IsNullOrEmpty(dialog.text))				
-					dialogContent.Show(false);			
-				else
-				{
-					dialogContent.Show(true);
-					dialogContent.SetText(dialog.text);
-				}
-			}
-
-
-			//has branch
-			if (dialog.branches.Count > 0)
-			{
-				for (int i = 0; i < dialog.branches.Count; i++)
-				{
-					var b = dialog.branches[i];
-					//detect branch condition
-					if (b.activeConditions.Count > 0 && variableSourceMgr != null)
-					{
-						bool active = true;
-						//check value 
-						foreach (var condition in b.activeConditions)
-						{
-							//finish check when one condition isn't correct
-							var val1 = condition.valueStr.ToValue(condition.vType.ToType());
-							var val2 = variableSourceMgr.GetValue(condition.name);
-							if (val1 != null && val2 != null && val1.ToString() != val2.ToString())
-							{
-								active = false;
-								continue;
-							}
-						}
-						if (active)
-							SetupBrancheButton(b, i);
-					}
-					//add directly
-					else
-						SetupBrancheButton(b, i);
-				}
-			}
+			currentNode = null;
+			AutoPlayNextNode();
 		}
 
 		void CurrentDialogFinshed()
@@ -198,6 +87,144 @@ namespace DialogSystem
 			}
 		}
 
+		// Update is called once per frame
+		void Update()
+		{
+			if (!startPlayDialog)
+				return;
+
+			MouseController();
+		}
+
+		private void MouseController()
+		{
+			//cannot pass dialog when has branch
+			if (waitingCoroutine != null || !(currentNode is DialogNode))
+				return;
+
+			if (Input.GetMouseButtonDown(0))
+			{
+				AutoPlayNextNode();
+			}
+		}
+
+		//play next story node in current story graph
+		void AutoPlayNextNode()
+		{
+			NodePort connection = null;
+			//find  current node
+			if (currentNode == null)
+				connection = currentDialogGraph.nodes.Where(n => n is StartPoint).FirstOrDefault().GetOutputPort("output").Connection;
+			else
+				connection = currentDialogGraph.nodes.Where(n => n == currentNode).FirstOrDefault().GetOutputPort("output").Connection;
+
+			PlayNode(connection);
+		}
+
+		void AutoPlayNextNode(bool wait, float duration)
+		{
+			if (wait)
+				waitingCoroutine = StartCoroutine(WaitingCorou(duration));
+			else
+				AutoPlayNextNode();
+		}
+
+		public void PlayNode(NodePort connection)
+		{
+			//finish story
+			if (connection == null)
+			{
+				if (onDialogFinished != null) onDialogFinished();
+				return;
+			}
+
+			currentNode = connection.node;
+
+			if (onPlayNode != null)
+			{
+				onPlayNode(currentNode);
+				if (autoClearAction) onPlayNode = null;
+			}
+
+			if (currentNode is DialogNode)
+				PlayDialogItem();
+			if (currentNode is BranchsNode)
+				ShowBranch();
+			if (currentNode is CGNode)
+				CGIn();
+			if (currentNode is CGOutNode)
+				CGOut();
+			if (currentNode is DelayNode)
+				DoDelay();
+		}
+		void PlayDialogItem()
+		{
+			var node = currentNode as DialogNode;
+
+			if (characterNameContent != null)
+			{
+				if (string.IsNullOrEmpty(node.characterName))
+					characterNameContent.Show(false);
+				else
+				{
+					characterNameContent.Show(true);
+					characterNameContent.SetText(node.characterName);
+				}
+			}
+
+			if (dialogContent != null)
+			{
+				if (string.IsNullOrEmpty(node.text))
+					dialogContent.Show(false);
+				else
+				{
+					dialogContent.Show(true);
+					dialogContent.SetText(node.text);
+				}
+			}
+		}
+
+		void ShowBranch()
+		{
+			var node = currentNode as BranchsNode;
+			//has branch
+			if (node.branchs.Count > 0)
+			{
+				for (int i = 0; i < node.branchs.Count; i++)
+				{
+					var b = node.branchs[i];
+
+					var connection = node.GetActiveConditions(i);
+					//detect branch condition
+					if (connection != null && variableSourceMgr != null)
+					{
+						bool active = true;
+
+						var conditions = connection.node as ActiveConditionsNode;
+						//check value
+						foreach (var c in conditions.conditions)
+						{
+							//finish check when one condition isn't correct
+							var val1 = c.valueStr.ToValue(c.vType.ToType());
+							var val2 = variableSourceMgr.GetValue(c.name);
+							if (val1 != null && val2 != null && val1.ToString() != val2.ToString())
+							{
+								active = false;
+								continue;
+							}
+						}
+						if (active)
+							SetupBrancheButton(b, i);
+					}
+					//add directly
+					else
+						SetupBrancheButton(b, i);
+				}
+			}
+			else
+				AutoPlayNextNode();
+		}
+
 		void SetupBrancheButton(BrancheItem branch, int index)
 		{
 			BranchButton btn = null;
@@ -209,19 +236,16 @@ namespace DialogSystem
 
 			btn.Show(branch);
 			var b = branch;
-			btn.Button.onClick.AddListener(() => OnClickSelectBranche(b));
-
-			showBranches = true;
+			btn.Button.onClick.AddListener(() => OnClickSelectBranche(b, index));
 		}
 
-		void OnClickSelectBranche(BrancheItem branch)
+		void OnClickSelectBranche(BrancheItem branch, int index)
 		{
 			//refresh all branches
 			foreach (var b in brancheBtnList)
 				b.Hide(true);
-			showBranches = false;
 
-			nextPlayIndex += 1;
+			var connection = (currentNode as BranchsNode).GetOutputConnection(index);
 
 			var returnVal = branch.onSelect;
 			if (variableSourceMgr != null && returnVal.vType != VariableType.Null)
@@ -237,6 +261,8 @@ namespace DialogSystem
 				onSelectBranche(branch);
 				if (autoClearAction) onSelectBranche = null;
 			}
+
+			PlayNode(connection);
 		}
 
 		BranchButton CreateBrancheButton()
@@ -252,11 +278,11 @@ namespace DialogSystem
 		{
 			if (cgContent == null)
 			{
-				nextPlayIndex += 1;
+				AutoPlayNextNode();
 				return;
 			}
 
-			var item = currentItem as CGItem;
+			var item = currentNode as CGNode;
 
 			var duration = item.duration;
 			if (item.duration > 0)
@@ -282,37 +308,29 @@ namespace DialogSystem
 			}
 			cgContent.raycastTarget = true;
 
-			PlayNextItem(item.waitFade, item.duration);
+			AutoPlayNextNode(item.isWait, item.duration);
 		}
 
 		void CGOut()
 		{
 			if (cgContent == null)
 			{
-				nextPlayIndex += 1;
+				AutoPlayNextNode();
 				return;
 			}
 
-			var item = currentItem as CGOutItem;
+			var item = currentNode as CGOutNode;
 
 			DOTween.Kill(cgContent);
 			cgContent.DOColor(new Color(1, 1, 1, 0), item.duration);
 			cgContent.raycastTarget = false;
 
-			PlayNextItem(item.waitFade, item.duration);
-		}
-
-		void PlayNextItem(bool wait, float duration)
-		{
-			if (wait)
-				waitingCoroutine = StartCoroutine(WaitingCorou(duration));
-			else
-				nextPlayIndex += 1;
+			AutoPlayNextNode(item.isWait, item.duration);
 		}
 
 		void DoDelay()
 		{
-			var item = currentItem as DelayItem;
+			var item = currentNode as DelayNode;
 			waitingCoroutine = StartCoroutine(WaitingCorou(item.duration));
 		}
 
@@ -324,7 +342,7 @@ namespace DialogSystem
 		IEnumerator WaitingCorou(float time)
 		{
 			yield return new WaitForSeconds(time);
-			nextPlayIndex += 1;
+			AutoPlayNextNode();
 			waitingCoroutine = null;
 		}
 	}
