@@ -31,7 +31,7 @@ MonoBehaviour:
   - {fileID: 114961676762407010}
   - {fileID: 0}
   - {fileID: 114187373335616700}
-  - {fileID: 114261496037290166}
+  - {fileID: 114791242263770446}
   variableSource: {fileID: 114735846283954992}
 --- !u!114 &114003861249723866
 MonoBehaviour:
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 680, y: 360}
+  position: {x: 632, y: 408}
   ports:
     keys:
     - input
@@ -253,7 +253,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114261496037290166}
+        node: {fileID: 114791242263770446}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -277,57 +277,6 @@ MonoBehaviour:
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
---- !u!114 &114261496037290166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d79f083dc1e46fd4daab26638c7b755b, type: 3}
-  m_Name: CG
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 392, y: 360}
-  ports:
-    keys:
-    - input
-    - output
-    values:
-    - _fieldName: input
-      _node: {fileID: 114261496037290166}
-      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: bOutput1
-        node: {fileID: 114961676762407010}
-        reroutePoints: []
-      - fieldName: bOutput0
-        node: {fileID: 114961676762407010}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 1
-      _dynamic: 0
-    - _fieldName: output
-      _node: {fileID: 114261496037290166}
-      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: input
-        node: {fileID: 114187373335616700}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-  input: {fileID: 0}
-  output: {fileID: 0}
-  sprite: {fileID: 21300000, guid: 075af4d0f861b0c43ae2b93531c1e5a4, type: 3}
-  duration: 0
-  isWait: 0
 --- !u!114 &114336470798916672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -688,6 +637,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42e963c5726cd341894dc0532de5445, type: 3}
   m_Name: Variable Source Object
   m_EditorClassIdentifier: 
+--- !u!114 &114791242263770446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a2e666ad6af1f469808d98b6aeb2ea, type: 3}
+  m_Name: CG out
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 392, y: 408}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114791242263770446}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: bOutput0
+        node: {fileID: 114961676762407010}
+        reroutePoints: []
+      - fieldName: bOutput1
+        node: {fileID: 114961676762407010}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114791242263770446}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114187373335616700}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  duration: 1
+  isWait: 0
 --- !u!114 &114920652161702476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1017,7 +1016,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114261496037290166}
+        node: {fileID: 114791242263770446}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -1038,7 +1037,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114261496037290166}
+        node: {fileID: 114791242263770446}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -1130,12 +1129,12 @@ MonoBehaviour:
         valueStr: 
         name: 
       method:
-        fullMethod: LaunchGameSpotGerman( )
-        name: 
-        hasParameter: 0
+        fullMethod: OnBordingSelectPhotoFace(System.Int32 index)
+        name: OnBordingSelectPhotoFace
+        hasParameter: 1
         parameter:
-          vType: 0
-          valueStr: 
+          vType: 2
+          valueStr: 0
   - text: "S\xE9rieux, montrant l'exemple"
     onSelect:
       vType: 5
@@ -1144,12 +1143,12 @@ MonoBehaviour:
         valueStr: 
         name: 
       method:
-        fullMethod: LaunchGameSpotGerman( )
-        name: 
-        hasParameter: 0
+        fullMethod: OnBordingSelectPhotoFace(System.Int32 index)
+        name: OnBordingSelectPhotoFace
+        hasParameter: 1
         parameter:
-          vType: 0
-          valueStr: 
+          vType: 2
+          valueStr: 1
   bInput0: {fileID: 0}
   bOutput0: {fileID: 0}
   bInput1: {fileID: 0}
