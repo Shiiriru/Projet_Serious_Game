@@ -22,6 +22,7 @@ MonoBehaviour:
   - {fileID: 114970577560077974}
   - {fileID: 114450402791947548}
   - {fileID: 114988584626994936}
+  - {fileID: 0}
   variableSource: {fileID: 114835073160396614}
 --- !u!114 &114187048128425772
 MonoBehaviour:
@@ -85,9 +86,9 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   conditions:
-  - vType: 0
-    valueStr: 
-    name: 
+  - vType: 4
+    valueStr: True
+    name: PhotoChecked
   output: {fileID: 0}
 --- !u!114 &114450402791947548
 MonoBehaviour:

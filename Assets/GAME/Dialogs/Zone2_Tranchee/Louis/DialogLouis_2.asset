@@ -19,7 +19,180 @@ MonoBehaviour:
   - {fileID: 114643110029360906}
   - {fileID: 114965234773466174}
   - {fileID: 114389682660445126}
+  - {fileID: 114464042204307450}
+  - {fileID: 114115507897331806}
+  - {fileID: 0}
   variableSource: {fileID: 114277648485271632}
+--- !u!114 &114115507897331806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38aa6ba4a254d1344a6aca965219f155, type: 3}
+  m_Name: Branchs
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1288, y: -24}
+  ports:
+    keys:
+    - bInput0
+    - bOutput0
+    - bInput1
+    - bOutput1
+    - bInput2
+    - bOutput2
+    - bInput3
+    - bOutput3
+    - bInput4
+    - bOutput4
+    - input
+    - output
+    values:
+    - _fieldName: bInput0
+      _node: {fileID: 114115507897331806}
+      _typeQualifiedName: DialogSystem.Nodes.ActiveConditionsNode, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114464042204307450}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: bOutput0
+      _node: {fileID: 114115507897331806}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114643110029360906}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: bInput1
+      _node: {fileID: 114115507897331806}
+      _typeQualifiedName: DialogSystem.Nodes.ActiveConditionsNode, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: bOutput1
+      _node: {fileID: 114115507897331806}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: bInput2
+      _node: {fileID: 114115507897331806}
+      _typeQualifiedName: DialogSystem.Nodes.ActiveConditionsNode, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: bOutput2
+      _node: {fileID: 114115507897331806}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: bInput3
+      _node: {fileID: 114115507897331806}
+      _typeQualifiedName: DialogSystem.Nodes.ActiveConditionsNode, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: bOutput3
+      _node: {fileID: 114115507897331806}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: bInput4
+      _node: {fileID: 114115507897331806}
+      _typeQualifiedName: DialogSystem.Nodes.ActiveConditionsNode, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: bOutput4
+      _node: {fileID: 114115507897331806}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: 114115507897331806}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114115507897331806}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  branchs:
+  - text: 
+    onSelect:
+      vType: 0
+      variable:
+        vType: 0
+        valueStr: 
+        name: 
+      method:
+        fullMethod: 
+        name: 
+        hasParameter: 0
+        parameter:
+          vType: 0
+          valueStr: 
+  bInput0: {fileID: 0}
+  bOutput0: {fileID: 0}
+  bInput1: {fileID: 0}
+  bOutput1: {fileID: 0}
+  bInput2: {fileID: 0}
+  bOutput2: {fileID: 0}
+  bInput3: {fileID: 0}
+  bOutput3: {fileID: 0}
+  bInput4: {fileID: 0}
+  bOutput4: {fileID: 0}
 --- !u!114 &114277648485271632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +270,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1656, y: -24}
+  position: {x: 2056, y: -8}
   ports:
     keys:
     - input
@@ -169,7 +342,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114643110029360906}
+        node: {fileID: 114965234773466174}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -184,6 +357,41 @@ MonoBehaviour:
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+--- !u!114 &114464042204307450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b6c5ce7cde358346a91548fa6078f93, type: 3}
+  m_Name: Active Condition
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1048, y: 216}
+  ports:
+    keys:
+    - output
+    values:
+    - _fieldName: output
+      _node: {fileID: 114464042204307450}
+      _typeQualifiedName: DialogSystem.Nodes.ActiveConditionsNode, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: bInput0
+        node: {fileID: 114115507897331806}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  conditions:
+  - vType: 4
+    valueStr: False
+    name: GameSpotGermanFinished
+  output: {fileID: 0}
 --- !u!114 &114643110029360906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,7 +405,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1256, y: -24}
+  position: {x: 1656, y: -8}
   ports:
     keys:
     - input
@@ -208,8 +416,8 @@ MonoBehaviour:
       _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
-      - fieldName: output
-        node: {fileID: 114434492772338200}
+      - fieldName: bOutput0
+        node: {fileID: 114115507897331806}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -279,7 +487,7 @@ MonoBehaviour:
   m_Name: Branchs
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 920, y: -56}
+  position: {x: 920, y: -24}
   ports:
     keys:
     - bInput0
@@ -389,7 +597,10 @@ MonoBehaviour:
       _node: {fileID: 114965234773466174}
       _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: output
+        node: {fileID: 114434492772338200}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 1
@@ -406,20 +617,20 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   branchs:
-  - text: Une fois que le joueur a fini le mini jeu "Spot the german"
+  - text: "V\xE9rifier l'horizon"
     onSelect:
-      vType: 0
+      vType: 5
       variable:
         vType: 0
         valueStr: 
         name: 
       method:
-        fullMethod: 
+        fullMethod: LaunchCardGame( )
         name: 
         hasParameter: 0
         parameter:
-          vType: 0
-          valueStr: 
+          vType: 2
+          valueStr: 0
   bInput0: {fileID: 0}
   bOutput0: {fileID: 0}
   bInput1: {fileID: 0}
