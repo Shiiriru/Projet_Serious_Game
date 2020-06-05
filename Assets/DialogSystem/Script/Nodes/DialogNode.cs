@@ -18,7 +18,9 @@ namespace DialogSystem.Nodes
 		public string characterName;
 		[TextArea] public string text;
 
+		public bool disableScene = true;
+
 		public bool displayAll;
-		[Range(1, 4)] public int displaySpeed = 1;
+		[Range(1, 5)] public int displaySpeed = 3;
 	}
 }

@@ -6,11 +6,15 @@ using UnityEngine.UI;
 using DialogSystem.Nodes;
 using XNode;
 using System.Linq;
+using FMODUnity;
 
 namespace DialogSystem
 {
 	public class DialogPlayer : MonoBehaviour
 	{
+		[SerializeField] UIInventory uiInventory;
+
+		[SerializeField] Image blackBG;
 		[SerializeField] TextContent characterNameContent;
 		[SerializeField] TextContent dialogContent;
 		[SerializeField] Image cgContent;
@@ -19,6 +23,9 @@ namespace DialogSystem
 		List<BranchButton> brancheBtnList = new List<BranchButton>();
 
 		[SerializeField] BranchButton branchBtnPrefab;
+
+		[SerializeField] DatePanel datePanel;
+		public DatePanel DatePanel { get { return datePanel; } }
 
 		[SerializeField] VariableSourceManager variableSourceMgr;
 		public VariableSourceManager VariableSourceMgr { get { return variableSourceMgr; } }
@@ -36,19 +43,20 @@ namespace DialogSystem
 
 		Coroutine waitingCoroutine;
 
-		private void Awake()
+		[SerializeField] [EventRef] string soundSwithScene;
+
+		private void Start()
 		{
 			Reset();
-
 			DontDestroyOnLoad(gameObject);
 		}
 
 		void Reset()
 		{
-			if (characterNameContent != null)
-				characterNameContent.Show(false);
-			if (dialogContent != null)
-				dialogContent.Show(false);
+			uiInventory.Show(false);
+			characterNameContent.Show(false);
+			dialogContent.Show(false);
+			ShowBlackBG(false);
 
 			if (cgContent != null)
 			{
@@ -104,7 +112,10 @@ namespace DialogSystem
 
 			if (Input.GetMouseButtonDown(0))
 			{
-				AutoPlayNextNode();
+				if (dialogContent.isDisplayFinished)
+					AutoPlayNextNode();
+				else
+					dialogContent.DisplayEntierStr();
 			}
 		}
 
@@ -134,7 +145,7 @@ namespace DialogSystem
 			//finish story
 			if (connection == null)
 			{
-				if (onDialogFinished != null) onDialogFinished();
+				CurrentDialogFinshed();
 				return;
 			}
 
@@ -161,27 +172,33 @@ namespace DialogSystem
 		{
 			var node = currentNode as DialogNode;
 
-			if (characterNameContent != null)
+			if (string.IsNullOrEmpty(node.characterName))
+				characterNameContent.Show(false);
+			else
 			{
-				if (string.IsNullOrEmpty(node.characterName))
-					characterNameContent.Show(false);
-				else
-				{
-					characterNameContent.Show(true);
-					characterNameContent.SetText(node.characterName);
-				}
+				characterNameContent.Show(true);
+				characterNameContent.SetText(node.characterName, true);
 			}
 
-			if (dialogContent != null)
+			if (string.IsNullOrEmpty(node.text))
+				dialogContent.Show(false);
+			else
 			{
-				if (string.IsNullOrEmpty(node.text))
-					dialogContent.Show(false);
-				else
-				{
-					dialogContent.Show(true);
-					dialogContent.SetText(node.text);
-				}
+				dialogContent.SetDisplaySpeed(node.displaySpeed);
+				dialogContent.Show(true);
+				dialogContent.SetText(node.text, node.displayAll);
 			}
+
+			ShowBlackBG(node.disableScene);
+		}
+
+		void ShowBlackBG(bool show)
+		{
+			if (blackBG.raycastTarget == show)
+				return;
+
+			blackBG.DOColor(new Color(0, 0, 0, show ? 0.6f : 0), 0.5f);
+			blackBG.raycastTarget = show;
 		}
 
 		void ShowBranch()

@@ -10,6 +10,10 @@ namespace DialogSystem
 	{
 		CanvasGroup canvasGroup;
 		[SerializeField] Text text;
+		string targetStr;
+		float playSpeed;
+
+		public bool isDisplayFinished { get; private set; }
 
 		private void Awake()
 		{
@@ -17,10 +21,31 @@ namespace DialogSystem
 			canvasGroup.alpha = 0;
 		}
 
-		public void SetText(string str)
+		public void SetDisplaySpeed(int speed)
 		{
-			text.text = "";
-			text.DOText(str, str.Length * 0.01f);
+			playSpeed = 0.06f / speed;
+		}
+
+		public void SetText(string str, bool displayAll)
+		{
+			SetDisplayFinished(displayAll ? true : false);
+			targetStr = str;
+
+			text.text = displayAll ? targetStr : "";
+			if (!displayAll)
+				text.DOText(targetStr, targetStr.Length * playSpeed).OnComplete(() => SetDisplayFinished(true));
+		}
+
+		public void DisplayEntierStr()
+		{
+			DOTween.Kill(text);
+			text.text = targetStr;
+			SetDisplayFinished(true);
+		}
+
+		void SetDisplayFinished(bool b)
+		{
+			isDisplayFinished = b;
 		}
 
 		public void Show(bool show)

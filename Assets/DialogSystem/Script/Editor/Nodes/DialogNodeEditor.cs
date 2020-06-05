@@ -22,6 +22,8 @@ namespace DialogSystem.Nodes
 			EditorGUILayout.PropertyField(serializedObject.FindProperty("characterName"), new GUIContent("name"));
 			EditorGUILayout.PropertyField(serializedObject.FindProperty("text"));
 
+			EditorGUILayout.PropertyField(serializedObject.FindProperty("disableScene"));
+
 			EditorGUILayout.PropertyField(serializedObject.FindProperty("displayAll"));
 			if (!node.displayAll)
 				EditorGUILayout.PropertyField(serializedObject.FindProperty("displaySpeed"));

@@ -5,12 +5,21 @@ using UnityEngine;
 
 public class SoldatDialogDemo : MonoBehaviour
 {
-	[SerializeField] DialogListManager dialogListMgr;
+	[SerializeField] DialogGraph targetDialog;
 	[SerializeField] DialogPlayer dialogPlayer;
+
+	[SerializeField] DatePanelInfosObject datePanelInfo;
+	[SerializeField] DatePanel datePanel;
 
 	public void OnClickPlayDialog()
 	{
-		dialogPlayer.SetDialog(dialogListMgr.dialogList[0]);
+		dialogPlayer.SetDialog(targetDialog);
 		dialogPlayer.VariableSourceMgr.enabled = true;
+		dialogPlayer.onDialogFinished += DisplayDate;
+	}
+
+	private void DisplayDate()
+	{
+		datePanel.Launch(datePanelInfo, 1f);
 	}
 }

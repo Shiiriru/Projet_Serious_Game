@@ -323,7 +323,7 @@ namespace XNodeEditor {
 
                 //Get node position
                 Vector2 nodePos = GridToWindowPositionNoClipped(node.position);
-				EditorGUIUtility.labelWidth = 80;
+				EditorGUIUtility.labelWidth = 90;
 
 				GUILayout.BeginArea(new Rect(nodePos, new Vector2(nodeEditor.GetWidth(), 4000)));
 
