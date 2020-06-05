@@ -179,16 +179,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5640520233655896039, guid: 3e8f7323c8b9fc34480576f34bc33132,
-        type: 3}
-      propertyPath: variableSourceMgr
-      value: 
-      objectReference: {fileID: 989977469}
     - target: {fileID: 2489473181558828845, guid: 3e8f7323c8b9fc34480576f34bc33132,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 989977467}
+    - target: {fileID: 5640520233655896039, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: variableSourceMgr
+      value: 
+      objectReference: {fileID: 989977469}
+    - target: {fileID: 4650896677192592457, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000016337232
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714355733843324387, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714355733843324387, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714355733843324387, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e8f7323c8b9fc34480576f34bc33132, type: 3}
 --- !u!114 &8855880 stripped
@@ -201,18 +221,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d17a681e900014e45a7d784ce548baf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8855881 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5425870050797944693, guid: 3e8f7323c8b9fc34480576f34bc33132,
-    type: 3}
-  m_PrefabInstance: {fileID: 8855879}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1df32ea4ec66b7447a436235689af9ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &396850765
@@ -269,7 +277,7 @@ MonoBehaviour:
   targetDialog: {fileID: 11400000, guid: 0cd62c9e63c60464ab9ec1d15c9086f2, type: 2}
   dialogPlayer: {fileID: 8855880}
   datePanelInfo: {fileID: 11400000, guid: bfac00d0b90ca0d4b8bde4ea9c0be42c, type: 2}
-  datePanel: {fileID: 8855881}
+  datePanel: {fileID: 0}
 --- !u!114 &396850768
 MonoBehaviour:
   m_ObjectHideFlags: 0

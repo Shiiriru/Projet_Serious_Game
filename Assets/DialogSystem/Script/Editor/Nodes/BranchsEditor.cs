@@ -82,12 +82,13 @@ namespace DialogSystem.Nodes
 				{
 					List<FieldInfo> infoList = graph.variableSource.GetSourceFieldInfos().ToList();
 
-					var strList = infoList.Select(v => v.Name).ToList();
-					var valFullNames = new List<string>(strList);
+					var valNames = infoList.Select(v => v.Name).ToList();
 					List<VariableType> vTypeList = infoList.Select(i => i.FieldType.ToVariableType()).ToList();
 
 					vTypeList.Insert(0, VariableType.Null);
-					strList.Insert(0, "None");
+					valNames.Insert(0, "None");
+
+					var valFullNames = new List<string>(valNames);
 
 					var methodList = graph.variableSource.GetSourceMethods();
 					foreach (var m in methodList)
@@ -103,13 +104,13 @@ namespace DialogSystem.Nodes
 								var name = match.Groups["name"].Value;
 								if (type != null)
 								{
+									valNames.Add($"{name}({Type.GetType(type).ToShortTypeStr()} {match.Groups["vName"].Value})");
 									valFullNames.Add($"{name}({type} {match.Groups["vName"].Value})");
-									strList.Add($"{name}({Type.GetType(type).ToShortTypeStr()} {match.Groups["vName"].Value})");
 								}
 								else
 								{
 									valFullNames.Add($"{name}()");
-									strList.Add($"{name}()");
+									valNames.Add($"{name}()");
 								}
 							}
 						}
@@ -117,7 +118,7 @@ namespace DialogSystem.Nodes
 					}
 
 					GUILayout.Space(5);
-					OnGUIBranchOnSelectValue(b, vTypeList, strList, valFullNames);
+					OnGUIBranchOnSelectValue(b, vTypeList, valNames, valFullNames);
 				}
 				GUILayout.EndVertical();
 			}
@@ -128,7 +129,7 @@ namespace DialogSystem.Nodes
 			EditorGUI.EndDisabledGroup();
 		}
 
-		void OnGUIBranchOnSelectValue(BrancheItem branche, List<VariableType> vTypeList, List<string> strList, List<string> valFullNames)
+		void OnGUIBranchOnSelectValue(BrancheItem branche, List<VariableType> vTypeList, List<string> valNames, List<string> valFullNames)
 		{
 			GUILayout.BeginVertical("box");
 			GUILayout.Label("OnSelect");
@@ -159,18 +160,19 @@ namespace DialogSystem.Nodes
 				}
 			}
 
-			branche.onSelect.valueIndex = EditorGUILayout.Popup(branche.onSelect.valueIndex, strList.ToArray());
+			branche.onSelect.valueIndex = EditorGUILayout.Popup(branche.onSelect.valueIndex, valNames.ToArray());
 			branche.onSelect.vType = vTypeList[branche.onSelect.valueIndex];
 
 			if (branche.onSelect.vType == VariableType.Method)
 			{
 				branche.onSelect.method.fullMethod = valFullNames[branche.onSelect.valueIndex];
 				var match = Regex.Match(branche.onSelect.method.fullMethod, methodPattern);
+
 				OnGUIMethod(branche.onSelect.method, match);
 			}
 			else
 			{
-				branche.onSelect.variable.name = branche.onSelect.valueIndex != 0 ? strList[branche.onSelect.valueIndex] : "";
+				branche.onSelect.variable.name = branche.onSelect.valueIndex != 0 ? valNames[branche.onSelect.valueIndex] : "";
 				branche.onSelect.variable.vType = branche.onSelect.vType;
 				OnGUIVariable(branche.onSelect.variable);
 			}
@@ -216,9 +218,9 @@ namespace DialogSystem.Nodes
 
 			var vType = match.Groups["vType"].Value;
 			method.hasParameter = !string.IsNullOrEmpty(vType);
-
 			if (!string.IsNullOrEmpty(vType))
 			{
+
 				method.parameter.vType = Type.GetType(vType).ToVariableType();
 				OnGUIVariable(method.parameter);
 			}
