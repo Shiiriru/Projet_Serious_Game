@@ -2,31 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonMap : ButtonBase
+public class ButtonMap : InfoItemBouton
 {
     [SerializeField] GameObject MapDeployed;
-    [SerializeField] GameObject ButtonDeployMap;
+    //[SerializeField] GameObject ButtonDeployMap;
 
     [SerializeField] GameObject IconActive;
     [SerializeField] GameObject IconNoActive;
 
-    [SerializeField] FicheTemplate ficheTemplate;
-    [SerializeField] InventoryItemInfoObject Infoitem;
     [SerializeField] SceneBureauxManager sceneBureaux;
 
     // Start is called before the first frame update
     public override void OnClickButton()
     {
         base.OnClickButton();
-        ficheTemplate.OpenPageObj(Infoitem, false, soundEmitter);
-        ButtonDeployMap.SetActive(true);
+        uiMain.OpenFicheTemplate(Infoitem, false, soundEmitter);
+        //ButtonDeployMap.SetActive(true);
     }
 
     public void DeployMap()
     {
-        ficheTemplate.ExitFiche();
+        uiMain.CloseFicheTemplate();
         MapDeployed.SetActive(true);
-        ButtonDeployMap.SetActive(false);
+        //ButtonDeployMap.SetActive(false);
     }
 
     public void SwitchMap()
@@ -34,7 +32,6 @@ public class ButtonMap : ButtonBase
         IconActive.SetActive(false);
         IconNoActive.SetActive(true);
     }
-
 
     public void CloseList()
     {

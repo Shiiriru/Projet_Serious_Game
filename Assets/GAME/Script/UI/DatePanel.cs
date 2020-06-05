@@ -12,7 +12,8 @@ public class DatePanel : MonoBehaviour
 	[SerializeField] Text textDate;
 	[SerializeField] Text textPlace;
 	[SerializeField] Text textSoldatCount;
-	public event System.Action onDisplayFinished;
+
+	public Coroutine launchCoroutine { get; private set; }
 
 	private void Awake()
 	{
@@ -26,12 +27,8 @@ public class DatePanel : MonoBehaviour
 		textPlace.text = infos.place;
 		textSoldatCount.text = $"Soldats en vie : {infos.soldatCount}";
 
-		StartCoroutine(LaunchCorutine(time));
-	}
-
-	public void Launch(float time)
-	{
-		StartCoroutine(LaunchCorutine(time));
+		StopAllCoroutines();
+		launchCoroutine = StartCoroutine(LaunchCorutine(time));
 	}
 
 	IEnumerator LaunchCorutine(float displayTime)
@@ -46,7 +43,6 @@ public class DatePanel : MonoBehaviour
 		yield return new WaitWhile(() => DOTween.IsTweening(canvasGroup));
 		yield return new WaitForSeconds(1);
 
-		if (onDisplayFinished != null)
-			onDisplayFinished();
+		launchCoroutine = null;
 	}
 }

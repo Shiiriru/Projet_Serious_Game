@@ -7,69 +7,60 @@ using UnityEngine;
 
 public class SceneBureauxManager : MonoBehaviour
 {
-    [SerializeField] ButtonBase BoutonMap;
-    [SerializeField] InfoItemBouton BoutonLetter;
-    [SerializeField] ButtonBase BoutonArtilery;
-    [SerializeField] InfoItemBouton BoutonPhoto;
+	[SerializeField] ButtonBase BoutonMap;
+	[SerializeField] InfoItemBouton BoutonLetter;
+	[SerializeField] InfoItemBouton BoutonPhoto;
 
-    [SerializeField] GameObject ButtonExit;
-    [SerializeField] DialogPlayer dialogplayer;
+	[SerializeField] GameObject buttonChangeScene;
+	DialogPlayer dialogPlayer;
+	UIMain uiMain;
+	InventoryScript inventory;
 
-    public bool MapIsChecked { get; private set; } //get le bool mais on ne peut pas le modifier ailleurs
-    private bool LetterIsChecked;
-    private bool ArtileryIsChecked;
-    private bool PhotoIsChecked;
+	[SerializeField] InfoItemBouton[] infoButtonList;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        BoutonMap.OnChecked += CheckMapBoolean; //on fait appel à la variable, on ne l'ajoute pas. Permet d'ajouter plusieurs actions ensemble
-        BoutonLetter.OnChecked += CheckLetterBoolean;
-        BoutonArtilery.OnChecked += CheckArtileryBoolean;
-        BoutonPhoto.OnChecked += CheckPhotoBoolean;
-    }
+	// Start is called before the first frame update
+	void Start()
+	{
+		dialogPlayer = FindObjectOfType<DialogPlayer>();
 
-    private void CheckMapBoolean()
-    {
-        MapIsChecked = true;
-        Debug.Log(MapIsChecked);
+		uiMain = FindObjectOfType<UIMain>();
+		uiMain.ShowPlayerUI(true);
 
-        if (LetterIsChecked == true && ArtileryIsChecked == true)
-        {
-            ExitLevel();
-        }
-    }
+		inventory = uiMain.UIPlayer.Inventory;
 
-    private void CheckLetterBoolean()
-    {
-        LetterIsChecked = true;
-        Debug.Log(LetterIsChecked);
+		foreach (var b in infoButtonList)
+			b.Init(uiMain);
 
-        if (MapIsChecked == true && ArtileryIsChecked == true)
-        {
-            ExitLevel();
-        }
-    }
+		BoutonMap.OnChecked += CheckMapBoolean; //on fait appel à la variable, on ne l'ajoute pas. Permet d'ajouter plusieurs actions ensemble
+		BoutonPhoto.OnChecked += CheckPhotoBoolean;
 
-    private void CheckArtileryBoolean()
-    {
-        ArtileryIsChecked = true;
-        Debug.Log(ArtileryIsChecked);
+		inventory.onItemChanged += ActiveExitButton;
+	}
 
-        if (MapIsChecked == true && LetterIsChecked == true)
-        {
-            ExitLevel();
-        }
-    }
+	private void CheckMapBoolean()
+	{
+		dialogPlayer.VariableSourceMgr.SetValue("MapIsChecked", true);
 
-    private void CheckPhotoBoolean()
-    {
-        ((MainVariableSourceMng)(dialogplayer.VariableSourceMgr)).source.LetterChecked = true;
-    }
+		ActiveExitButton();
+	}
 
-    private void ExitLevel()
-    {
-        ButtonExit.SetActive(true);
-        Debug.Log("Bouton loaded");
-    }
+	private void CheckArtileryBoolean()
+	{
+		dialogPlayer.VariableSourceMgr.SetValue("ArtileryIsChecked", true);
+		ActiveExitButton();
+	}
+
+	private void CheckPhotoBoolean()
+	{
+		dialogPlayer.VariableSourceMgr.SetValue("PhotoIsChecked", true);
+	}
+
+	private void ActiveExitButton()
+	{
+		if (!inventory.CheckHasObject("informationLetter") ||
+			!(bool)dialogPlayer.VariableSourceMgr.GetValue("ArtileryIsChecked"))
+			return;
+
+		buttonChangeScene.SetActive(true);
+	}
 }

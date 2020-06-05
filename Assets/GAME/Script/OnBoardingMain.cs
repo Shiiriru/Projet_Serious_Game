@@ -14,17 +14,18 @@ public class OnBoardingMain : MonoBehaviour
 	[SerializeField] DialogGraph dialogGraph;
 
 	DialogPlayer dialogPlayer;
-	[SerializeField] VariableSourceManager variableSourceManager;
+	UIMain uiMain;
+
+	[SerializeField] DatePanelInfosObject dateInfo;
 
 	// Start is called before the first frame update
 	void Start()
 	{
 		dialogPlayer = FindObjectOfType<DialogPlayer>();
+		uiMain = FindObjectOfType<UIMain>();
 
 		dialogPlayer.SetDialog(dialogGraph);
 		dialogPlayer.onDialogFinished += OnboardingFinished;
-
-		dialogPlayer.SetVariableManger(variableSourceManager);
 	}
 
 	private void OnboardingFinished() //fin de dialogue
@@ -33,13 +34,7 @@ public class OnBoardingMain : MonoBehaviour
 		SpriteSerious.SetActive(false);
 		SpriteHappy.SetActive(false);
 
-		dialogPlayer.DatePanel.Launch(2f);
-		dialogPlayer.DatePanel.onDisplayFinished += SwitchScene;
-	}
-
-	private void SwitchScene()
-	{
-		SceneManager.LoadScene("ScBureau_1", LoadSceneMode.Single);
+		uiMain.SwitchScene("ScBureau_1", 2f, dateInfo);
 	}
 
 	public void afficherPhoto(int index)

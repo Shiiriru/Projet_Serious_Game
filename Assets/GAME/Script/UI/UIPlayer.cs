@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-public class UIInventory : MonoBehaviour
+public class UIPlayer : MonoBehaviour
 {
-	[SerializeField] GameObject SacDeployed;
+	[SerializeField] InventoryScript inventory;
+	public InventoryScript Inventory { get { return inventory; } }
+
 	bool isBagOpend;
 
 	[SerializeField] [EventRef] string SoundOpenInventory;
@@ -18,6 +20,7 @@ public class UIInventory : MonoBehaviour
 	private void Awake()
 	{
 		animator = GetComponent<Animator>();
+		inventory.Init();
 	}
 
 	public void OnClickOpenInventory()
@@ -28,8 +31,7 @@ public class UIInventory : MonoBehaviour
 
 	public void OpenInventory(bool b)
 	{
-		SacDeployed.SetActive(isBagOpend);
-
+		inventory.Show(isBagOpend);
 		PlaySound(isBagOpend ? SoundOpenInventory : soundCloseInventory);
 	}
 
@@ -50,6 +52,8 @@ public class UIInventory : MonoBehaviour
 	public void Show(bool isShow)
 	{
 		animator.SetBool("show", isShow);
+		if (!isShow)
+			inventory.Show(isShow);
 	}
 
 	void PlaySound(string path)

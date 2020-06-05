@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class FicheTemplate : MonoBehaviour
 {
-	//public Item Infoitem;
-
 	//[SerializeField] GameObject ButtonPhoneCall;
 	//[SerializeField] GameObject ButtonDeployMap;
 
@@ -21,14 +19,19 @@ public class FicheTemplate : MonoBehaviour
 	[SerializeField] Text textInfos;
 	[SerializeField] RectTransform textInfosContent;
 
-	public InfoItemBouton SoundManager;
+	InventoryItemInfoObject targetInfoItem;
+	InfoItemBouton sceneInfoItem;
 
-	InventoryItemInfoObject targetInventoryItem;
-	GameObject sceneInventoryItem;
+	[SerializeField] InventoryScript inventory;
 
-	public void OpenPageObj(InventoryItemInfoObject item, bool canAddToinventory, StudioEventEmitter emitter, GameObject sceneItem = null) //(Je récupère toutes les valeurs lié à item et je récupère la valeur du bool, j'indique ici les éléments que je souhaite envoyer. Tout ce qui est entre parenthèse sont mes variables en local)
+	private void Start()
 	{
-		gameObject.SetActive(true);
+		Show(false);
+	}
+
+	public void Open(InventoryItemInfoObject item, bool canAddToinventory, StudioEventEmitter emitter = null, InfoItemBouton sceneItem = null) //(Je récupère toutes les valeurs lié à item et je récupère la valeur du bool, j'indique ici les éléments que je souhaite envoyer. Tout ce qui est entre parenthèse sont mes variables en local)
+	{
+		Show(true);
 		soundEmitter = emitter;
 
 		if (soundEmitter != null)
@@ -38,42 +41,66 @@ public class FicheTemplate : MonoBehaviour
 			catch { }
 		}
 
-		targetInventoryItem = item;
-		sceneInventoryItem = sceneItem;
-
-		imgPhoto.sprite = item.image;
-		imgPhoto.enabled = true;
+		targetInfoItem = item;
+		sceneInfoItem = sceneItem;
 
 		textTitle.text = item.name;
+		OnClickShowResume();
 
 		buttonAddToInventory.interactable = canAddToinventory;
-
-		imgPhoto.sprite = item.photo;
-		textInfos.text = targetInventoryItem.textResume.text;
 	}
 
 	public void OnClickAddItemToInventory()
 	{
-		//Debug.Log("Objet" + item.name + "récolté");
-		bool IsSelected = InventoryScript.instance.Add(targetInventoryItem);
+		bool IsSelected = inventory.Add(targetInfoItem);
 
 		if (IsSelected)
 		{
-			//buttonAddToInventory.SetActive(false);
-			if (sceneInventoryItem != null)
-				sceneInventoryItem.SetActive(false);
-			//Debug.Log("Objet" + item.name + "est détruit");
+			sceneInfoItem.Disable();
+			buttonAddToInventory.interactable = false;
+		}
+		else
+		{
+			Debug.Log("inventory is full");
 		}
 	}
 
-	public void PageArchive()
+	public void OnClickShowResume()
 	{
-		textInfos.text = targetInventoryItem.TexteWiki.text;
+		ShowImg(targetInfoItem.imageResume);
+		SetText(targetInfoItem.textResume.text);
 	}
 
-	public void ExitFiche()
+	public void OnClickShowWiki()
 	{
-		gameObject.SetActive(false);
+		ShowImg(targetInfoItem.imageWIKI);
+		SetText(targetInfoItem.TexteWiki.text);
+	}
+
+	void ShowImg(Sprite sprite)
+	{
+		if (sprite == null)
+			imgPhoto.enabled = false;
+
+		imgPhoto.sprite = sprite;
+		imgPhoto.enabled = true;
+	}
+
+	void SetText(string str)
+	{
+		textInfos.text = str;
+		StartCoroutine(SetTextContentHeight());
+	}
+
+	IEnumerator SetTextContentHeight()
+	{
+		yield return null;
+		textInfosContent.sizeDelta = new Vector2(textInfosContent.sizeDelta.x, textInfos.rectTransform.sizeDelta.y + 20);
+	}
+
+	public void Close()
+	{
+		Show(false);
 		//ButtonPhoneCall.SetActive(false);
 		//ButtonDeployMap.SetActive(false);
 
@@ -82,5 +109,10 @@ public class FicheTemplate : MonoBehaviour
 			try { soundEmitter.Stop(); }
 			catch { }
 		}
+	}
+
+	void Show(bool isShow)
+	{
+		gameObject.SetActive(isShow);
 	}
 }

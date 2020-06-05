@@ -6,13 +6,12 @@ using UnityEngine.UI;
 using DialogSystem.Nodes;
 using XNode;
 using System.Linq;
-using FMODUnity;
 
 namespace DialogSystem
 {
 	public class DialogPlayer : MonoBehaviour
 	{
-		[SerializeField] UIInventory uiInventory;
+		[SerializeField] UIMain uiMain;
 
 		[SerializeField] Image blackBG;
 		[SerializeField] TextContent characterNameContent;
@@ -23,9 +22,6 @@ namespace DialogSystem
 		List<BranchButton> brancheBtnList = new List<BranchButton>();
 
 		[SerializeField] BranchButton branchBtnPrefab;
-
-		[SerializeField] DatePanel datePanel;
-		public DatePanel DatePanel { get { return datePanel; } }
 
 		[SerializeField] VariableSourceManager variableSourceMgr;
 		public VariableSourceManager VariableSourceMgr { get { return variableSourceMgr; } }
@@ -43,8 +39,6 @@ namespace DialogSystem
 
 		Coroutine waitingCoroutine;
 
-		[SerializeField] [EventRef] string soundSwithScene;
-
 		private void Start()
 		{
 			Reset();
@@ -53,7 +47,7 @@ namespace DialogSystem
 
 		void Reset()
 		{
-			uiInventory.Show(false);
+			uiMain.ShowPlayerUI(false);
 			characterNameContent.Show(false);
 			dialogContent.Show(false);
 			ShowBlackBG(false);
@@ -351,7 +345,7 @@ namespace DialogSystem
 			waitingCoroutine = StartCoroutine(WaitingCorou(item.duration));
 		}
 
-		public void SetVariableManger(VariableSourceManager mgr)
+		public void SetVariableSourceManger(VariableSourceManager mgr)
 		{
 			variableSourceMgr = mgr;
 		}

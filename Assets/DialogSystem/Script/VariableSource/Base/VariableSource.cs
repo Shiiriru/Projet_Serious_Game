@@ -48,38 +48,23 @@ namespace DialogSystem
 		//	SetVal(variable, value);
 		//}
 
-		public void SetValue(string name, string value)
+		public void SetValue(string name, object value)
 		{
-			var variable = GetFieldInfos().Where(f => f.Name == name).FirstOrDefault();
+			var variable = GetValue(name);
 			if (variable == null)
+			{
+				Debug.LogError($"Variable '{name}' isn't implement in {GetType().Name}");
 				return;
-			SetVal(variable, value);
-		}
+			}
 
-		void SetVal(object variable, string value)
-		{
-			Type t = variable.GetType();
-			if (t == typeof(int))
-			{
-				var newVal = 0;
-				if (int.TryParse(value, out newVal))
-					variable = newVal;
-			}
-			else if (t == typeof(float))
-			{
-				var newVal = 0.0f;
-				if (float.TryParse(value, out newVal))
-					variable = newVal;
-			}
-			else if (t == typeof(bool))
-			{
-				var newVal = false;
-				if (bool.TryParse(value, out newVal))
-					variable = newVal;
-			}
-			else if (t == typeof(string))
+			try
 			{
 				variable = value;
+				Debug.Log(variable.GetType() + " " + variable);
+			}
+			catch
+			{
+				Debug.LogError($"Variable '{name}' can't equals to {value}");
 			}
 		}
 
