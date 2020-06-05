@@ -6,7 +6,6 @@ using DialogSystem;
 
 public class ScriptMsg : MonoBehaviour
 {
-    [SerializeField] DialogListManager dialogList;
     [SerializeField] DialogPlayer dialogPlayer;
 
     // Start is called before the first frame update

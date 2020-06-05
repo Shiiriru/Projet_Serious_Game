@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class UIMain : MonoBehaviour
 {
 	Canvas canvas;
-	[SerializeField] Animator FadeInScreen;
-	[SerializeField] GameObject PanelDate;
 
 	private void Awake()
 	{
@@ -24,25 +22,5 @@ public class UIMain : MonoBehaviour
 	{
 		var cam = FindObjectOfType<Camera>();
 		canvas.worldCamera = cam;
-	}
-
-	IEnumerator LaunchPanelInfo()
-	{
-		yield return new WaitForSeconds(2f);
-		ApparitionPanel();
-	}
-
-	void ApparitionPanel()
-	{
-		PanelDate.SetActive(true);
-		StartCoroutine(LaunchEndOnboarding());
-	}
-
-	IEnumerator LaunchEndOnboarding()
-	{
-		yield return new WaitForSeconds(2f);
-
-		PanelDate.SetActive(false);
-		FadeInScreen.SetTrigger("FirstSpeechDone");
 	}
 }

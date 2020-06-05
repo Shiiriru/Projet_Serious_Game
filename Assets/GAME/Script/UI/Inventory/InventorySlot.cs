@@ -8,11 +8,11 @@ public class InventorySlot : MonoBehaviour
     public Image icon;
     GameObject Fichetech;
 
-    Item infoItem;
+    InventoryItemInfoObject infoItem;
     InfoItemBouton activation;
     public FicheTemplate RecupInfo;
 
-    public void AddItem (Item newItem)
+    public void AddItem (InventoryItemInfoObject newItem)
     {
         infoItem = newItem;
 

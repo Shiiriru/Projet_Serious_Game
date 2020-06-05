@@ -11,17 +11,20 @@ public class OnBoardingMain : MonoBehaviour
 	[SerializeField] GameObject SpriteHappy;
 	[SerializeField] GameObject SpriteSerious;
 
+	[SerializeField] DialogGraph dialogGraph;
+
 	DialogPlayer dialogPlayer;
-	DialogListManager dialogList;
+	[SerializeField] VariableSourceManager variableSourceManager;
 
 	// Start is called before the first frame update
 	void Start()
 	{
 		dialogPlayer = FindObjectOfType<DialogPlayer>();
-		dialogList = GetComponent<DialogListManager>();
 
-		//dialogPlayer.SetDialog(dialogList.dialogList[0]);
+		dialogPlayer.SetDialog(dialogGraph);
 		dialogPlayer.onDialogFinished += OnboardingFinished;
+
+		dialogPlayer.SetVariableManger(variableSourceManager);
 	}
 
 	private void OnboardingFinished() //fin de dialogue
@@ -30,13 +33,13 @@ public class OnBoardingMain : MonoBehaviour
 		SpriteSerious.SetActive(false);
 		SpriteHappy.SetActive(false);
 
+		dialogPlayer.DatePanel.Launch(2f);
+		dialogPlayer.DatePanel.onDisplayFinished += SwitchScene;
+	}
+
+	private void SwitchScene()
+	{
 		SceneManager.LoadScene("ScBureau_1", LoadSceneMode.Single);
-		//StartCoroutine(LaunchPanelInfo());
-		/*if (FinPanelDate == true)
-        {
-            Debug.Log("papon");
-            StartCoroutine(LaunchEndOnboarding());
-        }*/
 	}
 
 	public void afficherPhoto(int index)
@@ -44,8 +47,8 @@ public class OnBoardingMain : MonoBehaviour
 		PhotoCompagnie.SetActive(true);
 
 		if (index == 0)
-			SpriteHappy.SetActive(true);	
-		else		
-			SpriteSerious.SetActive(true);		
+			SpriteHappy.SetActive(true);
+		else
+			SpriteSerious.SetActive(true);
 	}
 }

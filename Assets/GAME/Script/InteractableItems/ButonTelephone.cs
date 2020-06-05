@@ -11,7 +11,7 @@ public class ButonTelephone : ButtonBase
     [SerializeField] GameObject ButtonCallArtilery;
 
     [SerializeField] FicheTemplate ficheTemplate;
-    [SerializeField] Item Infoitem;
+    [SerializeField] InventoryItemInfoObject Infoitem;
     [SerializeField] SceneBureauxManager sceneBureaux;
 
     // Start is called before the first frame update

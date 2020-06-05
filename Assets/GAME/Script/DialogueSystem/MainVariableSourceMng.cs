@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class MainVariableSourceMng : VariableSourceManager, IMainVariableSource
 {
+	[SerializeField] OnBoardingMain onBoardingMain;
     public MainVariableSource source = new MainVariableSource();
 
     #region Values function
@@ -44,6 +45,6 @@ public class MainVariableSourceMng : VariableSourceManager, IMainVariableSource
 
 	public void OnBordingSelectPhotoFace(int index)
 	{
-		FindObjectOfType<OnBoardingMain>().afficherPhoto(index);
+		onBoardingMain.afficherPhoto(index);
 	}
 }

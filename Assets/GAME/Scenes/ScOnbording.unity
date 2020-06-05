@@ -337,6 +337,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &876595564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 876595566}
+  - component: {fileID: 876595565}
+  m_Layer: 0
+  m_Name: VariableSourceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &876595565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876595564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd85eca01fe1742489b434f793477442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onBoardingMain: {fileID: 1512596364}
+--- !u!4 &876595566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876595564}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &929920980
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,7 +607,6 @@ GameObject:
   - component: {fileID: 1512596368}
   - component: {fileID: 1512596367}
   - component: {fileID: 1512596366}
-  - component: {fileID: 1512596365}
   - component: {fileID: 1512596364}
   m_Layer: 5
   m_Name: Canvas_OnBoarding
@@ -587,20 +630,8 @@ MonoBehaviour:
   PhotoCompagnie: {fileID: 1965558468}
   SpriteHappy: {fileID: 72675239}
   SpriteSerious: {fileID: 1236417542}
---- !u!114 &1512596365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1512596363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60f0f49eeef7a8b48a6c96fa709bf213, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogList:
-  - {fileID: 11400000, guid: 44a76d26802ec2e4ebf1bfb9ef931f34, type: 2}
+  dialogGraph: {fileID: 11400000, guid: c08a33fc5ec0b8f49911d6f1cc9d4f9d, type: 2}
+  variableSourceManager: {fileID: 876595565}
 --- !u!114 &1512596366
 MonoBehaviour:
   m_ObjectHideFlags: 0

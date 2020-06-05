@@ -10,7 +10,6 @@ public class ScriptLouis : MonoBehaviour
     [SerializeField] GameObject ObjectMask;
     [SerializeField] GameObject TextBox;
 
-    [SerializeField] DialogListManager dialogList;
     [SerializeField] DialogPlayer dialogPlayer;
 
     SceneBureauxManager sceneBureaux;
