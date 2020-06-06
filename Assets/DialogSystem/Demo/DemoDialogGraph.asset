@@ -24,8 +24,8 @@ MonoBehaviour:
   - {fileID: 114989465210313218}
   - {fileID: 114882807348357912}
   - {fileID: 114822404410428676}
-  - {fileID: 114440179280054632}
   - {fileID: 114481217326831290}
+  - {fileID: 114177763335642208}
   - {fileID: 0}
   variableSource: {fileID: 114647803991876338}
 --- !u!114 &114152329893024062
@@ -74,6 +74,61 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   duration: 0.5
+--- !u!114 &114177763335642208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a09e241c5ea9de4cb892937b913adec, type: 3}
+  m_Name: Run Method/Change variable
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1800, y: -120}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114177763335642208}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114882807348357912}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114177763335642208}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  variableMethod:
+    vType: 5
+    variable:
+      vType: 0
+      valueStr: 
+      name: 
+    method:
+      fullMethod: MakeChoice(System.Int32 index)
+      name: MakeChoice
+      hasParameter: 1
+      parameter:
+        vType: 2
+        valueStr: 100
 --- !u!114 &114186531707837326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,51 +224,6 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 6a37b150b28ce394db98845c399ede98, type: 3}
   duration: 1
   isWait: 1
---- !u!114 &114440179280054632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6deb360af6f58844786a8c31ac84847f, type: 3}
-  m_Name: Change scene
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 1720, y: -120}
-  ports:
-    keys:
-    - input
-    - output
-    values:
-    - _fieldName: input
-      _node: {fileID: 114440179280054632}
-      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: output
-        node: {fileID: 114882807348357912}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 1
-      _dynamic: 0
-    - _fieldName: output
-      _node: {fileID: 114440179280054632}
-      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections: []
-      _direction: 1
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-  input: {fileID: 0}
-  output: {fileID: 0}
-  scene: {fileID: 102900000, guid: 066a278ebcef6cb4c9da7ac79c68d47c, type: 3}
-  duration: 2
-  dateInfos: {fileID: 11400000, guid: bfac00d0b90ca0d4b8bde4ea9c0be42c, type: 2}
 --- !u!114 &114441759806970504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -688,7 +698,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114440179280054632}
+        node: {fileID: 114177763335642208}
         reroutePoints: []
       _direction: 1
       _connectionType: 1

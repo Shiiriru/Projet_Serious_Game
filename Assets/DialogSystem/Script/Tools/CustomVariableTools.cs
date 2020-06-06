@@ -37,6 +37,31 @@ namespace DialogSystem
 			return null;
 		}
 
+		public static object ToValue(this string value, VariableType type)
+		{
+			switch (type)
+			{
+				case VariableType.Int:
+					var num = 0;
+					if (int.TryParse(value, out num))
+						return num;
+					return null;
+				case VariableType.Float:
+					var f = 0f;
+					if (float.TryParse(value, out f))
+						return f;
+					return null;
+				case VariableType.Bool:
+					var b = false;
+					if (bool.TryParse(value, out b))
+						return b;
+					return null;
+				case VariableType.String:
+					return value;
+			}
+			return null;
+		}
+
 		public static Type ToType(this VariableType type)
 		{
 			switch (type)

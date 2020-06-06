@@ -33,9 +33,9 @@ namespace DialogSystem
 			return variable != null ? variable.GetValue(this) : null;
 		}
 
-		public object GetValue(object obj)
+		public object GetValue(VariableObject obj)
 		{
-			var variable = this.GetType().GetFields().Where(f => f.Name == nameof(obj) && f.FieldType == obj.GetType()).FirstOrDefault();
+			var variable = this.GetType().GetFields().Where(f => f.Name == obj.name && f.FieldType == obj.vType.ToType()).FirstOrDefault();
 			return variable != null ? variable.GetValue(this) : null;
 		}
 
@@ -50,8 +50,8 @@ namespace DialogSystem
 
 		public void SetValue(string name, object value)
 		{
-			var variable = GetValue(name);
-			if (variable == null)
+			var fieldInfo = GetType().GetFields().Where(f => f.Name == name).FirstOrDefault();
+			if (fieldInfo == null)
 			{
 				Debug.LogError($"Variable '{name}' isn't implement in {GetType().Name}");
 				return;
@@ -59,8 +59,7 @@ namespace DialogSystem
 
 			try
 			{
-				variable = value;
-				Debug.Log(variable.GetType() + " " + variable);
+				fieldInfo.SetValue(this, value.ToString().ToValue(fieldInfo.FieldType));
 			}
 			catch
 			{

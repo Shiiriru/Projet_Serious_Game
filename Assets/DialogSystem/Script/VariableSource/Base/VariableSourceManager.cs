@@ -15,8 +15,7 @@ namespace DialogSystem
 		{
 			throw new NotImplementedException();
 		}
-
-		public virtual object GetValue(object obj)
+		public virtual object GetValue(VariableObject obj)
 		{
 			throw new NotImplementedException();
 		}

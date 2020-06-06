@@ -14,11 +14,5 @@ public class SoldatDialogDemo : MonoBehaviour
 	public void OnClickPlayDialog()
 	{
 		dialogPlayer.SetDialog(targetDialog);
-		dialogPlayer.onDialogFinished += DisplayDate;
-	}
-
-	private void DisplayDate()
-	{
-		datePanel.Launch(datePanelInfo, 1f);
 	}
 }

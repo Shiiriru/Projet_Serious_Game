@@ -11,12 +11,10 @@ using XNodeEditor;
 namespace DialogSystem.Nodes
 {
 	[CustomNodeEditor(typeof(BranchsNode))]
-	public class BranchsEditor : DialogNodeEditorBase
+	public class BranchsEditor : VariableObjectEditorBase
 	{
 		DialogGraph graph;
 		BranchsNode node;
-
-		const string methodPattern = @"(?<name>\w+)\(((?<vType>System.(Int32|Single|Boolean|String)) (?<vName>\w+))?\)";
 
 		public override void OnCreate()
 		{
@@ -80,46 +78,19 @@ namespace DialogSystem.Nodes
 				}
 				else
 				{
-					List<FieldInfo> infoList = graph.variableSource.GetSourceFieldInfos().ToList();
+					List<VariableType> vTypeList;
+					List<string> valNames;
+					List<string> valFullNames;
 
-					var valNames = infoList.Select(v => v.Name).ToList();
-					List<VariableType> vTypeList = infoList.Select(i => i.FieldType.ToVariableType()).ToList();
-
-					vTypeList.Insert(0, VariableType.Null);
-					valNames.Insert(0, "None");
-
-					var valFullNames = new List<string>(valNames);
-
-					var methodList = graph.variableSource.GetSourceMethods();
-					foreach (var m in methodList)
-					{
-						try
-						{
-							var match = Regex.Match(m, methodPattern);
-							if (match.Success)
-							{
-								vTypeList.Add(VariableType.Method);
-
-								var type = match.Groups["vType"].Value;
-								var name = match.Groups["name"].Value;
-								if (type != null)
-								{
-									valNames.Add($"{name}({Type.GetType(type).ToShortTypeStr()} {match.Groups["vName"].Value})");
-									valFullNames.Add($"{name}({type} {match.Groups["vName"].Value})");
-								}
-								else
-								{
-									valFullNames.Add($"{name}()");
-									valNames.Add($"{name}()");
-								}
-							}
-						}
-						catch { }
-					}
+					GetValueListWithMethods(graph, out vTypeList,out valNames,out valFullNames);
 
 					GUILayout.Space(5);
-					OnGUIBranchOnSelectValue(b, vTypeList, valNames, valFullNames);
+					GUILayout.BeginVertical("box");
+					GUILayout.Label("OnSelect");
+					DrawVariablMethodItemField(b.onSelect, vTypeList, valNames, valFullNames);
+					GUILayout.EndVertical();
 				}
+
 				GUILayout.EndVertical();
 			}
 
@@ -127,105 +98,6 @@ namespace DialogSystem.Nodes
 			if (GUILayout.Button("+"))
 				node.AddBranch();
 			EditorGUI.EndDisabledGroup();
-		}
-
-		void OnGUIBranchOnSelectValue(BrancheItem branche, List<VariableType> vTypeList, List<string> valNames, List<string> valFullNames)
-		{
-			GUILayout.BeginVertical("box");
-			GUILayout.Label("OnSelect");
-
-			EditorGUILayout.BeginHorizontal();
-			//init selected index
-			if (branche.onSelect.valueIndex < 0)
-			{
-				var type = branche.onSelect.vType;
-
-				if (type == VariableType.Null)
-					branche.onSelect.valueIndex = 0;
-				else if (type == VariableType.Method)
-				{
-					if (valFullNames.Contains(branche.onSelect.method.fullMethod))
-					{
-						var index = valFullNames.IndexOf(branche.onSelect.method.fullMethod);
-						if (branche.onSelect.valueIndex != index) branche.onSelect.valueIndex = index;
-					}
-				}
-				else
-				{
-					if (valFullNames.Contains(branche.onSelect.variable.name))
-					{
-						var index = valFullNames.IndexOf(branche.onSelect.variable.name);
-						if (branche.onSelect.valueIndex != index) branche.onSelect.valueIndex = index;
-					}
-				}
-			}
-
-			branche.onSelect.valueIndex = EditorGUILayout.Popup(branche.onSelect.valueIndex, valNames.ToArray());
-			branche.onSelect.vType = vTypeList[branche.onSelect.valueIndex];
-
-			if (branche.onSelect.vType == VariableType.Method)
-			{
-				branche.onSelect.method.fullMethod = valFullNames[branche.onSelect.valueIndex];
-				var match = Regex.Match(branche.onSelect.method.fullMethod, methodPattern);
-
-				OnGUIMethod(branche.onSelect.method, match);
-			}
-			else
-			{
-				branche.onSelect.variable.name = branche.onSelect.valueIndex != 0 ? valNames[branche.onSelect.valueIndex] : "";
-				branche.onSelect.variable.vType = branche.onSelect.vType;
-				OnGUIVariable(branche.onSelect.variable);
-			}
-			EditorGUILayout.EndHorizontal();
-
-			GUILayout.EndVertical();
-		}
-
-		void OnGUIVariable(VariableBase c)
-		{
-			switch (c.vType)
-			{
-				case VariableType.Int:
-					if (c.value == null)
-						c.valueStr = "0";
-					c.valueStr = EditorGUILayout.IntField(int.Parse(c.valueStr)).ToString();
-					break;
-				case VariableType.Float:
-					if (c.value == null)
-						c.valueStr = "0";
-					c.valueStr = EditorGUILayout.FloatField(float.Parse(c.valueStr)).ToString();
-					break;
-				case VariableType.Bool:
-					if (c.value == null)
-						c.valueStr = "false";
-					c.valueStr = EditorGUILayout.Toggle(bool.Parse(c.valueStr)).ToString();
-					break;
-				case VariableType.String:
-					c.valueStr = EditorGUILayout.TextField(c.valueStr);
-					break;
-				case VariableType.Method:
-					break;
-				default:
-					GUILayout.FlexibleSpace();
-					break;
-			}
-		}
-
-		//method
-		void OnGUIMethod(MethodObject method, Match match)
-		{
-			method.name = match.Groups["name"].Value;
-
-			var vType = match.Groups["vType"].Value;
-			method.hasParameter = !string.IsNullOrEmpty(vType);
-			if (!string.IsNullOrEmpty(vType))
-			{
-
-				method.parameter.vType = Type.GetType(vType).ToVariableType();
-				OnGUIVariable(method.parameter);
-			}
-			else
-				GUILayout.FlexibleSpace();
-		}
+		}	
 	}
 }

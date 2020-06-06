@@ -3,20 +3,18 @@ using UnityEditor;
 
 namespace DialogSystem.Nodes
 {
-	[CreateNodeMenu("Change Scene")]
-	[NodeWidth(300)]
+	[CreateNodeMenu("Other/Delay")]
+	[NodeWidth(200)]
 	[NodeTint("#ffcc00")]
-	public class ChangeSceneNode : DialogNodeBase
+	public class DelayNode : DialogNodeBase
 	{
 		// Use this for initialization
 		protected override void Init()
 		{
-			name = "Change scene";
+			name = "Delay";
 			base.Init();
 		}
 
-		public SceneAsset scene;
 		public float duration;
-		public DatePanelInfosObject dateInfos;
 	}
 }

@@ -17,6 +17,6 @@ namespace DialogSystem
 	{
 		public VariableType vType;
 		public string valueStr;
-		public object value { get { return valueStr.ToValue(vType.ToType()); } }
+		public object value { get { return valueStr.ToValue(vType); } }
 	}
 }

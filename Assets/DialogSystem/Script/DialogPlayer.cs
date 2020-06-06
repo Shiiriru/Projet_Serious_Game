@@ -150,15 +150,24 @@ namespace DialogSystem
 				HideDialog();
 			else if (currentNode is BranchsNode)
 				ShowBranch();
+
 			else if (currentNode is CGNode)
 				CGIn();
 			else if (currentNode is CGOutNode)
 				CGOut();
+
+			else if (currentNode is ConditionBranchNode)
+				CheckConditionBranch();
+
 			else if (currentNode is DelayNode)
 				DoDelay();
 			else if (currentNode is ChangeSceneNode)
 				ChangeScene();
+			else if (currentNode is RunMethodNode)
+				RunMethodOrVariable((currentNode as RunMethodNode).variableMethod, true);
+
 		}
+
 		void PlayDialogItem()
 		{
 			var node = currentNode as DialogNode;
@@ -224,7 +233,7 @@ namespace DialogSystem
 						foreach (var c in conditions.conditions)
 						{
 							//finish check when one condition isn't correct
-							var val1 = c.valueStr.ToValue(c.vType.ToType());
+							var val1 = c.valueStr.ToValue(c.vType);
 							var val2 = variableSourceMgr.GetValue(c.name);
 							if (val1 != null && val2 != null && val1.ToString() != val2.ToString())
 							{
@@ -267,15 +276,22 @@ namespace DialogSystem
 			var connection = (currentNode as BranchsNode).GetOutputConnection(index);
 
 			var returnVal = branch.onSelect;
-			if (variableSourceMgr != null && returnVal.vType != VariableType.Null)
+			RunMethodOrVariable(returnVal, false);
+			PlayNode(connection);
+		}
+
+		void RunMethodOrVariable(VariableMethodItem item, bool playNextNode)
+		{
+			if (variableSourceMgr != null && item.vType != VariableType.Null)
 			{
-				if (returnVal.vType == VariableType.Method)
-					variableSourceMgr.PlayMethod(returnVal.method);
+				if (item.vType == VariableType.Method)
+					variableSourceMgr.PlayMethod(item.method);
 				else
-					variableSourceMgr.SetValue(returnVal.variable);
+					variableSourceMgr.SetValue(item.variable);
 			}
 
-			PlayNode(connection);
+			if (playNextNode)
+				AutoPlayNextNode();
 		}
 
 		BranchButton CreateBrancheButton()
@@ -352,6 +368,28 @@ namespace DialogSystem
 			var node = currentNode as ChangeSceneNode;
 			Reset();
 			uiMain.ChangeScene(node.scene.name, node.duration, node.dateInfos);
+		}
+
+		private void CheckConditionBranch()
+		{
+			var node = currentNode as ConditionBranchNode;
+
+			if (node.branchs.Count < 1)
+			{
+				AutoPlayNextNode();
+				return;
+			}
+
+			var value = variableSourceMgr.GetValue(node.condition);
+			for (int i = 0; i < node.branchs.Count; i++)
+			{
+				if (value.Equals(node.branchs[i].ToValue(node.condition.vType)))
+				{
+					var connection = node.GetOutputConnection(i);
+					PlayNode(connection);
+					break;
+				}
+			}
 		}
 
 		public void SetVariableSourceManger(VariableSourceManager mgr)

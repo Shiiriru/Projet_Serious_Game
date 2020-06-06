@@ -2,11 +2,13 @@
 using UnityEditor;
 using System.Linq;
 using XNodeEditor;
+using System.Collections.Generic;
+using System.Reflection;
 
 namespace DialogSystem.Nodes
 {
 	[CustomNodeEditor(typeof(ActiveConditionsNode))]
-	public class ActiveConditionsEditor : DialogNodeEditorBase
+	public class ActiveConditionsEditor : VariableObjectEditorBase
 	{
 		ActiveConditionsNode node;
 		DialogGraph graph;
@@ -39,10 +41,9 @@ namespace DialogSystem.Nodes
 				return;
 			}
 
-			var valueList = graph.variableSource.GetSourceFieldInfos().ToList();
-			var strList = valueList.Select(v => v.Name).ToList();
-			valueList.Insert(0, null);
-			strList.Insert(0, "None");
+			var vTypeList = new List<VariableType>();
+			var strList = new List<string>();
+			GetValueList(graph, out vTypeList, out strList);
 
 			if (node.conditions.Count > 0)
 			{
@@ -55,46 +56,8 @@ namespace DialogSystem.Nodes
 			foreach (var c in node.conditions)
 			{
 				EditorGUILayout.BeginHorizontal("box");
-				//init selected index
-				if (c.valueIndex < 0)
-				{
-					if (!string.IsNullOrEmpty(c.name) && strList.Contains(c.name))
-					{
-						var index = strList.IndexOf(c.name);
-						if (c.valueIndex != index) c.valueIndex = index;
-					}
-					else
-						c.valueIndex = 0;
-				}
 
-				c.valueIndex = EditorGUILayout.Popup(c.valueIndex, strList.ToArray());
-				c.name = c.valueIndex != 0 ? strList[c.valueIndex] : "";
-				c.vType = c.valueIndex != 0 ? valueList[c.valueIndex].FieldType.ToVariableType() : VariableType.Null;
-
-				switch (c.vType)
-				{
-					case VariableType.Int:
-						if (c.value == null)
-							c.valueStr = "0";
-						c.valueStr = EditorGUILayout.IntField(int.Parse(c.valueStr)).ToString();
-						break;
-					case VariableType.Float:
-						if (c.value == null)
-							c.valueStr = "0";
-						c.valueStr = EditorGUILayout.FloatField(float.Parse(c.valueStr)).ToString();
-						break;
-					case VariableType.Bool:
-						if (c.value == null)
-							c.valueStr = "false";
-						c.valueStr = EditorGUILayout.Toggle(bool.Parse(c.valueStr)).ToString();
-						break;
-					case VariableType.String:
-						c.valueStr = EditorGUILayout.TextField(c.valueStr);
-						break;
-					default:
-						GUILayout.FlexibleSpace();
-						break;
-				}
+				DrawVariableObjectField(c, vTypeList, strList);
 
 				if (GUILayout.Button("x", GUILayout.Width(20)))
 					node.conditions.Remove(c);

@@ -3,18 +3,15 @@ using UnityEditor;
 
 namespace DialogSystem.Nodes
 {
-	[CreateNodeMenu("Delay")]
-	[NodeWidth(200)]
-	[NodeTint("#ffcc00")]
-	public class DelayNode : DialogNodeBase
+	[CreateNodeMenu("Image/CG out")]
+	[NodeTint("#00ccff")]
+	public class CGOutNode : DurationNodeBase
 	{
 		// Use this for initialization
 		protected override void Init()
 		{
-			name = "Delay";
+			name = "CG out";
 			base.Init();
 		}
-
-		public float duration;
 	}
 }

@@ -5,8 +5,8 @@ using XNode;
 
 namespace DialogSystem.Nodes
 {
-	[CreateNodeMenu("Active Condition")]
-	[NodeTint("#ffcc00")]
+	[CreateNodeMenu("Condition/Active Condition")]
+	[NodeTint("#ff5050")]
 	public class ActiveConditionsNode : Node
 	{
 		// Use this for initialization

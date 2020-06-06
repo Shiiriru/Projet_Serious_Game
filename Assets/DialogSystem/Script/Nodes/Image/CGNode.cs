@@ -3,15 +3,20 @@ using UnityEditor;
 
 namespace DialogSystem.Nodes
 {
-	[CreateNodeMenu("CG/CG out")]
+	[CreateNodeMenu("Image/New CG")]
 	[NodeTint("#00ccff")]
-	public class CGOutNode : DurationNodeBase
+	public class CGNode : DialogNodeBase
 	{
 		// Use this for initialization
 		protected override void Init()
 		{
-			name = "CG out";
+			name = "CG";
 			base.Init();
 		}
+
+		public Sprite sprite;
+
+		public float duration;
+		public bool isWait;
 	}
 }

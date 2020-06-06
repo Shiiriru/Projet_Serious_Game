@@ -20,7 +20,7 @@ public class MainVariableSourceMng : VariableSourceManager, IMainVariableSource
 		return source.GetValue(name);
 	}
 
-	public override object GetValue(object obj)
+	public override object GetValue(VariableObject obj)
 	{
 		return source.GetValue(obj);
 	}
