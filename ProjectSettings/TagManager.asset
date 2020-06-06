@@ -50,3 +50,6 @@ TagManager:
   - name: Inventaire
     uniqueID: 1262920533
     locked: 0
+  - name: FirstPlan
+    uniqueID: 486409949
+    locked: 0
