@@ -3,7 +3,7 @@ using UnityEditor;
 
 namespace DialogSystem.Nodes
 {
-	[CreateNodeMenu("CG")]
+	[CreateNodeMenu("CG/New CG")]
 	[NodeTint("#00ccff")]
 	public class CGNode : DialogNodeBase
 	{

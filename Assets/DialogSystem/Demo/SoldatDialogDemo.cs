@@ -14,7 +14,6 @@ public class SoldatDialogDemo : MonoBehaviour
 	public void OnClickPlayDialog()
 	{
 		dialogPlayer.SetDialog(targetDialog);
-		dialogPlayer.VariableSourceMgr.enabled = true;
 		dialogPlayer.onDialogFinished += DisplayDate;
 	}
 

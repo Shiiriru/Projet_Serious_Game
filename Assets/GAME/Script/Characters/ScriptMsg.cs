@@ -4,22 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using DialogSystem;
 
-public class ScriptMsg : MonoBehaviour
+public class ScriptMsg : CharacterBase
 {
-    [SerializeField] DialogPlayer dialogPlayer;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void EnvoieMsg(int index)
     {
         /*if(LetterinInventory)

@@ -16,6 +16,6 @@ public class ButtonSwitchScene : ButtonBase
 	public override void OnClickButton()
 	{
 		base.OnClickButton();
-		uiMain.SwitchScene(SceneName, 1);
+		uiMain.ChangeScene(SceneName, 1);
 	}
 }

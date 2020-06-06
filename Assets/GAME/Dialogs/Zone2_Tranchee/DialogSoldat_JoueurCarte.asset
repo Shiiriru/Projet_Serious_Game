@@ -26,8 +26,8 @@ MonoBehaviour:
   - {fileID: 114245459138922048}
   - {fileID: 114407480541900116}
   - {fileID: 114455095106399850}
-  - {fileID: 0}
   - {fileID: 114590404505100380}
+  - {fileID: 0}
   variableSource: {fileID: 114161093363272342}
 --- !u!114 &114060540473410770
 MonoBehaviour:
@@ -450,7 +450,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
-  m_Name: Dialogue
+  m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
   position: {x: 1752, y: -56}
@@ -545,7 +545,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
-  m_Name: Dialogue
+  m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
   position: {x: 2120, y: 200}
@@ -593,7 +593,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
-  m_Name: Dialogue
+  m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
   position: {x: 120, y: -24}
@@ -644,7 +644,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
-  m_Name: Dialogue
+  m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
   position: {x: 2504, y: 440}
@@ -695,7 +695,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
-  m_Name: Dialogue
+  m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
   position: {x: 2888, y: 440}
@@ -746,7 +746,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
-  m_Name: Dialogue
+  m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
   position: {x: 504, y: -24}
@@ -1000,7 +1000,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
-  m_Name: Dialogue
+  m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
   position: {x: 888, y: -24}
@@ -1052,7 +1052,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
-  m_Name: Dialogue
+  m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
   position: {x: 2120, y: 440}

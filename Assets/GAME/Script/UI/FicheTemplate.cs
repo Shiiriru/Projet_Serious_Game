@@ -1,14 +1,12 @@
 ﻿using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FicheTemplate : MonoBehaviour
 {
-	//[SerializeField] GameObject ButtonPhoneCall;
-	//[SerializeField] GameObject ButtonDeployMap;
-
 	[SerializeField] Button buttonAddToInventory;
 
 	StudioEventEmitter soundEmitter;
@@ -24,12 +22,18 @@ public class FicheTemplate : MonoBehaviour
 
 	[SerializeField] InventoryScript inventory;
 
+	public event System.Action onClose;
+
+	[SerializeField] CustomActionButton[] customActionButtons;
+
 	private void Start()
 	{
 		Show(false);
 	}
 
-	public void Open(InventoryItemInfoObject item, bool canAddToinventory, StudioEventEmitter emitter = null, InfoItemBouton sceneItem = null) //(Je récupère toutes les valeurs lié à item et je récupère la valeur du bool, j'indique ici les éléments que je souhaite envoyer. Tout ce qui est entre parenthèse sont mes variables en local)
+	//(Je récupère toutes les valeurs lié à item et je récupère la valeur du bool, j'indique ici les éléments que je souhaite envoyer. Tout ce qui est entre parenthèse sont mes variables en local)
+	public void Open(InventoryItemInfoObject item, bool canAddToinventory,
+		StudioEventEmitter emitter = null, InfoItemBouton sceneItem = null, Dictionary<string, System.Action> customActions = null)
 	{
 		Show(true);
 		soundEmitter = emitter;
@@ -48,6 +52,19 @@ public class FicheTemplate : MonoBehaviour
 		OnClickShowResume();
 
 		buttonAddToInventory.interactable = canAddToinventory;
+
+	}
+
+	void SetCustomButtons(Dictionary<string, System.Action> customActions)
+	{
+		for (int i = 0; i < customActions.Keys.Count; i++)
+		{
+			if (i < customActionButtons.Length - 1)
+			{
+				var item = customActions.ElementAt(i);
+				customActionButtons[i].Init(item.Key, item.Value);
+			}
+		}
 	}
 
 	public void OnClickAddItemToInventory()
@@ -101,8 +118,12 @@ public class FicheTemplate : MonoBehaviour
 	public void Close()
 	{
 		Show(false);
-		//ButtonPhoneCall.SetActive(false);
-		//ButtonDeployMap.SetActive(false);
+
+		if (onClose != null)
+		{
+			onClose();
+			onClose = null;
+		}
 
 		if (soundEmitter != null)
 		{
@@ -114,5 +135,8 @@ public class FicheTemplate : MonoBehaviour
 	void Show(bool isShow)
 	{
 		gameObject.SetActive(isShow);
+
+		foreach (var c in customActionButtons)
+			c.Show(false);
 	}
 }

@@ -3,10 +3,9 @@ using UnityEditor;
 
 namespace DialogSystem.Nodes
 {
-	[CreateNodeMenu("CG out")]
-	[NodeWidth(200)]
+	[CreateNodeMenu("CG/CG out")]
 	[NodeTint("#00ccff")]
-	public class CGOutNode : DialogNodeBase
+	public class CGOutNode : DurationNodeBase
 	{
 		// Use this for initialization
 		protected override void Init()
@@ -14,8 +13,5 @@ namespace DialogSystem.Nodes
 			name = "CG out";
 			base.Init();
 		}
-
-		public float duration;
-		public bool isWait;
 	}
 }

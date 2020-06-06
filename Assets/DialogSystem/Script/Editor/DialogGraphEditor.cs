@@ -46,7 +46,7 @@ namespace DialogSystem
 				string path = GetNodeMenuName(type);
 				if (string.IsNullOrEmpty(path)) continue;
 
-				if (!path.Contains("Start Point"))
+				if (!path.Contains("Start Point") && !path.Contains("Node Base"))
 				{
 					menu.AddItem(new GUIContent(path), false, () =>
 					{

@@ -11,7 +11,10 @@ namespace DialogSystem.Nodes
 			serializedObject.Update();
 
 			DrawPorts();
-			EditorGUILayout.PropertyField(serializedObject.FindProperty("scene"), GUIContent.none);
+			EditorGUILayout.PropertyField(serializedObject.FindProperty("scene"));
+
+			DrawDurationField();
+			EditorGUILayout.PropertyField(serializedObject.FindProperty("dateInfos"));
 
 			serializedObject.ApplyModifiedProperties();
 		}

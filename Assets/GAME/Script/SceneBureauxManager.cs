@@ -7,12 +7,11 @@ using UnityEngine;
 
 public class SceneBureauxManager : MonoBehaviour
 {
-	[SerializeField] ButtonBase BoutonMap;
+	[SerializeField] MapGame mapGame;
 	[SerializeField] InfoItemBouton BoutonLetter;
 	[SerializeField] InfoItemBouton BoutonPhoto;
 
 	[SerializeField] GameObject buttonChangeScene;
-	DialogPlayer dialogPlayer;
 	UIMain uiMain;
 	InventoryScript inventory;
 
@@ -21,46 +20,50 @@ public class SceneBureauxManager : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		dialogPlayer = FindObjectOfType<DialogPlayer>();
-
 		uiMain = FindObjectOfType<UIMain>();
 		uiMain.ShowPlayerUI(true);
+		uiMain.onChangeSceneFinished += CommandantCall;
 
 		inventory = uiMain.UIPlayer.Inventory;
 
 		foreach (var b in infoButtonList)
 			b.Init(uiMain);
 
-		BoutonMap.OnChecked += CheckMapBoolean; //on fait appel à la variable, on ne l'ajoute pas. Permet d'ajouter plusieurs actions ensemble
+		mapGame.onGameComplete += CheckMapBoolean; //on fait appel à la variable, on ne l'ajoute pas. Permet d'ajouter plusieurs actions ensemble
 		BoutonPhoto.OnChecked += CheckPhotoBoolean;
 
 		inventory.onItemChanged += ActiveExitButton;
 	}
 
-	private void CheckMapBoolean()
+	private void CommandantCall()
 	{
-		dialogPlayer.VariableSourceMgr.SetValue("MapIsChecked", true);
-
-		ActiveExitButton();
+		StartCoroutine(CommandantCallCoroutine());
 	}
 
-	private void CheckArtileryBoolean()
+	IEnumerator CommandantCallCoroutine()
 	{
-		dialogPlayer.VariableSourceMgr.SetValue("ArtileryIsChecked", true);
+		yield return new WaitForSeconds(0.5f);
+		//play sound
+	}
+
+	private void CheckMapBoolean()
+	{
+		DialogPlayerHelper.VariableSourceMgr.SetValue("MapChecked", true);
 		ActiveExitButton();
 	}
 
 	private void CheckPhotoBoolean()
 	{
-		dialogPlayer.VariableSourceMgr.SetValue("PhotoIsChecked", true);
+		DialogPlayerHelper.VariableSourceMgr.SetValue("PhotoChecked", true);
 	}
 
 	private void ActiveExitButton()
 	{
 		if (!inventory.CheckHasObject("informationLetter") ||
-			!(bool)dialogPlayer.VariableSourceMgr.GetValue("ArtileryIsChecked"))
+			!(bool)DialogPlayerHelper.VariableSourceMgr.GetValue("MapChecked"))
 			return;
 
+		DialogPlayerHelper.VariableSourceMgr.SetValue("LetterChecked", true);
 		buttonChangeScene.SetActive(true);
 	}
 }

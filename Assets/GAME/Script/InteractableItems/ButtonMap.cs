@@ -4,37 +4,22 @@ using UnityEngine;
 
 public class ButtonMap : InfoItemBouton
 {
-    [SerializeField] GameObject MapDeployed;
-    //[SerializeField] GameObject ButtonDeployMap;
-
-    [SerializeField] GameObject IconActive;
-    [SerializeField] GameObject IconNoActive;
-
-    [SerializeField] SceneBureauxManager sceneBureaux;
+    [SerializeField] MapGame mapGame;
 
     // Start is called before the first frame update
     public override void OnClickButton()
     {
         base.OnClickButton();
-        uiMain.OpenFicheTemplate(Infoitem, false, soundEmitter);
+
+		var actions = new Dictionary<string, System.Action>();
+		actions.Add("Déployer map", DeployMap);
+		uiMain.OpenFicheTemplate(Infoitem, false, soundEmitter, customActions:actions);
         //ButtonDeployMap.SetActive(true);
     }
 
     public void DeployMap()
     {
-        uiMain.CloseFicheTemplate();
-        MapDeployed.SetActive(true);
-        //ButtonDeployMap.SetActive(false);
-    }
-
-    public void SwitchMap()
-    {
-        IconActive.SetActive(false);
-        IconNoActive.SetActive(true);
-    }
-
-    public void CloseList()
-    {
-        MapDeployed.SetActive(false);
+        //uiMain.CloseFicheTemplate();
+        mapGame.Show(true);
     }
 }

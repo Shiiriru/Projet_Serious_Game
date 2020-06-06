@@ -24,16 +24,13 @@ namespace DialogSystem
 		[SerializeField] BranchButton branchBtnPrefab;
 
 		[SerializeField] VariableSourceManager variableSourceMgr;
-		public VariableSourceManager VariableSourceMgr { get { return variableSourceMgr; } }
 
-		DialogGraph currentDialogGraph;
+		static DialogGraph currentDialogGraph;
 		Node currentNode;
 
 		[SerializeField] bool autoClearAction;
 
-		public event System.Action<Node> onPlayNode;
 		public event System.Action onDialogFinished;
-		public event System.Action<BrancheItem> onSelectBranche;
 
 		bool startPlayDialog;
 
@@ -43,6 +40,8 @@ namespace DialogSystem
 		{
 			Reset();
 			DontDestroyOnLoad(gameObject);
+
+			DialogPlayerHelper.SetVariableSourceMgr(variableSourceMgr);
 		}
 
 		void Reset()
@@ -145,22 +144,20 @@ namespace DialogSystem
 
 			currentNode = connection.node;
 
-			if (onPlayNode != null)
-			{
-				onPlayNode(currentNode);
-				if (autoClearAction) onPlayNode = null;
-			}
-
 			if (currentNode is DialogNode)
 				PlayDialogItem();
-			if (currentNode is BranchsNode)
+			else if (currentNode is HideDialogNode)
+				HideDialog();
+			else if (currentNode is BranchsNode)
 				ShowBranch();
-			if (currentNode is CGNode)
+			else if (currentNode is CGNode)
 				CGIn();
-			if (currentNode is CGOutNode)
+			else if (currentNode is CGOutNode)
 				CGOut();
-			if (currentNode is DelayNode)
+			else if (currentNode is DelayNode)
 				DoDelay();
+			else if (currentNode is ChangeSceneNode)
+				ChangeScene();
 		}
 		void PlayDialogItem()
 		{
@@ -188,11 +185,22 @@ namespace DialogSystem
 
 		void ShowBlackBG(bool show)
 		{
+
 			if (blackBG.raycastTarget == show)
 				return;
 
 			blackBG.DOColor(new Color(0, 0, 0, show ? 0.6f : 0), 0.5f);
 			blackBG.raycastTarget = show;
+		}
+
+		void HideDialog()
+		{
+			var node = currentNode as HideDialogNode;
+			characterNameContent.Show(false);
+			dialogContent.Show(false);
+			ShowBlackBG(false);
+
+			AutoPlayNextNode(node.isWait, node.duration);
 		}
 
 		void ShowBranch()
@@ -267,12 +275,6 @@ namespace DialogSystem
 					variableSourceMgr.SetValue(returnVal.variable);
 			}
 
-			if (onSelectBranche != null)
-			{
-				onSelectBranche(branch);
-				if (autoClearAction) onSelectBranche = null;
-			}
-
 			PlayNode(connection);
 		}
 
@@ -293,21 +295,21 @@ namespace DialogSystem
 				return;
 			}
 
-			var item = currentNode as CGNode;
+			var node = currentNode as CGNode;
 
-			var duration = item.duration;
-			if (item.duration > 0)
+			var duration = node.duration;
+			if (node.duration > 0)
 			{
 				DOTween.Kill(cgContent);
 				if (cgContent.color.a > 0)
 					cgContent.DOColor(Color.black, duration * 0.5f).OnComplete(() =>
 					{
-						cgContent.sprite = item.sprite;
+						cgContent.sprite = node.sprite;
 						cgContent.DOColor(Color.white, duration * 0.5f);
 					});
 				else
 				{
-					cgContent.sprite = item.sprite;
+					cgContent.sprite = node.sprite;
 					cgContent.DOColor(Color.white, duration);
 				}
 
@@ -319,7 +321,7 @@ namespace DialogSystem
 			}
 			cgContent.raycastTarget = true;
 
-			AutoPlayNextNode(item.isWait, item.duration);
+			AutoPlayNextNode(node.isWait, node.duration);
 		}
 
 		void CGOut()
@@ -330,13 +332,13 @@ namespace DialogSystem
 				return;
 			}
 
-			var item = currentNode as CGOutNode;
+			var node = currentNode as CGOutNode;
 
 			DOTween.Kill(cgContent);
-			cgContent.DOColor(new Color(1, 1, 1, 0), item.duration);
+			cgContent.DOColor(new Color(1, 1, 1, 0), node.duration);
 			cgContent.raycastTarget = false;
 
-			AutoPlayNextNode(item.isWait, item.duration);
+			AutoPlayNextNode(node.isWait, node.duration);
 		}
 
 		void DoDelay()
@@ -345,9 +347,17 @@ namespace DialogSystem
 			waitingCoroutine = StartCoroutine(WaitingCorou(item.duration));
 		}
 
+		void ChangeScene()
+		{
+			var node = currentNode as ChangeSceneNode;
+			Reset();
+			uiMain.ChangeScene(node.scene.name, node.duration, node.dateInfos);
+		}
+
 		public void SetVariableSourceManger(VariableSourceManager mgr)
 		{
 			variableSourceMgr = mgr;
+			DialogPlayerHelper.SetVariableSourceMgr(variableSourceMgr);
 		}
 
 		IEnumerator WaitingCorou(float time)

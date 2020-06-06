@@ -5,7 +5,7 @@ using XNode;
 
 namespace DialogSystem.Nodes
 {
-	[CreateNodeMenu("Branchs")]
+	[CreateNodeMenu("Dialog/Branchs")]
 	[NodeWidth(300)]
 	[NodeTint("#99ffcc")]
 	public class BranchsNode : DialogNodeBase

@@ -4,42 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 using DialogSystem;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class OnBoardingMain : MonoBehaviour
 {
-	[SerializeField] GameObject PhotoCompagnie;
+	[SerializeField] CanvasGroup photoGroup;
 	[SerializeField] GameObject SpriteHappy;
 	[SerializeField] GameObject SpriteSerious;
 
 	[SerializeField] DialogGraph dialogGraph;
-
-	DialogPlayer dialogPlayer;
-	UIMain uiMain;
 
 	[SerializeField] DatePanelInfosObject dateInfo;
 
 	// Start is called before the first frame update
 	void Start()
 	{
-		dialogPlayer = FindObjectOfType<DialogPlayer>();
-		uiMain = FindObjectOfType<UIMain>();
-
-		dialogPlayer.SetDialog(dialogGraph);
-		dialogPlayer.onDialogFinished += OnboardingFinished;
+		DialogPlayerHelper.SetDialog(dialogGraph);
 	}
 
-	private void OnboardingFinished() //fin de dialogue
+	public void ShowPhoto(int index)
 	{
-		PhotoCompagnie.SetActive(false);
-		SpriteSerious.SetActive(false);
-		SpriteHappy.SetActive(false);
-
-		uiMain.SwitchScene("ScBureau_1", 2f, dateInfo);
-	}
-
-	public void afficherPhoto(int index)
-	{
-		PhotoCompagnie.SetActive(true);
+		photoGroup.DOFade(1, 1.5f);
 
 		if (index == 0)
 			SpriteHappy.SetActive(true);

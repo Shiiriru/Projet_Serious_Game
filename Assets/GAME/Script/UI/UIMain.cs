@@ -19,6 +19,7 @@ public class UIMain : MonoBehaviour
 	[SerializeField] FicheTemplate ficheTemplate;
 
 	[SerializeField] [EventRef] string soundSwithScene;
+	public event System.Action onChangeSceneFinished;
 
 	private void Awake()
 	{
@@ -37,12 +38,12 @@ public class UIMain : MonoBehaviour
 		canvas.worldCamera = cam;
 	}
 
-	public void SwitchScene(string sceneName, float time, DatePanelInfosObject dateInfos = null)
+	public void ChangeScene(string sceneName, float time, DatePanelInfosObject dateInfos = null)
 	{
-		StartCoroutine(SwitchSceneCoroutine(sceneName, time, dateInfos));
+		StartCoroutine(ChangeSceneCoroutine(sceneName, time, dateInfos));
 	}
 
-	IEnumerator SwitchSceneCoroutine(string sceneName, float time, DatePanelInfosObject dateInfos)
+	IEnumerator ChangeSceneCoroutine(string sceneName, float time, DatePanelInfosObject dateInfos)
 	{
 		foregourndBg.DOColor(Color.black, 0.8f);
 		yield return new WaitWhile(() => DOTween.IsTweening(foregourndBg));
@@ -62,6 +63,9 @@ public class UIMain : MonoBehaviour
 
 		foregourndBg.DOColor(Color.clear, 0.8f);
 		yield return new WaitWhile(() => DOTween.IsTweening(foregourndBg));
+
+		if (onChangeSceneFinished != null)
+			onChangeSceneFinished();
 	}
 
 	public void ShowPlayerUI(bool show)
@@ -69,9 +73,10 @@ public class UIMain : MonoBehaviour
 		uiPlayer.Show(show);
 	}
 
-	public void OpenFicheTemplate(InventoryItemInfoObject item, bool canAddToinventory, StudioEventEmitter emitter = null, InfoItemBouton sceneItem = null)
+	public void OpenFicheTemplate(InventoryItemInfoObject item, bool canAddToinventory,
+		StudioEventEmitter emitter = null, InfoItemBouton sceneItem = null, Dictionary<string, System.Action> customActions = null)
 	{
-		ficheTemplate.Open(item, canAddToinventory, emitter, sceneItem);
+		ficheTemplate.Open(item, canAddToinventory, emitter, sceneItem, customActions);
 	}
 
 	public void CloseFicheTemplate()

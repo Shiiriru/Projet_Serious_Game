@@ -3,7 +3,7 @@ using UnityEditor;
 
 namespace DialogSystem.Nodes
 {
-	[CreateNodeMenu("Dialogue")]
+	[CreateNodeMenu("Dialog/New Dialog")]
 	[NodeWidth(350)]
 	[NodeTint("#99ffcc")]
 	public class DialogNode : DialogNodeBase
@@ -11,7 +11,7 @@ namespace DialogSystem.Nodes
 		// Use this for initialization
 		protected override void Init()
 		{
-			name = "Dialogue";
+			name = "Dialog";
 			base.Init();
 		}
 
