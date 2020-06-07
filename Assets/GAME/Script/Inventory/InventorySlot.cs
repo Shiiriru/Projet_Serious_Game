@@ -8,11 +8,11 @@ public class InventorySlot : MonoBehaviour
 	[SerializeField] Image icon;
 
 	public InventoryItemInfoObject CurrrentInfoItem { get; private set; }
-	FicheTemplate ficheTemplate;
+	UIPlayer uiPlayer;
 
-	public void Init(FicheTemplate _ficheTemplate)
+	public void Init(UIPlayer _uiPlayer)
 	{
-		ficheTemplate = _ficheTemplate;
+		uiPlayer = _uiPlayer;
 		LoseItem();
 	}
 
@@ -34,7 +34,7 @@ public class InventorySlot : MonoBehaviour
 	{
 		if (CurrrentInfoItem != null)
 		{
-			ficheTemplate.Open(CurrrentInfoItem, false);
+			uiPlayer.OpenFicheTemplate(CurrrentInfoItem, null, false);
 		}
 	}
 

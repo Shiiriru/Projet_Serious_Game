@@ -52,7 +52,7 @@ namespace DialogSystem
 		{
 			var alpha = show ? 1 : 0;
 			if (canvasGroup.alpha != alpha)
-				canvasGroup.DOFade(alpha, 0.5f).SetEase(Ease.InOutQuad);
+				canvasGroup.DOFade(alpha, 0.3f).SetEase(Ease.InOutQuad);
 		}
 	}
 }

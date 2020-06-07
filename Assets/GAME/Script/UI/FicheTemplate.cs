@@ -26,18 +26,20 @@ public class FicheTemplate : MonoBehaviour
 
 	[SerializeField] CustomActionButton[] customActionButtons;
 
-	private void Start()
-	{
-		Show(false);
-	}
-
 	//(Je récupère toutes les valeurs lié à item et je récupère la valeur du bool, j'indique ici les éléments que je souhaite envoyer. Tout ce qui est entre parenthèse sont mes variables en local)
-	public void Open(InventoryItemInfoObject item, bool canAddToinventory,
-		StudioEventEmitter emitter = null, InfoItemBouton sceneItem = null, Dictionary<string, System.Action> customActions = null)
+	public void Open(InventoryItemInfoObject item, InfoItemBouton sceneItem, bool canAddToinventory,
+		StudioEventEmitter emitter = null, Dictionary<string, System.Action> customActions = null)
 	{
 		Show(true);
-		soundEmitter = emitter;
 
+		textTitle.text = item.name;
+		targetInfoItem = item;
+		sceneInfoItem = sceneItem;
+		buttonAddToInventory.interactable = canAddToinventory;
+
+		SetCustomButtons(customActions);
+
+		soundEmitter = emitter;
 		if (soundEmitter != null)
 		{
 			try
@@ -45,18 +47,14 @@ public class FicheTemplate : MonoBehaviour
 			catch { }
 		}
 
-		targetInfoItem = item;
-		sceneInfoItem = sceneItem;
-
-		textTitle.text = item.name;
 		OnClickShowResume();
-
-		buttonAddToInventory.interactable = canAddToinventory;
-
 	}
 
 	void SetCustomButtons(Dictionary<string, System.Action> customActions)
 	{
+		if (customActions == null)
+			return;
+
 		for (int i = 0; i < customActions.Keys.Count; i++)
 		{
 			if (i < customActionButtons.Length - 1)
@@ -73,7 +71,7 @@ public class FicheTemplate : MonoBehaviour
 
 		if (IsSelected)
 		{
-			sceneInfoItem.Disable();
+			sceneInfoItem.AddToInventory();
 			buttonAddToInventory.interactable = false;
 		}
 		else
@@ -119,11 +117,8 @@ public class FicheTemplate : MonoBehaviour
 	{
 		Show(false);
 
-		if (onClose != null)
-		{
+		if (onClose != null)		
 			onClose();
-			onClose = null;
-		}
 
 		if (soundEmitter != null)
 		{

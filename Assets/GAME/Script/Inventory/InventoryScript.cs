@@ -8,7 +8,7 @@ public class InventoryScript : MonoBehaviour
 {
 	List<InventoryItemInfoObject> inInventoryItems;
 
-	[SerializeField] FicheTemplate ficheTemplate;
+	[SerializeField] UIPlayer uiPlayer;
 	[SerializeField] InventorySlot[] inventorySlots;
 
 	public event System.Action onItemChanged;
@@ -16,7 +16,7 @@ public class InventoryScript : MonoBehaviour
 	public void Init()
 	{
 		foreach (var s in inventorySlots)
-			s.Init(ficheTemplate);
+			s.Init(uiPlayer);
 
 		Show(false);
 		inInventoryItems = new List<InventoryItemInfoObject>();

@@ -20,15 +20,14 @@ public class InfoItemBouton : ButtonBase
 	public override void OnClickButton()
 	{
 		base.OnClickButton(); //fonction basique + fonction particulière
-		if (disableObject)
-			uiMain.OpenFicheTemplate(Infoitem, GoToInventory, soundEmitter, this);
-		else
-			uiMain.OpenFicheTemplate(Infoitem, GoToInventory, soundEmitter); //Je lie ce que j'avais déclaré dans ma parenthèse et je les lie avec ce que j'ai déclaré ici
+
+		uiMain.OpenFicheTemplate(Infoitem, this, GoToInventory, soundEmitter);
 	}
 
-	public virtual void Disable()
+	public virtual void AddToInventory()
 	{
+		if (disableObject)
+			gameObject.SetActive(false);
 		GoToInventory = false;
-		gameObject.SetActive(false);
 	}
 }

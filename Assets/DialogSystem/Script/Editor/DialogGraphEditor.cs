@@ -58,5 +58,15 @@ namespace DialogSystem
 			menu.AddItem(new GUIContent("Preferences"), false, () => NodeEditorWindow.OpenPreferences());
 			NodeEditorWindow.AddCustomContextMenuItems(menu, target);
 		}
+
+		public override void RemoveNode(XNode.Node node)
+		{
+			if (node is StartPoint)
+				return;
+
+			target.RemoveNode(node);
+			UnityEngine.Object.DestroyImmediate(node, true);
+			if (NodeEditorPreferences.GetSettings().autoSave) AssetDatabase.SaveAssets();
+		}
 	}
 }

@@ -71,6 +71,7 @@ namespace DialogSystem
 			if (currentDialogGraph == null)
 				return;
 
+			Reset();
 			startPlayDialog = true;
 			currentNode = null;
 			AutoPlayNextNode();
@@ -81,6 +82,8 @@ namespace DialogSystem
 			Reset();
 
 			startPlayDialog = false;
+			uiMain.ShowPlayerUI(true);
+
 			if (onDialogFinished != null)
 			{
 				onDialogFinished();

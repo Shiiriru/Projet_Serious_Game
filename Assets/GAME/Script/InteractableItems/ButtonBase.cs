@@ -7,23 +7,28 @@ using FMODUnity;
 [RequireComponent(typeof(Button))]
 public class ButtonBase : MonoBehaviour
 {
-	public event System.Action OnChecked;
+	public event System.Action onCheckedAction;
 
 	[SerializeField] protected StudioEventEmitter soundEmitter;
 
-	Button bouton;
+	protected Button button;
 
 	// Start is called before the first frame update
 	void Awake()
 	{
-		bouton = GetComponent<Button>();
-		bouton.onClick.AddListener(OnClickButton);
+		button = GetComponent<Button>();
+		button.onClick.AddListener(OnClickButton);
 	}
 	public virtual void OnClickButton()
 	{
-		if (OnChecked != null)
+		OnChecked();
+	}
+
+	public void OnChecked()
+	{
+		if (onCheckedAction != null)
 		{
-			OnChecked();
+			onCheckedAction();
 		}
 	}
 }

@@ -16,8 +16,6 @@ public class UIMain : MonoBehaviour
 	[SerializeField] UIPlayer uiPlayer;
 	public UIPlayer UIPlayer { get { return uiPlayer; } }
 
-	[SerializeField] FicheTemplate ficheTemplate;
-
 	[SerializeField] [EventRef] string soundSwithScene;
 	public event System.Action onChangeSceneFinished;
 
@@ -73,14 +71,14 @@ public class UIMain : MonoBehaviour
 		uiPlayer.Show(show);
 	}
 
-	public void OpenFicheTemplate(InventoryItemInfoObject item, bool canAddToinventory,
-		StudioEventEmitter emitter = null, InfoItemBouton sceneItem = null, Dictionary<string, System.Action> customActions = null)
+	public void OpenFicheTemplate(InventoryItemInfoObject item, InfoItemBouton sceneItem, bool canAddToinventory,
+		StudioEventEmitter emitter = null, Dictionary<string, System.Action> customActions = null)
 	{
-		ficheTemplate.Open(item, canAddToinventory, emitter, sceneItem, customActions);
+		uiPlayer.OpenFicheTemplate(item, sceneItem, canAddToinventory, emitter, customActions);
 	}
 
 	public void CloseFicheTemplate()
 	{
-		ficheTemplate.Close();
+		uiPlayer.CloseFicheTemplate();
 	}
 }

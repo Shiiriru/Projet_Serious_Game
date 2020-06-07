@@ -6,26 +6,22 @@ using DialogSystem;
 
 public class ButtonTelephone : InfoItemBouton
 {
-	bool isCommandantCalled;
+	[SerializeField] SceneBureauxManager sceneBereaux;
 
-	[SerializeField] DialogGraph commandantDialog;
 	[SerializeField] DialogGraph phoneCallDialog;
 
 	// Start is called before the first frame update
 	public override void OnClickButton()
 	{
-		base.OnClickButton();
+		OnChecked();
 
-		if (!isCommandantCalled)
-		{
-			DialogPlayerHelper.SetDialog(commandantDialog);
-			isCommandantCalled = true;
-		}
+		if (!sceneBereaux.IsCommandantCalled)
+			sceneBereaux.AnswerCommandant();
 		else
 		{
 			var actions = new Dictionary<string, System.Action>();
 			actions.Add("Appeler quelqu'un", CallPhone);
-			uiMain.OpenFicheTemplate(Infoitem, false, soundEmitter, customActions: actions);
+			uiMain.OpenFicheTemplate(Infoitem, this, false, soundEmitter, customActions: actions);
 		}
 	}
 

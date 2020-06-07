@@ -30,6 +30,11 @@ public class MainVariableSourceMng : VariableSourceManager, IMainVariableSource
 		source.SetValue(variable.name, variable.valueStr);
 	}
 
+	public override void SetValue(string variableName, object value)
+	{
+		source.SetValue(variableName, value);
+	}
+
 	public override void PlayMethod(MethodObject methodObj)
 	{
 		Type type = this.GetType();
@@ -62,12 +67,12 @@ public class MainVariableSourceMng : VariableSourceManager, IMainVariableSource
 
 	}
 
-	public void DropLootMask()
+	public void LootMask()
 	{
 
 	}
 
-	public void DropLootMontre()
+	public void LootWatch()
 	{
 
 	}

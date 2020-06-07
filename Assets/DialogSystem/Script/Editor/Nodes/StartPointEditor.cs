@@ -24,6 +24,8 @@ namespace DialogSystem.Nodes
 			base.OnCreate();
 		}
 
+		public override void AddContextMenuItems(GenericMenu menu) { }
+
 		public override void OnBodyGUI()
 		{
 			serializedObject.Update();

@@ -39,6 +39,11 @@ namespace DialogSystem.Demo
 			source.SetValue(variable.name, variable.valueStr);
 		}
 
+		public override void SetValue(string variableName, object value)
+		{
+			source.SetValue(variableName, value);
+		}
+
 		public override void PlayMethod(MethodObject methodObj)
 		{
 			Type type = this.GetType();

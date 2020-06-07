@@ -9,11 +9,18 @@ public class SceneBureauxManager : MonoBehaviour
 {
 	[SerializeField] MapGame mapGame;
 	[SerializeField] InfoItemBouton BoutonLetter;
-	[SerializeField] InfoItemBouton BoutonPhoto;
+	[SerializeField] ButtonBase buttonPhotoVillage;
 
 	[SerializeField] GameObject buttonChangeScene;
 	UIMain uiMain;
 	InventoryScript inventory;
+
+	public bool IsCommandantCalled { get; private set; }
+	[SerializeField] DialogGraph commandantDialog;
+	//for hidding other button when not answer commandant
+	[SerializeField] GameObject hideOtherInterctableFilter;
+
+	[SerializeField] GameObject photoWall;
 
 	[SerializeField] InfoItemBouton[] infoButtonList;
 
@@ -21,7 +28,6 @@ public class SceneBureauxManager : MonoBehaviour
 	void Start()
 	{
 		uiMain = FindObjectOfType<UIMain>();
-		uiMain.ShowPlayerUI(true);
 		uiMain.onChangeSceneFinished += CommandantCall;
 
 		inventory = uiMain.UIPlayer.Inventory;
@@ -30,7 +36,7 @@ public class SceneBureauxManager : MonoBehaviour
 			b.Init(uiMain);
 
 		mapGame.onGameComplete += CheckMapBoolean; //on fait appel à la variable, on ne l'ajoute pas. Permet d'ajouter plusieurs actions ensemble
-		BoutonPhoto.OnChecked += CheckPhotoBoolean;
+		buttonPhotoVillage.onCheckedAction += CheckPhotoBoolean;
 
 		inventory.onItemChanged += ActiveExitButton;
 	}
@@ -46,6 +52,13 @@ public class SceneBureauxManager : MonoBehaviour
 		//play sound
 	}
 
+	public void AnswerCommandant()
+	{
+		DialogPlayerHelper.SetDialog(commandantDialog);
+		IsCommandantCalled = true;
+		hideOtherInterctableFilter.SetActive(false);
+	}
+
 	private void CheckMapBoolean()
 	{
 		DialogPlayerHelper.VariableSourceMgr.SetValue("MapChecked", true);
@@ -54,7 +67,7 @@ public class SceneBureauxManager : MonoBehaviour
 
 	private void CheckPhotoBoolean()
 	{
-		DialogPlayerHelper.VariableSourceMgr.SetValue("PhotoChecked", true);
+		DialogPlayerHelper.VariableSourceMgr.SetValue("villagePhotoChecked", true);
 	}
 
 	private void ActiveExitButton()
@@ -65,5 +78,10 @@ public class SceneBureauxManager : MonoBehaviour
 
 		DialogPlayerHelper.VariableSourceMgr.SetValue("LetterChecked", true);
 		buttonChangeScene.SetActive(true);
+	}
+
+	public void OnClickShowPhotoWall(bool show)
+	{
+		photoWall.SetActive(show);
 	}
 }
