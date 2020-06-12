@@ -41,7 +41,7 @@ namespace DialogSystem.Nodes
 
 						var type = match.Groups["vType"].Value;
 						var name = match.Groups["name"].Value;
-						if (type != null)
+						if (!string.IsNullOrEmpty(type))
 						{
 							valNames.Add($"{name}({Type.GetType(type).ToShortTypeStr()} {match.Groups["vName"].Value})");
 							valFullNames.Add($"{name}({type} {match.Groups["vName"].Value})");
@@ -98,6 +98,8 @@ namespace DialogSystem.Nodes
 						var index = valFullNames.IndexOf(item.method.fullMethod);
 						if (item.valueIndex != index) item.valueIndex = index;
 					}
+					else
+						item.valueIndex = 0;
 				}
 				else
 				{
@@ -106,6 +108,8 @@ namespace DialogSystem.Nodes
 						var index = valFullNames.IndexOf(item.variable.name);
 						if (item.valueIndex != index) item.valueIndex = index;
 					}
+					else
+						item.valueIndex = 0;
 				}
 			}
 

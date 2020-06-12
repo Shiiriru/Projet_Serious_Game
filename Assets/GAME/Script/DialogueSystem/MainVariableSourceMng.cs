@@ -38,12 +38,13 @@ public class MainVariableSourceMng : VariableSourceManager, IMainVariableSource
 	public override void PlayMethod(MethodObject methodObj)
 	{
 		Type type = this.GetType();
-		MethodInfo method = type.GetMethod((string)methodObj.name);
+		MethodInfo method = type.GetMethod(methodObj.name);
 		//has parameter
 		if (methodObj.hasParameter)
 			method.Invoke(this, new[] { methodObj.parameter.value });
 		else
 			method.Invoke(this, null);
+
 	}
 	#endregion
 
@@ -59,7 +60,12 @@ public class MainVariableSourceMng : VariableSourceManager, IMainVariableSource
 
 	public void LaunchCardGame()
 	{
+		FindObjectOfType<TrencheMain>().LaunchBlackJack();
+	}
 
+	public void LootWatch()
+	{
+		FindObjectOfType<TrencheMain>().LootWatch();
 	}
 
 	public void LaunchEndChapter()
@@ -68,11 +74,6 @@ public class MainVariableSourceMng : VariableSourceManager, IMainVariableSource
 	}
 
 	public void LootMask()
-	{
-
-	}
-
-	public void LootWatch()
 	{
 
 	}

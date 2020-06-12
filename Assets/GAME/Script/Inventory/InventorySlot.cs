@@ -32,11 +32,21 @@ public class InventorySlot : MonoBehaviour
 
 	public void OnClickUseItem()
 	{
-		if (CurrrentInfoItem != null)
+		if (CurrrentInfoItem == null)
+			return;
+		switch (CurrrentInfoItem.itemType)
 		{
-			uiPlayer.OpenFicheTemplate(CurrrentInfoItem, null, false);
+			case InventoryItemType.Other:
+				break;
+			case InventoryItemType.InfoItem:
+				uiPlayer.OpenFicheTemplate(CurrrentInfoItem, null, false);
+				break;
+			case InventoryItemType.Photo:
+				uiPlayer.ShowPhoto(CurrrentInfoItem.imageResume != null ? CurrrentInfoItem.imageResume : CurrrentInfoItem.imageInventory);
+				break;
 		}
 	}
+
 
 	public bool CanAdd(InventoryItemInfoObject item)
 	{

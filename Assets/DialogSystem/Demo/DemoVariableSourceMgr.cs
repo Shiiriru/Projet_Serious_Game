@@ -60,5 +60,10 @@ namespace DialogSystem.Demo
 		{
 			Debug.Log(index);
 		}
+
+		public void TestFunc()
+		{
+			Debug.Log("tetssssssssssssssssssssssssssssssssssssssssssssss");
+		}
 	}
 }

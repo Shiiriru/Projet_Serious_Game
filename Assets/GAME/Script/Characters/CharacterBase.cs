@@ -7,14 +7,14 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
 public class CharacterBase : MonoBehaviour
 {
-	[SerializeField] DialogGraph dialog;
+	[SerializeField] protected DialogGraph dialog;
 
 	private void Start()
 	{
 		GetComponent<Button>().onClick.AddListener(OnClickPlayDialog);
 	}
 
-	void OnClickPlayDialog()
+	protected virtual void OnClickPlayDialog()
 	{
 		DialogPlayerHelper.SetDialog(dialog);
 	}

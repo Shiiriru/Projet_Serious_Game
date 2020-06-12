@@ -63,7 +63,10 @@ public class UIMain : MonoBehaviour
 		yield return new WaitWhile(() => DOTween.IsTweening(foregourndBg));
 
 		if (onChangeSceneFinished != null)
+		{
 			onChangeSceneFinished();
+			onChangeSceneFinished = null;
+		}			
 	}
 
 	public void ShowPlayerUI(bool show)

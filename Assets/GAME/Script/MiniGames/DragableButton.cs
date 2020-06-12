@@ -1,18 +1,45 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class DragableButton : MonoBehaviour
+public class DragableButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	protected RectTransform rectTransform;
+	protected bool isHovering;
+	[SerializeField] protected bool disableMove;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public event System.Action onHoverBegin;
+	public event System.Action onHoverEnd;
+
+	protected virtual void Awake()
+	{
+		rectTransform = GetComponent<RectTransform>();
+	}
+
+	public void OnPointerDown(PointerEventData eventData)
+	{
+		if (disableMove)
+			return;
+
+		isHovering = true;
+		if (onHoverBegin != null)
+			onHoverBegin();
+	}
+
+	public void OnPointerUp(PointerEventData eventData)
+	{
+		isHovering = false;
+		if (onHoverEnd != null)
+			onHoverEnd();
+	}
+
+	private void Update()
+	{
+		if (!isHovering || disableMove)
+			return;
+
+		var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		transform.position = Vector2.Lerp(transform.position, mousePosition, 30 * Time.deltaTime);
+	}
 }

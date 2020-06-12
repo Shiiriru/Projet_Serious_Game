@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3721790001615606934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2795784155816150296}
+  - component: {fileID: 293417799718443871}
+  - component: {fileID: 7532054315738828275}
+  - component: {fileID: 2343243708451164737}
+  - component: {fileID: 5324924748451258584}
+  m_Layer: 0
+  m_Name: PokerCard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2795784155816150296
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3721790001615606934}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 250, y: 350}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &293417799718443871
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3721790001615606934}
+  m_CullTransparentMesh: 0
+--- !u!114 &7532054315738828275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3721790001615606934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: c69362ac352947c48b1f1a8648503931, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!114 &2343243708451164737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3721790001615606934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
+--- !u!114 &5324924748451258584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3721790001615606934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73da66cc53cb06f4f832817de83844e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteBack: {fileID: 21300000, guid: c69362ac352947c48b1f1a8648503931, type: 3}
+  cardList:
+  - {fileID: 21300000, guid: f718a713479285248845748e3a73c74f, type: 3}
+  - {fileID: 21300000, guid: 13df443ce4128b843bc7ca4b4e0c0fe9, type: 3}
+  - {fileID: 21300000, guid: 35ba4fda20d443549be33fed45e5b4b9, type: 3}
+  - {fileID: 21300000, guid: 7aa110ae1dab32746a486d9dc8d3c9ba, type: 3}
+  - {fileID: 21300000, guid: 89193ca1e78f3434ebc2fe183268f769, type: 3}
+  - {fileID: 21300000, guid: 332e48b8f55771f48bc5e515c8e6c867, type: 3}
+  - {fileID: 21300000, guid: 38bc42fbad330a04da9d7978e8b3c14d, type: 3}
+  - {fileID: 21300000, guid: 1304b69398265ef49b22dd79893f40b4, type: 3}
+  - {fileID: 21300000, guid: 1ce73860aae26f84f8ea963955e7e698, type: 3}
+  - {fileID: 21300000, guid: 8c6be9ae70ab8ad49bbc8d9388045bc7, type: 3}
+  - {fileID: 21300000, guid: 522e88b1ac2448e48a6ab6d33942ad82, type: 3}
+  - {fileID: 21300000, guid: 7fe22770bd4722a45be1b390fdadddfb, type: 3}
+  - {fileID: 21300000, guid: 5580624172b412e48aa4998ef7a21664, type: 3}

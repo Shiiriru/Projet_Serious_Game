@@ -6,4 +6,9 @@ using DialogSystem;
 
 public class ScriptLouis : CharacterBase
 {
+	protected override void OnClickPlayDialog()
+	{
+		DialogPlayerHelper.SetOnFinishedAction(() => gameObject.SetActive(false));
+		base.OnClickPlayDialog();
+	}
 }

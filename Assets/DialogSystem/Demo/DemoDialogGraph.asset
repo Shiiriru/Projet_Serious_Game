@@ -122,13 +122,13 @@ MonoBehaviour:
   variableMethod:
     vType: 5
     variable:
-      vType: 0
-      valueStr: 
-      name: 
+      vType: 2
+      valueStr: 0
+      name: testInt
     method:
-      fullMethod: MakeChoice(System.Int32 index)
-      name: MakeChoice
-      hasParameter: 1
+      fullMethod: TestFunc()
+      name: TestFunc
+      hasParameter: 0
       parameter:
         vType: 2
         valueStr: 100
@@ -697,9 +697,9 @@ MonoBehaviour:
     onSelect:
       vType: 5
       variable:
-        vType: 4
+        vType: 0
         valueStr: False
-        name: activeChoice1
+        name: 
       method:
         fullMethod: MakeChoice(System.Int32 index)
         name: MakeChoice
