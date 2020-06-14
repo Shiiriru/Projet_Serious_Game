@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{cbc2c002-25cc-422a-b492-e7fa5d78df85}">
+        <property name="assetPath">
+            <value>sf_tictac.mp3</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>17.763265306122449</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{f43c76cb-9b2b-49fc-8569-5370f4c211b2}</destination>
+        </relationship>
+    </object>
+</objects>

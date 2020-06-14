@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{7ff92029-5d1e-43bd-8d48-5455391f113e}">
+        <property name="assetPath">
+            <value>SFB-diapo-1.mp3</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>3.0824489795918368</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{f43c76cb-9b2b-49fc-8569-5370f4c211b2}</destination>
+        </relationship>
+    </object>
+</objects>

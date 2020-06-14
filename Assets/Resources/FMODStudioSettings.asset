@@ -14,11 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: D:\Documents\Dossier ICAN\Cours ICAN 5GD\Serious game\Sound Design\ICAN5GD_SeriousGame_SD\ICAN5GD_SeriousGame_SD.fspro
-  SourceProjectPathUnformatted: D:\Documents\Dossier ICAN\Cours ICAN 5GD\Serious game\Sound
-    Design\ICAN5GD_SeriousGame_SD\ICAN5GD_SeriousGame_SD.fspro
-  SourceBankPathUnformatted: D:\Documents\Dossier ICAN\Cours ICAN 5GD\Serious game\Sound
-    Design\ICAN5GD_SeriousGame_SD\Build
+  sourceProjectPath: ICAN5GD_SeriousGame_SD\ICAN5GD_SeriousGame_SD.fspro
+  SourceProjectPathUnformatted: ICAN5GD_SeriousGame_SD\ICAN5GD_SeriousGame_SD.fspro
+  SourceBankPathUnformatted: ICAN5GD_SeriousGame_SD\Build
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0
@@ -61,5 +59,5 @@ MonoBehaviour:
   - Platform: 2
     Value: 32
   Plugins: []
-  MasterBank: Master Bank
+  MasterBank: 
   Banks: []

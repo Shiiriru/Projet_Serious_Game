@@ -55,7 +55,6 @@ public class UIMain : MonoBehaviour
 		}
 		else
 		{
-			FMODUnity.RuntimeManager.PlayOneShot(soundSwithScene);
 			yield return new WaitForSeconds(time);
 		}
 

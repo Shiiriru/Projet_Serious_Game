@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{998f43f2-7d30-454b-8366-bec827e61265}">
+        <property name="assetPath">
+            <value>Charge_Un long dimanche de fiançailles.mp3</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>234.44897959183675</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{f43c76cb-9b2b-49fc-8569-5370f4c211b2}</destination>
+        </relationship>
+    </object>
+</objects>
