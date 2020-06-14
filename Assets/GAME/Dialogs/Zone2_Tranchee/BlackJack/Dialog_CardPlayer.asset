@@ -402,7 +402,7 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   characterName: Touvenel
-  text: ON COMMENCE !
+  text: "Commen\xE7ons alors !"
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -453,7 +453,7 @@ MonoBehaviour:
   output: {fileID: 0}
   characterName: Touvenel
   text: "Hey capitaine ! C'est moi, le seconde classe Jacques Touvenel, vous vous
-    souvenez ? On a prit le m\xEAme train depuis Paris pour venir ici !"
+    souvenez ? On a pris le m\xEAme train depuis Paris pour venir ici !"
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -503,9 +503,9 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   characterName: Touvenel
-  text: "Vous avez d\xE9cid\xE9 de venir profiter de ce premier jour de juillet dehors
-    ? Profitez en bien avant que les gaz viennent gacher cette bonne odeur de boue
-    !"
+  text: "Vous avez d\xE9cid\xE9 de venir profiter de ce premier jour de juillet en
+    mettant le nez dehors ? Profitez en bien avant que les gaz viennent gacher cette
+    bonne odeur de boue ! *rire*"
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -555,8 +555,8 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   characterName: Touvenel
-  text: "Dite moi capitaine, je me rappelle d'une partie de carte non achev\xE9e dans
-    la capitale ... Ca vous dirait de la finir rapidement ici ? On ne sait pas de
+  text: "Dite moi capitaine, je me rappelle d'une partie de cartes non achev\xE9e
+    dans la capitale... Ca vous dit de la finir ? Apr\xE8s tout, on ne sait pas de
     quoi demain sera fait !"
   disableScene: 1
   displayAll: 0

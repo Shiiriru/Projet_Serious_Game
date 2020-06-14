@@ -34,7 +34,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1656, y: -24}
+  position: {x: 1176, y: -56}
   ports:
     keys:
     - input
@@ -116,7 +116,7 @@ MonoBehaviour:
   characterName: Commandement
   text: "Il faut que vous alliez dans la tranch\xE9e pour surveiller les mouvements
     ennemis. On nous a signal\xE9 du mouvement chez les germains, \xE7a ne m'\xE9tonnerait
-    pas qu'ils tente de s'infiltrer \xE0 travers le no man's land."
+    pas qu'ils tentent de s'infiltrer \xE0 travers le no man's land."
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -167,7 +167,7 @@ MonoBehaviour:
   output: {fileID: 0}
   characterName: Commandement
   text: "Souvenez vous, cette position est vitale. Si vous tombez, c'est tout le flanc
-    de notre arm\xE9e qui sera vuln\xE9rable \xE0 un assaut allemand !"
+    de notre arm\xE9e qui sera vuln\xE9rable !"
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -217,8 +217,8 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   characterName: Commandement
-  text: "Allez informer vos hommes et faites attention \xE0 vous, l'aviation a remarqu\xE9
-    la livraison d'\xE9tranges obus chez nos ennemis ..."
+  text: "Allez informer vos hommes et faites attention \xE0 vous. L'aviation a remarqu\xE9
+    la livraison d'\xE9tranges obus chez nos ennemis."
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -300,7 +300,7 @@ MonoBehaviour:
   output: {fileID: 0}
   characterName: Commandement
   text: "Capitaine Favourier, nous savons que votre compagnie a subi des pertes lors
-    de la derni\xE8re attaque mais nous avons encore besoin de vous et de vos hommes."
+    de la derni\xE8re attaque, mais nous avons encore besoin de vous et de vos hommes."
   disableScene: 1
   displayAll: 0
   displaySpeed: 3

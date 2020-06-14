@@ -218,8 +218,8 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   characterName: Touvenel
-  text: "ECHEC : Hehehe dommage pour vous mon capitaine ! Je penserais \xE0 vous quand
-    je boirai un coup \xE0 Paris avec cet argent !"
+  text: "Hehehe dommage pour vous mon capitaine ! Je penserais \xE0 vous quand je
+    boirai un coup \xE0 Paris avec cet argent !"
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -375,8 +375,8 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   characterName: Touvenel
-  text: "Ca vous aidera \xE0 mieux planifier vos prochaines id\xE9es, et au pire les
-    prochains assaut !"
+  text: "Ca vous aidera \xE0 mieux planifier vos prochains assaut, mais n'en abusez
+    pas trop !"
   disableScene: 1
   displayAll: 0
   displaySpeed: 3

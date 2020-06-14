@@ -82,9 +82,9 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  characterName: Capitaine Favourier
-  text: "Hors de question de monopoliser la ligne comme \xE7a, d'autres secteurs peuvent
-    plus en avoir besoin que moi ..."
+  characterName: Centre d'appels
+  text: "D\xE9sol\xE9 mais hors de question de monopoliser la ligne comme \xE7a, d'autres
+    secteurs peuvent plus en avoir besoin que vous"
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -471,8 +471,9 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  characterName: Hello girl
-  text: Bonjour, Qu'est-ce je peux vous aidez?
+  characterName: Centre d'appels
+  text: Ici le centre des communications de lignes, avec qui dois-je vous raccorder
+    ?
   disableScene: 1
   displayAll: 0
   displaySpeed: 3

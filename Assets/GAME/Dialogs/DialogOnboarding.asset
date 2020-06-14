@@ -35,6 +35,7 @@ MonoBehaviour:
   - {fileID: 114271084819973380}
   - {fileID: 114593880930906600}
   - {fileID: 0}
+  - {fileID: 114599755178817316}
   variableSource: {fileID: 114735846283954992}
 --- !u!114 &114003861249723866
 MonoBehaviour:
@@ -82,10 +83,12 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   characterName: 
-  text: "C'\xE9tait aussi mon cas. J'\xE9tais instituteur dans une \xE9cole de la
-    r\xE9gion de la Marne. Malheuresment, il fallait des cadres pour g\xE9rer tout
-    ce petit monde. Mes \xE9tudes m'ont permis d'etre officer, et que ce soit g\xE9rer
-    des \xE9l\xE8ves ou des soldats, je suppose que c'est pareil."
+  text: "Malgr\xE9 tout, je ne peux m'emp\xEAcher de penser \xE0 l'avant. D\xE9but
+    1914. Je vivais la belle vie. Fort de mes 24 ans, nouveau venu dans les rangs
+    des estim\xE9s professeurs, tout me souriait. Je voyais la vie avec entrain et
+    f\xE9licit\xE9 et c'est toujours le cas ! La guerre ne faisait juste pas partie
+    de mon plan de carri\xE8re. Ce si\xE8cle va vite, trop vite peut-\xEAtre ? Il
+    est prometteur \xE0 n'en pas douter, mais qui sait ce qui nous attend."
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -244,7 +247,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 56, y: 184}
+  position: {x: 360, y: 184}
   ports:
     keys:
     - input
@@ -296,7 +299,7 @@ MonoBehaviour:
   m_Name: Change scene
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 472, y: 328}
+  position: {x: 776, y: 328}
   ports:
     keys:
     - input
@@ -341,7 +344,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -984, y: 72}
+  position: {x: -1048, y: 216}
   ports:
     keys:
     - input
@@ -365,7 +368,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114596655729629326}
+        node: {fileID: 114599755178817316}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -374,9 +377,11 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   characterName: 
-  text: "Trimbal\xE9 un peu partout de bureaux en bureaux, j'ai fini par me retrouver
-    en premi\xE8re ligne, dans un coin paum\xE9 de la Somme, par un bel \xE9t\xE9
-    1916."
+  text: "De simple instituteur dans un petit village de la Marne, je deviens soudain
+    soldat d'infanterie, dr\xF4le de reconversion. Mais il faut des cadres pour g\xE9rer
+    tout ce petit monde. Alors qui de mieux qu'un instit pour mener ce petit monde
+    \xE0 la baguette ? Apr\xE8s tout, soldats ou \xE9l\xE8ves, je suppose que c'est
+    du pareil au m\xEAme."
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -475,9 +480,12 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   characterName: 
-  text: "Du jour au lendemain, des hommes de 20 \xE0 45 ans abandonnent tout. Ils
-    partent par devoir, dans l'espoir d'une guerre rapide ... Le temps de sortir le
-    fusil puis de rentrer. C'est l'histoire d'une escapade, qui tourne au cauchemar."
+  text: "Du jour au lendemain, les hommes, entre 20 \xE0 45 ans, ont tout abandonn\xE9s.
+    Moi aussi d'ailleurs. Nous sommes partis, la fleur au fusil, par devoir et emplis
+    de la certitude de revenir. Une guerre rapide qu'ils disent. Nous verrons bien.
+    Pourtant, au fond de moi, je sens quelque chose. Comme une inqui\xE8tude sourde.
+    Mais peut-\xEAtre que je me fais des films. Apr\xE8s tout, qui suis-je pour douter
+    ?"
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -539,7 +547,7 @@ MonoBehaviour:
   m_Name: Hide Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -216, y: 296}
+  position: {x: 88, y: 296}
   ports:
     keys:
     - input
@@ -686,7 +694,7 @@ MonoBehaviour:
   m_Name: Hide Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 424, y: 216}
+  position: {x: 728, y: 216}
   ports:
     keys:
     - input
@@ -733,7 +741,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -968, y: 360}
+  position: {x: -664, y: 360}
   ports:
     keys:
     - input
@@ -745,7 +753,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114336470798916672}
+        node: {fileID: 114599755178817316}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -766,9 +774,64 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   characterName: 
-  text: "Avant de partir pour le front, on m'a demande de poser avec la compagnie,
-    pour la post\xE9rit\xE9 qu'ils disaient. Cette photo repr\xE9sente bien mon \xE9tat
-    d'esprit, j'\xE9tais ..."
+  text: "Tiens, j'ai retrouv\xE9 \xE7a ! Avant de partir pour le front, on m'a demand\xE9
+    de poser avec la compagnie. Pour la post\xE9rit\xE9 qu'ils disaient. J'appr\xE9cie
+    beaucoup cette photo. Elle repr\xE9sente bien mon \xE9tat d'esprit, j'\xE9tais
+    \u2026"
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
+--- !u!114 &114599755178817316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -680, y: 104}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114599755178817316}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114336470798916672}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114599755178817316}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114596655729629326}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  characterName: 
+  text: "Officier, donc, trimbal\xE9 un peu partout, de bureaux en bureaux, je me
+    retrouve deux ans plus tard dans un coin paum\xE9 de la Somme, \xE0 la t\xEAte
+    d'un groupe de pauvres bougres. En premi\xE8re ligne. Je ne sais pas quoi en penser.
+    Est-ce une bonne chose ? Cela sonne-t-il la fin de ce conflit ? A vrai dire, je
+    n'en sais rien."
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -797,7 +860,7 @@ MonoBehaviour:
   m_Name: CG out
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -216, y: 168}
+  position: {x: 88, y: 168}
   ports:
     keys:
     - input
@@ -1112,10 +1175,10 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   characterName: 
-  text: "La Grande Guerre ... C'est le 3 septembre 1914, tout \xE0 bascul\xE9 : notre
-    vie, notre destin, celle de notre nation, celle de l'Europe ... Il a suffit d'un
-    meutre dans une ville perdue des Balkans et tout s'est enchain\xE9 tr\xE8s vite,
-    une escalade de tension."
+  text: "La Grande Guerre. 3 septembre 1914. \r\n Le jour o\xF9 tout a bascul\xE9
+    : notre vie, notre destin, notre nation. L'Europe toute enti\xE8re s'est embras\xE9e.\r\n
+    Il a suffit d'un meutre dans une ville perdue des Balkans pour que tout s'encha\xEEne
+    vite. Trop vite."
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -1132,7 +1195,7 @@ MonoBehaviour:
   m_Name: Branchs
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -584, y: 120}
+  position: {x: -280, y: 120}
   ports:
     keys:
     - bInput0
