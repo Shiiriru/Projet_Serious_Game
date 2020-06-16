@@ -1,4 +1,5 @@
 ﻿using FMODUnity;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,6 @@ using UnityEngine.UI;
 
 public class FicheTemplate : MonoBehaviour
 {
-	[SerializeField] Button buttonAddToInventory;
-
 	StudioEventEmitter soundEmitter;
 
 	[SerializeField] Text textTitle;
@@ -17,27 +16,37 @@ public class FicheTemplate : MonoBehaviour
 	[SerializeField] Text textInfos;
 	[SerializeField] RectTransform textInfosContent;
 
-	InventoryItemInfoObject targetInfoItem;
-	InfoItemBouton sceneInfoItem;
+	ItemInfoObject targetInfoItem;
 
 	[SerializeField] InventoryScript inventory;
 
 	public event System.Action onClose;
 
-	[SerializeField] CustomActionButton[] customActionButtons;
+	[SerializeField] FicheTemplateButton resumeButton;
+	[SerializeField] CustomActionButton customActionButton;
+
+	[SerializeField] FicheTemplateButton[] btnList;
+
+	private void Start()
+	{
+		foreach (var b in btnList)
+			b.GetComponent<Button>().onClick.AddListener(() => SelecteButton(b));
+	}
+
+	// selete button animation
+	private void SelecteButton(FicheTemplateButton b)
+	{
+		foreach (var btn in btnList)
+			btn.OnSelected(btn == b);
+	}
 
 	//(Je récupère toutes les valeurs lié à item et je récupère la valeur du bool, j'indique ici les éléments que je souhaite envoyer. Tout ce qui est entre parenthèse sont mes variables en local)
-	public void Open(InventoryItemInfoObject item, InfoItemBouton sceneItem, bool canAddToinventory,
-		StudioEventEmitter emitter = null, Dictionary<string, System.Action> customActions = null)
+	public void Open(ItemInfoObject item, bool canAddToinventory, StudioEventEmitter emitter = null)
 	{
 		Show(true);
 
 		textTitle.text = item.name;
 		targetInfoItem = item;
-		sceneInfoItem = sceneItem;
-		buttonAddToInventory.interactable = canAddToinventory;
-
-		SetCustomButtons(customActions);
 
 		soundEmitter = emitter;
 		if (soundEmitter != null)
@@ -47,37 +56,21 @@ public class FicheTemplate : MonoBehaviour
 			catch { }
 		}
 
+		resumeButton.ImageIcon.sprite = item.imageResume;
+
+		foreach (var b in btnList)
+		{
+			if (b != customActionButton)
+				b.Show(true);
+		}
+		resumeButton.OnSelected(true);
+
 		OnClickShowResume();
 	}
 
-	void SetCustomButtons(Dictionary<string, System.Action> customActions)
+	public void SetCustomAction(Sprite sprite, System.Action action)
 	{
-		if (customActions == null)
-			return;
-
-		for (int i = 0; i < customActions.Keys.Count; i++)
-		{
-			if (i < customActionButtons.Length - 1)
-			{
-				var item = customActions.ElementAt(i);
-				customActionButtons[i].Init(item.Key, item.Value);
-			}
-		}
-	}
-
-	public void OnClickAddItemToInventory()
-	{
-		bool IsSelected = inventory.Add(targetInfoItem);
-
-		if (IsSelected)
-		{
-			sceneInfoItem.AddToInventory();
-			buttonAddToInventory.interactable = false;
-		}
-		else
-		{
-			Debug.Log("inventory is full");
-		}
+		customActionButton.Init(sprite, action);
 	}
 
 	public void OnClickShowResume()
@@ -117,7 +110,7 @@ public class FicheTemplate : MonoBehaviour
 	{
 		Show(false);
 
-		if (onClose != null)		
+		if (onClose != null)
 			onClose();
 
 		if (soundEmitter != null)
@@ -130,8 +123,7 @@ public class FicheTemplate : MonoBehaviour
 	void Show(bool isShow)
 	{
 		gameObject.SetActive(isShow);
-
-		foreach (var c in customActionButtons)
-			c.Show(false);
+		foreach (var b in btnList)
+			b.Show(false);
 	}
 }

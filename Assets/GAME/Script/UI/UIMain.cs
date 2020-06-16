@@ -65,7 +65,7 @@ public class UIMain : MonoBehaviour
 		{
 			onChangeSceneFinished();
 			onChangeSceneFinished = null;
-		}			
+		}
 	}
 
 	public void ShowPlayerUI(bool show)
@@ -73,14 +73,23 @@ public class UIMain : MonoBehaviour
 		uiPlayer.Show(show);
 	}
 
-	public void OpenFicheTemplate(InventoryItemInfoObject item, InfoItemBouton sceneItem, bool canAddToinventory,
-		StudioEventEmitter emitter = null, Dictionary<string, System.Action> customActions = null)
+	public void OpenFicheTemplate(ItemInfoObject item, StudioEventEmitter emitter = null)
 	{
-		uiPlayer.OpenFicheTemplate(item, sceneItem, canAddToinventory, emitter, customActions);
+		uiPlayer.OpenFicheTemplate(item, emitter);
+	}
+
+	public void SetFicheTemplateCustomAction(Sprite sprite, System.Action action)
+	{
+		uiPlayer.SetFicheTemplateCustomAction(sprite, action);
 	}
 
 	public void CloseFicheTemplate()
 	{
 		uiPlayer.CloseFicheTemplate();
+	}
+
+	public void AddToInventoryScreen(ItemInfoObject itemInfo)
+	{
+		uiPlayer.GetItem(itemInfo);
 	}
 }

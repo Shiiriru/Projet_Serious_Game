@@ -6,12 +6,6 @@ using UnityEngine.SceneManagement;
 public class ButtonSwitchScene : ButtonBase
 {
 	[SerializeField] string SceneName;
-	UIMain uiMain;
-
-	private void Start()
-	{
-		uiMain = FindObjectOfType<UIMain>();
-	}
 
 	public override void OnClickButton()
 	{

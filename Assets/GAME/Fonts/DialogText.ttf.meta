@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bba70f7282dfb4a40949f33a5eae8dfd
+guid: 3b8e87cbc4acc1c4da12f0140e80b49c
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: KidSans
+  fontName: Shadows Into Light
   fontNames:
-  - KidSans
+  - Shadows Into Light
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

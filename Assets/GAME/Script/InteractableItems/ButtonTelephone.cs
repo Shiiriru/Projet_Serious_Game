@@ -19,9 +19,8 @@ public class ButtonTelephone : InfoItemBouton
 			sceneBereaux.AnswerCommandant();
 		else
 		{
-			var actions = new Dictionary<string, System.Action>();
-			actions.Add("Appeler quelqu'un", CallPhone);
-			uiMain.OpenFicheTemplate(Infoitem, this, false, soundEmitter, customActions: actions);
+			uiMain.OpenFicheTemplate(Infoitem, soundEmitter);
+			uiMain.SetFicheTemplateCustomAction(customActionSprite, CallPhone);
 		}
 	}
 

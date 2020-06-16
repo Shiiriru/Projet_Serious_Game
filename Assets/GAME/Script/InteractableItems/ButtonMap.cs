@@ -11,9 +11,8 @@ public class ButtonMap : InfoItemBouton
 	{
 		OnChecked();
 
-		var actions = new Dictionary<string, System.Action>();
-		actions.Add("Déployer map", DeployMap);
-		uiMain.OpenFicheTemplate(Infoitem, this, false, soundEmitter, customActions: actions);
+		uiMain.OpenFicheTemplate(Infoitem, soundEmitter);
+		uiMain.SetFicheTemplateCustomAction(customActionSprite, DeployMap);
 		//ButtonDeployMap.SetActive(true);
 	}
 

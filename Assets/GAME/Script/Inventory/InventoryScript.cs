@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class InventoryScript : MonoBehaviour
 {
-	List<InventoryItemInfoObject> inInventoryItems;
+	List<ItemInfoObject> inInventoryItems;
 
 	[SerializeField] UIPlayer uiPlayer;
 	[SerializeField] InventorySlot[] inventorySlots;
@@ -19,10 +19,10 @@ public class InventoryScript : MonoBehaviour
 			s.Init(uiPlayer);
 
 		Show(false);
-		inInventoryItems = new List<InventoryItemInfoObject>();
+		inInventoryItems = new List<ItemInfoObject>();
 	}
 
-	public bool Add(InventoryItemInfoObject item)
+	public bool Add(ItemInfoObject item)
 	{
 		foreach (var slot in inventorySlots)
 		{
@@ -43,7 +43,7 @@ public class InventoryScript : MonoBehaviour
 		return false;
 	}
 
-	public void Remove(InventoryItemInfoObject item)
+	public void Remove(ItemInfoObject item)
 	{
 		InventorySlot targetSlot = null;
 		foreach (var s in inventorySlots)

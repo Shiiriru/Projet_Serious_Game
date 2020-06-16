@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundEmitter: {fileID: 1602367634}
+  spritePhoto: {fileID: 0}
 --- !u!114 &49526961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,6 +472,115 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07a0f2af6aa18947a02bebb5f7e7fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &298550435
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7926227738776431926, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_Name
+      value: MAIN
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872686943637122051, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872686943637122051, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872686943637122051, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872686943637122051, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872686943637122051, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872686943637122051, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872686943637122051, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872686943637122051, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872686943637122051, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872686943637122051, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872686943637122051, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4315407401835049499, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4650896677192592457, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0000047905787
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967923525843068545, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097380402128970120, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097380402128970120, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097380402128970120, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714355733843324387, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714355733843324387, guid: 3e8f7323c8b9fc34480576f34bc33132,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3e8f7323c8b9fc34480576f34bc33132, type: 3}
 --- !u!1 &331313744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,7 +1181,7 @@ GameObject:
   - component: {fileID: 891304512}
   - component: {fileID: 891304511}
   m_Layer: 5
-  m_Name: objets
+  m_Name: decor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1347,6 +1457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundEmitter: {fileID: 1602367634}
+  spritePhoto: {fileID: 0}
 --- !u!114 &1024791129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3152,7 +3263,7 @@ Transform:
   m_Children:
   - {fileID: 1509825394}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2058700650
 GameObject:
@@ -3206,6 +3317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundEmitter: {fileID: 1602367634}
+  spritePhoto: {fileID: 0}
 --- !u!114 &2058700653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3384,7 +3496,7 @@ GameObject:
   - component: {fileID: 3424102733716699691}
   - component: {fileID: 874315626915134105}
   m_Layer: 0
-  m_Name: MAIN
+  m_Name: bureauMain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3403,7 +3515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapGame: {fileID: 1987183061}
-  BoutonLetter: {fileID: 6306057252852829304}
+  BoutonLetter: {fileID: 0}
   buttonPhotoVillage: {fileID: 2058700652}
   buttonChangeScene: {fileID: 1159135574}
   commandantDialog: {fileID: 11400000, guid: c1c4903437d2b7a49aa509e088122118, type: 2}
@@ -3411,10 +3523,8 @@ MonoBehaviour:
   photoWall: {fileID: 1319158060}
   infoButtonList:
   - {fileID: 6306057253469517876}
-  - {fileID: 6306057253646835380}
   - {fileID: 6306057252852829304}
   - {fileID: 6306057254270119304}
-  - {fileID: 6306057253053785936}
 --- !u!4 &3424102733716699691
 Transform:
   m_ObjectHideFlags: 0
@@ -3427,7 +3537,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6306057252621928036
 MonoBehaviour:
@@ -3689,12 +3799,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6306057252852829303}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faabfddcb3dc03d4f86d9e5201a64aae, type: 3}
+  m_Script: {fileID: 11500000, guid: ae3e868bd47614341bc06cdb17f6ccda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEmitter: {fileID: 2082260401}
-  Infoitem: {fileID: 11400000, guid: aaa6465ece84ff946b5ca562397a7594, type: 2}
-  GoToInventory: 1
+  soundEmitter: {fileID: 0}
+  itemInfo: {fileID: 11400000, guid: aaa6465ece84ff946b5ca562397a7594, type: 2}
   disableObject: 1
 --- !u!114 &6306057252852829305
 MonoBehaviour:
@@ -3828,8 +3937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundEmitter: {fileID: 1006326863}
   Infoitem: {fileID: 11400000, guid: f43e9d9e2fc254a429814b7953908776, type: 2}
-  GoToInventory: 0
-  disableObject: 0
+  customActionSprite: {fileID: 21300000, guid: a76ecb7b977e7184e8c851f17bd5af68, type: 3}
   sceneBereaux: {fileID: 874315626915134105}
   phoneCallDialog: {fileID: 11400000, guid: 462772484f296504eb68e53a3f5ac9ce, type: 2}
 --- !u!114 &6306057253053785937
@@ -3964,8 +4072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundEmitter: {fileID: 1343269244}
   Infoitem: {fileID: 11400000, guid: 3a689c858c8a97d438b0b8070bacd8df, type: 2}
-  GoToInventory: 0
-  disableObject: 0
+  customActionSprite: {fileID: 21300000, guid: 1252ee09e99358c4c933888543d2fcc2, type: 3}
   mapGame: {fileID: 1987183061}
 --- !u!114 &6306057253469517877
 MonoBehaviour:
@@ -4099,8 +4206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundEmitter: {fileID: 0}
   Infoitem: {fileID: 11400000, guid: a80e1ca4178d2f74daa24011a62d67c2, type: 2}
-  GoToInventory: 0
-  disableObject: 0
+  customActionSprite: {fileID: 0}
 --- !u!114 &6306057253646835381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4312,13 +4418,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6306057254270119302}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faabfddcb3dc03d4f86d9e5201a64aae, type: 3}
+  m_Script: {fileID: 11500000, guid: 055471954f7edf9439821396e6a67257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEmitter: {fileID: 1987459960}
-  Infoitem: {fileID: 11400000, guid: c2dd424ee0bc4c24d8dd80c938472bbc, type: 2}
-  GoToInventory: 0
-  disableObject: 0
+  soundEmitter: {fileID: 1602367634}
+  spritePhoto: {fileID: 21300000, guid: 449d09d13dd8b914eb31a418e88c281e, type: 3}
 --- !u!114 &6306057254270119305
 MonoBehaviour:
   m_ObjectHideFlags: 0

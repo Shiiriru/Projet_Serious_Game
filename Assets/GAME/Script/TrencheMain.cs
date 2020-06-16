@@ -7,7 +7,7 @@ public class TrencheMain : MonoBehaviour
 	[SerializeField] BlackJack blackJackGame;
 	[SerializeField] CardPlayers cardPlayers;
 
-	[SerializeField] InventoryItemInfoObject pocketWatchItem;
+	[SerializeField] ItemInfoObject pocketWatchItem;
 	UIMain uiMain;
 
 	private void Start()

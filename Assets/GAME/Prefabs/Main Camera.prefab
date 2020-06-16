@@ -150,13 +150,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oldFilmShader: {fileID: 4800000, guid: 3c95832ce2fcad749837490a08e0375b, type: 3}
-  oldFilmEffectAmount: 0.12
+  oldFilmEffectAmount: 0.1
   sepiaColor: {r: 0, g: 0, b: 0, a: 1}
   vignetteTexture: {fileID: 0}
   vignetteAmount: 0
   scratchesTexture: {fileID: 2800000, guid: 85935358f5135af47ae1a18d2c829c40, type: 3}
-  scratchesXSpeed: 20
-  scratchesYSpeed: 20
+  scratchesXSpeed: 10
+  scratchesYSpeed: 10
   dustTexture: {fileID: 2800000, guid: 9d8f5a981039ec241a93507a44fcf3a7, type: 3}
   dustXSpeed: 0.7
   dustYSpeed: 0.5

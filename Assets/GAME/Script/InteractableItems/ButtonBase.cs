@@ -12,13 +12,17 @@ public class ButtonBase : MonoBehaviour
 	[SerializeField] protected StudioEventEmitter soundEmitter;
 
 	protected Button button;
+	protected UIMain uiMain;
 
 	// Start is called before the first frame update
 	void Awake()
 	{
 		button = GetComponent<Button>();
 		button.onClick.AddListener(OnClickButton);
+
+		uiMain = FindObjectOfType<UIMain>();
 	}
+
 	public virtual void OnClickButton()
 	{
 		OnChecked();

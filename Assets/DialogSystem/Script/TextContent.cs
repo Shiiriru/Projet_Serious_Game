@@ -2,21 +2,28 @@
 using UnityEditor;
 using UnityEngine.UI;
 using DG.Tweening;
+using System.Collections;
 
 namespace DialogSystem
 {
 	[RequireComponent(typeof(CanvasGroup))]
 	public class TextContent : MonoBehaviour
 	{
+		RectTransform rectTransform;
 		CanvasGroup canvasGroup;
 		[SerializeField] Text text;
 		string targetStr;
 		float playSpeed;
 
+		//for set auto height
+		[SerializeField] bool autoHeight;
+		[SerializeField] Text textContentHeight;
+
 		public bool isDisplayFinished { get; private set; }
 
 		private void Awake()
 		{
+			rectTransform = GetComponent<RectTransform>();
 			canvasGroup = GetComponent<CanvasGroup>();
 			canvasGroup.alpha = 0;
 		}
@@ -34,6 +41,17 @@ namespace DialogSystem
 			text.text = displayAll ? targetStr : "";
 			if (!displayAll)
 				text.DOText(targetStr, targetStr.Length * playSpeed).OnComplete(() => SetDisplayFinished(true));
+
+			if (autoHeight)
+				StartCoroutine(SetContentHeightCoroutine(str));
+
+		}
+
+		IEnumerator SetContentHeightCoroutine(string str)
+		{
+			textContentHeight.text = str;
+			yield return null;
+			rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, textContentHeight.rectTransform.sizeDelta.y + 50);
 		}
 
 		public void DisplayEntierStr()

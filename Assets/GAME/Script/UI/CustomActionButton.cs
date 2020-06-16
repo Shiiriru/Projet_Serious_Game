@@ -6,33 +6,19 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class CustomActionButton : MonoBehaviour
+public class CustomActionButton : FicheTemplateButton
 {
-	RectTransform rectTransform;
-	[SerializeField] Text text;
-	Button button;
-
-	private void Awake()
+	public void Init(Sprite sprite, Action action)
 	{
-		rectTransform = GetComponent<RectTransform>();
-		button = GetComponent<Button>();
-	}
-
-	public void Init(string str, Action action)
-	{
-		text.text = str;
+		imgIcon.sprite = sprite;
 		button.onClick.AddListener(() => action());
 		Show(true);
 	}
 
-	public void Show(bool show)
+	public override void Show(bool show)
 	{
-		var targetX = show ? rectTransform.sizeDelta.x : 0;
-		if (rectTransform.anchoredPosition.x == targetX)
-			return;
+		base.Show(show);
 
-		DOTween.Kill(rectTransform);
-		rectTransform.DOAnchorPos( new Vector2(targetX, rectTransform.anchoredPosition.y), 0.3f).SetEase(Ease.OutQuad);
 		if (!show)
 			button.onClick.RemoveAllListeners();
 	}

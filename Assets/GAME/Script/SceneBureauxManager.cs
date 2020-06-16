@@ -22,8 +22,6 @@ public class SceneBureauxManager : MonoBehaviour
 
 	[SerializeField] GameObject photoWall;
 
-	[SerializeField] InfoItemBouton[] infoButtonList;
-
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -31,9 +29,6 @@ public class SceneBureauxManager : MonoBehaviour
 		uiMain.onChangeSceneFinished += CommandantCall;
 
 		inventory = uiMain.UIPlayer.Inventory;
-
-		foreach (var b in infoButtonList)
-			b.Init(uiMain);
 
 		mapGame.onGameComplete += () => CheckBoolean("MapChecked"); //on fait appel à la variable, on ne l'ajoute pas. Permet d'ajouter plusieurs actions ensemble
 		buttonPhotoVillage.onCheckedAction += () => CheckBoolean("villagePhotoChecked");

@@ -7,7 +7,7 @@ public class InventorySlot : MonoBehaviour
 {
 	[SerializeField] Image icon;
 
-	public InventoryItemInfoObject CurrrentInfoItem { get; private set; }
+	public ItemInfoObject CurrrentInfoItem { get; private set; }
 	UIPlayer uiPlayer;
 
 	public void Init(UIPlayer _uiPlayer)
@@ -16,11 +16,11 @@ public class InventorySlot : MonoBehaviour
 		LoseItem();
 	}
 
-	public void GetItem(InventoryItemInfoObject newItem)
+	public void GetItem(ItemInfoObject newItem)
 	{
 		CurrrentInfoItem = newItem;
 
-		icon.sprite = CurrrentInfoItem.imageInventory;
+		icon.sprite = CurrrentInfoItem.imageResume;
 		icon.enabled = true;
 	}
 
@@ -39,16 +39,16 @@ public class InventorySlot : MonoBehaviour
 			case InventoryItemType.Other:
 				break;
 			case InventoryItemType.InfoItem:
-				uiPlayer.OpenFicheTemplate(CurrrentInfoItem, null, false);
+				uiPlayer.OpenFicheTemplate(CurrrentInfoItem);
 				break;
 			case InventoryItemType.Photo:
-				uiPlayer.ShowPhoto(CurrrentInfoItem.imageResume != null ? CurrrentInfoItem.imageResume : CurrrentInfoItem.imageInventory);
+				uiPlayer.ShowPhoto(CurrrentInfoItem.imageResume);
 				break;
 		}
 	}
 
 
-	public bool CanAdd(InventoryItemInfoObject item)
+	public bool CanAdd(ItemInfoObject item)
 	{
 		return CurrrentInfoItem == null && CurrrentInfoItem != item;
 	}

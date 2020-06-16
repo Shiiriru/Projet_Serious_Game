@@ -10,11 +10,17 @@ public class UIPlayer : MonoBehaviour
 	[SerializeField] InventoryScript inventory;
 	public InventoryScript Inventory { get { return inventory; } }
 
+	[SerializeField] Image imgInventory;
+	[SerializeField] Sprite spriteInventoryOpen;
+	[SerializeField] Sprite spriteInventoryClose;
+
 	bool isBagOpend;
 	[SerializeField] Button hideUIButton;
 	[SerializeField] Image photoContent;
 
 	[SerializeField] FicheTemplate ficheTemplate;
+
+	[SerializeField] GetItemScreen getItemScreen;
 
 	[SerializeField] [EventRef] string SoundOpenInventory;
 	[SerializeField] [EventRef] string soundCloseInventory;
@@ -28,6 +34,7 @@ public class UIPlayer : MonoBehaviour
 		inventory.Init();
 		CloseFicheTemplate();
 		HidePhoto();
+		OnClickCloseGetItemScreen();
 
 		ficheTemplate.onClose += () => ShowBlackFilter(false);
 	}
@@ -40,6 +47,8 @@ public class UIPlayer : MonoBehaviour
 
 	public void OpenInventory(bool b)
 	{
+		imgInventory.sprite = b ? spriteInventoryOpen : spriteInventoryClose;
+
 		inventory.Show(isBagOpend);
 		PlaySound(isBagOpend ? SoundOpenInventory : soundCloseInventory);
 	}
@@ -74,11 +83,15 @@ public class UIPlayer : MonoBehaviour
 		FMODUnity.RuntimeManager.PlayOneShot(path);
 	}
 
-	public void OpenFicheTemplate(InventoryItemInfoObject item, InfoItemBouton sceneItem, bool canAddToinventory,
-	StudioEventEmitter emitter = null, Dictionary<string, System.Action> customActions = null)
+	public void OpenFicheTemplate(ItemInfoObject item, StudioEventEmitter emitter = null)
 	{
 		ShowBlackFilter(true);
-		ficheTemplate.Open(item, sceneItem, canAddToinventory, emitter, customActions);
+		ficheTemplate.Open(item, emitter);
+	}
+
+	public void SetFicheTemplateCustomAction(Sprite sprite, System.Action action)
+	{
+		ficheTemplate.SetCustomAction(sprite, action);
 	}
 
 	public void CloseFicheTemplate()
@@ -102,6 +115,19 @@ public class UIPlayer : MonoBehaviour
 		hideUIButton.onClick.RemoveAllListeners();
 
 		photoContent.gameObject.SetActive(false);
+	}
+
+	public void GetItem(ItemInfoObject itemInfo)
+	{
+		getItemScreen.Open(itemInfo.imageInventory, itemInfo.name);
+		ShowBlackFilter(true);
+		inventory.Add(itemInfo);
+	}
+
+	public void OnClickCloseGetItemScreen()
+	{
+		getItemScreen.Close();
+		ShowBlackFilter(false);
 	}
 
 	void ShowBlackFilter(bool show)

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-[CreateAssetMenu(fileName = "NewInventoryItem", menuName = "Inventory Item Info")]
-public class InventoryItemInfoObject : ScriptableObject
+[CreateAssetMenu(fileName = "NewItemInfo", menuName = "Item Info")]
+public class ItemInfoObject : ScriptableObject
 {
 	public string Id = "";
 	public string name = "New item";
 	public InventoryItemType itemType;
 
-	[FormerlySerializedAs("icon")] public Sprite imageInventory = null;
+	public Sprite imageInventory;
 	[FormerlySerializedAs("image")] public Sprite imageResume = null;
 	[FormerlySerializedAs("photo")] public Sprite imageWIKI = null;
 
