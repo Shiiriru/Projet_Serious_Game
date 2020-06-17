@@ -36,6 +36,7 @@ MonoBehaviour:
   - {fileID: 114593880930906600}
   - {fileID: 114599755178817316}
   - {fileID: 0}
+  - {fileID: 114284158097132946}
   variableSource: {fileID: 114735846283954992}
 --- !u!114 &114003861249723866
 MonoBehaviour:
@@ -85,10 +86,8 @@ MonoBehaviour:
   characterName: 
   text: "Malgr\xE9 tout, je ne peux m'emp\xEAcher de penser \xE0 l'avant. D\xE9but
     1914. Je vivais la belle vie. Fort de mes 24 ans, nouveau venu dans les rangs
-    des estim\xE9s professeurs, tout me souriait. Je voyais la vie avec entrain et
-    f\xE9licit\xE9 et c'est toujours le cas ! La guerre ne faisait juste pas partie
-    de mon plan de carri\xE8re. Ce si\xE8cle va vite, trop vite peut-\xEAtre ? Il
-    est prometteur \xE0 n'en pas douter, mais qui sait ce qui nous attend."
+    des professeurs, tout me souriait. Je voyais la vie avec entrain et f\xE9licit\xE9.
+    La guerre ne faisait juste pas partie de mon plan de carri\xE8re. "
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -247,7 +246,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 360, y: 184}
+  position: {x: 424, y: 200}
   ports:
     keys:
     - input
@@ -299,7 +298,7 @@ MonoBehaviour:
   m_Name: Change scene
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 776, y: 328}
+  position: {x: 840, y: 344}
   ports:
     keys:
     - input
@@ -331,6 +330,60 @@ MonoBehaviour:
   scene: {fileID: 102900000, guid: 066a278ebcef6cb4c9da7ac79c68d47c, type: 3}
   duration: 2
   dateInfos: {fileID: 11400000, guid: df167f58f068fe34296427360892cf80, type: 2}
+--- !u!114 &114284158097132946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1016, y: 376}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114284158097132946}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114336470798916672}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114284158097132946}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114599755178817316}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  characterName: 
+  text: "De simple instituteur dans un petit village de la Marne, je deviens soudain
+    soldat d'infanterie, dr\xF4le de reconversion. Mais il faut des cadres pour g\xE9rer
+    tout ce petit monde. Alors qui de mieux qu'un instit pour mener ce petit monde
+    \xE0 la baguette ? Apr\xE8s tout, soldats ou \xE9l\xE8ves, je suppose que c'est
+    du pareil au m\xEAme."
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
 --- !u!114 &114336470798916672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,7 +397,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1048, y: 216}
+  position: {x: -1016, y: 104}
   ports:
     keys:
     - input
@@ -368,7 +421,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114599755178817316}
+        node: {fileID: 114284158097132946}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -377,11 +430,9 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   characterName: 
-  text: "De simple instituteur dans un petit village de la Marne, je deviens soudain
-    soldat d'infanterie, dr\xF4le de reconversion. Mais il faut des cadres pour g\xE9rer
-    tout ce petit monde. Alors qui de mieux qu'un instit pour mener ce petit monde
-    \xE0 la baguette ? Apr\xE8s tout, soldats ou \xE9l\xE8ves, je suppose que c'est
-    du pareil au m\xEAme."
+  text: "Je pensais que ce si\xE8cle serait celui des merveilles et des progr\xE8s
+    techniques. Cependant, ce si\xE8cle va vite, trop vite peut-\xEAtre ? Il est prometteur
+    \xE0 n'en pas douter, mais qui sait ce qui nous attend."
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -481,11 +532,10 @@ MonoBehaviour:
   output: {fileID: 0}
   characterName: 
   text: "Du jour au lendemain, les hommes, entre 20 \xE0 45 ans, ont tout abandonn\xE9s.
-    Moi aussi d'ailleurs. Nous sommes partis, la fleur au fusil, par devoir et emplis
-    de la certitude de revenir. Une guerre rapide qu'ils disent. Nous verrons bien.
-    Pourtant, au fond de moi, je sens quelque chose. Comme une inqui\xE8tude sourde.
-    Mais peut-\xEAtre que je me fais des films. Apr\xE8s tout, qui suis-je pour douter
-    ?"
+    Nous sommes partis, la fleur au fusil, par devoir et emplis de la certitude de
+    revenir. Une guerre rapide qu'ils disent. Nous verrons bien. Pourtant, au fond
+    de moi, je sens comme une inqui\xE8tude sourde. Mais peut-\xEAtre que je me fais
+    des films. Apr\xE8s tout, qui suis-je pour douter ?"
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -547,7 +597,7 @@ MonoBehaviour:
   m_Name: Hide Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 88, y: 296}
+  position: {x: 152, y: 312}
   ports:
     keys:
     - input
@@ -694,7 +744,7 @@ MonoBehaviour:
   m_Name: Hide Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 728, y: 216}
+  position: {x: 792, y: 232}
   ports:
     keys:
     - input
@@ -741,7 +791,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -664, y: 360}
+  position: {x: -600, y: 376}
   ports:
     keys:
     - input
@@ -794,7 +844,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -680, y: 104}
+  position: {x: -600, y: 104}
   ports:
     keys:
     - input
@@ -806,7 +856,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114336470798916672}
+        node: {fileID: 114284158097132946}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -860,7 +910,7 @@ MonoBehaviour:
   m_Name: CG out
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 88, y: 168}
+  position: {x: 152, y: 184}
   ports:
     keys:
     - input
@@ -1195,7 +1245,7 @@ MonoBehaviour:
   m_Name: Branchs
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -280, y: 120}
+  position: {x: -216, y: 136}
   ports:
     keys:
     - bInput0

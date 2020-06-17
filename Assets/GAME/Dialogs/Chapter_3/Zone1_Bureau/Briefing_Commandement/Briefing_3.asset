@@ -240,7 +240,7 @@ MonoBehaviour:
     au combat lui a valu la Croix de Guerre. Ca devrait aider \xE0 le requinquer."
   disableScene: 1
   displayAll: 0
-  displaySpeed: 3
+  displaySpeed: 1
 --- !u!114 &114477733181754912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,7 +339,7 @@ MonoBehaviour:
   text: "Nous comptons sur vous, ne l\xE2chez rien, c'est bientot fini."
   disableScene: 1
   displayAll: 0
-  displaySpeed: 3
+  displaySpeed: 1
 --- !u!114 &114677274199510180
 MonoBehaviour:
   m_ObjectHideFlags: 0
