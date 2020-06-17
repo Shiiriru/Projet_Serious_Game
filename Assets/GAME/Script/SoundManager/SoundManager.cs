@@ -26,10 +26,4 @@ public class SoundManager : MonoBehaviour
     [EventRef] public String WatchEvent = "";
     [EventRef] public String CardGameEvent = "";
     [EventRef] public String TrenchThemeEvent = "";
-
-    public void PlayOneShot()
-    {
-        //FMODUnity.RuntimeManager.PlayOneShot();
-    }
-
 }

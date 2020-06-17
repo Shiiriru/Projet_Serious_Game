@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,8 @@ public class DatePanel : MonoBehaviour
 
 	public Coroutine launchCoroutine { get; private set; }
 
+	[EventRef] public string launchEvt = "";
+
 	private void Awake()
 	{
 		canvasGroup = GetComponent<CanvasGroup>();
@@ -29,6 +32,7 @@ public class DatePanel : MonoBehaviour
 
 		StopAllCoroutines();
 		launchCoroutine = StartCoroutine(LaunchCorutine(time));
+		SoundPlayer.PlayOneShot(launchEvt);
 	}
 
 	IEnumerator LaunchCorutine(float displayTime)

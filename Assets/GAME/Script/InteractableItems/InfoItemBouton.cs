@@ -13,6 +13,6 @@ public class InfoItemBouton : ButtonBase
 	{
 		base.OnClickButton(); //fonction basique + fonction particulière
 
-		uiMain.OpenFicheTemplate(Infoitem, soundEmitter);
+		uiMain.OpenFicheTemplate(Infoitem);
 	}
 }

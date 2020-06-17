@@ -1,8 +1,5 @@
 ﻿using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
@@ -11,6 +8,7 @@ public class FicheTemplateButton : MonoBehaviour
 	protected Button button;
 	protected RectTransform rectTransform;
 
+	[SerializeField] [FMODUnity.EventRef] string onClickSound;
 	[SerializeField] Color onSelectedColor;
 	[SerializeField] protected Image imgIcon;
 	public Image ImageIcon { get { return imgIcon; } }
@@ -49,6 +47,7 @@ public class FicheTemplateButton : MonoBehaviour
 		rectTransform.DOAnchorPos(new Vector2(selected ? 0 : -15, defaultYPos), 0.15f);
 		button.Select();
 
+		SoundPlayer.PlayOneShot(onClickSound);
 		button.image.DOColor(selected ? onSelectedColor : Color.white, 0.15f);
 	}
 }

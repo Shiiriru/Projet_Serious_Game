@@ -9,7 +9,7 @@ public class ButtonBase : MonoBehaviour
 {
 	public event System.Action onCheckedAction;
 
-	[SerializeField] protected StudioEventEmitter soundEmitter;
+	[SerializeField] [EventRef] protected string soundEvt;
 
 	protected Button button;
 	protected UIMain uiMain;
@@ -25,6 +25,8 @@ public class ButtonBase : MonoBehaviour
 
 	public virtual void OnClickButton()
 	{
+		if(!string.IsNullOrEmpty(soundEvt))
+			SoundPlayer.PlayOneShot(soundEvt);
 		OnChecked();
 	}
 

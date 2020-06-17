@@ -8,8 +8,6 @@ using UnityEngine.UI;
 
 public class FicheTemplate : MonoBehaviour
 {
-	StudioEventEmitter soundEmitter;
-
 	[SerializeField] Text textTitle;
 	[SerializeField] Image imgPhoto;
 
@@ -41,20 +39,12 @@ public class FicheTemplate : MonoBehaviour
 	}
 
 	//(Je récupère toutes les valeurs lié à item et je récupère la valeur du bool, j'indique ici les éléments que je souhaite envoyer. Tout ce qui est entre parenthèse sont mes variables en local)
-	public void Open(ItemInfoObject item, bool canAddToinventory, StudioEventEmitter emitter = null)
+	public void Open(ItemInfoObject item)
 	{
 		Show(true);
 
 		textTitle.text = item.name;
 		targetInfoItem = item;
-
-		soundEmitter = emitter;
-		if (soundEmitter != null)
-		{
-			try
-			{ soundEmitter.Play(); }
-			catch { }
-		}
 
 		resumeButton.ImageIcon.sprite = item.imageResume;
 
@@ -63,7 +53,8 @@ public class FicheTemplate : MonoBehaviour
 			if (b != customActionButton)
 				b.Show(true);
 		}
-		resumeButton.OnSelected(true);
+
+		SelecteButton(resumeButton);
 
 		OnClickShowResume();
 	}
@@ -112,12 +103,6 @@ public class FicheTemplate : MonoBehaviour
 
 		if (onClose != null)
 			onClose();
-
-		if (soundEmitter != null)
-		{
-			try { soundEmitter.Stop(); }
-			catch { }
-		}
 	}
 
 	void Show(bool isShow)

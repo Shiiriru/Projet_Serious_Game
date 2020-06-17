@@ -14,12 +14,13 @@ public class ButtonTelephone : InfoItemBouton
 	public override void OnClickButton()
 	{
 		OnChecked();
+		SoundPlayer.PlayOneShot(soundEvt);
 
 		if (!sceneBereaux.IsCommandantCalled)
 			sceneBereaux.AnswerCommandant();
 		else
 		{
-			uiMain.OpenFicheTemplate(Infoitem, soundEmitter);
+			uiMain.OpenFicheTemplate(Infoitem);
 			uiMain.SetFicheTemplateCustomAction(customActionSprite, CallPhone);
 		}
 	}

@@ -11,14 +11,13 @@ public class ButtonMap : InfoItemBouton
 	{
 		OnChecked();
 
-		uiMain.OpenFicheTemplate(Infoitem, soundEmitter);
+		SoundPlayer.PlayOneShot(soundEvt);
+		uiMain.OpenFicheTemplate(Infoitem);
 		uiMain.SetFicheTemplateCustomAction(customActionSprite, DeployMap);
-		//ButtonDeployMap.SetActive(true);
 	}
 
 	public void DeployMap()
 	{
-		//uiMain.CloseFicheTemplate();
 		mapGame.Show(true);
 	}
 }

@@ -1,4 +1,6 @@
 ﻿using DialogSystem;
+using FMOD.Studio;
+using FMODUnity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,6 +24,11 @@ public class SceneBureauxManager : MonoBehaviour
 
 	[SerializeField] GameObject photoWall;
 
+	EventInstance phoneRingInstance;
+	[SerializeField] [EventRef] string phoneRingEvent;
+
+	[SerializeField] [EventRef] string ambianceEvent;
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -43,12 +50,16 @@ public class SceneBureauxManager : MonoBehaviour
 
 	IEnumerator CommandantCallCoroutine()
 	{
+		yield return new WaitForSeconds(0.1f);
+		uiMain.Ambiance.Play(ambianceEvent);
 		yield return new WaitForSeconds(0.5f);
-		//play sound
+		phoneRingInstance.PlayEvent(phoneRingEvent);
 	}
 
 	public void AnswerCommandant()
 	{
+		phoneRingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
 		DialogPlayerHelper.SetDialog(commandantDialog);
 		IsCommandantCalled = true;
 		hideOtherInterctableFilter.SetActive(false);

@@ -22,9 +22,10 @@ public class UIPlayer : MonoBehaviour
 
 	[SerializeField] GetItemScreen getItemScreen;
 
-	[SerializeField] [EventRef] string SoundOpenInventory;
-	[SerializeField] [EventRef] string soundCloseInventory;
-	[SerializeField] [EventRef] string soundOpenNote;
+	[SerializeField] [EventRef] string openInventoryEvt = "";
+	[SerializeField] [EventRef] string closeInventoryEvt = "";
+	[SerializeField] [EventRef] string putInInventoryEvt = "";
+	[SerializeField] [EventRef] string noteEvt = "";
 
 	Animator animator;
 
@@ -50,7 +51,7 @@ public class UIPlayer : MonoBehaviour
 		imgInventory.sprite = b ? spriteInventoryOpen : spriteInventoryClose;
 
 		inventory.Show(isBagOpend);
-		PlaySound(isBagOpend ? SoundOpenInventory : soundCloseInventory);
+		SoundPlayer.PlayOneShot(isBagOpend ? openInventoryEvt : closeInventoryEvt);
 	}
 
 	//public void DeployObjectNote()
@@ -78,15 +79,10 @@ public class UIPlayer : MonoBehaviour
 		}
 	}
 
-	void PlaySound(string path)
-	{
-		FMODUnity.RuntimeManager.PlayOneShot(path);
-	}
-
-	public void OpenFicheTemplate(ItemInfoObject item, StudioEventEmitter emitter = null)
+	public void OpenFicheTemplate(ItemInfoObject item)
 	{
 		ShowBlackFilter(true);
-		ficheTemplate.Open(item, emitter);
+		ficheTemplate.Open(item);
 	}
 
 	public void SetFicheTemplateCustomAction(Sprite sprite, System.Action action)
@@ -117,11 +113,13 @@ public class UIPlayer : MonoBehaviour
 		photoContent.gameObject.SetActive(false);
 	}
 
-	public void GetItem(ItemInfoObject itemInfo)
+	public void AddItemToInventory(ItemInfoObject itemInfo)
 	{
 		getItemScreen.Open(itemInfo.imageInventory, itemInfo.name);
 		ShowBlackFilter(true);
 		inventory.Add(itemInfo);
+
+		SoundPlayer.PlayOneShot(putInInventoryEvt);
 	}
 
 	public void OnClickCloseGetItemScreen()

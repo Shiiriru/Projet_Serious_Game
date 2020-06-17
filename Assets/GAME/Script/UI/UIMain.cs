@@ -16,8 +16,13 @@ public class UIMain : MonoBehaviour
 	[SerializeField] UIPlayer uiPlayer;
 	public UIPlayer UIPlayer { get { return uiPlayer; } }
 
-	[SerializeField] [EventRef] string soundSwithScene;
+	[EventRef] public string ChangeChapterEvt = "";
+	[EventRef] public string EndChapterEvt = "";
+
 	public event System.Action onChangeSceneFinished;
+
+	[SerializeField] AmbianceSound ambiance;
+	public AmbianceSound Ambiance { get { return ambiance; } }
 
 	private void Awake()
 	{
@@ -46,6 +51,7 @@ public class UIMain : MonoBehaviour
 		foregourndBg.DOColor(Color.black, 0.8f);
 		yield return new WaitWhile(() => DOTween.IsTweening(foregourndBg));
 
+		ambiance.Stop(true);
 		yield return new WaitForSeconds(0.5f);
 		SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
 		if (dateInfos != null)
@@ -73,9 +79,9 @@ public class UIMain : MonoBehaviour
 		uiPlayer.Show(show);
 	}
 
-	public void OpenFicheTemplate(ItemInfoObject item, StudioEventEmitter emitter = null)
+	public void OpenFicheTemplate(ItemInfoObject item)
 	{
-		uiPlayer.OpenFicheTemplate(item, emitter);
+		uiPlayer.OpenFicheTemplate(item);
 	}
 
 	public void SetFicheTemplateCustomAction(Sprite sprite, System.Action action)
@@ -90,6 +96,6 @@ public class UIMain : MonoBehaviour
 
 	public void AddToInventoryScreen(ItemInfoObject itemInfo)
 	{
-		uiPlayer.GetItem(itemInfo);
+		uiPlayer.AddItemToInventory(itemInfo);
 	}
 }
