@@ -3007,7 +3007,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000011442134}
+  m_AnchoredPosition: {x: 0, y: -0.00001294233}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &5084050110506612009
@@ -4530,24 +4530,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3dbf48104a9e948864ebb6ac6d2dfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OpenInventoryEvent: event:/Son_Systeme/S_Interaction_Inventaire_Open
-  CloseInventoryEvent: event:/Son_Systeme/S_Interaction_Inventaire_Close
-  PutInInventoryEvent: "event:/Son_Systeme/S_Int\xE9gration_Objet_Inventaire"
-  NoteEvent: event:/Son_Systeme/S_Interaction_Carnet
-  TelephoneEvent: event:/Scene_1_Bureau/01_Sons_Objets/SA_Telephone_Decroche
-  ShowPanelInfoEvent: event:/Son_Systeme/S_Affichage_EcranDate
-  ChangeChapter: event:/Son_Systeme/S_Transition_Chapitre
-  EndChapter: event:/Son_Systeme/S_Fin_Chapitre
-  TelephoneRingEvent: event:/Scene_1_Bureau/01_Sons_Objets/SA_Telephone_Sonne
-  DocEvent: event:/Scene_1_Bureau/01_Sons_Objets/SA_Consultant_Doc
-  PaperEvent: event:/Scene_1_Bureau/01_Sons_Objets/SA_Consultant_Journal
-  RapportEvent: event:/Scene_1_Bureau/01_Sons_Objets/SA_2-3_Ecrit_Rapport
-  OfficeThemeEvent: event:/Scene_1_Bureau/02_Ambiance/S1_AmbianceBureau
-  MaskEvent: "event:/Scene_2_Tranch\xE9e/01_Sons_Objets/SB_1-2_Masque_Gaz"
-  BirdEvent: "event:/Scene_2_Tranch\xE9e/01_Sons_Objets/SB_1-3_Oiseau"
-  WatchEvent: "event:/Scene_2_Tranch\xE9e/01_Sons_Objets/SB_1-3_Montre"
-  CardGameEvent: "event:/Scene_2_Tranch\xE9e/01_Sons_Objets/SB_1-3_Montre"
-  TrenchThemeEvent: "event:/Scene_2_Tranch\xE9e/03_Ambiance/SB_1_Ambiance_Tranch\xE9e"
+  OpenInventoryEvent: event:/01_Son_Systeme/S_Interaction_Inventaire_Open
+  CloseInventoryEvent: event:/01_Son_Systeme/S_Interaction_Inventaire_Close
+  PutInInventoryEvent: "event:/01_Son_Systeme/S_Int\xE9gration_Objet_Inventaire"
+  NoteEvent: event:/01_Son_Systeme/S_Interaction_Carnet
+  TelephoneEvent: event:/03_Scene1_Bureau/01_Sons_Objets/SA_Telephone_Decroche
+  ShowPanelInfoEvent: event:/01_Son_Systeme/S_Affichage_EcranDate
+  ChangeSceneEvent: event:/01_Son_Systeme/S_Transition_Zone
+  EndChapterEvent: event:/01_Son_Systeme/S_Transition_Chapitre
+  TelephoneRingEvent: event:/03_Scene1_Bureau/01_Sons_Objets/SA_Telephone_Sonne
+  DocEvent: event:/03_Scene1_Bureau/01_Sons_Objets/SA_Consultant_Doc
+  PaperEvent: event:/03_Scene1_Bureau/01_Sons_Objets/SA_Consultant_Journal
+  RapportEvent: event:/03_Scene1_Bureau/01_Sons_Objets/SA_2-3_Ecrit_Rapport
+  OfficeThemeEvent: event:/03_Scene1_Bureau/02_Ambiance/S1_AmbianceBureau
+  MaskEvent: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_1-2_Masque_Gaz"
+  BirdEvent: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_1-3_Oiseau"
+  WatchEvent: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_1-3_Montre"
+  CardGameEvent: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_1_Jeu_Carte"
+  GazWarningEvent: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_2_Alarme_Gaz"
+  GazEvent: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_2_Event_Attaque_Gaz"
+  TrenchThemeEvent1: "event:/04_Scene2_Tranch\xE9e/04_Ambiance/SB_1_Ambiance_Tranch\xE9e"
+  TrenchThemeEvent2: "event:/04_Scene2_Tranch\xE9e/04_Ambiance/SB_2_Ambiance_Tranch\xE9e"
+  TrenchThemeEvent3: "event:/04_Scene2_Tranch\xE9e/04_Ambiance/SB_3_Ambiance_Tranch\xE9e"
+  SoldierInteractionEvent: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Interaction/SB_Soldat_Interaction_Ensemble"
+  SoldierValidationEvent: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Acceptation/SB_Soldat_Acceptation_Ensemble"
+  SoldierRefuseEvent: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Refus"
+  SoldierExclamationEvent: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Acceptation/SB_Soldat_Acceptation_Ensemble"
+  SoldierSleepingEvent: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_1_Soldat_Endormi"
+  SoldierWoundedEvent: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat-Blessure/SB_3_Soldat_Blessure_Ensemble"
+  SoldierSongEvent: "event:/04_Scene2_Tranch\xE9e/03_Chant/SB_3_Chant_Craonne"
+  DeadByBulletEvent: event:/05_Scene_Fin du jeu/S_FJ_Tir Final
+  BattlefieldThemeEvent: event:/05_Scene_Fin du jeu/S_FJ_Champ de bataille
+  EndGameThemeEvent: event:/05_Scene_Fin du jeu/S_FJ_Chant Final
 --- !u!114 &644869947149214597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5296,11 +5310,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8414389623538424297}
     m_Modifications:
-    - target: {fileID: 7464724942039022928, guid: bc96c14356a51424788a191300cd325a,
-        type: 3}
-      propertyPath: m_Name
-      value: ItemSlot (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 4001784608801943964, guid: bc96c14356a51424788a191300cd325a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5406,6 +5415,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7464724942039022928, guid: bc96c14356a51424788a191300cd325a,
+        type: 3}
+      propertyPath: m_Name
+      value: ItemSlot (5)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc96c14356a51424788a191300cd325a, type: 3}
 --- !u!224 &2422633853993798826 stripped
@@ -5433,11 +5447,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8414389623538424297}
     m_Modifications:
-    - target: {fileID: 7464724942039022928, guid: bc96c14356a51424788a191300cd325a,
-        type: 3}
-      propertyPath: m_Name
-      value: ItemSlot (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 4001784608801943964, guid: bc96c14356a51424788a191300cd325a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5543,6 +5552,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7464724942039022928, guid: bc96c14356a51424788a191300cd325a,
+        type: 3}
+      propertyPath: m_Name
+      value: ItemSlot (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 755419860214007632, guid: bc96c14356a51424788a191300cd325a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -5575,11 +5589,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8414389623538424297}
     m_Modifications:
-    - target: {fileID: 7464724942039022928, guid: bc96c14356a51424788a191300cd325a,
-        type: 3}
-      propertyPath: m_Name
-      value: ItemSlot (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 4001784608801943964, guid: bc96c14356a51424788a191300cd325a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5685,6 +5694,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7464724942039022928, guid: bc96c14356a51424788a191300cd325a,
+        type: 3}
+      propertyPath: m_Name
+      value: ItemSlot (6)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc96c14356a51424788a191300cd325a, type: 3}
 --- !u!224 &1372253361336489938 stripped
@@ -5712,11 +5726,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8414389623538424297}
     m_Modifications:
-    - target: {fileID: 7464724942039022928, guid: bc96c14356a51424788a191300cd325a,
-        type: 3}
-      propertyPath: m_Name
-      value: ItemSlot (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 4001784608801943964, guid: bc96c14356a51424788a191300cd325a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5822,6 +5831,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7464724942039022928, guid: bc96c14356a51424788a191300cd325a,
+        type: 3}
+      propertyPath: m_Name
+      value: ItemSlot (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 755419860214007632, guid: bc96c14356a51424788a191300cd325a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -5854,11 +5868,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8414389623538424297}
     m_Modifications:
-    - target: {fileID: 7464724942039022928, guid: bc96c14356a51424788a191300cd325a,
-        type: 3}
-      propertyPath: m_Name
-      value: ItemSlot (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 4001784608801943964, guid: bc96c14356a51424788a191300cd325a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5964,6 +5973,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7464724942039022928, guid: bc96c14356a51424788a191300cd325a,
+        type: 3}
+      propertyPath: m_Name
+      value: ItemSlot (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 755419860214007632, guid: bc96c14356a51424788a191300cd325a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -5996,11 +6010,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8414389623538424297}
     m_Modifications:
-    - target: {fileID: 7464724942039022928, guid: bc96c14356a51424788a191300cd325a,
-        type: 3}
-      propertyPath: m_Name
-      value: ItemSlot (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 4001784608801943964, guid: bc96c14356a51424788a191300cd325a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6106,6 +6115,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7464724942039022928, guid: bc96c14356a51424788a191300cd325a,
+        type: 3}
+      propertyPath: m_Name
+      value: ItemSlot (7)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc96c14356a51424788a191300cd325a, type: 3}
 --- !u!224 &5779175312800695627 stripped
@@ -6133,11 +6147,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8414389623538424297}
     m_Modifications:
-    - target: {fileID: 7464724942039022928, guid: bc96c14356a51424788a191300cd325a,
-        type: 3}
-      propertyPath: m_Name
-      value: ItemSlot (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 4001784608801943964, guid: bc96c14356a51424788a191300cd325a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6242,6 +6251,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464724942039022928, guid: bc96c14356a51424788a191300cd325a,
+        type: 3}
+      propertyPath: m_Name
+      value: ItemSlot (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc96c14356a51424788a191300cd325a, type: 3}
