@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class BlackJack : MonoBehaviour
+public class BlackJack : MiniGameBase
 {
 	Animator animator;
 
@@ -22,18 +22,16 @@ public class BlackJack : MonoBehaviour
 
 	[SerializeField] GameObject buttonFinish;
 
-	bool gameFinished;
-	public event System.Action onGameFinished;
+
 
 	private void Awake()
 	{
 		animator = GetComponent<Animator>();
 	}
 
-	public void LaunchGame()
+	public override void Launch()
 	{
-		gameFinished = false;
-		gameObject.SetActive(true);
+		base.Launch();
 
 		foreach (var c in shownCardList)
 			c.Destroy();
@@ -48,13 +46,6 @@ public class BlackJack : MonoBehaviour
 
 		animator.SetBool("show_buttons", true);
 		StartCoroutine(LaunchGameCoroutine());
-	}
-
-	public void OnClickCloseGame()
-	{
-		if (onGameFinished != null)
-			onGameFinished();
-		gameObject.SetActive(false);
 	}
 
 	IEnumerator LaunchGameCoroutine()
@@ -132,7 +123,7 @@ public class BlackJack : MonoBehaviour
 	{
 		var totalPoints = GetPoints(cards);
 		if (totalPoints >= 21)
-			OnClickEndGame();
+			FnishGame();
 	}
 
 	void AIHitCard()
@@ -154,14 +145,14 @@ public class BlackJack : MonoBehaviour
 			AddCard(false, false);
 	}
 
-	public void OnClickEndGame()
+	public override void FnishGame()
 	{
 		if (gameFinished)
 			return;
-		gameFinished = true;
-		animator.SetBool("show_buttons", false);
 
+		animator.SetBool("show_buttons", false);
 		StartCoroutine(EndGameCoroutine());
+		base.FnishGame();
 	}
 
 	IEnumerator EndGameCoroutine()
@@ -203,5 +194,10 @@ public class BlackJack : MonoBehaviour
 
 		yield return new WaitForSeconds(2);
 		buttonFinish.SetActive(true);
+	}
+
+	public void OnClickClose()
+	{
+		gameObject.SetActive(false);
 	}
 }

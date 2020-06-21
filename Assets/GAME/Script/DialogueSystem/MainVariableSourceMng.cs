@@ -9,6 +9,8 @@ public class MainVariableSourceMng : VariableSourceManager, IMainVariableSource
 {
 	public MainVariableSource source = new MainVariableSource();
 
+	[SerializeField] InventoryScript inventory;
+
 	#region Values function
 	public override FieldInfo[] GetSourceFieldInfo()
 	{
@@ -48,14 +50,15 @@ public class MainVariableSourceMng : VariableSourceManager, IMainVariableSource
 	}
 	#endregion
 
-	public void OnBordingSelectPhotoFace(int index)
+	public void OnBordingSelectPhotoFace(bool smile)
 	{
-		FindObjectOfType<OnBoardingMain>().ShowPhoto(index);
+		FindObjectOfType<OnBoardingMain>().ShowPhoto(smile);
+		source.isPhotoSmile = smile;
 	}
 
 	public void LaunchGameSpotGerman()
 	{
-
+		FindObjectOfType<TrencheMain>().LaunchSpotGerman();
 	}
 
 	public void LaunchCardGame()
@@ -68,13 +71,21 @@ public class MainVariableSourceMng : VariableSourceManager, IMainVariableSource
 		FindObjectOfType<TrencheMain>().LootWatch();
 	}
 
-	public void LaunchEndChapter()
-	{
-
-	}
-
 	public void LootMask()
 	{
+		FindObjectOfType<TrencheMain>().LootMask();
+		source.MaskChecked = true;
+	}
 
+	public void SendLetter(int chapter)
+	{
+		source.letterSent = true;
+		source.LetterChecked = false;
+		inventory.Remove("informationLetter_" + chapter);
+	}
+
+	public void LoseInventoryObject(string id)
+	{
+		inventory.Remove(id);
 	}
 }

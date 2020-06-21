@@ -8,6 +8,13 @@ namespace DialogSystem.Nodes
 	[NodeTint("#99ffcc")]
 	public class DialogNode : DialogNodeBase
 	{
+
+		public enum DisplaySide
+		{
+			Right,
+			Left	
+		}
+
 		// Use this for initialization
 		protected override void Init()
 		{
@@ -15,6 +22,7 @@ namespace DialogSystem.Nodes
 			base.Init();
 		}
 
+		public DisplaySide displaySide;
 		public string characterName;
 		[TextArea] public string text;
 

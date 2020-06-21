@@ -19,6 +19,7 @@ public class UIMain : MonoBehaviour
 	[EventRef] public string ChangeChapterEvt = "";
 	[EventRef] public string EndChapterEvt = "";
 
+	public bool IsChangingScene { get; private set; }
 	public event System.Action onChangeSceneFinished;
 
 	[SerializeField] AmbianceSound ambiance;
@@ -43,6 +44,9 @@ public class UIMain : MonoBehaviour
 
 	public void ChangeScene(string sceneName, float time, DatePanelInfosObject dateInfos = null)
 	{
+		if (IsChangingScene)
+			return;
+		IsChangingScene = true;
 		StartCoroutine(ChangeSceneCoroutine(sceneName, time, dateInfos));
 	}
 
@@ -72,6 +76,8 @@ public class UIMain : MonoBehaviour
 			onChangeSceneFinished();
 			onChangeSceneFinished = null;
 		}
+
+		IsChangingScene = false;
 	}
 
 	public void ShowPlayerUI(bool show)

@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class ButtonPhoto : ButtonBase
 {
-	UIPlayer uiPlayer;
-	[SerializeField] Sprite spritePhoto;
+	protected UIPlayer uiPlayer;
+	[SerializeField] protected Sprite spritePhoto;
 
 	private void Start()
 	{
-		uiPlayer = FindObjectOfType<UIPlayer>();
+		uiPlayer = uiMain.UIPlayer;
 		if (spritePhoto == null)
 			spritePhoto = button.image.sprite;
 	}

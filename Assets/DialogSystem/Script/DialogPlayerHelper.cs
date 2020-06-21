@@ -44,5 +44,10 @@ namespace DialogSystem
 		{
 			dialogPlayer.onDialogFinished -= action;
 		}
+
+		public static bool IsPlaying()
+		{
+			return dialogPlayer.isPLaying;
+		}
 	}
 }

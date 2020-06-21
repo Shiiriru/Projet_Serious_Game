@@ -7,6 +7,7 @@ public class GetItemScreen : MonoBehaviour
 {
 	[SerializeField] Image icon;
 	[SerializeField] Text textName;
+	[SerializeField] [FMODUnity.EventRef] string getItemEvent;
 
     public void Open(Sprite iconSprite, string name)
 	{
@@ -14,6 +15,7 @@ public class GetItemScreen : MonoBehaviour
 		textName.text = name;
 
 		gameObject.SetActive(true);
+		SoundPlayer.PlayOneShot(getItemEvent);
 	}
 
 	public void Close()

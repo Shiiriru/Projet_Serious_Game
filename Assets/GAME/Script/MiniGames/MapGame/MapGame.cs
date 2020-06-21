@@ -22,8 +22,7 @@ public class MapGame : MiniGameBase
 		}
 
 		Debug.Log("Map game complete yeah!");
-		GameComplete();
-
+		OnGameComplete();
 	}
 
 	public void OnClickClose()

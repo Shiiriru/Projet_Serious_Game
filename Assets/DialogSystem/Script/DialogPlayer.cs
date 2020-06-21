@@ -15,7 +15,7 @@ namespace DialogSystem
 
 		[SerializeField] Image blackBG;
 		[SerializeField] TextContent characterNameContent;
-		[SerializeField] TextContent dialogContent;
+		[SerializeField] DialogContent dialogContent;
 		[SerializeField] Image cgContent;
 
 		[SerializeField] Transform brancheParent;
@@ -32,7 +32,7 @@ namespace DialogSystem
 
 		public event System.Action onDialogFinished;
 
-		bool startPlayDialog;
+		public bool isPLaying { get; private set; }
 
 		Coroutine waitingCoroutine;
 
@@ -60,6 +60,8 @@ namespace DialogSystem
 
 		public void SetDialog(DialogGraph target, bool autoPlay = true)
 		{
+			if (target == null)
+				return;
 			currentDialogGraph = target;
 
 			if (autoPlay)
@@ -72,7 +74,7 @@ namespace DialogSystem
 				return;
 
 			Reset();
-			startPlayDialog = true;
+			isPLaying = true;
 			currentNode = null;
 			AutoPlayNextNode();
 		}
@@ -81,7 +83,7 @@ namespace DialogSystem
 		{
 			Reset();
 
-			startPlayDialog = false;
+			isPLaying = false;
 			uiMain.ShowPlayerUI(true);
 
 			if (onDialogFinished != null)
@@ -94,7 +96,7 @@ namespace DialogSystem
 		// Update is called once per frame
 		void Update()
 		{
-			if (!startPlayDialog)
+			if (!isPLaying)
 				return;
 
 			MouseController();
@@ -187,6 +189,7 @@ namespace DialogSystem
 				dialogContent.Show(false);
 			else
 			{
+				dialogContent.SetDisplaySide(node.displaySide);
 				dialogContent.SetDisplaySpeed(node.displaySpeed);
 				dialogContent.Show(true);
 				dialogContent.SetText(node.text, node.displayAll);

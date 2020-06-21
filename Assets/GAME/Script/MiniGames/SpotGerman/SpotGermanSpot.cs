@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpotGermanSpot : MonoBehaviour
 {
-	[SerializeField] SpotGerman gameMain;
+	[SerializeField] SpotGermanGame gameMain;
 	SpotGermanTarget targetSpoted;
 	private void Update()
 	{
@@ -13,7 +13,7 @@ public class SpotGermanSpot : MonoBehaviour
 
 		if (Input.GetMouseButtonDown(0))
 			if (targetSpoted != null)
-				gameMain.ShootTarget();
+				gameMain.FnishGame();
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)

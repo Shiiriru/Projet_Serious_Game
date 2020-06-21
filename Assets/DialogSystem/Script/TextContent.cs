@@ -9,7 +9,7 @@ namespace DialogSystem
 	[RequireComponent(typeof(CanvasGroup))]
 	public class TextContent : MonoBehaviour
 	{
-		RectTransform rectTransform;
+		protected RectTransform rectTransform;
 		CanvasGroup canvasGroup;
 		[SerializeField] Text text;
 		string targetStr;

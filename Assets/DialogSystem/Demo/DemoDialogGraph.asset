@@ -871,6 +871,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
+  displaySide: 0
   characterName: coucou
   text: longgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
     no finsh yet :)
@@ -925,6 +926,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
+  displaySide: 0
   characterName: coucou
   text: fin
   disableScene: 1
@@ -978,6 +980,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
+  displaySide: 0
   characterName: coucou
   text: toto is here coucou yolo
   disableScene: 0
@@ -1028,6 +1031,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
+  displaySide: 0
   characterName: coucou
   text: do your choice
   disableScene: 1

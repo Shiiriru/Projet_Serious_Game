@@ -8,7 +8,7 @@ public class CardPlayers : CharacterBase
 	[SerializeField] DialogGraph dialogGameResult;
 	[SerializeField] DialogGraph dialogAfterGame;
 
-	bool gameFinished;
+	static bool gameFinished;
 
 	protected override void OnClickPlayDialog()
 	{

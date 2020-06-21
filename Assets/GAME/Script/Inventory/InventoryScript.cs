@@ -6,7 +6,9 @@ using UnityEngine;
 
 public class InventoryScript : MonoBehaviour
 {
-	List<ItemInfoObject> inInventoryItems;
+	//this list show the item already added to inventory 
+	//avoid reshow the item
+	List<ItemInfoObject> addedInInventoryItems = new List<ItemInfoObject>();
 
 	[SerializeField] UIPlayer uiPlayer;
 	[SerializeField] InventorySlot[] inventorySlots;
@@ -19,7 +21,6 @@ public class InventoryScript : MonoBehaviour
 			s.Init(uiPlayer);
 
 		Show(false);
-		inInventoryItems = new List<ItemInfoObject>();
 	}
 
 	public bool Add(ItemInfoObject item)
@@ -28,7 +29,7 @@ public class InventoryScript : MonoBehaviour
 		{
 			if (slot.CanAdd(item))
 			{
-				inInventoryItems.Add(item);
+				addedInInventoryItems.Add(item);
 				slot.GetItem(item);
 
 				if (onItemChanged != null)
@@ -43,6 +44,21 @@ public class InventoryScript : MonoBehaviour
 		return false;
 	}
 
+	public void Remove(string id)
+	{
+		InventorySlot targetSlot = null;
+		foreach (var s in inventorySlots)
+		{
+			if (s.CurrrentInfoItem.Id == id)
+			{
+				targetSlot = s;
+				break;
+			}
+		}
+
+		RemoveObject(targetSlot);
+	}
+
 	public void Remove(ItemInfoObject item)
 	{
 		InventorySlot targetSlot = null;
@@ -55,10 +71,14 @@ public class InventoryScript : MonoBehaviour
 			}
 		}
 
+		RemoveObject(targetSlot);
+	}
+
+	void RemoveObject(InventorySlot targetSlot)
+	{
 		if (targetSlot == null)
 			return;
 
-		inInventoryItems.Remove(item);
 		targetSlot.LoseItem();
 
 		if (onItemChanged != null)
@@ -74,6 +94,11 @@ public class InventoryScript : MonoBehaviour
 
 	public bool CheckHasObject(string id)
 	{
-		return inInventoryItems.Any(i => i.Id == id);
+		return inventorySlots.Any(i => i.CurrrentInfoItem != null && i.CurrrentInfoItem.Id == id);
+	}
+
+	public bool AlreadyPicked(ItemInfoObject item)
+	{
+		return addedInInventoryItems.Contains(item);
 	}
 }

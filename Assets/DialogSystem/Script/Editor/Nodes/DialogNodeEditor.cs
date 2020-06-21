@@ -21,6 +21,7 @@ namespace DialogSystem.Nodes
 			DrawPorts();
 			EditorGUILayout.PropertyField(serializedObject.FindProperty("characterName"), new GUIContent("name"));
 			EditorGUILayout.PropertyField(serializedObject.FindProperty("text"));
+			EditorGUILayout.PropertyField(serializedObject.FindProperty("displaySide"));
 
 			EditorGUILayout.PropertyField(serializedObject.FindProperty("disableScene"));
 
