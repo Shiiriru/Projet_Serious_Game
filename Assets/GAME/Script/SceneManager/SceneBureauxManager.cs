@@ -70,13 +70,13 @@ public class SceneBureauxManager : SceneManagerBase
 	{
 		yield return new WaitForSeconds(0.1f);
 		uiMain.Ambiance.Play(ambianceEvent);
-		yield return new WaitForSeconds(0.5f);
-		phoneRingInstance.PlayEvent(phoneRingEvent);
+		if (!(bool)DialogPlayerHelper.VariableSourceMgr.GetValue("isCommandantCalled"))
+			phoneRingInstance.PlayEvent(phoneRingEvent);
 	}
 
 	public void AnswerCommandant()
 	{
-		phoneRingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+		phoneRingInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 
 		DialogPlayerHelper.SetOnFinishedAction(ActiveExitButton);
 		DialogPlayerHelper.VariableSourceMgr.SetValue("isCommandantCalled", true);

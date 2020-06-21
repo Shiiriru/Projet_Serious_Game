@@ -20,11 +20,8 @@ public class UIPlayer : MonoBehaviour
 
 	[SerializeField] FicheTemplate ficheTemplate;
 
-	[SerializeField] GetItemScreen getItemScreen;
-
 	[SerializeField] [EventRef] string openInventoryEvt = "";
 	[SerializeField] [EventRef] string closeInventoryEvt = "";
-	[SerializeField] [EventRef] string putInInventoryEvt = "";
 	[SerializeField] [EventRef] string noteEvt = "";
 
 	Animator animator;
@@ -35,9 +32,11 @@ public class UIPlayer : MonoBehaviour
 		inventory.Init();
 		CloseFicheTemplate();
 		HidePhoto();
-		OnClickCloseGetItemScreen();
 
 		ficheTemplate.onClose += () => ShowBlackFilter(false);
+
+		inventory.onOpen += ChangeInventoryButtonSprite;
+		inventory.onClose += ChangeInventoryButtonSprite;
 	}
 
 	public void OnClickOpenInventory()
@@ -48,10 +47,13 @@ public class UIPlayer : MonoBehaviour
 
 	public void OpenInventory(bool b)
 	{
-		imgInventory.sprite = b ? spriteInventoryOpen : spriteInventoryClose;
-
 		inventory.Show(isBagOpend);
 		SoundPlayer.PlayOneShot(isBagOpend ? openInventoryEvt : closeInventoryEvt);
+	}
+
+	void ChangeInventoryButtonSprite()
+	{
+		imgInventory.sprite = isBagOpend ? spriteInventoryOpen : spriteInventoryClose;
 	}
 
 	//public void DeployObjectNote()
@@ -111,21 +113,6 @@ public class UIPlayer : MonoBehaviour
 		hideUIButton.onClick.RemoveAllListeners();
 
 		photoContent.gameObject.SetActive(false);
-	}
-
-	public void AddItemToInventory(ItemInfoObject itemInfo)
-	{
-		getItemScreen.Open(itemInfo.imageInventory, itemInfo.name);
-		ShowBlackFilter(true);
-		inventory.Add(itemInfo);
-
-		SoundPlayer.PlayOneShot(putInInventoryEvt);
-	}
-
-	public void OnClickCloseGetItemScreen()
-	{
-		getItemScreen.Close();
-		ShowBlackFilter(false);
 	}
 
 	void ShowBlackFilter(bool show)

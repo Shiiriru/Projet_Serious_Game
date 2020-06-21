@@ -152,7 +152,7 @@ public class BlackJack : MiniGameBase
 
 		animator.SetBool("show_buttons", false);
 		StartCoroutine(EndGameCoroutine());
-		base.FnishGame();
+		gameFinished = true;
 	}
 
 	IEnumerator EndGameCoroutine()
@@ -198,6 +198,7 @@ public class BlackJack : MiniGameBase
 
 	public void OnClickClose()
 	{
+		OnGameComplete();
 		gameObject.SetActive(false);
 	}
 }

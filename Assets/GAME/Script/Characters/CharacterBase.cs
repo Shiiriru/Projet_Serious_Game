@@ -9,7 +9,7 @@ public class CharacterBase : MonoBehaviour
 {
 	[SerializeField] protected DialogGraph dialog;
 
-	private void Start()
+	protected virtual void Start()
 	{
 		GetComponent<Button>().onClick.AddListener(OnClickPlayDialog);
 	}

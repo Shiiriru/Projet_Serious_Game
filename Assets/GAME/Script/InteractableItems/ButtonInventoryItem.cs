@@ -23,7 +23,7 @@ public class ButtonInventoryItem : ButtonBase
 		if (disableObject)
 			gameObject.SetActive(false);
 
-		uiMain.AddToInventoryScreen(itemInfo);
+		uiMain.AddToInventory(itemInfo);
 		addedToInveneotry = true;
 
 		base.OnClickButton();

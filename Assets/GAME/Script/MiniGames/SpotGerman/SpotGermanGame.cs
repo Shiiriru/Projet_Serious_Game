@@ -23,12 +23,13 @@ public class SpotGermanGame : MiniGameBase
 		foundText.SetActive(true);
 
 		StartCoroutine(GameFinishCoroutine());
-		base.FnishGame();		
+		gameFinished = true;
 	}
 
 	IEnumerator GameFinishCoroutine()
 	{
 		yield return new WaitForSeconds(2f);
+		OnGameComplete();
 		gameObject.SetActive(false);
 	}
 }

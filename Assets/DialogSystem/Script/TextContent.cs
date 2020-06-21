@@ -44,14 +44,14 @@ namespace DialogSystem
 
 			if (autoHeight)
 				StartCoroutine(SetContentHeightCoroutine(str));
-
 		}
 
-		IEnumerator SetContentHeightCoroutine(string str)
+		protected virtual IEnumerator SetContentHeightCoroutine(string str)
 		{
 			textContentHeight.text = str;
 			yield return null;
-			rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, textContentHeight.rectTransform.sizeDelta.y + 50);
+			DOTween.Kill(rectTransform);
+			rectTransform.DOSizeDelta(new Vector2(rectTransform.sizeDelta.x, textContentHeight.rectTransform.sizeDelta.y + 50), 0.1f);
 		}
 
 		public void DisplayEntierStr()

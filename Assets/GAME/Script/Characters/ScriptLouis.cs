@@ -8,6 +8,14 @@ public class ScriptLouis : CharacterBase
 {
 	[SerializeField] DialogGraph dialogSpotFinish;
 
+	protected override void Start()
+	{
+		if (GameManager.chapterCount == 0 && (bool)DialogPlayerHelper.VariableSourceMgr.GetValue("louisLeave"))
+			gameObject.SetActive(false);
+
+		base.Start();
+	}
+
 	protected override void OnClickPlayDialog()
 	{
 		//must talk to louis

@@ -189,10 +189,11 @@ namespace DialogSystem
 				dialogContent.Show(false);
 			else
 			{
-				dialogContent.SetDisplaySide(node.displaySide);
 				dialogContent.SetDisplaySpeed(node.displaySpeed);
 				dialogContent.Show(true);
+
 				dialogContent.SetText(node.text, node.displayAll);
+				dialogContent.SetDisplaySide(node.displaySide);
 			}
 
 			ShowBlackBG(node.disableScene);

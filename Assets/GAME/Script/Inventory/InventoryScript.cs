@@ -13,7 +13,11 @@ public class InventoryScript : MonoBehaviour
 	[SerializeField] UIPlayer uiPlayer;
 	[SerializeField] InventorySlot[] inventorySlots;
 
+	public event System.Action<ItemInfoObject> onAddItem;
 	public event System.Action onItemChanged;
+
+	public event System.Action onOpen;
+	public event System.Action onClose;
 
 	public void Init()
 	{
@@ -32,10 +36,12 @@ public class InventoryScript : MonoBehaviour
 				addedInInventoryItems.Add(item);
 				slot.GetItem(item);
 
-				if (onItemChanged != null)
-				{
-					onItemChanged();
-				}
+				if (onAddItem != null)
+					onAddItem(item);
+
+				if (onItemChanged != null)				
+					onItemChanged();		
+				
 				return true;
 			}
 		}
@@ -89,6 +95,17 @@ public class InventoryScript : MonoBehaviour
 
 	public void Show(bool isShow)
 	{
+		if(isShow)
+		{
+			if (onOpen != null)
+				onOpen();
+		}
+		else
+		{
+			if (onClose != null)
+				onClose();
+		}
+
 		gameObject.SetActive(isShow);
 	}
 

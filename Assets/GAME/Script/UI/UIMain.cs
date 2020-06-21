@@ -25,10 +25,15 @@ public class UIMain : MonoBehaviour
 	[SerializeField] AmbianceSound ambiance;
 	public AmbianceSound Ambiance { get { return ambiance; } }
 
+	[SerializeField] GetItemScreen getItemScreen;
+
 	private void Awake()
 	{
 		canvas = GetComponent<Canvas>();
 		foregourndBg.color = Color.clear;
+
+		uiPlayer.Inventory.onAddItem += ShowGetItemScreen;
+		getItemScreen.Close();
 	}
 
 	private void OnEnable()
@@ -38,6 +43,7 @@ public class UIMain : MonoBehaviour
 
 	void OnSceneLoadGetCamera(Scene scene, LoadSceneMode mode)
 	{
+		SceneManager.SetActiveScene(scene);
 		var cam = FindObjectOfType<Camera>();
 		canvas.worldCamera = cam;
 	}
@@ -57,7 +63,9 @@ public class UIMain : MonoBehaviour
 
 		ambiance.Stop(true);
 		yield return new WaitForSeconds(0.5f);
+
 		SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+
 		if (dateInfos != null)
 		{
 			datePanel.Launch(dateInfos, time);
@@ -100,8 +108,13 @@ public class UIMain : MonoBehaviour
 		uiPlayer.CloseFicheTemplate();
 	}
 
-	public void AddToInventoryScreen(ItemInfoObject itemInfo)
+	public void AddToInventory(ItemInfoObject itemInfo)
 	{
-		uiPlayer.AddItemToInventory(itemInfo);
+		uiPlayer.Inventory.Add(itemInfo);
+	}
+
+	private void ShowGetItemScreen(ItemInfoObject itemInfo)
+	{
+		getItemScreen.Open(itemInfo.imageInventory, itemInfo.name);
 	}
 }
