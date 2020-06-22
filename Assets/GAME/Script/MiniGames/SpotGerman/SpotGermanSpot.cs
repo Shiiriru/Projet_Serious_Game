@@ -4,27 +4,17 @@ using UnityEngine;
 
 public class SpotGermanSpot : MonoBehaviour
 {
-	[SerializeField] SpotGermanGame gameMain;
-	SpotGermanTarget targetSpoted;
-	private void Update()
-	{
-		var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		transform.position = Vector2.Lerp(transform.position, mousePosition, 30 * Time.deltaTime);
-
-		if (Input.GetMouseButtonDown(0))
-			if (targetSpoted != null)
-				gameMain.FnishGame();
-	}
+	public SpotGermanTarget TargetSpoted { get; private set; }
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.GetComponent<SpotGermanTarget>() != null)
-			targetSpoted = collision.GetComponent<SpotGermanTarget>();
+			TargetSpoted = collision.GetComponent<SpotGermanTarget>();
 	}
 
 	private void OnTriggerExit2D(Collider2D collision)
 	{
 		if (collision.GetComponent<SpotGermanTarget>() != null)
-			targetSpoted = null;
+			TargetSpoted = null;
 	}
 }

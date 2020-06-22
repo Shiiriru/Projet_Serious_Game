@@ -374,7 +374,7 @@ namespace DialogSystem
 		{
 			var node = currentNode as ChangeSceneNode;
 			Reset();
-			uiMain.ChangeScene(node.scene.name, node.duration, node.dateInfos);
+			uiMain.ChangeScene(node.scene.Name, node.duration, node.dateInfos);
 		}
 
 		private void CheckConditionBranch()

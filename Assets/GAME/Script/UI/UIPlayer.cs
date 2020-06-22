@@ -29,14 +29,17 @@ public class UIPlayer : MonoBehaviour
 	private void Awake()
 	{
 		animator = GetComponent<Animator>();
-		inventory.Init();
-		CloseFicheTemplate();
-		HidePhoto();
 
 		ficheTemplate.onClose += () => ShowBlackFilter(false);
 
 		inventory.onOpen += ChangeInventoryButtonSprite;
 		inventory.onClose += ChangeInventoryButtonSprite;
+	}
+	private void Start()
+	{
+		inventory.Init();
+		CloseFicheTemplate();
+		HidePhoto();
 	}
 
 	public void OnClickOpenInventory()

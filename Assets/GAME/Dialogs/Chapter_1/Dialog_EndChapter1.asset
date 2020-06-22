@@ -94,7 +94,9 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  scene: {fileID: 102900000, guid: 066a278ebcef6cb4c9da7ac79c68d47c, type: 3}
+  scene:
+    sceneAsset: {fileID: 102900000, guid: 066a278ebcef6cb4c9da7ac79c68d47c, type: 3}
+    sceneName: 
   duration: 2
   dateInfos: {fileID: 11400000, guid: ff22d2460074bfb4f83210c41f03f6d1, type: 2}
 --- !u!114 &114392536337937070
@@ -318,7 +320,7 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: 
-  text: "\xC0 l'attaque!!!!"
+  text: "\xC0 L'ATTAQUE!!!!"
   disableScene: 1
   displayAll: 0
   displaySpeed: 2

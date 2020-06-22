@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Name: Change scene
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 856, y: 344}
+  position: {x: 984, y: 344}
   ports:
     keys:
     - input
@@ -329,7 +329,9 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  scene: {fileID: 102900000, guid: 066a278ebcef6cb4c9da7ac79c68d47c, type: 3}
+  scene:
+    sceneAsset: {fileID: 102900000, guid: 066a278ebcef6cb4c9da7ac79c68d47c, type: 3}
+    sceneName: GAME/Scenes/ScBureau
   duration: 2
   dateInfos: {fileID: 11400000, guid: df167f58f068fe34296427360892cf80, type: 2}
 --- !u!114 &114284158097132946
@@ -586,7 +588,9 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  scene: {fileID: 102900000, guid: 066a278ebcef6cb4c9da7ac79c68d47c, type: 3}
+  scene:
+    sceneAsset: {fileID: 0}
+    sceneName: 
   duration: 0
   dateInfos: {fileID: 0}
 --- !u!114 &114510399393118832

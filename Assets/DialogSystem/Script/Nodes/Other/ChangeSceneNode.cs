@@ -4,7 +4,7 @@ using UnityEditor;
 namespace DialogSystem.Nodes
 {
 	[CreateNodeMenu("Other/Change Scene")]
-	[NodeWidth(300)]
+	[NodeWidth(320)]
 	[NodeTint("#ffcc00")]
 	public class ChangeSceneNode : DialogNodeBase
 	{
@@ -15,7 +15,7 @@ namespace DialogSystem.Nodes
 			base.Init();
 		}
 
-		public SceneAsset scene;
+		public SceneReference scene;
 		public float duration;
 		public DatePanelInfosObject dateInfos;
 	}
