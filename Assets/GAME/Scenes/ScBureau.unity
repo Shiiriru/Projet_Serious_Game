@@ -1697,6 +1697,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 102900000, guid: 51608ffece53c9d4099befcae6571017,
         type: 3}
+    - target: {fileID: 1689324172802590227, guid: 3d0d288ca31490e4a8e7c80764576ea7,
+        type: 3}
+      propertyPath: sceneRef.sceneName
+      value: GAME/Scenes/ScTranchee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689324172802590227, guid: 3d0d288ca31490e4a8e7c80764576ea7,
+        type: 3}
+      propertyPath: sceneRef.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 51608ffece53c9d4099befcae6571017,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d0d288ca31490e4a8e7c80764576ea7, type: 3}
 --- !u!224 &1159135573 stripped

@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class ButtonChangeScene : ButtonBase
 {
-	[SerializeField] SceneReference scene;
+	[SerializeField] SceneReference sceneRef;
 
 	public override void OnClickButton()
 	{
 		base.OnClickButton();
-		uiMain.ChangeScene(scene.Name, 1);
+		uiMain.ChangeScene(sceneRef.Name, 1);
 	}
 }

@@ -15,9 +15,9 @@ namespace DialogSystem
 		}
 
 		// makes it work with the existing Unity methods (LoadLevel/LoadScene)
-		public static implicit operator string(SceneReference sceneField)
+		public static implicit operator string(SceneReference sceneRef)
 		{
-			return sceneField.Name;
+			return sceneRef.Name;
 		}
 	}
 }

@@ -8,7 +8,7 @@ public class SpotGermanGame : MiniGameBase
 	[SerializeField] GameObject foundText;
 	[SerializeField] SpotGermanSpot spot;
 
-	[SerializeField] Image ambiance;
+	[SerializeField] RectTransform ambianceRect;
 	[SerializeField] RectTransform canvasRect;
 	float canvasCenterX;
 
@@ -51,8 +51,14 @@ public class SpotGermanGame : MiniGameBase
 	}
 
 	void AmbianceScroll(bool left)
-	{
-		
+	{		
+		if(left)
+		{
+			//if (ambianceRect.anchoredPosition.x > 0)
+			//	ambianceRect.anchoredPosition = Vector2.Lerp(ambianceRect.anchoredPosition, ambianceRect.anchoredPosition - Vector2.left, 30 * Time.deltaTime);
+			//else
+			//	ambianceRect.anchoredPosition = new Vector2(0, ambianceRect.anchoredPosition.y);
+		}
 	}
 
 	public override void FnishGame()

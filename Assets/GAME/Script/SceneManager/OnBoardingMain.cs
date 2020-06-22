@@ -13,8 +13,6 @@ public class OnBoardingMain : MonoBehaviour
 
 	[SerializeField] DialogGraph dialogGraph;
 
-	[SerializeField] DatePanelInfosObject dateInfo;
-
 	// Start is called before the first frame update
 	void Start()
 	{
