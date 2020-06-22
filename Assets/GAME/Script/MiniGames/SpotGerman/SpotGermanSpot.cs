@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class SpotGermanSpot : MonoBehaviour
 {
-	public SpotGermanTarget TargetSpoted { get; private set; }
+	public SpotGermanTarget SpotedTarget { get; private set; }
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.GetComponent<SpotGermanTarget>() != null)
-			TargetSpoted = collision.GetComponent<SpotGermanTarget>();
+			SpotedTarget = collision.GetComponent<SpotGermanTarget>();
 	}
 
 	private void OnTriggerExit2D(Collider2D collision)
 	{
 		if (collision.GetComponent<SpotGermanTarget>() != null)
-			TargetSpoted = null;
+			SpotedTarget = null;
 	}
 }

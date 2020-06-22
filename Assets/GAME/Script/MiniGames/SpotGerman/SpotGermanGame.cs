@@ -11,11 +11,17 @@ public class SpotGermanGame : MiniGameBase
 	[SerializeField] RectTransform ambianceRect;
 	[SerializeField] RectTransform canvasRect;
 	float canvasCenterX;
+	float ambianceScrolloffsetX;
 
 	private void Awake()
 	{
 		foundText.SetActive(false);
+	}
+
+	private void Start()
+	{
 		canvasCenterX = canvasRect.sizeDelta.x / 2;
+		ambianceScrolloffsetX = (ambianceRect.sizeDelta.x - canvasRect.sizeDelta.x) / 2;
 	}
 
 	public override void Launch()
@@ -23,7 +29,7 @@ public class SpotGermanGame : MiniGameBase
 		base.Launch();
 	}
 
-	private void Update()
+	private void LateUpdate()
 	{
 		if (gameFinished)
 			return;
@@ -33,7 +39,7 @@ public class SpotGermanGame : MiniGameBase
 		ScrollMap();
 
 		if (Input.GetMouseButtonDown(0))
-			if (spot.TargetSpoted != null)
+			if (spot.SpotedTarget != null)
 				FnishGame();
 	}
 
@@ -42,23 +48,27 @@ public class SpotGermanGame : MiniGameBase
 		var point = Vector2.zero;
 		RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, Camera.main, out point);
 		var scrollOffset = canvasCenterX / 3;
+
 		//scroll left
-		if (point.x < scrollOffset)		
+		if (point.x < -scrollOffset)
 			AmbianceScroll(true);
 		//right
-		else if (point.x > canvasCenterX + scrollOffset)
+		else if (point.x > scrollOffset)
 			AmbianceScroll(false);
+		else
+			ambianceRect.anchoredPosition = ambianceRect.anchoredPosition;
 	}
 
 	void AmbianceScroll(bool left)
-	{		
-		if(left)
-		{
-			//if (ambianceRect.anchoredPosition.x > 0)
-			//	ambianceRect.anchoredPosition = Vector2.Lerp(ambianceRect.anchoredPosition, ambianceRect.anchoredPosition - Vector2.left, 30 * Time.deltaTime);
-			//else
-			//	ambianceRect.anchoredPosition = new Vector2(0, ambianceRect.anchoredPosition.y);
-		}
+	{
+		var moveSpeed = 0;
+
+		if ((left && ambianceRect.anchoredPosition.x < ambianceScrolloffsetX) ||
+			(!left && ambianceRect.anchoredPosition.x > -ambianceScrolloffsetX))
+			moveSpeed = 80;
+
+		ambianceRect.anchoredPosition =
+					Vector2.Lerp(ambianceRect.anchoredPosition, ambianceRect.anchoredPosition + (left ? Vector2.right : Vector2.left), moveSpeed * Time.deltaTime);
 	}
 
 	public override void FnishGame()
@@ -66,6 +76,8 @@ public class SpotGermanGame : MiniGameBase
 		if (gameFinished)
 			return;
 		foundText.SetActive(true);
+
+		spot.SpotedTarget.Kill();
 
 		StartCoroutine(GameFinishCoroutine());
 		gameFinished = true;
