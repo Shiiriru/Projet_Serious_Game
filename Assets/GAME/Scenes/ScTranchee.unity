@@ -2433,13 +2433,13 @@ PrefabInstance:
     - target: {fileID: 1689324172802590227, guid: 3d0d288ca31490e4a8e7c80764576ea7,
         type: 3}
       propertyPath: sceneRef.sceneName
-      value: Test_Assets/Scene_Bureaux
+      value: GAME/Scenes/ScBureau
       objectReference: {fileID: 0}
     - target: {fileID: 1689324172802590227, guid: 3d0d288ca31490e4a8e7c80764576ea7,
         type: 3}
       propertyPath: sceneRef.sceneAsset
       value: 
-      objectReference: {fileID: 102900000, guid: 7892f4c41943e3544bd419fc45de823d,
+      objectReference: {fileID: 102900000, guid: 066a278ebcef6cb4c9da7ac79c68d47c,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d0d288ca31490e4a8e7c80764576ea7, type: 3}
