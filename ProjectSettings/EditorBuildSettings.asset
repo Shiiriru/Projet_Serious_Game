@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/GAME/Scenes/ScOnbording.unity
     guid: 90b432f89d29b2741b5302744ac00fdc
   - enabled: 1
-    path: Assets/GAME/Scenes/ScBureau_1.unity
+    path: Assets/GAME/Scenes/ScBureau.unity
     guid: 066a278ebcef6cb4c9da7ac79c68d47c
   - enabled: 1
-    path: Assets/GAME/Scenes/Scene_Tranchee_1.unity
+    path: Assets/GAME/Scenes/ScTranchee.unity
     guid: 51608ffece53c9d4099befcae6571017
   m_configObjects: {}
