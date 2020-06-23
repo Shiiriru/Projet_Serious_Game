@@ -41,6 +41,7 @@ MonoBehaviour:
   - {fileID: 114439911403360272}
   - {fileID: 114262866557328528}
   - {fileID: 0}
+  - {fileID: 114024938754690320}
   variableSource: {fileID: 114573644158395328}
 --- !u!114 &114009860169979930
 MonoBehaviour:
@@ -88,10 +89,63 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   displaySide: 1
-  characterName: Capitaine Favourier
+  characterName: 
   text: "Et o\xF9 est le soldat Vernet ?!? Il \xE9tait \xE0 mes c\xF4t\xE9s il y a
     quelques secondes \xE0 peines ! Il se serait fait emport\xE9 par cette explosion
     d'obus ?"
+  showAdvance: 0
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
+  duration: 0.3
+--- !u!114 &114024938754690320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 568, y: -8}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114024938754690320}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114856910333258350}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114024938754690320}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114035374748185414}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 0
+  characterName: Louis
+  text: J'vais... essayer ... *grimace de douleur*
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -110,7 +164,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 584, y: 248}
+  position: {x: 568, y: 200}
   ports:
     keys:
     - input
@@ -122,7 +176,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114856910333258350}
+        node: {fileID: 114024938754690320}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -143,9 +197,9 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   displaySide: 1
-  characterName: Capitaine Favourier
+  characterName: 
   text: "Il faut en finir rapidement ! Je ne veux pas perdre plus de monde que \xE7a
-    pour cette derni\xE8re attaque \u2026"
+    pour cette derni\xE8re attaque !!"
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -195,7 +249,7 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: Capitaine Favourier
-  text: "Hardis les gars, rentrez leur dedans ! On va \u2026"
+  text: HARDIS LES GARS ! RENTREZ LEUR DEDANS ! ON VA ...
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -247,7 +301,7 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   displaySide: 1
-  characterName: Capitaine Favourier
+  characterName: 
   text: "Je ne peux pas m'arr\xEAter pour eux \u2026 Je dois \u2026 avancer"
   showAdvance: 0
   disableScene: 1
@@ -504,7 +558,7 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   displaySide: 1
-  characterName: Capitaine Favourier
+  characterName: 
   text: "On ne peut pas abandonner d\xE8s maintenant !"
   showAdvance: 0
   disableScene: 1
@@ -578,7 +632,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 120, y: 504}
+  position: {x: 120, y: 408}
   ports:
     keys:
     - input
@@ -612,9 +666,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Louis
-  text: "Salut Anatole \u2026 J'ai pris un prunneau dans les guiboles *Grimace de
-    douleur* Je ne peux plus trop marcher, l'assaut \xE7a va \xEAtre sans moi mon
-    grand. En esp\xE9rant qu'un obus va pas venir me cueillr dans ce maudit trou \u2026"
+  text: "ARGGG !! D\xE9sol\xE9 chef mais l'assaut \xE7a va \xEAtre sans moi, mon aventure
+    s'arr\xEAte ici ..."
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -701,7 +754,10 @@ MonoBehaviour:
       _node: {fileID: 114263330727346448}
       _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: input
+        node: {fileID: 114387362585195628}
+        reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
@@ -709,7 +765,7 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   displaySide: 1
-  characterName: Capitaine Favourier
+  characterName: 
   text: Je dois continuer, si je flanche on est foutu !
   showAdvance: 0
   disableScene: 1
@@ -751,7 +807,10 @@ MonoBehaviour:
       _node: {fileID: 114269220132841844}
       _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: input
+        node: {fileID: 114387362585195628}
+        reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
@@ -759,7 +818,7 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   displaySide: 1
-  characterName: Capitaine Favourier
+  characterName: 
   text: "On ne peut pas abandonner d\xE8s maintenant !"
   showAdvance: 0
   disableScene: 1
@@ -779,7 +838,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 120, y: 248}
+  position: {x: 120, y: 200}
   ports:
     keys:
     - input
@@ -866,7 +925,7 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   displaySide: 1
-  characterName: Capitaine Favourier
+  characterName: 
   text: "Bon sang, soldat Imany ! Il vient de s'en prendre une dans le ventre ! M\xEAme
     lui le grand noir, le grand gaillard de la compagnie, ne peut pas survivre \xE0
     cette blessure fatale."
@@ -902,6 +961,12 @@ MonoBehaviour:
       - fieldName: output
         node: {fileID: 114098380732743238}
         reroutePoints: []
+      - fieldName: output
+        node: {fileID: 114269220132841844}
+        reroutePoints: []
+      - fieldName: output
+        node: {fileID: 114263330727346448}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 1
@@ -921,7 +986,7 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   displaySide: 1
-  characterName: Capitaine Favourier
+  characterName: 
   text: "Seigneur \u2026 Tout autour de moi les soldats s'effondre, certains dans
     un cri, d'autres dans le silence ! C'est pas vrai \u2026 Ca va encore \xEAtre
     un massacre comme depuis le d\xE9but de cette fichue campagne !"
@@ -976,7 +1041,7 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   displaySide: 1
-  characterName: Capitaine Favourier
+  characterName: 
   text: Il faut continuer d'avancer vers l'ennemi et le museler le plus rapidement
     possible !
   showAdvance: 0
@@ -1062,7 +1127,7 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   displaySide: 1
-  characterName: Capitaine Favourier
+  characterName: 
   text: "D\xE9sol\xE9 les gars, je vous jure de revenir pour vous sortir de l\xE0,
     tenez bon ..."
   showAdvance: 0
@@ -1131,7 +1196,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 584, y: 504}
+  position: {x: 568, y: 408}
   ports:
     keys:
     - input
@@ -1164,7 +1229,7 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   displaySide: 1
-  characterName: Capitaine Favourier
+  characterName: 
   text: "Bon sang \xE7a devait bien se passer, on me l'avait promis et JE le leur
     avais promis ! Ils me faisaient confiance ..."
   showAdvance: 0
@@ -1230,7 +1295,7 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   displaySide: 1
-  characterName: Capitaine Favourier
+  characterName: 
   text: "Ce cri \u2026 c'est celui du petit Pierrot ! Le gamin est tomb\xE9 dans les
     barbel\xE9s, je l'entend qui appelle faiblement \xE0 l'aide, qu'on vienne le chercher
     ! Il faut que quelqu'un \u2026"
@@ -1495,7 +1560,7 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   displaySide: 1
-  characterName: Capitaine Favourier
+  characterName: 
   text: "C'est bon, la compagnie me suit toujours, bayonette au canon, criant pour
     se donner du courage ! Je ne dois pas les d\xE9cevoir et montrer l'exemple, surtout
     dans un moment pareil !"
@@ -1557,7 +1622,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: Capitaine Favourier
-  text: '*Rugit* Salopard de boches, vous allez me payer la perte de mes hommes !'
+  text: "RAAAAAAH !!\r\nSALOPARD DE BOCHES, VOUS ALLEZ ME PAYER LA PERTE DE MES HOMMES
+    !!"
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -1576,7 +1642,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 584, y: -8}
+  position: {x: 120, y: 616}
   ports:
     keys:
     - input
@@ -1600,7 +1666,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114035374748185414}
+        node: {fileID: 114024938754690320}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -1610,9 +1676,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: Capitaine Favourier
-  text: "D\xE9sol\xE9 Louis, je jure que je reviendrais le chercher plus tard, mais
-    je dois terminer cette attaque ou nous sommes tous morts ! Je \u2026 Ne m'abandonne
-    pas d'accord ?"
+  text: "NON Louis, ne dis pas \xE7a ! Je jure que je reviendrais te chercher plus
+    tard! Je \u2026 Ne m'abandonne pas d'accord ? "
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -1664,7 +1729,7 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   displaySide: 1
-  characterName: Capitaine Favourier
+  characterName: 
   text: "Oh non, le lieutenant Poux vient de s'effondrer au sol dans la boue, lui
     aussi il a \xE9t\xE9 touch\xE9 ! Son oiseau s'envole, pourvu que l'\xE2me du lieutenant
     ne soit pas partit avec."

@@ -26,7 +26,65 @@ MonoBehaviour:
   - {fileID: 114279306884062398}
   - {fileID: 114683559266700010}
   - {fileID: 0}
+  - {fileID: 114869330277325388}
+  - {fileID: 114956919139721506}
+  - {fileID: 114263952048501746}
   variableSource: {fileID: 114676213875856208}
+--- !u!114 &114263952048501746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1288, y: 168}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114263952048501746}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114956919139721506}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114263952048501746}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114279306884062398}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 1
+  characterName: 
+  text: "Et surtout, j'ai peur de mourir. Peur que ma vie soit emport\xE9e \xE0 n'importe
+    quelle heure du jour ou de la nuit, par la maladie, par les rats, par une balle
+    ou un obus ..."
+  showAdvance: 0
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114279306884062398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40,7 +98,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 872, y: 440}
+  position: {x: 1304, y: 360}
   ports:
     keys:
     - input
@@ -52,7 +110,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114683559266700010}
+        node: {fileID: 114263952048501746}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -74,8 +132,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: 
-  text: mais je ne peux pas le montrer devant les soldats. Il faut qu'ils continuent
-    de croire en moi et s'ils me voient flancher, c'est la fin.
+  text: "Mais je ne peux que les garder dans ma tete. Il faut qu'ils continuent de
+    croire en moi et s'ils me voient flancher. \rc'est la fin."
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -94,7 +152,7 @@ MonoBehaviour:
   m_Name: Delay
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1560, y: -8}
+  position: {x: 1720, y: -8}
   ports:
     keys:
     - input
@@ -140,7 +198,7 @@ MonoBehaviour:
   m_Name: Change scene
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1800, y: -8}
+  position: {x: 1960, y: -8}
   ports:
     keys:
     - input
@@ -401,7 +459,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 856, y: 200}
+  position: {x: 856, y: 168}
   ports:
     keys:
     - input
@@ -425,7 +483,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114279306884062398}
+        node: {fileID: 114869330277325388}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -489,6 +547,59 @@ MonoBehaviour:
   displaySide: 1
   characterName: 
   text: "Il faut que je rentre pour pr\xE9parer l'offensive ..."
+  showAdvance: 0
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
+  duration: 0.3
+--- !u!114 &114869330277325388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 856, y: 360}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114869330277325388}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114683559266700010}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114869330277325388}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114956919139721506}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 1
+  characterName: 
+  text: "A peine quelques mois sur le front et j'ai d\xE9sormais peur de tout ..."
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -605,6 +716,60 @@ MonoBehaviour:
   displayAll: 0
   displaySpeed: 3
   duration: 0.3
+--- !u!114 &114956919139721506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1288, y: -24}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114956919139721506}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114869330277325388}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114956919139721506}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114263952048501746}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 1
+  characterName: 
+  text: "Peur de voir des camarades mourir, peur du noir, peur d'\xEAtre bless\xE9
+    ..."
+  showAdvance: 0
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114958234655620994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,7 +783,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1272, y: 184}
+  position: {x: 1304, y: 552}
   ports:
     keys:
     - input

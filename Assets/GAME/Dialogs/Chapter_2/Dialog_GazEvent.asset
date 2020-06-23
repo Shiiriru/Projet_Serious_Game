@@ -380,8 +380,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: 
-  text: "*tousse* c'est pas vrai ... Fichu masque ! Ca filtre quasiement rien ! Je
-    dois retourner \xE0 l'abri dans mon bureau si je ne veux pas mourir !"
+  text: "*tousse* c'est pas vrai ... Fichu masque ! Ca filtre quasiement rien ! Et
+    je n'ai plus le temps de me mettre \xE0 l'abri !"
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -413,6 +413,12 @@ MonoBehaviour:
       connections:
       - fieldName: output
         node: {fileID: 114870599714457100}
+        reroutePoints: []
+      - fieldName: output
+        node: {fileID: 114964142061481670}
+        reroutePoints: []
+      - fieldName: output
+        node: {fileID: 114845290934376590}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -480,8 +486,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: 
-  text: "*tousse* c'est pas vrai ! Je dois retourner \xE0 l'abri dans mon bureau si
-    je ne veux pas mourir ici !"
+  text: "*tousse* c'est pas vrai ! Il faudrait que j'aille \xE0 l'abri mais il est
+    trop tard pour \xE7a ..."
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -610,7 +616,10 @@ MonoBehaviour:
       _node: {fileID: 114845290934376590}
       _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: input
+        node: {fileID: 114612851495439072}
+        reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
@@ -619,8 +628,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: 
-  text: "J'esp\xE8re que les sous-officiers parviendront \xE0 g\xE9rer tout \xE7a
-    sans moi, sinon, c'est la catastrophe ..."
+  text: "Si tous les sous-officiers sont dans le m\xEAme \xE9tat que moi, on court
+    \xE0 la catastrophe ..."
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -673,8 +682,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: 
-  text: "Foutu gaz .... Il ne manquait plus que \xE7a pour d\xE9cimer mes hommes !
-    *tousse*"
+  text: "Foutu pour foutu, autant mettre ce masque, m\xEAme s'il est peu pratique
+    !"
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -824,7 +833,10 @@ MonoBehaviour:
       _node: {fileID: 114964142061481670}
       _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: input
+        node: {fileID: 114612851495439072}
+        reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0

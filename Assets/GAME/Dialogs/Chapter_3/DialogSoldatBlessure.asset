@@ -27,6 +27,10 @@ MonoBehaviour:
   - {fileID: 114826478282345510}
   - {fileID: 114864506032760406}
   - {fileID: 0}
+  - {fileID: 114305111730545714}
+  - {fileID: 114671202277933388}
+  - {fileID: 114169904459698126}
+  - {fileID: 114321314960169656}
   variableSource: {fileID: 114212070592026810}
 --- !u!114 &114133149623565040
 MonoBehaviour:
@@ -75,12 +79,65 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Ferdinand
-  text: "On en peut plus capitaine ! Vous nous entendez ? Certains d'entre nous sont
-    l\xE0 depuis 14 et c'est toujours la m\xEAme chose !"
+  text: "On en peut plus capitaine !! Vous nous entendez ? ON NE PEUT PLUS ! Certains
+    d'entre nous sont l\xE0 depuis 14 et c'est toujours la m\xEAme chose !!"
   showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 1
+  duration: 0.2
+--- !u!114 &114169904459698126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1288, y: 168}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114169904459698126}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114671202277933388}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114169904459698126}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114209646987483102}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 1
+  characterName: Capitaine Favourier
+  text: je... *soupir* Je n'y peux rien...
+  showAdvance: 0
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
   duration: 0.2
 --- !u!114 &114201844901393596
 MonoBehaviour:
@@ -119,7 +176,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114209646987483102}
+        node: {fileID: 114671202277933388}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -129,7 +186,7 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: Capitaine Favourier
-  text: Ce sont les ordres soldats... je... *soupir* Je n'y peux rien...
+  text: '...Ce sont les ordres soldats... '
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -148,7 +205,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1288, y: 24}
+  position: {x: 1288, y: 360}
   ports:
     keys:
     - input
@@ -160,7 +217,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114201844901393596}
+        node: {fileID: 114169904459698126}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -215,7 +272,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 840, y: -216}
+  position: {x: 840, y: -24}
   ports:
     keys:
     - input
@@ -227,7 +284,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114737209902076266}
+        node: {fileID: 114305111730545714}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -249,9 +306,113 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Ferdinand
-  text: "Bon sang, mais\u2026mais capitaine ! Tous les gars sont \xE9clop\xE9s ou
-    dans la tombe ! On a rien pour affronter efficacement l'ennemi ! On va leur balancer
-    quoi, des cailloux ?"
+  text: "Bon Dieu de ... Mais\u2026mais capitaine ! Tous les gars sont \xE9clop\xE9s
+    ou dans la tombe ! On a rien pour affronter efficacement l'ennemi ! On va leur
+    balancer quoi ?? des cailloux ??"
+  showAdvance: 0
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
+  duration: 0.2
+--- !u!114 &114305111730545714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 840, y: -216}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114305111730545714}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114737209902076266}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114305111730545714}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114277431254354040}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 1
+  characterName: Capitaine Favourier
+  text: "Malheusement, l'ordre vient d'en haut, j'ai eu le commadement au t\xE9l\xE9phone
+    et ..."
+  showAdvance: 0
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
+  duration: 0.2
+--- !u!114 &114321314960169656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 2968, y: -200}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114321314960169656}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114864506032760406}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114321314960169656}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 0
+  characterName: Ferdinand
+  text: "*D\xE9tourne le regard vers l'horizon, se met \xE0 pleurer*"
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -422,6 +583,59 @@ MonoBehaviour:
   bOutput2: {fileID: 0}
   bOutput3: {fileID: 0}
   bOutput4: {fileID: 0}
+--- !u!114 &114671202277933388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1272, y: -24}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114671202277933388}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114201844901393596}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114671202277933388}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114169904459698126}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 1
+  characterName: Capitaine Favourier
+  text: "*Murmure pour lui m\xEAme* Et peut \xEAtre m\xEAme les derniers ..."
+  showAdvance: 0
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114678509594633674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,8 +683,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Ferdinand
-  text: "Si on monte, c'est uniquement pour vous capitaine, mais pr\xE9parez vous
-    \xE0 avoir nos morts sur la conscience..."
+  text: "On s'en fout de la perm' ! Si on monte, c'est uniquement pour vous capitaine!
+    Mais, mais pr\xE9parez vous \xE0 avoir nos morts sur la conscience..."
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -513,7 +727,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114277431254354040}
+        node: {fileID: 114305111730545714}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -579,7 +793,8 @@ MonoBehaviour:
   characterName: Capitaine Favourier
   text: "Je connais votre souffrance soldats ... Ecoutez, je vous promet que c'est
     la derni\xE8re attaque ! Ensuite ce ... c'est fini et on se retire d'ici. Je vous
-    demande de me suivre juste une derni\xE8re fois."
+    demande de me suivre juste une derni\xE8re fois. Apres tout le monde aura le droit
+    \xE0 une permission de 3 semaine !"
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -672,7 +887,10 @@ MonoBehaviour:
       _node: {fileID: 114864506032760406}
       _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: input
+        node: {fileID: 114321314960169656}
+        reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
@@ -701,7 +919,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 840, y: 24}
+  position: {x: 840, y: 168}
   ports:
     keys:
     - input
