@@ -29,12 +29,14 @@ namespace DialogSystem
 		Node currentNode;
 
 		[SerializeField] bool autoClearAction;
+		bool showPlayerUIAfterDialog;
 
 		public event System.Action onDialogFinished;
 
 		public bool isPLaying { get; private set; }
 
 		Coroutine waitingCoroutine;
+
 
 		private void Start()
 		{
@@ -46,9 +48,10 @@ namespace DialogSystem
 
 		void Reset()
 		{
+
 			uiMain.ShowPlayerUI(false);
-			characterNameContent.Show(false);
-			dialogContent.Show(false);
+			characterNameContent.Show(false, true);
+			dialogContent.Show(false, true);
 			ShowBlackBG(false);
 
 			if (cgContent != null)
@@ -84,7 +87,8 @@ namespace DialogSystem
 			Reset();
 
 			isPLaying = false;
-			uiMain.ShowPlayerUI(true);
+			if (showPlayerUIAfterDialog)
+				uiMain.ShowPlayerUI(true);
 
 			if (onDialogFinished != null)
 			{
@@ -105,7 +109,7 @@ namespace DialogSystem
 		private void MouseController()
 		{
 			//cannot pass dialog when has branch
-			if (waitingCoroutine != null || !(currentNode is DialogNode))
+			if (waitingCoroutine != null || !(currentNode is DialogNode) || dialogContent.isFading())
 				return;
 
 			if (Input.GetMouseButtonDown(0))
@@ -123,7 +127,12 @@ namespace DialogSystem
 			NodePort connection = null;
 			//find  current node
 			if (currentNode == null)
-				connection = currentDialogGraph.nodes.Where(n => n is StartPoint).FirstOrDefault().GetOutputPort("output").Connection;
+			{
+				var startPoint = (StartPoint)currentDialogGraph.nodes.Where(n => n is StartPoint).FirstOrDefault();
+				showPlayerUIAfterDialog = startPoint.showPlayerUIAfterDialog;
+
+				connection = startPoint.GetOutputPort("output").Connection;
+			}
 			else
 				connection = currentDialogGraph.nodes.Where(n => n == currentNode).FirstOrDefault().GetOutputPort("output").Connection;
 
@@ -177,34 +186,36 @@ namespace DialogSystem
 		{
 			var node = currentNode as DialogNode;
 
+			ShowBlackBG(node.disableScene);
+
 			if (string.IsNullOrEmpty(node.characterName))
-				characterNameContent.Show(false);
+				characterNameContent.Show(false, false);
 			else
 			{
-				characterNameContent.Show(true);
+				characterNameContent.SetDisplaySpeed(node.displaySpeed);
+
 				characterNameContent.SetText(node.characterName, true);
+				characterNameContent.Show(true, node.duration > 0, node.duration);
 			}
 
 			if (string.IsNullOrEmpty(node.text))
-				dialogContent.Show(false);
+				dialogContent.Show(false, false);
 			else
 			{
 				dialogContent.SetDisplaySpeed(node.displaySpeed);
-				dialogContent.Show(true);
+				dialogContent.SetDisplaySide(node.displaySide);
 
 				dialogContent.SetText(node.text, node.displayAll);
-				dialogContent.SetDisplaySide(node.displaySide);
+				dialogContent.Show(true, node.duration > 0, node.duration);
 			}
-
-			ShowBlackBG(node.disableScene);
 		}
 
 		void ShowBlackBG(bool show)
 		{
-
 			if (blackBG.raycastTarget == show)
 				return;
 
+			DOTween.Kill(blackBG);
 			blackBG.DOColor(new Color(0, 0, 0, show ? 0.6f : 0), 0.5f);
 			blackBG.raycastTarget = show;
 		}
@@ -212,8 +223,8 @@ namespace DialogSystem
 		void HideDialog()
 		{
 			var node = currentNode as HideDialogNode;
-			characterNameContent.Show(false);
-			dialogContent.Show(false);
+			characterNameContent.Show(false, node.duration > 0, node.duration);
+			dialogContent.Show(false, node.duration > 0, node.duration);
 			ShowBlackBG(false);
 
 			AutoPlayNextNode(node.isWait, node.duration);
@@ -339,9 +350,10 @@ namespace DialogSystem
 			}
 			else
 			{
-				cgContent.DOColor(Color.white, duration);
+				cgContent.sprite = node.sprite;
 				cgContent.color = Color.white;
 			}
+
 			cgContent.raycastTarget = true;
 
 			AutoPlayNextNode(node.isWait, node.duration);

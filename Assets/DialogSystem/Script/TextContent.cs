@@ -66,11 +66,23 @@ namespace DialogSystem
 			isDisplayFinished = b;
 		}
 
-		public void Show(bool show)
+		public void Show(bool show, bool doFade, float fadeTime = 0.3f)
 		{
 			var alpha = show ? 1 : 0;
+			DOTween.Kill(canvasGroup);
+
 			if (canvasGroup.alpha != alpha)
-				canvasGroup.DOFade(alpha, 0.3f).SetEase(Ease.InOutQuad);
+			{
+				if (doFade)
+					canvasGroup.DOFade(alpha, fadeTime).SetEase(Ease.InOutQuad);
+				else
+					canvasGroup.alpha = alpha;
+			}
+		}
+
+		public bool isFading()
+		{
+			return DOTween.IsTweening(canvasGroup);
 		}
 	}
 }

@@ -23,13 +23,21 @@ namespace DialogSystem.Nodes
 			EditorGUILayout.PropertyField(serializedObject.FindProperty("text"));
 			EditorGUILayout.PropertyField(serializedObject.FindProperty("displaySide"));
 
-			EditorGUILayout.PropertyField(serializedObject.FindProperty("disableScene"));
+			node.showAdvance = EditorGUILayout.Foldout(node.showAdvance, "Advance");
+			if (node.showAdvance)
+			{
+				EditorGUILayout.PropertyField(serializedObject.FindProperty("disableScene"));
 
-			EditorGUILayout.PropertyField(serializedObject.FindProperty("displayAll"));
-			if (!node.displayAll)
-				EditorGUILayout.PropertyField(serializedObject.FindProperty("displaySpeed"));
+				EditorGUILayout.PropertyField(serializedObject.FindProperty("displayAll"));
+				if (!node.displayAll)
+				{
+					EditorGUILayout.PropertyField(serializedObject.FindProperty("displaySpeed"));
+					DrawDurationField();
+				}
+			}
 
 			serializedObject.ApplyModifiedProperties();
+			EditorUtility.SetDirty(target);
 		}
 	}
 }

@@ -26,10 +26,10 @@ namespace DialogSystem
 			dialogPlayer.SetDialog(target, autoPlay);
 		}
 
-		public static void Play()
-		{
-			dialogPlayer.PlayDialog();
-		}
+		//public static void Play()
+		//{
+		//	dialogPlayer.PlayDialog();
+		//}
 
 		public static void SetVariableSourceMgr(VariableSourceManager mgr)
 		{

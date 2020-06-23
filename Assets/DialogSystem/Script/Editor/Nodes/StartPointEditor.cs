@@ -31,6 +31,8 @@ namespace DialogSystem.Nodes
 			serializedObject.Update();
 
 			OnGuiVariableSource();
+			GUILayout.Space(5);
+			EditorGUILayout.PropertyField(serializedObject.FindProperty("showPlayerUIAfterDialog"));
 
 			GUILayout.Space(-20);
 			NodeEditorGUILayout.PortField(GUIContent.none, target.GetOutputPort("output"), GUILayout.MinWidth(0));

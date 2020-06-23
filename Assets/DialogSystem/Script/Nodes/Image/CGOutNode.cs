@@ -3,14 +3,14 @@ using UnityEditor;
 
 namespace DialogSystem.Nodes
 {
-	[CreateNodeMenu("Image/CG out")]
+	[CreateNodeMenu("Image/Hide CG")]
 	[NodeTint("#00ccff")]
 	public class CGOutNode : DurationNodeBase
 	{
 		// Use this for initialization
 		protected override void Init()
 		{
-			name = "CG out";
+			name = "Hide CG";
 			base.Init();
 		}
 	}

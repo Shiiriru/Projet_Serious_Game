@@ -1,23 +1,20 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace DialogSystem
+[System.Serializable]
+public class SceneReference
 {
-	[System.Serializable]
-	public class SceneReference
+	[SerializeField] private Object sceneAsset;
+	[SerializeField] private string sceneName = "";
+
+	public string Name
 	{
-		[SerializeField] private Object sceneAsset;
-		[SerializeField] private string sceneName = "";
+		get { return sceneName; }
+	}
 
-		public string Name
-		{
-			get { return sceneName; }
-		}
-
-		// makes it work with the existing Unity methods (LoadLevel/LoadScene)
-		public static implicit operator string(SceneReference sceneRef)
-		{
-			return sceneRef.Name;
-		}
+	// makes it work with the existing Unity methods (LoadLevel/LoadScene)
+	public static implicit operator string(SceneReference sceneRef)
+	{
+		return sceneRef.Name;
 	}
 }

@@ -41,6 +41,11 @@ public class UIMain : MonoBehaviour
 		SceneManager.sceneLoaded += OnSceneLoadGetCamera;
 	}
 
+	private void OnDestroy()
+	{
+		SceneManager.sceneLoaded -= OnSceneLoadGetCamera;
+	}
+
 	void OnSceneLoadGetCamera(Scene scene, LoadSceneMode mode)
 	{
 		SceneManager.SetActiveScene(scene);

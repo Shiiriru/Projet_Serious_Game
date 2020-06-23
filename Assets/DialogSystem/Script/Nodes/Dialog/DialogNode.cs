@@ -12,7 +12,7 @@ namespace DialogSystem.Nodes
 		public enum DisplaySide
 		{
 			Right,
-			Left	
+			Left
 		}
 
 		// Use this for initialization
@@ -26,9 +26,12 @@ namespace DialogSystem.Nodes
 		public string characterName;
 		[TextArea] public string text;
 
-		public bool disableScene = true;
+		public bool showAdvance;
 
+		public bool disableScene = true;
 		public bool displayAll;
 		[Range(1, 5)] public int displaySpeed = 3;
+		public float duration = 0.3f;
+
 	}
 }

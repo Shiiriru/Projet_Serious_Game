@@ -63,9 +63,11 @@ MonoBehaviour:
   displaySide: 0
   characterName: 
   text: testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114101910558138758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,6 +147,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   output: {fileID: 0}
+  showPlayerUIAfterDialog: 1
 --- !u!114 &114773541795566762
 MonoBehaviour:
   m_ObjectHideFlags: 0

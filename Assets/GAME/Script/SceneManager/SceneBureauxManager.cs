@@ -32,10 +32,11 @@ public class SceneBureauxManager : SceneManagerBase
 		inventory = uiMain.UIPlayer.Inventory;
 
 		var commandantCalled = (bool)DialogPlayerHelper.VariableSourceMgr.GetValue("isCommandantCalled");
+
 		if (!commandantCalled)
 			uiMain.onChangeSceneFinished += CommandantCall;
-		else
-			hideOtherInterctableFilter.SetActive(false);
+		else		
+			hideOtherInterctableFilter.SetActive(false);		
 
 		buttonChangeScene.SetActive(commandantCalled);
 

@@ -15,5 +15,7 @@ namespace DialogSystem.Nodes
 			name = "START";
 			base.Init();
 		}
+
+		public bool showPlayerUIAfterDialog = true;
 	}
 }

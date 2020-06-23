@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/GAME/Scenes/ScMainMenu.unity
+    guid: 2de5cd7b896f5074ab7c2c013a489135
+  - enabled: 1
     path: Assets/GAME/Scenes/ScOnbording.unity
     guid: 90b432f89d29b2741b5302744ac00fdc
   - enabled: 1
@@ -14,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GAME/Scenes/ScTranchee.unity
     guid: 51608ffece53c9d4099befcae6571017
+  - enabled: 1
+    path: Assets/GAME/Scenes/ScFinalWar.unity
+    guid: ec7e0732dd618594b8b70a6a98ba01c1
   m_configObjects: {}
