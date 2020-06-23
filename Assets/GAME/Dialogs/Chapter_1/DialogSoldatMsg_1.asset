@@ -72,9 +72,11 @@ MonoBehaviour:
   characterName: Poux
   text: "Ah bah, \xE9videmment ! C'est bien pratique les pigeons quand on n'a pas
     la ligne directe ! Croyez-moi, \xE7a a fait ses preuves."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114178139625449316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,9 +139,11 @@ MonoBehaviour:
   text: "Salut cap'taine ! Je suis le lieutemant C\xE9lestin Poux, responsable des
     transmissions de la compagnie ! Enfin ... Des pigeons voyageurs en tout cas !
     Pour la radio ou le t\xE9l\xE9phone on repassera."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 2
+  duration: 0.2
 --- !u!114 &114264113429471202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,9 +193,11 @@ MonoBehaviour:
   characterName: Poux
   text: "Bonne journ\xE9e \xE0 vous capt'aine, et faites gaffe aux cieux; il n'y a
     pas que des pigeons qui volent, les albatros allemands aussi !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114360915472589342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,9 +247,11 @@ MonoBehaviour:
   characterName: Poux
   text: "Un courrier donc ? Voyons voir \xE7a ... Oh, un message pour nos amis les
     rosbeafs ? Pas de soucis cap'taine, \xE7a part tout de suite !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114364292816872774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,9 +301,11 @@ MonoBehaviour:
   characterName: Poux
   text: Que puis je bien faire pour vous aujourd'hui cap'taine ? Vous prenez un peu
     l'air parmi nous ?
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114475036009664378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,9 +351,11 @@ MonoBehaviour:
   displaySide: 0
   characterName: Poux
   text: Ma foi pas grand chose, et ce n'est pas plus mal si vous voulez mon avis !
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114712322923335128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,9 +405,11 @@ MonoBehaviour:
   characterName: Poux
   text: "Enfin, faut juste prier pour que le pigeon ne d\xE9cide pas d'aller ailleurs,
     genre aller faire un coucou \xE0 ceux d'en face ..."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114776467547611146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,6 +476,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   output: {fileID: 0}
+  showPlayerUIAfterDialog: 1
 --- !u!114 &114890073171165820
 MonoBehaviour:
   m_ObjectHideFlags: 0

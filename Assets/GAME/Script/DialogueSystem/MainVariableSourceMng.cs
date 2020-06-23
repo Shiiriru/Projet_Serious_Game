@@ -84,6 +84,10 @@ public class MainVariableSourceMng : VariableSourceManager, IMainVariableSource
 		inventory.Remove("informationLetter_" + chapter);
 	}
 
+	public void AfterGasAttack() {
+		FindObjectOfType<TrencheMain>().AfterGasAttack();
+	}
+
 	public void LoseInventoryObject(string id)
 	{
 		inventory.Remove(id);

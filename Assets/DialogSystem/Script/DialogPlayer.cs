@@ -37,7 +37,6 @@ namespace DialogSystem
 
 		Coroutine waitingCoroutine;
 
-
 		private void Start()
 		{
 			Reset();

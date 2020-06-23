@@ -5,15 +5,20 @@ using UnityEngine;
 
 public class TrencheMain : SceneManagerBase
 {
+	[SerializeField] DialogGraph[] dialogEndChapter;
+
 	[SerializeField] BlackJack blackJackGame;
 	[SerializeField] CardPlayers cardPlayers;
 	[SerializeField] ItemInfoObject pocketWatchItem;
 	[SerializeField] ItemInfoObject maskItem;
 
+	//chapter 2
 	[SerializeField] SpotGermanGame spotGermanGame;
 	[SerializeField] ScriptLouis spotGermanLouis;
+	[SerializeField] DialogGraph dialogAfterGas;
 
-	[SerializeField] DialogGraph[] dialogEndChapter;
+	//chapter 3
+	[SerializeField] CharacterBase soliderHurt;
 
 	protected override void Start()
 	{
@@ -35,7 +40,7 @@ public class TrencheMain : SceneManagerBase
 				spotGermanGame.onGameComplete += SpotGermanGameComplete;
 				break;
 			case 2:
-
+				soliderHurt.onDialogFinished += LaunchFinaWar;
 				break;
 		}
 	}
@@ -66,12 +71,7 @@ public class TrencheMain : SceneManagerBase
 						}
 						break;
 					case 2:
-						//if ((bool)DialogPlayerHelper.VariableSourceMgr.GetValue("MapChecked") &&
-						//	(bool)DialogPlayerHelper.VariableSourceMgr.GetValue("letterSent"))
-						//{
 						yield break;
-						//}
-						//break;
 				}
 		}
 	}
@@ -110,5 +110,17 @@ public class TrencheMain : SceneManagerBase
 	public void LootMask()
 	{
 		uiMain.UIPlayer.Inventory.Add(maskItem);
+	}
+
+	 public void AfterGasAttack()
+	{
+		DialogPlayerHelper.SetDialog(dialogAfterGas);
+	}
+
+	private void LaunchFinaWar()
+	{
+		if (!(bool)DialogPlayerHelper.VariableSourceMgr.GetValue("isTalkedToLouis"))
+			return;
+		NextChapter();
 	}
 }

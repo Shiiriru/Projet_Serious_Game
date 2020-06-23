@@ -1309,7 +1309,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 920209601}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30dd616a732495947a6901f25bd6fec8, type: 3}
+  m_Script: {fileID: 11500000, guid: e8985667500ba2f4381ff322fb807cdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialog: {fileID: 11400000, guid: 86c5314691c71824c839f892f06bd364, type: 2}
@@ -2233,15 +2233,18 @@ MonoBehaviour:
   - {fileID: 1047970801}
   - {fileID: 834669146}
   - {fileID: 1312151687}
+  dialogEndChapter:
+  - {fileID: 11400000, guid: ac14137e53f3c0d4aa01154109d4bf3f, type: 2}
+  - {fileID: 11400000, guid: 2803388bd54815b41b70da19c41a6f7e, type: 2}
+  - {fileID: 11400000, guid: 5803166d261dfe24ca374723c4d19035, type: 2}
   blackJackGame: {fileID: 122891007}
   cardPlayers: {fileID: 1011312053}
   pocketWatchItem: {fileID: 11400000, guid: e02f68dd13cf27d468f381e1fe3736e7, type: 2}
   maskItem: {fileID: 11400000, guid: 3727cbf81f5491c44850d2d9bee39964, type: 2}
   spotGermanGame: {fileID: 1408825397}
   spotGermanLouis: {fileID: 1148271133}
-  dialogEndChapter:
-  - {fileID: 11400000, guid: ac14137e53f3c0d4aa01154109d4bf3f, type: 2}
-  - {fileID: 11400000, guid: 2803388bd54815b41b70da19c41a6f7e, type: 2}
+  dialogAfterGas: {fileID: 11400000, guid: c76ee5d8da2f9ca4cbb84444911d1326, type: 2}
+  soliderHurt: {fileID: 1971803156}
 --- !u!1 &1248321549
 GameObject:
   m_ObjectHideFlags: 0
@@ -3177,7 +3180,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1802955825}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30dd616a732495947a6901f25bd6fec8, type: 3}
+  m_Script: {fileID: 11500000, guid: e8985667500ba2f4381ff322fb807cdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialog: {fileID: 11400000, guid: 6ed8ebcf6b9d8f0408f9fea42ababbb4, type: 2}

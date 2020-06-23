@@ -73,9 +73,11 @@ MonoBehaviour:
   text: "Courage, capitaine ! C'est la derni\xE8re offensive pour votre compagnie,
     ensuite vous aurez bien m\xE9ritez un mois de repos complet dans un secteur calme
     !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114166011251790694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,9 +140,11 @@ MonoBehaviour:
   text: "Capitaine Favourier, nous avons eu le bilan de la derni\xE8re battaile concernant
     votre compagnie. Vous vous en \xEAtes tir\xE9 de peu d'apr\xE8s ce que nous avons
     compris."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114290684623299166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,9 +195,11 @@ MonoBehaviour:
   text: "Malheuresement, nous avons encore besoin de vous, capitaine ! Une nouvelle
     attaque est pr\xE9vue pour demain et vos gars seraient d'une grande aide pour
     soutenir les anglais."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114373369634454004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,9 +249,11 @@ MonoBehaviour:
   characterName: Commandement
   text: "Vous verrez, sur votre bureau, une m\xE9daile pour le soldat Louis. Son courage
     au combat lui a valu la Croix de Guerre. Ca devrait aider \xE0 le requinquer."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 1
+  duration: 0.2
 --- !u!114 &114477733181754912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,9 +304,11 @@ MonoBehaviour:
   text: "Aller voir votre compagnie et pr\xE9venez-la de l'attaque. Transmettez la
     lettre pour pr\xE9venir vos alli\xE9s aussi. T\xE2chez de remonter le moral de
     tout le monde. Ils ont l'air au bout du rouleau."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114566133805316520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,9 +357,11 @@ MonoBehaviour:
   displaySide: 0
   characterName: Commandement
   text: "Nous comptons sur vous, ne l\xE2chez rien, c'est bientot fini."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 1
+  duration: 0.2
 --- !u!114 &114677274199510180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,6 +393,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   output: {fileID: 0}
+  showPlayerUIAfterDialog: 1
 --- !u!114 &114972893475362742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,9 +437,11 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   displaySide: 1
-  characterName: Capitaine Favourier
+  characterName: 
   text: Encore une attaque ... Je dois essayer proteger les survivants mais je sais
     pas si je peux y arriver ou pas ...
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 1
+  duration: 0.2

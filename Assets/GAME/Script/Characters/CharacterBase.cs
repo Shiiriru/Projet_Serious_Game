@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class CharacterBase : MonoBehaviour
 {
 	[SerializeField] protected DialogGraph dialog;
+	public event System.Action onDialogFinished;
 
 	protected virtual void Start()
 	{
@@ -17,5 +18,6 @@ public class CharacterBase : MonoBehaviour
 	protected virtual void OnClickPlayDialog()
 	{
 		DialogPlayerHelper.SetDialog(dialog);
+		DialogPlayerHelper.SetOnFinishedAction(onDialogFinished);
 	}
 }

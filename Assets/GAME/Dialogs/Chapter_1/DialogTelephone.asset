@@ -86,9 +86,11 @@ MonoBehaviour:
   characterName: Centre d'appels
   text: "D\xE9sol\xE9 capitaine mais vous ne pouvez pas monopoliser la ligne comme
     \xE7a, d'autres secteurs peuvent plus en avoir besoin que vous."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 2
+  duration: 0.2
 --- !u!114 &114305329318044512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,9 +136,11 @@ MonoBehaviour:
   displaySide: 0
   characterName: Commandement
   text: "Si vous rencontrez un probl\xE8me, recontactez moi. Bon courage !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114326165485986062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,9 +189,11 @@ MonoBehaviour:
   displaySide: 0
   characterName: Commandement
   text: "Bonjour Capitaine, et bien alors, des petits soucis de m\xE9moire ?"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114430153706341704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,9 +484,11 @@ MonoBehaviour:
   characterName: Centre d'appels
   text: Ici le centre des communications de lignes, avec qui dois-je vous raccorder
     ?
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114634188916696634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,9 +570,11 @@ MonoBehaviour:
   characterName: "R\xE9giment de Chasseurs"
   text: "Vu le gros boucan fait par les anglais durant une semaine, j'esp\xE8re qu'ils
     vont r\xE9ussir \xE0 percer ces fichues lignes boches !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114666887485889458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,9 +622,11 @@ MonoBehaviour:
   text: "Rassurez vous, si les germains nous envoie des prunneaux, avec nos canons
     de 75 \xE0 tir rapide, on leur montrera que le coq fran\xE7ais sait se battre
     !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114719215350765014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,9 +676,11 @@ MonoBehaviour:
   characterName: "R\xE9giment de Chasseurs"
   text: "Salut la 366 ! Tout vas bien dans votre secteur ? Du c\xF4t\xE9 des Chasseurs,
     tout se tient tranquile pour le moment."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114723626585502364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,9 +732,11 @@ MonoBehaviour:
     la \xE0 jour, prenez aussi contact avec l'artillerie la plus proche du r\xE9giment
     ! Aussi, si vous sortez, n'oubliez pas de prendre la lettre de renseignement pour
     nos amis anglais."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114841110535010692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,9 +783,11 @@ MonoBehaviour:
   characterName: Capitaine Favourier
   text: "Si je ne sais pas \xE0 qui parler, cela ne me sert \xE0 rien de t\xE9l\xE9phoner
     ..."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114953985197681906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -819,9 +837,11 @@ MonoBehaviour:
   characterName: "R\xE9giment d'Artilllerie"
   text: Ici le 77eme d'Artillerie, Ainsi c'est vous le nouveau capitaine de la 366eme
     ? Ravi de vous connaitre.
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114957105726987134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -853,3 +873,4 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   output: {fileID: 0}
+  showPlayerUIAfterDialog: 1

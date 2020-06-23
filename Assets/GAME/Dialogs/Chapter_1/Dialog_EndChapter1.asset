@@ -19,8 +19,8 @@ MonoBehaviour:
   - {fileID: 114392536337937070}
   - {fileID: 114480214189244390}
   - {fileID: 114723940661614668}
-  - {fileID: 0}
   - {fileID: 114468843467328214}
+  - {fileID: 0}
   variableSource: {fileID: 114700773602609724}
 --- !u!114 &114209672102483416
 MonoBehaviour:
@@ -53,6 +53,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   output: {fileID: 0}
+  showPlayerUIAfterDialog: 0
 --- !u!114 &114352503042236588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,9 +209,11 @@ MonoBehaviour:
   text: "Bonne journ\xE9e \xE0 vous soldats, et surveillez bien le front. Ce serait
     dommage de subir un assaut surprise de la part des allemands pour nous souhaiter
     la bienvenue dans ce secteur !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 2
+  duration: 0.3
 --- !u!114 &114480214189244390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,7 +297,7 @@ MonoBehaviour:
   m_Name: Delay
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 760, y: -216}
+  position: {x: 792, y: -168}
   ports:
     keys:
     - input
@@ -377,6 +380,8 @@ MonoBehaviour:
   text: "Bon, je dois vous laisser, il faut que je retourne dans mes quartiers afin
     de pr\xE9parer les prochains plans de bataille. Une fois les anglais pass\xE9,
     ce sera \xE0 nous de jouer."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 2
+  duration: 0.3

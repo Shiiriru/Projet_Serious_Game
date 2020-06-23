@@ -78,9 +78,11 @@ MonoBehaviour:
   displaySide: 0
   characterName: Louis
   text: " Hehehe sacr\xE9 Anatole va ! Toujours le mot pour rire !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 4
+  duration: 0.2
 --- !u!114 &114092705244759892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,9 +187,11 @@ MonoBehaviour:
   characterName: Capitaine Favourier
   text: "Moi aussi je suis bien content de te voir ! Toujours en vie et toujours bien
     portant \xE0 ce que je vois. On dirait que \xE7a te r\xE9ussit bien la guerre."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114137612085133436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,9 +241,11 @@ MonoBehaviour:
   characterName: Capitain Favourier
   text: "Oul\xE0, j'avais dis \xE7a il y a longtemps ... BIEN longtemps ! C'\xE9tait
     m\xEAme avant d'avoir du poil au menton !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114176813803073020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,9 +296,11 @@ MonoBehaviour:
   text: "Et toi, alors ? Toujours pas grand h\xE9ros d'la Nation ? C'tait pas ce que
     t'avais dit avant d'partir ? Tu m'diras, t'as encore l'temps hein, vu que c'te
     fichue guerre veut pas se finir !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114187048128425772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +332,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   output: {fileID: 0}
+  showPlayerUIAfterDialog: 1
 --- !u!114 &114208824125695646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,9 +418,11 @@ MonoBehaviour:
   text: "J'esp\xE8re que t'as pris ton groin \xE0 gaz ! Depuis 1915, les germains
     sont taquins avec la fum\xE9e. Au cas o\xF9, prend c'lui-l\xE0, on sait jamais.
     Ca sera toujours mieux qu'le vieux sac qu'on se trimballe !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114615277219434222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,9 +530,11 @@ MonoBehaviour:
   characterName: Louis
   text: Caporal Louis Perret au rapport, mon capitaine ! Que puis-je faire pour vous
     ?
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114679436621285878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,9 +581,11 @@ MonoBehaviour:
   characterName: Louis
   text: "Tout est calme, mon capitaine ! Un peu trop si vous voulez mon avis\u2026
     J'aime pas \xE7a. Qui sait ce que les allemands nous r\xE9servent."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114710289478919684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -620,9 +635,11 @@ MonoBehaviour:
   characterName: Louis
   text: Ci fait mon capitaine ! Comment connaissez vous ... Attendez .... Favourier
     ... Anatole Favourier ? Sans rire, c'est bien toi !
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114835073160396614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -874,9 +891,11 @@ MonoBehaviour:
   characterName: Louis
   text: "Ah mon vieux ! Ca fait plaisir de te revoir ! J'suis rassur\xE9 d'pas passer
     c'te foutue guerre tout seul et d'avoir un vieux copain avec moi !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114988584626994936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -926,6 +945,8 @@ MonoBehaviour:
   characterName: Louis
   text: "Bon, j'aurais des tas de choses \xE0 te dire, mais la pause est finie et
     j'dois aller chercher le rata pour la section !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 2
+  duration: 0.2

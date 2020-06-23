@@ -54,6 +54,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   output: {fileID: 0}
+  showPlayerUIAfterDialog: 1
 --- !u!114 &114116858514112540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,9 +343,11 @@ MonoBehaviour:
   characterName: Touvenel
   text: "Vous \xEAtes pas drole capitaine ! Il faut savoir parfois vivre un peu dangereusement
     !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114161093363272342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,9 +408,11 @@ MonoBehaviour:
   displaySide: 0
   characterName: Touvenel
   text: "Commen\xE7ons alors !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114330346426511796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,9 +462,11 @@ MonoBehaviour:
   characterName: Touvenel
   text: "Hey capitaine ! C'est moi, le seconde classe Jacques Touvenel, vous vous
     souvenez ? On a pris le m\xEAme train depuis Paris pour venir ici !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114587957044229922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,9 +517,11 @@ MonoBehaviour:
   text: "Vous avez d\xE9cid\xE9 de venir profiter de ce premier jour de juillet en
     mettant le nez dehors ? Profitez en bien avant que les gaz viennent gacher cette
     bonne odeur de boue ! *rire*"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114884662012556960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,6 +572,8 @@ MonoBehaviour:
   text: "Dite moi capitaine, je me rappelle d'une partie de cartes non achev\xE9e
     dans la capitale... Ca vous dit de la finir ? Apr\xE8s tout, on ne sait pas de
     quoi demain sera fait !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2

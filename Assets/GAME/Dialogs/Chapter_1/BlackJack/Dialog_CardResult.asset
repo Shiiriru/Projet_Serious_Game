@@ -53,6 +53,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   output: {fileID: 0}
+  showPlayerUIAfterDialog: 1
 --- !u!114 &114161093363272342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,9 +222,11 @@ MonoBehaviour:
   characterName: Touvenel
   text: "Hehehe dommage pour vous mon capitaine ! Je penserais \xE0 vous quand je
     boirai un coup \xE0 Paris avec cet argent !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114407480541900116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,9 +276,11 @@ MonoBehaviour:
   characterName: Touvenel
   text: "Tenez, c'est pour vous, j'ai r\xE9cup\xE9r\xE9 cette toquante lors d'une
     partie avec un autre gars du r\xE9giment mais j'en ai pas besoin !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114415287910541044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,9 +385,11 @@ MonoBehaviour:
   characterName: Touvenel
   text: "Ca vous aidera \xE0 mieux planifier vos prochains assaut, mais n'en abusez
     pas trop !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114976044827964498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,6 +438,8 @@ MonoBehaviour:
   displaySide: 0
   characterName: Touvenel
   text: Bravo mon capitaine, j'avoue que vous m'avez bien eu !
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2

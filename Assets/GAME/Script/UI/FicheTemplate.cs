@@ -94,7 +94,7 @@ public class FicheTemplate : MonoBehaviour
 	IEnumerator SetTextContentHeight()
 	{
 		yield return null;
-		textInfosContent.sizeDelta = new Vector2(textInfosContent.sizeDelta.x, textInfos.rectTransform.sizeDelta.y + 20);
+		textInfosContent.sizeDelta = new Vector2(textInfosContent.sizeDelta.x, textInfos.rectTransform.sizeDelta.y + 60);
 	}
 
 	public void Close()

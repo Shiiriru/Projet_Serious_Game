@@ -19,9 +19,9 @@ MonoBehaviour:
   - {fileID: 114139464551240886}
   - {fileID: 114384284171523518}
   - {fileID: 114021164841631614}
-  - {fileID: 0}
   - {fileID: 114740682220894416}
   - {fileID: 114770243746322450}
+  - {fileID: 0}
   variableSource: {fileID: 114559031115121122}
 --- !u!114 &114021164841631614
 MonoBehaviour:
@@ -71,9 +71,11 @@ MonoBehaviour:
   displaySide: 0
   characterName: Commandement
   text: "Si vous rencontrez un probl\xE8me, recontactez moi. Bon courage !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114021903261246764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,9 +126,11 @@ MonoBehaviour:
   text: "Il faut que vous alliez dans la tranch\xE9e pour surveiller les mouvements
     ennemis. On nous a signal\xE9 du mouvement chez les germains, \xE7a ne m'\xE9tonnerait
     pas qu'ils tentent de s'infiltrer \xE0 travers le no man's land."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114139464551240886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,9 +180,11 @@ MonoBehaviour:
   characterName: Commandement
   text: "Souvenez vous, cette position est vitale. Si vous tombez, c'est tout le flanc
     de notre arm\xE9e qui sera vuln\xE9rable !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114384284171523518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,9 +234,11 @@ MonoBehaviour:
   characterName: Commandement
   text: "Allez informer vos hommes et faites attention \xE0 vous. L'aviation a remarqu\xE9
     la livraison d'\xE9tranges obus chez nos ennemis."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114436076997626292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +270,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   output: {fileID: 0}
+  showPlayerUIAfterDialog: 1
 --- !u!114 &114467107705403590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,9 +320,11 @@ MonoBehaviour:
   characterName: Commandement
   text: "Capitaine Favourier, nous savons que votre compagnie a subi des pertes lors
     de la derni\xE8re attaque, mais nous avons encore besoin de vous et de vos hommes."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114559031115121122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,12 +383,14 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   displaySide: 1
-  characterName: Capitaine Favourier
+  characterName: 
   text: "J'ai vraiment l'impression ils n'ont aucune id\xE9e de ce qu'il se passe
     ici en fait ! "
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114770243746322450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,9 +434,11 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   displaySide: 1
-  characterName: Capitaine Favourier
+  characterName: 
   text: "Faut croire qu'ils pensent que ce que nous faisons de mieux dans les tranch\xE9es,
     c'est de mourir debout ..."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2

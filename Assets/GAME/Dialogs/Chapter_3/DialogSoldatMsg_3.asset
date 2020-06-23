@@ -87,9 +87,11 @@ MonoBehaviour:
   text: "Tiens cap'taine ! Vous \xEAtes venu compter les poilus qui restent  dans
     la compagnie ? On est plus tr\xE8s nombreux d\xE9sormais. Si vous voulez, on peut
     inclure les pigeons, apr\xE8s tout, ils subissent la guerre comme nous."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 2
+  duration: 0.2
 --- !u!114 &114264113429471202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,9 +141,11 @@ MonoBehaviour:
   characterName: Poux
   text: "Enfin bon ... je fais partir \xE7a tout de suite capt'aine, en esp\xE9rant
     que vous savez ce que vous faites."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114360915472589342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,9 +198,11 @@ MonoBehaviour:
   characterName: Poux
   text: Bon sang ... Alors on y retourne demain ? J'aurais pas assez de pigeons pour
     toutes les lettres d'adieux !
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114364292816872774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,9 +252,11 @@ MonoBehaviour:
   characterName: Poux
   text: "Enfin bon, que puis je bien faire pour vous aujourd'hui cap'taine ? Je suppose
     que vous n'\xEAtes pas l\xE0 uniquement pour m'entendre r\xE2ler."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114475036009664378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,9 +303,11 @@ MonoBehaviour:
   characterName: Poux
   text: "Comme vous le voyez cap'taine, plus trop en forme et \xE0 deux doigts de
     la tombe."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114712322923335128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,9 +357,11 @@ MonoBehaviour:
   characterName: Poux
   text: "Et on va y m\xEAler les anglais avec \xE7a ? Les pauvres vieux, ils vont
     renter au pays comme du pudding si \xE7a continue !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114776467547611146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,6 +431,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   output: {fileID: 0}
+  showPlayerUIAfterDialog: 1
 --- !u!114 &114890073171165820
 MonoBehaviour:
   m_ObjectHideFlags: 0

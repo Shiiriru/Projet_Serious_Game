@@ -85,9 +85,11 @@ MonoBehaviour:
   characterName: Capitaine Favourier
   text: "Louis est un peu nerveux ces derniers temps. Les nombreuses incursions nocturnes
     de nos ennemis l'ont mis \xE0 cran.\r\n Le moindre mouvement le fait sursauter."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114397523990913064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,9 +194,11 @@ MonoBehaviour:
   characterName: Capitaine Favourier
   text: "Je ferais mieux de voir comment il va. Je commence \xE0 m'inquieter pour
     lui, je n'aimerais pas qu'il file un mauvais coton."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114434492772338200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,9 +247,11 @@ MonoBehaviour:
   displaySide: 0
   characterName: Louis
   text: Quoi que ... HEY ! QUI VA LA !?
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114455845899669600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,9 +302,11 @@ MonoBehaviour:
   text: "Ca a sacr\xE9ment bard\xE9 la derni\xE8re fois, hein ? J'esp\xE8re qu'on
     va pas avoir \xE7a de nouveau. J'pensais pas le fridolin aussi teigneux... Encore
     pire qu'ma belle-m\xE8re, c'est pour t'dire !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114493282198653238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,9 +357,11 @@ MonoBehaviour:
   text: "Ah ! S'lut chef, d\xE9sol\xE9 j'ai eu peur ! Faut dire, avec les allemands
     qui s'amusent \xE0 jouer les rats et qui tentent dev'nir d'partout, on d'vient
     forcement soup\xE7onneux !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114914220020223666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,6 +393,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   output: {fileID: 0}
+  showPlayerUIAfterDialog: 1
 --- !u!114 &114922498920733352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,9 +443,11 @@ MonoBehaviour:
   characterName: Louis
   text: Dis voir... J'pense que j'ai vu qu'que chose bouger dans le champs ! Prend
     ces jumelles et dis-moi c'que tu vois !
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114965234773466174
 MonoBehaviour:
   m_ObjectHideFlags: 0

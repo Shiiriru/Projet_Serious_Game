@@ -31,7 +31,7 @@ namespace DialogSystem.Nodes
 		public bool disableScene = true;
 		public bool displayAll;
 		[Range(1, 5)] public int displaySpeed = 3;
-		public float duration = 0.3f;
+		public float duration = 0.2f;
 
 	}
 }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eafacef6301bdec41a6974a0a1872911, type: 3}
-  m_Name: Dialog_End_Game
+  m_Name: Dialog_FinalWar
   m_EditorClassIdentifier: 
   nodes:
   - {fileID: 114425058686077120}
@@ -38,13 +38,9 @@ MonoBehaviour:
   - {fileID: 114127506580942528}
   - {fileID: 114855689797843442}
   - {fileID: 114097319916977254}
-  - {fileID: 114562485840527364}
-  - {fileID: 114576385492489628}
-  - {fileID: 114635044302008682}
-  - {fileID: 114975998957191162}
-  - {fileID: 114403081392853588}
-  - {fileID: 114855466250559452}
   - {fileID: 114439911403360272}
+  - {fileID: 114262866557328528}
+  - {fileID: 0}
   variableSource: {fileID: 114573644158395328}
 --- !u!114 &114009860169979930
 MonoBehaviour:
@@ -96,9 +92,11 @@ MonoBehaviour:
   text: "Et o\xF9 est le soldat Vernet ?!? Il \xE9tait \xE0 mes c\xF4t\xE9s il y a
     quelques secondes \xE0 peines ! Il se serait fait emport\xE9 par cette explosion
     d'obus ?"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114035374748185414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,9 +146,11 @@ MonoBehaviour:
   characterName: Capitaine Favourier
   text: "Il faut en finir rapidement ! Je ne veux pas perdre plus de monde que \xE7a
     pour cette derni\xE8re attaque \u2026"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114097319916977254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 4360, y: 168}
+  position: {x: 4440, y: 152}
   ports:
     keys:
     - input
@@ -186,10 +186,7 @@ MonoBehaviour:
       _node: {fileID: 114097319916977254}
       _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: input
-        node: {fileID: 114562485840527364}
-        reroutePoints: []
+      connections: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
@@ -199,9 +196,11 @@ MonoBehaviour:
   displaySide: 1
   characterName: Capitaine Favourier
   text: "Hardis les gars, rentrez leur dedans ! On va \u2026"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114098380732743238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,9 +249,11 @@ MonoBehaviour:
   displaySide: 1
   characterName: Capitaine Favourier
   text: "Je ne peux pas m'arr\xEAter pour eux \u2026 Je dois \u2026 avancer"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114127506580942528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,9 +506,11 @@ MonoBehaviour:
   displaySide: 1
   characterName: Capitaine Favourier
   text: "On ne peut pas abandonner d\xE8s maintenant !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114179134928875796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,9 +560,11 @@ MonoBehaviour:
   characterName: Capitaine Favourier
   text: Sergent Notre-Dame, restez avec moi, j'ai besoin de vous et votre section
     pour ... pour ... Sergent ? C'est ... trop tard pour lui aussi, il est fichu ...
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114198021190905136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,9 +615,57 @@ MonoBehaviour:
   text: "Salut Anatole \u2026 J'ai pris un prunneau dans les guiboles *Grimace de
     douleur* Je ne peux plus trop marcher, l'assaut \xE7a va \xEAtre sans moi mon
     grand. En esp\xE9rant qu'un obus va pas venir me cueillr dans ce maudit trou \u2026"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.3
+--- !u!114 &114262866557328528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2930f4ae6871a4b46b84fd3536b5a2b4, type: 3}
+  m_Name: Delay
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -424, y: -8}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114262866557328528}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114425058686077120}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114262866557328528}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114439911403360272}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  duration: 2
 --- !u!114 &114263330727346448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -658,9 +711,11 @@ MonoBehaviour:
   displaySide: 1
   characterName: Capitaine Favourier
   text: Je dois continuer, si je flanche on est foutu !
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114269220132841844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -706,9 +761,11 @@ MonoBehaviour:
   displaySide: 1
   characterName: Capitaine Favourier
   text: "On ne peut pas abandonner d\xE8s maintenant !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114285397654213140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -758,9 +815,11 @@ MonoBehaviour:
   characterName: Capitaine Favourier
   text: "Qu'est ce que ... Mais ... C'est Louis dans ce trou ! Bon sang Il est bless\xE9
     ! Hey Louis \xE7a va ? Parle moi je t'en supplie !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114309915533260464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -811,9 +870,11 @@ MonoBehaviour:
   text: "Bon sang, soldat Imany ! Il vient de s'en prendre une dans le ventre ! M\xEAme
     lui le grand noir, le grand gaillard de la compagnie, ne peut pas survivre \xE0
     cette blessure fatale."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114387362585195628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -864,62 +925,11 @@ MonoBehaviour:
   text: "Seigneur \u2026 Tout autour de moi les soldats s'effondre, certains dans
     un cri, d'autres dans le silence ! C'est pas vrai \u2026 Ca va encore \xEAtre
     un massacre comme depuis le d\xE9but de cette fichue campagne !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
---- !u!114 &114403081392853588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
-  m_Name: Dialog
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 5304, y: 152}
-  ports:
-    keys:
-    - input
-    - output
-    values:
-    - _fieldName: input
-      _node: {fileID: 114403081392853588}
-      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: output
-        node: {fileID: 114975998957191162}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 1
-      _dynamic: 0
-    - _fieldName: output
-      _node: {fileID: 114403081392853588}
-      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: input
-        node: {fileID: 114855466250559452}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-  input: {fileID: 0}
-  output: {fileID: 0}
-  displaySide: 0
-  characterName: Soldat survivant
-  text: "C'est ainsi que je vous demande de simplement retenir ces \xE9venements,
-    de garder en m\xE9moire ceux qui se sont battus durant ce conflit, issus de tous
-    horizons."
-  disableScene: 1
-  displayAll: 0
-  displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114423451085328972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -969,9 +979,11 @@ MonoBehaviour:
   characterName: Capitaine Favourier
   text: Il faut continuer d'avancer vers l'ennemi et le museler le plus rapidement
     possible !
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114425058686077120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -985,7 +997,7 @@ MonoBehaviour:
   m_Name: START
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -504, y: -8}
+  position: {x: -760, y: -24}
   ports:
     keys:
     - output
@@ -996,13 +1008,14 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114439911403360272}
+        node: {fileID: 114262866557328528}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
   output: {fileID: 0}
+  showPlayerUIAfterDialog: 0
 --- !u!114 &114429315882852572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1052,9 +1065,11 @@ MonoBehaviour:
   characterName: Capitaine Favourier
   text: "D\xE9sol\xE9 les gars, je vous jure de revenir pour vous sortir de l\xE0,
     tenez bon ..."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114439911403360272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1080,7 +1095,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114425058686077120}
+        node: {fileID: 114262866557328528}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -1100,7 +1115,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: d41066af3c8ef9548b31060817d86ce5, type: 3}
   duration: 0
   isWait: 0
 --- !u!114 &114472730739782792
@@ -1152,62 +1167,11 @@ MonoBehaviour:
   characterName: Capitaine Favourier
   text: "Bon sang \xE7a devait bien se passer, on me l'avait promis et JE le leur
     avais promis ! Ils me faisaient confiance ..."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
---- !u!114 &114562485840527364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
-  m_Name: Dialog
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 4856, y: -72}
-  ports:
-    keys:
-    - input
-    - output
-    values:
-    - _fieldName: input
-      _node: {fileID: 114562485840527364}
-      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: output
-        node: {fileID: 114097319916977254}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 1
-      _dynamic: 0
-    - _fieldName: output
-      _node: {fileID: 114562485840527364}
-      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: input
-        node: {fileID: 114576385492489628}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-  input: {fileID: 0}
-  output: {fileID: 0}
-  displaySide: 0
-  characterName: Soldat survivant
-  text: "Et c'est ainsi que finit l'histoire de mon capitaine. Frapp\xE9 par une balle
-    allemande devant le village de Combles ce 26 septembre 1916, en d\xE9fendant son
-    pays, les armes \xE0 la main et \xE0 la t\xEAte de sa compagnie."
-  disableScene: 1
-  displayAll: 0
-  displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114573644158395328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1220,59 +1184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42e963c5726cd341894dc0532de5445, type: 3}
   m_Name: Variable Source Object
   m_EditorClassIdentifier: 
---- !u!114 &114576385492489628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
-  m_Name: Dialog
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 4856, y: 152}
-  ports:
-    keys:
-    - input
-    - output
-    values:
-    - _fieldName: input
-      _node: {fileID: 114576385492489628}
-      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: output
-        node: {fileID: 114562485840527364}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 1
-      _dynamic: 0
-    - _fieldName: output
-      _node: {fileID: 114576385492489628}
-      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: input
-        node: {fileID: 114635044302008682}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-  input: {fileID: 0}
-  output: {fileID: 0}
-  displaySide: 0
-  characterName: Soldat survivant
-  text: "Notre attaque sera, cependant, un succ\xE8s et repoussera l'ennemi sur le
-    plateau de P\xE9ronne. Notre compagnie est pratiquement d\xE9cim\xE9e, nos soldats
-    sont tous morts et moi aussi. Et tout \xE7a pour quoi ?"
-  disableScene: 1
-  displayAll: 0
-  displaySpeed: 3
 --- !u!114 &114634168442276372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1323,63 +1234,11 @@ MonoBehaviour:
   text: "Ce cri \u2026 c'est celui du petit Pierrot ! Le gamin est tomb\xE9 dans les
     barbel\xE9s, je l'entend qui appelle faiblement \xE0 l'aide, qu'on vienne le chercher
     ! Il faut que quelqu'un \u2026"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
---- !u!114 &114635044302008682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
-  m_Name: Dialog
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 4856, y: 376}
-  ports:
-    keys:
-    - input
-    - output
-    values:
-    - _fieldName: input
-      _node: {fileID: 114635044302008682}
-      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: output
-        node: {fileID: 114576385492489628}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 1
-      _dynamic: 0
-    - _fieldName: output
-      _node: {fileID: 114635044302008682}
-      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: input
-        node: {fileID: 114975998957191162}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-  input: {fileID: 0}
-  output: {fileID: 0}
-  displaySide: 0
-  characterName: Soldat survivant
-  text: "Pour rien. L'offensive de la Somme sera un immense g\xE2chis. 141 jours de
-    combats acharn\xE9s pour un gain ridicule de territoire et pour un prix \xE0 payer
-    exorbitant, et ce dans tous les camps. Le g\xE9n\xE9ral y a perdu sa place et
-    nous nos vies."
-  disableScene: 1
-  displayAll: 0
-  displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114707148619443426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1640,59 +1499,11 @@ MonoBehaviour:
   text: "C'est bon, la compagnie me suit toujours, bayonette au canon, criant pour
     se donner du courage ! Je ne dois pas les d\xE9cevoir et montrer l'exemple, surtout
     dans un moment pareil !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
---- !u!114 &114855466250559452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
-  m_Name: Dialog
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 5304, y: 376}
-  ports:
-    keys:
-    - input
-    - output
-    values:
-    - _fieldName: input
-      _node: {fileID: 114855466250559452}
-      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: output
-        node: {fileID: 114403081392853588}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 1
-      _dynamic: 0
-    - _fieldName: output
-      _node: {fileID: 114855466250559452}
-      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections: []
-      _direction: 1
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-  input: {fileID: 0}
-  output: {fileID: 0}
-  displaySide: 0
-  characterName: Soldat survivant
-  text: "En effet, le Pass\xE9 n'est rien sans le Pr\xE9sent qui \xE9coute et se souvient.
-    Vous avez la meilleure part, car s'il appartient d\xE9sormais \xE0 l'Histoire,
-    l'Histoire vous appartient."
-  disableScene: 1
-  displayAll: 0
-  displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114855689797843442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1747,9 +1558,11 @@ MonoBehaviour:
   displaySide: 1
   characterName: Capitaine Favourier
   text: '*Rugit* Salopard de boches, vous allez me payer la perte de mes hommes !'
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114856910333258350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1800,9 +1613,11 @@ MonoBehaviour:
   text: "D\xE9sol\xE9 Louis, je jure que je reviendrais le chercher plus tard, mais
     je dois terminer cette attaque ou nous sommes tous morts ! Je \u2026 Ne m'abandonne
     pas d'accord ?"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114923467360200724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1853,9 +1668,11 @@ MonoBehaviour:
   text: "Oh non, le lieutenant Poux vient de s'effondrer au sol dans la boue, lui
     aussi il a \xE9t\xE9 touch\xE9 ! Son oiseau s'envole, pourvu que l'\xE2me du lieutenant
     ne soit pas partit avec."
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114934218855394188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2109,59 +1926,8 @@ MonoBehaviour:
   characterName: Capitaine Favourier
   text: EN AVANT LES GARS ! COURAGE ! ON Y EST PRESQUE ! MAINTENEZ LA PRESSION ET
     ON LES AURA !
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
---- !u!114 &114975998957191162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
-  m_Name: Dialog
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 5304, y: -72}
-  ports:
-    keys:
-    - input
-    - output
-    values:
-    - _fieldName: input
-      _node: {fileID: 114975998957191162}
-      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: output
-        node: {fileID: 114635044302008682}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 1
-      _dynamic: 0
-    - _fieldName: output
-      _node: {fileID: 114975998957191162}
-      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: input
-        node: {fileID: 114403081392853588}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-  input: {fileID: 0}
-  output: {fileID: 0}
-  displaySide: 0
-  characterName: Soldat survivant
-  text: "Cette bataille fera en tout 443 070 morts et plus de 616 473 bless\xE9s,
-    mutili\xE9s et disparus. Et d\xE9sormais, il est l'un d'eux, emport\xE9 par cette
-    folie comme de nombreux autres avant et malheureusement apr\xE8s lui."
-  disableScene: 1
-  displayAll: 0
-  displaySpeed: 3
+  duration: 0.3

@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7a2e666ad6af1f469808d98b6aeb2ea, type: 3}
-  m_Name: CG out
+  m_Name: Hide CG
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
   position: {x: 1336, y: -328}
@@ -258,6 +258,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   output: {fileID: 0}
+  showPlayerUIAfterDialog: 1
 --- !u!114 &114481217326831290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -875,9 +876,11 @@ MonoBehaviour:
   characterName: coucou
   text: longgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
     no finsh yet :)
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114882807348357912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -929,9 +932,11 @@ MonoBehaviour:
   displaySide: 0
   characterName: coucou
   text: fin
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114934195877291502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -983,9 +988,11 @@ MonoBehaviour:
   displaySide: 0
   characterName: coucou
   text: toto is here coucou yolo
+  showAdvance: 0
   disableScene: 0
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114989465210313218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1034,6 +1041,8 @@ MonoBehaviour:
   displaySide: 0
   characterName: coucou
   text: do your choice
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2

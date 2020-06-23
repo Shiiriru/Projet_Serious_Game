@@ -9,6 +9,10 @@ public class MainVariableSource : VariableSource, IMainVariableSource
 	public bool isTalkedToLouis;
 	public bool isCommandantCalled;
 
+	public void SendLetter(int chapter) { }
+	public void LoseInventoryObject(string id) { }
+
+
 	public void OnBordingSelectPhotoFace(bool smile) { }
 
 	//chapter 1
@@ -28,10 +32,9 @@ public class MainVariableSource : VariableSource, IMainVariableSource
 	//chapter 2
 	public void LaunchGameSpotGerman() { }
 	public bool spotGermanFinished;
+	public void AfterGasAttack() { }
 
-
-	public void SendLetter(int chapter) { }
-	public void LoseInventoryObject(string id) { }
+	//chapter 3
 }
 
 public interface IMainVariableSource
@@ -42,6 +45,7 @@ public interface IMainVariableSource
 	void LootMask();
 	void LootWatch();
 	void SendLetter(int chapter);
+	void AfterGasAttack();
 
 	void LoseInventoryObject(string id);
 }

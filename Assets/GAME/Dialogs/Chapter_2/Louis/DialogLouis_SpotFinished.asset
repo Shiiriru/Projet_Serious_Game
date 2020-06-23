@@ -76,9 +76,11 @@ MonoBehaviour:
   characterName: Louis
   text: "En tout cas, \xE7a devrait les calmer un peu. On va continuer \xE0 veiller,
     chef ! Rassurez vous, comme \xE0 Verdun, ils passeront pas !"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114643110029360906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,9 +130,11 @@ MonoBehaviour:
   characterName: Louis
   text: "Bien vu, chef ! Salaud de boche, qu'est ce qu'y voulait celui-l\xE0 ? Venir
     nous piquer le pinard et le pain blanc ?"
+  showAdvance: 0
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114914220020223666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,3 +166,4 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   output: {fileID: 0}
+  showPlayerUIAfterDialog: 1
