@@ -425,7 +425,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: Capitaine Favourier
-  text: '......'
+  text: Encore une attaque ... Je dois essayer proteger les survivants mais je sais
+    pas si je peux y arriver ou pas ...
   disableScene: 1
   displayAll: 0
   displaySpeed: 1

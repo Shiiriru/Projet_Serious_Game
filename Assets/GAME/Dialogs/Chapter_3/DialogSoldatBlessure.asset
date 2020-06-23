@@ -563,7 +563,9 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: Capitaine Favourier
-  text: '... je sais...'
+  text: "Je connais votre souffrance soldats ... Ecoutez, je vous promet que c'est
+    la derni\xE8re attaque ! Ensuite ce ... c'est fini et on se retire d'ici. Je vous
+    demande de me suivre juste une derni\xE8re fois."
   disableScene: 1
   displayAll: 0
   displaySpeed: 1
@@ -611,8 +613,9 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: Capitaine Favourier
-  text: "J'irais voir ces braves gars apr\xE8s pour leur remonter le moral, je veux
-    d'abord m'assurer que mon ami aille bien."
+  text: "Les soldats sont vraiment au bout du rouleau, et dire que je dois leur annoncer
+    ... *soupire tristement* Je dois m'assurer tout d'abord que Louis aille bien et
+    lui remettre sa r\xE9compense."
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -660,7 +663,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: Capitaine Favourier
-  text: '...'
+  text: Pas la peine de me mettre cette pression en plus soldat ... J'en ai vraiment
+    pas besoin ...
   disableScene: 1
   displayAll: 0
   displaySpeed: 1

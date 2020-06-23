@@ -84,8 +84,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Centre d'appels
-  text: "D\xE9sol\xE9 mais hors de question de monopoliser la ligne comme \xE7a, d'autres
-    secteurs peuvent plus en avoir besoin que vous"
+  text: "D\xE9sol\xE9 capitaine mais vous ne pouvez pas monopoliser la ligne comme
+    \xE7a, d'autres secteurs peuvent plus en avoir besoin que vous."
   disableScene: 1
   displayAll: 0
   displaySpeed: 2

@@ -30,6 +30,9 @@ MonoBehaviour:
   - {fileID: 114955997886478168}
   - {fileID: 114287580558889048}
   - {fileID: 0}
+  - {fileID: 114870599714457100}
+  - {fileID: 114367187846884322}
+  - {fileID: 114960561080471966}
   variableSource: {fileID: 114452628957663408}
 --- !u!114 &114018518413419640
 MonoBehaviour:
@@ -44,7 +47,7 @@ MonoBehaviour:
   m_Name: Run Method/Change variable
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2056, y: 104}
+  position: {x: 2536, y: 104}
   ports:
     keys:
     - input
@@ -102,7 +105,7 @@ MonoBehaviour:
   m_Name: Delay
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2056, y: 8}
+  position: {x: 2536, y: 8}
   ports:
     keys:
     - input
@@ -114,10 +117,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114845290934376590}
-        reroutePoints: []
-      - fieldName: output
-        node: {fileID: 114964142061481670}
+        node: {fileID: 114960561080471966}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Name: Run Method/Change variable
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2056, y: 360}
+  position: {x: 2536, y: 360}
   ports:
     keys:
     - input
@@ -248,6 +248,65 @@ MonoBehaviour:
       parameter:
         vType: 0
         valueStr: 
+--- !u!114 &114367187846884322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 2104, y: 8}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114367187846884322}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114870599714457100}
+        reroutePoints: []
+      - fieldName: output
+        node: {fileID: 114845290934376590}
+        reroutePoints: []
+      - fieldName: output
+        node: {fileID: 114964142061481670}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114367187846884322}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114960561080471966}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 1
+  characterName: Capitaine Favourier
+  text: "Il ne manquait plus que les gaz de combats ... Notre tranch\xE9e va rapidement
+    devenir invivable ... et ce qui nous servait de foyer finira par devenir notre
+    tombeau ..."
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
 --- !u!114 &114389560179021090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,7 +539,7 @@ MonoBehaviour:
   m_Name: Run Method/Change variable
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2056, y: 184}
+  position: {x: 2536, y: 184}
   ports:
     keys:
     - input
@@ -604,7 +663,7 @@ MonoBehaviour:
   displaySide: 1
   characterName: Capitaine Favourier
   text: "*tousse* c'est pas vrai ... Fichu masque ! Ca filtre quasiement rien ! Je
-    dois retourner \xE0 l'abri dans mon bureau si je ne veux pas mourrir !"
+    dois retourner \xE0 l'abri dans mon bureau si je ne veux pas mourir !"
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -645,7 +704,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114845290934376590}
+        node: {fileID: 114870599714457100}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -656,7 +715,7 @@ MonoBehaviour:
   displaySide: 1
   characterName: Capitaine Favourier
   text: "*tousse* c'est pas vrai ! Je dois retourner \xE0 l'abri dans mon bureau si
-    je ne veux pas mourrir ici !"
+    je ne veux pas mourir ici !"
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -759,7 +818,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1592, y: -120}
+  position: {x: 1320, y: -120}
   ports:
     keys:
     - input
@@ -773,9 +832,6 @@ MonoBehaviour:
       - fieldName: output
         node: {fileID: 114575971606977644}
         reroutePoints: []
-      - fieldName: output
-        node: {fileID: 114626773861732098}
-        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 1
@@ -786,7 +842,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114049900250367740}
+        node: {fileID: 114367187846884322}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -798,6 +854,58 @@ MonoBehaviour:
   characterName: Capitaine Favourier
   text: "J'esp\xE8re que les sous-officiers parviendront \xE0 g\xE9rer tout \xE7a
     sans moi, sinon, c'est la catastrophe ..."
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
+--- !u!114 &114870599714457100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1688, y: 120}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114870599714457100}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114626773861732098}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114870599714457100}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114367187846884322}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 1
+  characterName: Capitaine Favourier
+  text: "Foutu gaz .... Il ne manquait plus que \xE7a pour d\xE9cimer mes hommes !
+    *tousse*"
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -866,7 +974,7 @@ MonoBehaviour:
   m_Name: Change scene
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2440, y: 168}
+  position: {x: 2856, y: 168}
   ports:
     keys:
     - input
@@ -913,7 +1021,7 @@ MonoBehaviour:
   m_Name: Run Method/Change variable
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2056, y: 264}
+  position: {x: 2536, y: 264}
   ports:
     keys:
     - input
@@ -958,6 +1066,58 @@ MonoBehaviour:
       parameter:
         vType: 0
         valueStr: 
+--- !u!114 &114960561080471966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 2104, y: 248}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114960561080471966}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114367187846884322}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114960561080471966}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114049900250367740}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 1
+  characterName: Capitaine Favourier
+  text: "Il faut que l'on contre attaque le plus rapidement possible, sinon les boches
+    vont continuer \xE0 nous gazer sans cesse !"
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
 --- !u!114 &114964142061481670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -971,7 +1131,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1320, y: 344}
+  position: {x: 1320, y: 360}
   ports:
     keys:
     - input
@@ -995,7 +1155,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114049900250367740}
+        node: {fileID: 114367187846884322}
         reroutePoints: []
       _direction: 1
       _connectionType: 1

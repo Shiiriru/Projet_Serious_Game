@@ -20,6 +20,7 @@ MonoBehaviour:
   - {fileID: 114480214189244390}
   - {fileID: 114723940661614668}
   - {fileID: 0}
+  - {fileID: 114468843467328214}
   variableSource: {fileID: 114700773602609724}
 --- !u!114 &114209672102483416
 MonoBehaviour:
@@ -157,6 +158,59 @@ MonoBehaviour:
       parameter:
         vType: 0
         valueStr: 
+--- !u!114 &114468843467328214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 344, y: 56}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114468843467328214}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114832860851708934}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114468843467328214}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114723940661614668}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 1
+  characterName: Capitaine Favourier
+  text: "Bonne journ\xE9e \xE0 vous soldats, et surveillez bien le front. Ce serait
+    dommage de subir un assaut surprise de la part des allemands pour nous souhaiter
+    la bienvenue dans ce secteur !"
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 2
 --- !u!114 &114480214189244390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +306,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114832860851708934}
+        node: {fileID: 114468843467328214}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -310,7 +364,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114723940661614668}
+        node: {fileID: 114468843467328214}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -319,8 +373,10 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   displaySide: 1
-  characterName: 
-  text: "\xC0 L'ATTAQUE!!!!"
+  characterName: Capitaine Favourier
+  text: "Bon, je dois vous laisser, il faut que je retourne dans mes quartiers afin
+    de pr\xE9parer les prochains plans de bataille. Une fois les anglais pass\xE9,
+    ce sera \xE0 nous de jouer."
   disableScene: 1
   displayAll: 0
   displaySpeed: 2

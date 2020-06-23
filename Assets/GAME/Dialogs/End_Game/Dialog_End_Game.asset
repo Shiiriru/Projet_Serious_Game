@@ -555,8 +555,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: Capitaine Favourier
-  text: "C'est pas vrai .. Ca ne devait pas se passer comme \xE7a ! Ca devait \xEAtre
-    la derni\xE8re charge et puis le repos pour tous, pas la boue et la mort !"
+  text: Sergent Notre-Dame, restez avec moi, j'ai besoin de vous et votre section
+    pour ... pour ... Sergent ? C'est ... trop tard pour lui aussi, il est fichu ...
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -862,8 +862,8 @@ MonoBehaviour:
   displaySide: 1
   characterName: Capitaine Favourier
   text: "Seigneur \u2026 Tout autour de moi les soldats s'effondre, certains dans
-    un cri, d'autres dans le silence ! C'est pas vrai \u2026 Je leur avais promis
-    que \xE7a se passerait bien, tu parles !"
+    un cri, d'autres dans le silence ! C'est pas vrai \u2026 Ca va encore \xEAtre
+    un massacre comme depuis le d\xE9but de cette fichue campagne !"
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -914,8 +914,9 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Soldat survivant
-  text: "C'est ainsi que je vous demande juste de retenir ces \xE9venements, de garder
-    en m\xE9moire ceux qui se sont battus durant ce conflit, issus de tous horizons."
+  text: "C'est ainsi que je vous demande de simplement retenir ces \xE9venements,
+    de garder en m\xE9moire ceux qui se sont battus durant ce conflit, issus de tous
+    horizons."
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -1149,8 +1150,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: Capitaine Favourier
-  text: "Et moi qui leur avais promis que tout se passerait bien mais \u2026Je \u2026
-    Je ne dois pas trahir ma promesse envers eux."
+  text: "Bon sang \xE7a devait bien se passer, on me l'avait promis et JE le leur
+    avais promis ! Ils me faisaient confiance ..."
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
@@ -1636,8 +1637,9 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: Capitaine Favourier
-  text: Au moins la compagnie me suit, elle charge bayonette au canon, essayant d'avaler
-    le plus rapidement possible la distance entre eux et nous, esquivant les balles.
+  text: "C'est bon, la compagnie me suit toujours, bayonette au canon, criant pour
+    se donner du courage ! Je ne dois pas les d\xE9cevoir et montrer l'exemple, surtout
+    dans un moment pareil !"
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
