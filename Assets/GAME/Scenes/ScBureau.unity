@@ -4424,7 +4424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 267d09368d7cb8b42833128faa19d5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEvt: event:/03_Scene1_Bureau/01_Sons_Objets/SA_Deploiement_Extradoc
+  soundEvt: event:/03_Scene1_Bureau/01_Sons_Objets/SA_Consultant_Journal
   Infoitem: {fileID: 11400000, guid: 3a689c858c8a97d438b0b8070bacd8df, type: 2}
   customActionSprite: {fileID: 21300000, guid: 1252ee09e99358c4c933888543d2fcc2, type: 3}
   mapGame: {fileID: 1987183061}

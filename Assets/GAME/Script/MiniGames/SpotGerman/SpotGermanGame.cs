@@ -90,7 +90,7 @@ public class SpotGermanGame : MiniGameBase
 
 	IEnumerator GameFinishCoroutine()
 	{
-		yield return new WaitForSeconds(2f);
+		yield return new WaitForSeconds(2.5f);
 		OnGameComplete();
 		gameObject.SetActive(false);
 	}

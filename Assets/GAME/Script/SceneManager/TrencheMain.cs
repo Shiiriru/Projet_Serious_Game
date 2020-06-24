@@ -8,7 +8,14 @@ public class TrencheMain : SceneManagerBase
 {
 	[SerializeField] DialogGraph[] dialogEndChapter;
 
-    [SerializeField] [EventRef] string SoundPath;
+    [SerializeField] [EventRef] string GazAlarmSound;
+    [SerializeField] [EventRef] string CardGameSound;
+    [SerializeField] [EventRef] string GazMaskSound;
+
+    //Son d'ambiance
+    [SerializeField] [EventRef] string AmbianceTrench1;
+    [SerializeField] [EventRef] string AmbianceTrench2;
+    [SerializeField] [EventRef] string AmbianceTrench3;
 
     [SerializeField] BlackJack blackJackGame;
 	[SerializeField] CardPlayers cardPlayers;
@@ -27,7 +34,7 @@ public class TrencheMain : SceneManagerBase
 	{
 		base.Start();
 		uiMain.onChangeSceneFinished += () => StartCoroutine(CheckChapterFinishCoroutine());
-	}
+    }
 
 	protected override void SetupChapters()
 	{
@@ -36,14 +43,17 @@ public class TrencheMain : SceneManagerBase
 		switch (GameManager.chapterCount)
 		{
 			case 0:
+                uiMain.Ambiance.Play(AmbianceTrench1);
 				blackJackGame.onGameComplete += BlackJackFinished;
 
 				break;
 			case 1:
-				spotGermanGame.onGameComplete += SpotGermanGameComplete;
+                uiMain.Ambiance.Play(AmbianceTrench2);
+                spotGermanGame.onGameComplete += SpotGermanGameComplete;
 				break;
 			case 2:
-				soliderHurt.onDialogFinished += LaunchFinaWar;
+                uiMain.Ambiance.Play(AmbianceTrench3);
+                soliderHurt.onDialogFinished += LaunchFinaWar;
 				break;
 		}
 	}
@@ -69,7 +79,7 @@ public class TrencheMain : SceneManagerBase
 					case 1:
 						if ((bool)DialogPlayerHelper.VariableSourceMgr.GetValue("spotGermanFinished"))
 						{
-                            SoundPlayer.PlayOneShot(SoundPath);
+                            SoundPlayer.PlayOneShot(GazAlarmSound);
 
                             NextChapter();
 							yield break;
@@ -90,7 +100,9 @@ public class TrencheMain : SceneManagerBase
 	public void LaunchBlackJack()
 	{
 		blackJackGame.Launch();
-	}
+
+        SoundPlayer.PlayOneShot(CardGameSound);
+    }
 
 	private void BlackJackFinished()
 	{
@@ -120,7 +132,9 @@ public class TrencheMain : SceneManagerBase
 	 public void AfterGasAttack()
 	{
 		DialogPlayerHelper.SetDialog(dialogAfterGas);
-	}
+
+        SoundPlayer.PlayOneShot(GazMaskSound);
+    }
 
 	private void LaunchFinaWar()
 	{

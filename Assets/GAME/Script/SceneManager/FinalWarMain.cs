@@ -1,5 +1,6 @@
 ﻿using DG.Tweening;
 using DialogSystem;
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,11 @@ public class FinalWarMain : MonoBehaviour
 	[SerializeField] DialogGraph dialogFinalWar;
 	[SerializeField] DialogGraph dialogAfterWar;
 
-	[SerializeField] CanvasGroup gameEndTextGroup;
+    [SerializeField] [EventRef] string FinalWarAmbiance;
+    [SerializeField] [EventRef] string AfterWarAmbiance;
+    [SerializeField] [EventRef] string FinalHeadShotSound;
+
+    [SerializeField] CanvasGroup gameEndTextGroup;
 	[SerializeField] SceneReference sceneMainMenu;
 	private void Start()
 	{
@@ -20,19 +25,25 @@ public class FinalWarMain : MonoBehaviour
 
 		DialogPlayerHelper.SetDialog(dialogFinalWar);
 		DialogPlayerHelper.SetOnFinishedAction(PlayAfterWarDialog);
-	}
+
+        SoundPlayer.PlayOneShot(FinalWarAmbiance);
+    }
 
 	void PlayAfterWarDialog()
 	{
 		StartCoroutine(AfterWarCoroutine());
-	}
+
+        uiMain.Ambiance.Play(FinalWarAmbiance);
+    }
 
 	IEnumerator AfterWarCoroutine()
 	{
-		yield return new WaitForSeconds(0.5f);
+		yield return new WaitForSeconds(1f);
 		DialogPlayerHelper.SetDialog(dialogAfterWar);
 		DialogPlayerHelper.SetOnFinishedAction(EndGame);
-	}
+
+        uiMain.Ambiance.Play(AfterWarAmbiance);
+    }
 
 	void EndGame()
 	{

@@ -507,6 +507,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogFinalWar: {fileID: 11400000, guid: d9ca203d810688a45b6a96667dc24688, type: 2}
   dialogAfterWar: {fileID: 11400000, guid: 4ea9888b8c409214dafd0c602980e2f5, type: 2}
+  FinalWarAmbiance: event:/05_Scene_Fin du jeu/S_FJ_Champ de bataille
+  AfterWarAmbiance: event:/05_Scene_Fin du jeu/S_FJ_Chant Final
+  FinalHeadShotSound: event:/05_Scene_Fin du jeu/S_FJ_Tir Final
   gameEndTextGroup: {fileID: 544209351}
   sceneMainMenu:
     sceneAsset: {fileID: 102900000, guid: 2de5cd7b896f5074ab7c2c013a489135, type: 3}

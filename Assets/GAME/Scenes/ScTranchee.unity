@@ -2175,7 +2175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25997ae6b812e64a9f32bf80a8ef01e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SoundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Interaction/SB_Soldat_Interaction_Ensemble"
+  SoundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat-Blessure/SB_3_Soldat_Blessure_Ensemble"
 --- !u!1 &1160759743
 GameObject:
   m_ObjectHideFlags: 0
@@ -2293,7 +2293,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ac14137e53f3c0d4aa01154109d4bf3f, type: 2}
   - {fileID: 11400000, guid: 2803388bd54815b41b70da19c41a6f7e, type: 2}
   - {fileID: 11400000, guid: 5803166d261dfe24ca374723c4d19035, type: 2}
-  SoundPath: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_2_Alarme_Gaz"
+  GazAlarmSound: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_2_Alarme_Gaz"
+  CardGameSound: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_1_Jeu_Carte"
+  GazMaskSound: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_2_Soldat_GasMask"
+  AmbianceTrench1: "event:/04_Scene2_Tranch\xE9e/04_Ambiance/SB_1_Ambiance_Tranch\xE9e"
+  AmbianceTrench2: "event:/04_Scene2_Tranch\xE9e/04_Ambiance/SB_2_Ambiance_Tranch\xE9e"
+  AmbianceTrench3: "event:/04_Scene2_Tranch\xE9e/04_Ambiance/SB_3_Ambiance_Tranch\xE9e"
   blackJackGame: {fileID: 122891007}
   cardPlayers: {fileID: 1011312053}
   pocketWatchItem: {fileID: 11400000, guid: e02f68dd13cf27d468f381e1fe3736e7, type: 2}
@@ -2814,7 +2819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25997ae6b812e64a9f32bf80a8ef01e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SoundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Interaction/SB_Soldat_Interaction_Ensemble"
+  SoundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat-Blessure/SB_3_Soldat_Blessure_Ensemble"
 --- !u!1 &1312151687
 GameObject:
   m_ObjectHideFlags: 0
