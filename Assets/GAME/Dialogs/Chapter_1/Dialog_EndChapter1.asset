@@ -20,8 +20,63 @@ MonoBehaviour:
   - {fileID: 114480214189244390}
   - {fileID: 114723940661614668}
   - {fileID: 114468843467328214}
+  - {fileID: 114547933311158320}
+  - {fileID: 114067484627857028}
   - {fileID: 0}
   variableSource: {fileID: 114700773602609724}
+--- !u!114 &114067484627857028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 744, y: 8}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114067484627857028}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114468843467328214}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114067484627857028}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114723940661614668}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 1
+  characterName: Capitaine Favourier
+  text: "Bonne journ\xE9e \xE0 vous soldats !"
+  showAdvance: 0
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114209672102483416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +122,7 @@ MonoBehaviour:
   m_Name: Change scene
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1016, y: -200}
+  position: {x: 1192, y: -24}
   ports:
     keys:
     - input
@@ -172,7 +227,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 344, y: 56}
+  position: {x: 744, y: -200}
   ports:
     keys:
     - input
@@ -184,7 +239,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114832860851708934}
+        node: {fileID: 114547933311158320}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -196,7 +251,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114723940661614668}
+        node: {fileID: 114067484627857028}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -206,9 +261,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: Capitaine Favourier
-  text: "Bonne journ\xE9e \xE0 vous soldats, et surveillez bien le front. Ce serait
-    dommage de subir un assaut surprise de la part des allemands pour nous souhaiter
-    la bienvenue dans ce secteur !"
+  text: Surveillez bien le front. Ce serait dommage de subir un assaut surprise de
+    la part des allemands pour nous souhaiter la bienvenue dans ce secteur !
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -272,6 +326,59 @@ MonoBehaviour:
       parameter:
         vType: 0
         valueStr: 
+--- !u!114 &114547933311158320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 344, y: 8}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114547933311158320}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114832860851708934}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114547933311158320}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114468843467328214}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 1
+  characterName: Capitaine Favourier
+  text: "Une fois les anglais pass\xE9, ce sera \xE0 nous de jouer."
+  showAdvance: 0
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 2
+  duration: 0.3
 --- !u!114 &114700773602609724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,7 +404,7 @@ MonoBehaviour:
   m_Name: Delay
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 792, y: -168}
+  position: {x: 1208, y: -168}
   ports:
     keys:
     - input
@@ -309,7 +416,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114468843467328214}
+        node: {fileID: 114067484627857028}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -329,7 +436,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  duration: 2
+  duration: 1
 --- !u!114 &114832860851708934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,7 +474,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114468843467328214}
+        node: {fileID: 114547933311158320}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -378,8 +485,7 @@ MonoBehaviour:
   displaySide: 1
   characterName: Capitaine Favourier
   text: "Bon, je dois vous laisser, il faut que je retourne dans mes quartiers afin
-    de pr\xE9parer les prochains plans de bataille. Une fois les anglais pass\xE9,
-    ce sera \xE0 nous de jouer."
+    de pr\xE9parer les prochains plans de bataille."
   showAdvance: 0
   disableScene: 1
   displayAll: 0

@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: Run Method/Change variable
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2088, y: 184}
+  position: {x: 2072, y: 168}
   ports:
     keys:
     - input

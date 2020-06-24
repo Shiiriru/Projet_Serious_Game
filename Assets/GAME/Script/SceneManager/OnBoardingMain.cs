@@ -6,7 +6,7 @@ using DialogSystem;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 
-public class OnBoardingMain : MonoBehaviour
+public class OnBoardingMain : SceneManagerBase
 {
 	[SerializeField] Image imgPhoto;
 	[SerializeField] Sprite SpriteSerious;
@@ -14,7 +14,7 @@ public class OnBoardingMain : MonoBehaviour
 	[SerializeField] DialogGraph dialogGraph;
 
 	// Start is called before the first frame update
-	void Start()
+	protected override void Start()
 	{
 		DialogPlayerHelper.SetDialog(dialogGraph);
 	}

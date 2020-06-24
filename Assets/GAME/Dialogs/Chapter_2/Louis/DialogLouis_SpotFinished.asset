@@ -16,6 +16,8 @@ MonoBehaviour:
   - {fileID: 114914220020223666}
   - {fileID: 114643110029360906}
   - {fileID: 114389682660445126}
+  - {fileID: 114733518378560936}
+  - {fileID: 114909353293360640}
   - {fileID: 0}
   variableSource: {fileID: 114277648485271632}
 --- !u!114 &114277648485271632
@@ -43,7 +45,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 392, y: -72}
+  position: {x: 440, y: -72}
   ports:
     keys:
     - input
@@ -55,7 +57,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114643110029360906}
+        node: {fileID: 114733518378560936}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -65,7 +67,10 @@ MonoBehaviour:
       _node: {fileID: 114389682660445126}
       _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: input
+        node: {fileID: 114909353293360640}
+        reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
@@ -75,7 +80,7 @@ MonoBehaviour:
   displaySide: 0
   characterName: Louis
   text: "En tout cas, \xE7a devrait les calmer un peu. On va continuer \xE0 veiller,
-    chef ! Rassurez vous, comme \xE0 Verdun, ils passeront pas !"
+    chef !"
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -118,6 +123,59 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
+        node: {fileID: 114733518378560936}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 0
+  characterName: Louis
+  text: BIEN VU, CHEF !
+  showAdvance: 0
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
+  duration: 0.2
+--- !u!114 &114733518378560936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -8, y: 152}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114733518378560936}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114643110029360906}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114733518378560936}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
         node: {fileID: 114389682660445126}
         reroutePoints: []
       _direction: 1
@@ -128,8 +186,58 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Louis
-  text: "Bien vu, chef ! Salaud de boche, qu'est ce qu'y voulait celui-l\xE0 ? Venir
-    nous piquer le pinard et le pain blanc ?"
+  text: "Salaud de boche, qu'est ce qu'y voulait celui-l\xE0 ? Venir nous piquer le
+    pinard et le pain blanc ?"
+  showAdvance: 0
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
+  duration: 0.2
+--- !u!114 &114909353293360640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 440, y: 152}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114909353293360640}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114389682660445126}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114909353293360640}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 0
+  characterName: Louis
+  text: "Rassurez vous, comme \xE0 Verdun, ils passeront pas !"
   showAdvance: 0
   disableScene: 1
   displayAll: 0

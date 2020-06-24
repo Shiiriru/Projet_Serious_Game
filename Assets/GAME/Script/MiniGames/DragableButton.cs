@@ -8,6 +8,7 @@ public class DragableButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 	protected RectTransform rectTransform;
 	protected bool isHovering;
 	[SerializeField] protected bool disableMove;
+	public bool DisableMove { get { return disableMove; } }
 
 	public event System.Action onHoverBegin;
 	public event System.Action onHoverEnd;
@@ -29,6 +30,8 @@ public class DragableButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
 	public void OnPointerUp(PointerEventData eventData)
 	{
+		if (disableMove)
+			return;
 		isHovering = false;
 		if (onHoverEnd != null)
 			onHoverEnd();

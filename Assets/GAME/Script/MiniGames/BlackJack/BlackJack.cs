@@ -1,4 +1,5 @@
 ﻿using DialogSystem;
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,7 @@ public class BlackJack : MiniGameBase
 
 	[SerializeField] GameObject buttonFinish;
 
-
+	[SerializeField] [EventRef] string launchGameSoundPath;
 
 	private void Awake()
 	{
@@ -32,6 +33,8 @@ public class BlackJack : MiniGameBase
 	public override void Launch()
 	{
 		base.Launch();
+
+		SoundPlayer.PlayOneShot(launchGameSoundPath);
 
 		foreach (var c in shownCardList)
 			c.Destroy();

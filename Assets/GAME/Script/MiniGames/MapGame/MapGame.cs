@@ -1,28 +1,40 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using DialogSystem;
 using UnityEngine;
 
 public class MapGame : MiniGameBase
 {
 	[SerializeField] MapGamePawn[] pawnList;
 
+	[SerializeField] DialogGraph dialog;
+
 	private void Start()
 	{
-		foreach(var p in pawnList)
-			p.onHoverEnd += CheckMapCorrect;
+		bool mapChecked = (bool)DialogPlayerHelper.VariableSourceMgr.GetValue("MapChecked");
+		foreach (var p in pawnList)
+		{
+			//auto set pawn pos
+			if (mapChecked)
+				p.SetPosToTargetCase();
+			else
+			{
+				DialogPlayerHelper.SetDialog(dialog);
+				p.onHoverEnd += CheckMapCorrect;
+			}				
+		}
 	}
 
 	private void CheckMapCorrect()
 	{
 		//return if one pawn isn't in the right place
-		foreach(var p in pawnList)
+		foreach (var p in pawnList)
 		{
 			if (!p.CheckCorrect())
-				return;													
+				return;
 		}
 
-		Debug.Log("Map game complete yeah!");
 		OnGameComplete();
+		DialogPlayerHelper.SetDialog(dialog);
+		DialogPlayerHelper.SetOnFinishedAction(OnClickClose);
 	}
 
 	public void OnClickClose()

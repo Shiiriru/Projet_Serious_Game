@@ -111,7 +111,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 140, y: 140}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8073669276924928439
 CanvasRenderer:
@@ -176,4 +176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundEvt: event:/Son_Systeme/S_Transition_Zone
-  scene: {fileID: 0}
+  sceneRef:
+    sceneAsset: {fileID: 102900000, guid: 066a278ebcef6cb4c9da7ac79c68d47c, type: 3}
+    sceneName: GAME/Scenes/ScBureau

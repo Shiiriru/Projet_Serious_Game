@@ -26,6 +26,7 @@ MonoBehaviour:
   - {fileID: 114305329318044512}
   - {fileID: 114658856074483736}
   - {fileID: 114666887485889458}
+  - {fileID: 114435026689721008}
   - {fileID: 0}
   variableSource: {fileID: 114212042385146074}
 --- !u!114 &114212042385146074
@@ -104,7 +105,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1752, y: -408}
+  position: {x: 1816, y: -584}
   ports:
     keys:
     - input
@@ -116,7 +117,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114723626585502364}
+        node: {fileID: 114435026689721008}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -435,6 +436,60 @@ MonoBehaviour:
   bOutput3: {fileID: 0}
   bInput4: {fileID: 0}
   bOutput4: {fileID: 0}
+--- !u!114 &114435026689721008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1384, y: -584}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114435026689721008}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114723626585502364}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114435026689721008}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114305329318044512}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 0
+  characterName: Commandement
+  text: Aussi, si vous sortez, n'oubliez pas de prendre la lettre de renseignement
+    pour nos amis anglais.
+  showAdvance: 0
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
+  duration: 0.2
 --- !u!114 &114518049651445052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,7 +773,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114305329318044512}
+        node: {fileID: 114435026689721008}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -730,8 +785,7 @@ MonoBehaviour:
   characterName: Commandement
   text: "Comme premiers objectifs, veillez consulter la carte de bataille puis mettez
     la \xE0 jour, prenez aussi contact avec l'artillerie la plus proche du r\xE9giment
-    ! Aussi, si vous sortez, n'oubliez pas de prendre la lettre de renseignement pour
-    nos amis anglais."
+    !"
   showAdvance: 0
   disableScene: 1
   displayAll: 0

@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: Run Method/Change variable
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1784, y: 8}
+  position: {x: 1784, y: 104}
   ports:
     keys:
     - input
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 968, y: -88}
+  position: {x: 968, y: 8}
   ports:
     keys:
     - input
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Name: Delay
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1784, y: -88}
+  position: {x: 1784, y: 8}
   ports:
     keys:
     - input
@@ -192,7 +192,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  duration: 3
+  duration: 1
 --- !u!114 &114069138236521070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 552, y: -88}
+  position: {x: 488, y: 24}
   ports:
     keys:
     - input
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -280, y: -216}
+  position: {x: -296, y: -168}
   ports:
     keys:
     - input
@@ -273,6 +273,9 @@ MonoBehaviour:
       - fieldName: output
         node: {fileID: 114352763682104196}
         reroutePoints: []
+      - fieldName: bOutput0
+        node: {fileID: 114352763682104196}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 1
@@ -283,7 +286,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114255181826789192}
+        node: {fileID: 114211615688035092}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -312,7 +315,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 584, y: 296}
+  position: {x: 984, y: -200}
   ports:
     keys:
     - input
@@ -325,6 +328,9 @@ MonoBehaviour:
       connections:
       - fieldName: output
         node: {fileID: 114541913062717296}
+        reroutePoints: []
+      - fieldName: output
+        node: {fileID: 114132718931574410}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -366,7 +372,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 136, y: -88}
+  position: {x: 88, y: -88}
   ports:
     keys:
     - input
@@ -379,9 +385,6 @@ MonoBehaviour:
       connections:
       - fieldName: output
         node: {fileID: 114332059390569324}
-        reroutePoints: []
-      - fieldName: output
-        node: {fileID: 114132718931574410}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -422,7 +425,7 @@ MonoBehaviour:
   m_Name: Run Method/Change variable
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1784, y: 264}
+  position: {x: 1784, y: 360}
   ports:
     keys:
     - input
@@ -480,7 +483,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -280, y: 88}
+  position: {x: -312, y: 88}
   ports:
     keys:
     - input
@@ -490,7 +493,10 @@ MonoBehaviour:
       _node: {fileID: 114332059390569324}
       _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: bOutput1
+        node: {fileID: 114352763682104196}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 1
@@ -530,7 +536,7 @@ MonoBehaviour:
   m_Name: Condition Branch
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -568, y: -8}
+  position: {x: -584, y: -40}
   ports:
     keys:
     - bOutput0
@@ -545,7 +551,10 @@ MonoBehaviour:
       _node: {fileID: 114352763682104196}
       _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: input
+        node: {fileID: 114132718931574410}
+        reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
@@ -554,7 +563,10 @@ MonoBehaviour:
       _node: {fileID: 114352763682104196}
       _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: input
+        node: {fileID: 114332059390569324}
+        reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
@@ -613,10 +625,12 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   condition:
-    vType: 0
+    vType: 4
     valueStr: 
-    name: 
-  branchs: []
+    name: isUsedNewMask
+  branchs:
+  - True
+  - False
   bOutput0: {fileID: 0}
   bOutput1: {fileID: 0}
   bOutput2: {fileID: 0}
@@ -635,7 +649,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1384, y: -88}
+  position: {x: 1384, y: 8}
   ports:
     keys:
     - input
@@ -690,7 +704,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 968, y: 104}
+  position: {x: 968, y: 200}
   ports:
     keys:
     - input
@@ -755,7 +769,7 @@ MonoBehaviour:
   m_Name: Run Method/Change variable
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1784, y: 88}
+  position: {x: 1784, y: 184}
   ports:
     keys:
     - input
@@ -813,7 +827,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 136, y: 104}
+  position: {x: 88, y: 104}
   ports:
     keys:
     - input
@@ -866,7 +880,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 136, y: 296}
+  position: {x: 88, y: 296}
   ports:
     keys:
     - input
@@ -919,7 +933,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 552, y: 104}
+  position: {x: 488, y: 216}
   ports:
     keys:
     - input
@@ -972,7 +986,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -952, y: -8}
+  position: {x: -952, y: -72}
   ports:
     keys:
     - input
@@ -1057,7 +1071,7 @@ MonoBehaviour:
   m_Name: Change scene
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2104, y: 72}
+  position: {x: 2104, y: 168}
   ports:
     keys:
     - input
@@ -1104,7 +1118,7 @@ MonoBehaviour:
   m_Name: Run Method/Change variable
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1784, y: 168}
+  position: {x: 1784, y: 264}
   ports:
     keys:
     - input
@@ -1162,7 +1176,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1384, y: 104}
+  position: {x: 1384, y: 200}
   ports:
     keys:
     - input

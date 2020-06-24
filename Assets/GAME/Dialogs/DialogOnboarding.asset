@@ -36,6 +36,13 @@ MonoBehaviour:
   - {fileID: 114593880930906600}
   - {fileID: 114599755178817316}
   - {fileID: 114284158097132946}
+  - {fileID: 114485192580013940}
+  - {fileID: 114100167550452878}
+  - {fileID: 114753109141827124}
+  - {fileID: 114708240281710556}
+  - {fileID: 114063315225300322}
+  - {fileID: 114386645465186884}
+  - {fileID: 114283826199934890}
   - {fileID: 0}
   variableSource: {fileID: 114735846283954992}
 --- !u!114 &114003861249723866
@@ -51,7 +58,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1432, y: 376}
+  position: {x: -1560, y: 568}
   ports:
     keys:
     - input
@@ -63,7 +70,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114443036558355488}
+        node: {fileID: 114386645465186884}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -142,6 +149,60 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 075af4d0f861b0c43ae2b93531c1e5a4, type: 3}
   duration: 0
   isWait: 0
+--- !u!114 &114063315225300322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1544, y: 136}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114063315225300322}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114443036558355488}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114063315225300322}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114386645465186884}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 1
+  characterName: 
+  text: "Pourtant, au fond de moi, je sens comme une inqui\xE8tude sourde. Mais peut-\xEAtre
+    que je me fais du soucis pour rien. "
+  showAdvance: 0
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114073350371673708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +216,7 @@ MonoBehaviour:
   m_Name: Delay
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -2056, y: 152}
+  position: {x: -2248, y: 152}
   ports:
     keys:
     - input
@@ -187,6 +248,52 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
+  duration: 2
+--- !u!114 &114100167550452878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2930f4ae6871a4b46b84fd3536b5a2b4, type: 3}
+  m_Name: Delay
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 840, y: 360}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114100167550452878}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114593880930906600}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114100167550452878}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114271084819973380}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
   duration: 1
 --- !u!114 &114142123012954572
 MonoBehaviour:
@@ -201,7 +308,7 @@ MonoBehaviour:
   m_Name: CG
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1816, y: 24}
+  position: {x: -2024, y: 40}
   ports:
     keys:
     - input
@@ -249,7 +356,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 440, y: 200}
+  position: {x: 424, y: 184}
   ports:
     keys:
     - input
@@ -261,7 +368,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114510399393118832}
+        node: {fileID: 114485192580013940}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -273,7 +380,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114593880930906600}
+        node: {fileID: 114753109141827124}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -285,7 +392,7 @@ MonoBehaviour:
   characterName: 
   text: "Je me pr\xE9sente, Anatole Favourier, jeune capitaine du 366eme R\xE9giment
     d'Infanterie de l'arm\xE9e fran\xE7aise. Nous venons juste d'arriver sur le front
-    ... Et ceci est notre histoire."
+    ..."
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -304,7 +411,7 @@ MonoBehaviour:
   m_Name: Change scene
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 984, y: 344}
+  position: {x: 1112, y: 264}
   ports:
     keys:
     - input
@@ -316,7 +423,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114593880930906600}
+        node: {fileID: 114100167550452878}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -338,6 +445,61 @@ MonoBehaviour:
     sceneName: GAME/Scenes/ScBureau
   duration: 2
   dateInfos: {fileID: 11400000, guid: df167f58f068fe34296427360892cf80, type: 2}
+--- !u!114 &114283826199934890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -680, y: 568}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114283826199934890}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114596655729629326}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114283826199934890}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114961676762407010}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 1
+  characterName: 
+  text: "Avant de partir pour le front, on m'a demand\xE9 de poser avec la compagnie.
+    Pour la post\xE9rit\xE9 qu'ils disaient. J'appr\xE9cie beaucoup cette photo. Elle
+    repr\xE9sente bien mon \xE9tat d'esprit, j'\xE9tais \u2026"
+  showAdvance: 0
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114284158097132946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,7 +513,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1000, y: 376}
+  position: {x: -1112, y: 376}
   ports:
     keys:
     - input
@@ -408,7 +570,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1016, y: 104}
+  position: {x: -1112, y: 152}
   ports:
     keys:
     - input
@@ -445,6 +607,59 @@ MonoBehaviour:
   text: "Je pensais que ce si\xE8cle serait celui des merveilles et des progr\xE8s
     techniques. Cependant, il va vite, trop vite peut-\xEAtre ? Il est prometteur
     \xE0 n'en pas douter, mais qui sait ce qui nous attend."
+  showAdvance: 0
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
+  duration: 0.3
+--- !u!114 &114386645465186884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1544, y: 328}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114386645465186884}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114063315225300322}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114386645465186884}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114003861249723866}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 1
+  characterName: 
+  text: "Apr\xE8s tout, qui suis-je pour douter ?"
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -512,7 +727,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1432, y: 88}
+  position: {x: -1544, y: -56}
   ports:
     keys:
     - input
@@ -524,7 +739,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114959026904933186}
+        node: {fileID: 114708240281710556}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -536,7 +751,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114003861249723866}
+        node: {fileID: 114063315225300322}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -546,11 +761,9 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: 
-  text: "Du jour au lendemain, les hommes, entre 20 \xE0 45 ans, ont tout abandonn\xE9s.
+  text: "Du jour au lendemain, les hommes, entre 15 \xE0 45 ans, ont tout abandonn\xE9s.
     Nous sommes partis, la fleur au fusil, par devoir et emplis de la certitude de
-    revenir. Une guerre rapide qu'ils disent. Pourtant, au fond de moi, je sens comme
-    une inqui\xE8tude sourde. Mais peut-\xEAtre que je me fais du soucis pour rien.
-    Apr\xE8s tout, qui suis-je pour douter ?"
+    revenir. Une guerre rapide qu'ils disent."
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -603,6 +816,52 @@ MonoBehaviour:
     sceneName: 
   duration: 0
   dateInfos: {fileID: 0}
+--- !u!114 &114485192580013940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2930f4ae6871a4b46b84fd3536b5a2b4, type: 3}
+  m_Name: Delay
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 120, y: 440}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114485192580013940}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114510399393118832}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114485192580013940}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114187373335616700}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  duration: 2
 --- !u!114 &114510399393118832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -616,7 +875,7 @@ MonoBehaviour:
   m_Name: Hide Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 168, y: 312}
+  position: {x: 120, y: 312}
   ports:
     keys:
     - input
@@ -640,7 +899,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114187373335616700}
+        node: {fileID: 114485192580013940}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -648,7 +907,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  duration: 2
+  duration: 1
   isWait: 1
 --- !u!114 &114556976993201166
 MonoBehaviour:
@@ -766,7 +1025,7 @@ MonoBehaviour:
   m_Name: Hide Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 808, y: 232}
+  position: {x: 840, y: 232}
   ports:
     keys:
     - input
@@ -778,7 +1037,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114187373335616700}
+        node: {fileID: 114753109141827124}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -790,7 +1049,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114271084819973380}
+        node: {fileID: 114100167550452878}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -798,7 +1057,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  duration: 1
+  duration: 0.5
   isWait: 1
 --- !u!114 &114596655729629326
 MonoBehaviour:
@@ -813,7 +1072,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -552, y: 376}
+  position: {x: -696, y: 344}
   ports:
     keys:
     - input
@@ -837,7 +1096,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114961676762407010}
+        node: {fileID: 114283826199934890}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -847,10 +1106,7 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: 
-  text: "Tiens, j'ai retrouv\xE9 \xE7a ! Avant de partir pour le front, on m'a demand\xE9
-    de poser avec la compagnie. Pour la post\xE9rit\xE9 qu'ils disaient. J'appr\xE9cie
-    beaucoup cette photo. Elle repr\xE9sente bien mon \xE9tat d'esprit, j'\xE9tais
-    \u2026"
+  text: "Tiens, j'ai retrouv\xE9 \xE7a !"
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -869,7 +1125,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -584, y: 104}
+  position: {x: -696, y: 88}
   ports:
     keys:
     - input
@@ -912,6 +1168,61 @@ MonoBehaviour:
   displayAll: 0
   displaySpeed: 3
   duration: 0.3
+--- !u!114 &114708240281710556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -2008, y: 456}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114708240281710556}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114959026904933186}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114708240281710556}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114443036558355488}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 1
+  characterName: 
+  text: "Le jour o\xF9 tout a bascul\xE9 : notre vie, notre destin, notre nation.
+    L'Europe toute enti\xE8re s'est embras\xE9e.\r\nIl a suffit d'un meutre dans une
+    ville perdue des Balkans pour que tout s'encha\xEEne vite."
+  showAdvance: 0
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114735846283954992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -924,6 +1235,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42e963c5726cd341894dc0532de5445, type: 3}
   m_Name: Variable Source Object
   m_EditorClassIdentifier: 
+--- !u!114 &114753109141827124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 424, y: 376}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114753109141827124}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114187373335616700}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114753109141827124}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114593880930906600}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 1
+  characterName: 
+  text: Ceci est notre histoire.
+  showAdvance: 0
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
+  duration: 0.3
 --- !u!114 &114791242263770446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -937,7 +1301,7 @@ MonoBehaviour:
   m_Name: Hide CG
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 168, y: 184}
+  position: {x: 120, y: 184}
   ports:
     keys:
     - input
@@ -1219,7 +1583,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1896, y: 312}
+  position: {x: -2008, y: 280}
   ports:
     keys:
     - input
@@ -1243,7 +1607,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114443036558355488}
+        node: {fileID: 114708240281710556}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -1253,14 +1617,11 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: 
-  text: "La Grande Guerre. 3 septembre 1914. \r\n Le jour o\xF9 tout a bascul\xE9
-    : notre vie, notre destin, notre nation. L'Europe toute enti\xE8re s'est embras\xE9e.\r\n
-    Il a suffit d'un meutre dans une ville perdue des Balkans pour que tout s'encha\xEEne
-    vite."
+  text: La Grande Guerre. 3 septembre 1914.
   showAdvance: 0
   disableScene: 1
   displayAll: 0
-  displaySpeed: 3
+  displaySpeed: 1
   duration: 0.3
 --- !u!114 &114961676762407010
 MonoBehaviour:
@@ -1275,7 +1636,7 @@ MonoBehaviour:
   m_Name: Branchs
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -168, y: 136}
+  position: {x: -248, y: 136}
   ports:
     keys:
     - bInput0
@@ -1393,7 +1754,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114596655729629326}
+        node: {fileID: 114283826199934890}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -1462,7 +1823,7 @@ MonoBehaviour:
   m_Name: START
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -2296, y: 328}
+  position: {x: -2376, y: 328}
   ports:
     keys:
     - output

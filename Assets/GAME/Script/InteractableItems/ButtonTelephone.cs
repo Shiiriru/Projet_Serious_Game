@@ -6,7 +6,7 @@ using DialogSystem;
 
 public class ButtonTelephone : InfoItemBouton
 {
-	[SerializeField] SceneBureauxManager sceneBereaux;
+	[SerializeField] BureauxMain sceneBereaux;
 
 	[SerializeField] DialogGraph phoneCallDialog;
 	[SerializeField] DialogGraph[] commandantBrefingDialog;

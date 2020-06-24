@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ButtonNewsPaper : ButtonBase
 {
-	[SerializeField] NewsPaperScreen newsPaperScreen;
+	[SerializeField] ImageZoomScreen displayScreen;
 	[SerializeField] Sprite[] newsPaperSprites;
 	public override void OnClickButton()
 	{
-		newsPaperScreen.Open(newsPaperSprites[GameManager.chapterCount]);
+		displayScreen.Open(newsPaperSprites[GameManager.chapterCount]);
 		base.OnClickButton();
 	}
 }

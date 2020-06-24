@@ -1,23 +1,16 @@
-﻿using DialogSystem;
+﻿using DG.Tweening;
+using DialogSystem;
 using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TrencheMain : SceneManagerBase
 {
 	[SerializeField] DialogGraph[] dialogEndChapter;
 
-    [SerializeField] [EventRef] string GazAlarmSound;
-    [SerializeField] [EventRef] string CardGameSound;
-    [SerializeField] [EventRef] string GazMaskSound;
-
-    //Son d'ambiance
-    [SerializeField] [EventRef] string AmbianceTrench1;
-    [SerializeField] [EventRef] string AmbianceTrench2;
-    [SerializeField] [EventRef] string AmbianceTrench3;
-
-    [SerializeField] BlackJack blackJackGame;
+	[SerializeField] BlackJack blackJackGame;
 	[SerializeField] CardPlayers cardPlayers;
 	[SerializeField] ItemInfoObject pocketWatchItem;
 	[SerializeField] ItemInfoObject maskItem;
@@ -26,15 +19,26 @@ public class TrencheMain : SceneManagerBase
 	[SerializeField] SpotGermanGame spotGermanGame;
 	[SerializeField] ScriptLouis spotGermanLouis;
 	[SerializeField] DialogGraph dialogAfterGas;
+	[SerializeField] Image gasFilter;
+	[SerializeField] Image imageMask;
+	[SerializeField] Sprite oldMaskSprite;
 
 	//chapter 3
 	[SerializeField] CharacterBase soliderHurt;
+
+	[SerializeField] [EventRef] string GazAlarmSound;
+	[SerializeField] [EventRef] string GazMaskSound;
+
+	//Son d'ambiance
+	[SerializeField] [EventRef] string AmbianceTrench1;
+	[SerializeField] [EventRef] string AmbianceTrench2;
+	[SerializeField] [EventRef] string AmbianceTrench3;
 
 	protected override void Start()
 	{
 		base.Start();
 		uiMain.onChangeSceneFinished += () => StartCoroutine(CheckChapterFinishCoroutine());
-    }
+	}
 
 	protected override void SetupChapters()
 	{
@@ -43,17 +47,19 @@ public class TrencheMain : SceneManagerBase
 		switch (GameManager.chapterCount)
 		{
 			case 0:
-                uiMain.Ambiance.Play(AmbianceTrench1);
+				uiMain.Ambiance.Play(AmbianceTrench1);
 				blackJackGame.onGameComplete += BlackJackFinished;
 
 				break;
 			case 1:
-                uiMain.Ambiance.Play(AmbianceTrench2);
-                spotGermanGame.onGameComplete += SpotGermanGameComplete;
+				uiMain.Ambiance.Play(AmbianceTrench2);
+				spotGermanGame.onGameComplete += SpotGermanGameComplete;
+				gasFilter.gameObject.SetActive(false);
+				imageMask.gameObject.SetActive(false);
 				break;
 			case 2:
-                uiMain.Ambiance.Play(AmbianceTrench3);
-                soliderHurt.onDialogFinished += LaunchFinaWar;
+				uiMain.Ambiance.Play(AmbianceTrench3);
+				soliderHurt.onDialogFinished += LaunchFinaWar;
 				break;
 		}
 	}
@@ -64,7 +70,7 @@ public class TrencheMain : SceneManagerBase
 		{
 			yield return new WaitForSeconds(2f);
 
-			if (!uiMain.IsChangingScene && !DialogPlayerHelper.IsPlaying() && 
+			if (!uiMain.IsChangingScene && !DialogPlayerHelper.IsPlaying() &&
 				(bool)DialogPlayerHelper.VariableSourceMgr.GetValue("isTalkedToLouis"))
 				switch (GameManager.chapterCount)
 				{
@@ -72,16 +78,15 @@ public class TrencheMain : SceneManagerBase
 						if ((bool)DialogPlayerHelper.VariableSourceMgr.GetValue("MapChecked") &&
 							(bool)DialogPlayerHelper.VariableSourceMgr.GetValue("letterSent"))
 						{
-							NextChapter();
+							PlayNextChapterDialog();
 							yield break;
 						}
 						break;
 					case 1:
 						if ((bool)DialogPlayerHelper.VariableSourceMgr.GetValue("spotGermanFinished"))
 						{
-                            SoundPlayer.PlayOneShot(GazAlarmSound);
-
-                            NextChapter();
+							LaunchGasEvent();
+							PlayNextChapterDialog();
 							yield break;
 						}
 						break;
@@ -91,18 +96,23 @@ public class TrencheMain : SceneManagerBase
 		}
 	}
 
-	void NextChapter()
+	void PlayNextChapterDialog()
 	{
 		DialogPlayerHelper.SetDialog(dialogEndChapter[GameManager.chapterCount]);
 		GameManager.chapterCount += 1;
 	}
 
+	void LaunchGasEvent()
+	{
+		SoundPlayer.PlayOneShot(GazAlarmSound);
+		gasFilter.gameObject.SetActive(true);
+		gasFilter.DOColor(new Color(gasFilter.color.r, gasFilter.color.g, gasFilter.color.b, 1), 7f);
+	}
+
 	public void LaunchBlackJack()
 	{
 		blackJackGame.Launch();
-
-        SoundPlayer.PlayOneShot(CardGameSound);
-    }
+	}
 
 	private void BlackJackFinished()
 	{
@@ -129,17 +139,39 @@ public class TrencheMain : SceneManagerBase
 		uiMain.UIPlayer.Inventory.Add(maskItem);
 	}
 
-	 public void AfterGasAttack()
+	public void WearMask(bool newMask)
 	{
-		DialogPlayerHelper.SetDialog(dialogAfterGas);
+		SoundPlayer.PlayOneShot(GazMaskSound);
+		if (!newMask)
+			imageMask.sprite = oldMaskSprite;
+		imageMask.gameObject.SetActive(true);
+	}
 
-        SoundPlayer.PlayOneShot(GazMaskSound);
-    }
+	public void AfterGasAttack()
+	{
+		StartCoroutine(AfertGazAttackCoroutine());
+	}
+
+	IEnumerator AfertGazAttackCoroutine()
+	{
+		//hide all characteres
+		foreach (var c in FindObjectsOfType<CharacterBase>())
+			c.gameObject.SetActive(false);
+
+		gasFilter.DOColor(new Color(gasFilter.color.r, gasFilter.color.g, gasFilter.color.b, 0), 4f);
+		yield return new WaitWhile(() => DOTween.IsTweening(gasFilter));
+
+		gasFilter.gameObject.SetActive(false);
+		imageMask.gameObject.SetActive(false);
+
+		yield return new WaitForSeconds(1.5f);
+		DialogPlayerHelper.SetDialog(dialogAfterGas);
+	}
 
 	private void LaunchFinaWar()
 	{
 		if (!(bool)DialogPlayerHelper.VariableSourceMgr.GetValue("isTalkedToLouis"))
 			return;
-		NextChapter();
+		PlayNextChapterDialog();
 	}
 }

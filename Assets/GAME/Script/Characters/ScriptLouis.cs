@@ -19,7 +19,7 @@ public class ScriptLouis : CharacterBase
 	protected override void OnClickPlayDialog()
 	{
 		//must talk to louis
-		DialogPlayerHelper.SetOnFinishedAction(()=> { DialogPlayerHelper.VariableSourceMgr.SetValue("isTalkedToLouis", true); });
+		DialogPlayerHelper.SetOnFinishedAction(() => { DialogPlayerHelper.VariableSourceMgr.SetValue("isTalkedToLouis", true); });
 
 		switch (GameManager.chapterCount)
 		{
@@ -28,10 +28,13 @@ public class ScriptLouis : CharacterBase
 				base.OnClickPlayDialog();
 				break;
 			case 1:
+				if (!(bool)DialogPlayerHelper.VariableSourceMgr.GetValue("spotGermanFinished"))
+					base.OnClickPlayDialog();
+				break;
 			case 2:
 				base.OnClickPlayDialog();
 				break;
-		}		
+		}
 	}
 
 	void Leave()

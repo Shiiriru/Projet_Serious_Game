@@ -82,7 +82,7 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   displaySide: 1
-  characterName: Capitaine Favourier
+  characterName: 
   text: "Louis est un peu nerveux ces derniers temps. Les nombreuses incursions nocturnes
     de nos ennemis l'ont mis \xE0 cran.\r\n Le moindre mouvement le fait sursauter."
   showAdvance: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: Run Method/Change variable
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1960.5, y: 225}
+  position: {x: 1944, y: 72}
   ports:
     keys:
     - input
@@ -191,7 +191,7 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   displaySide: 1
-  characterName: Capitaine Favourier
+  characterName: 
   text: "Je ferais mieux de voir comment il va. Je commence \xE0 m'inquieter pour
     lui, je n'aimerais pas qu'il file un mauvais coton."
   showAdvance: 0
