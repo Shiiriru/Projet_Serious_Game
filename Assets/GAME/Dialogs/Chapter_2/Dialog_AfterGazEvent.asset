@@ -22,7 +22,6 @@ MonoBehaviour:
   - {fileID: 114287580558889048}
   - {fileID: 114367187846884322}
   - {fileID: 114960561080471966}
-  - {fileID: 0}
   - {fileID: 114556543195567656}
   - {fileID: 114132718931574410}
   - {fileID: 114332059390569324}
@@ -35,6 +34,7 @@ MonoBehaviour:
   - {fileID: 114211615688035092}
   - {fileID: 114041703507302140}
   - {fileID: 114430769932369488}
+  - {fileID: 0}
   variableSource: {fileID: 114452628957663408}
 --- !u!114 &114018518413419640
 MonoBehaviour:
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 552, y: 296}
+  position: {x: 584, y: 296}
   ports:
     keys:
     - input
@@ -322,7 +322,10 @@ MonoBehaviour:
       _node: {fileID: 114211615688035092}
       _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: output
+        node: {fileID: 114541913062717296}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 1
@@ -938,7 +941,10 @@ MonoBehaviour:
       _node: {fileID: 114541913062717296}
       _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: input
+        node: {fileID: 114211615688035092}
+        reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
