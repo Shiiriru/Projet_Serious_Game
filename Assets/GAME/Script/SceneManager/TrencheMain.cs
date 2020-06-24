@@ -1,4 +1,5 @@
 ﻿using DialogSystem;
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,9 @@ public class TrencheMain : SceneManagerBase
 {
 	[SerializeField] DialogGraph[] dialogEndChapter;
 
-	[SerializeField] BlackJack blackJackGame;
+    [SerializeField] [EventRef] string SoundPath;
+
+    [SerializeField] BlackJack blackJackGame;
 	[SerializeField] CardPlayers cardPlayers;
 	[SerializeField] ItemInfoObject pocketWatchItem;
 	[SerializeField] ItemInfoObject maskItem;
@@ -66,7 +69,9 @@ public class TrencheMain : SceneManagerBase
 					case 1:
 						if ((bool)DialogPlayerHelper.VariableSourceMgr.GetValue("spotGermanFinished"))
 						{
-							NextChapter();
+                            SoundPlayer.PlayOneShot(SoundPath);
+
+                            NextChapter();
 							yield break;
 						}
 						break;

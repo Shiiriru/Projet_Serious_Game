@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using FMODUnity;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,7 +9,9 @@ public class SpotGermanGame : MiniGameBase
 	[SerializeField] GameObject foundText;
 	[SerializeField] SpotGermanSpot spot;
 
-	[SerializeField] RectTransform ambianceRect;
+    [SerializeField] [EventRef] string SoundPath;
+
+    [SerializeField] RectTransform ambianceRect;
 	[SerializeField] RectTransform canvasRect;
 	float canvasCenterX;
 	float ambianceScrolloffsetX;
@@ -77,7 +80,9 @@ public class SpotGermanGame : MiniGameBase
 			return;
 		foundText.SetActive(true);
 
-		spot.SpotedTarget.Kill();
+        SoundPlayer.PlayOneShot(SoundPath);
+
+        spot.SpotedTarget.Kill();
 
 		StartCoroutine(GameFinishCoroutine());
 		gameFinished = true;

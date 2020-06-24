@@ -1184,6 +1184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableMove: 0
+  SoundPath: event:/03_Scene1_Bureau/01_Sons_Objets/SA_1_Jeton_Map
   targetCase: {fileID: 140698514}
 --- !u!114 &356694392
 MonoBehaviour:
@@ -2320,6 +2321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableMove: 0
+  SoundPath: event:/03_Scene1_Bureau/01_Sons_Objets/SA_1_Jeton_Map
   targetCase: {fileID: 331313745}
 --- !u!50 &1154537968
 Rigidbody2D:
@@ -2420,7 +2422,7 @@ PrefabInstance:
     - target: {fileID: 8073669276924928435, guid: 3d0d288ca31490e4a8e7c80764576ea7,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8073669276924928432, guid: 3d0d288ca31490e4a8e7c80764576ea7,
         type: 3}
@@ -3235,6 +3237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableMove: 0
+  SoundPath: event:/03_Scene1_Bureau/01_Sons_Objets/SA_1_Jeton_Map
   targetCase: {fileID: 1145232634}
 --- !u!50 &1806644232
 Rigidbody2D:

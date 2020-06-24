@@ -1194,6 +1194,7 @@ GameObject:
   - component: {fileID: 920209604}
   - component: {fileID: 920209603}
   - component: {fileID: 920209606}
+  - component: {fileID: 920209607}
   m_Layer: 5
   m_Name: SoldatMessager
   m_TagString: Untagged
@@ -1313,6 +1314,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog: {fileID: 11400000, guid: 86c5314691c71824c839f892f06bd364, type: 2}
+--- !u!114 &920209607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920209601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25997ae6b812e64a9f32bf80a8ef01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Interaction/SB_Soldat_Interaction_Ensemble"
 --- !u!1 &948606617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,6 +1340,7 @@ GameObject:
   - component: {fileID: 948606621}
   - component: {fileID: 948606620}
   - component: {fileID: 948606619}
+  - component: {fileID: 948606623}
   m_Layer: 5
   m_Name: SoldatDormir
   m_TagString: Untagged
@@ -1445,6 +1460,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 948606617}
   m_CullTransparentMesh: 0
+--- !u!114 &948606623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948606617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25997ae6b812e64a9f32bf80a8ef01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_1_Soldat_Endormi"
 --- !u!1 &1011312051
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,6 +1486,7 @@ GameObject:
   - component: {fileID: 1011312055}
   - component: {fileID: 1011312054}
   - component: {fileID: 1011312053}
+  - component: {fileID: 1011312057}
   m_Layer: 5
   m_Name: joueurCarte
   m_TagString: Untagged
@@ -1579,6 +1608,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011312051}
   m_CullTransparentMesh: 0
+--- !u!114 &1011312057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011312051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25997ae6b812e64a9f32bf80a8ef01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Interaction/SB_Soldat_Interaction_Ensemble"
 --- !u!1 &1045030909
 GameObject:
   m_ObjectHideFlags: 0
@@ -2000,6 +2042,7 @@ GameObject:
   - component: {fileID: 1148271135}
   - component: {fileID: 1148271134}
   - component: {fileID: 1148271133}
+  - component: {fileID: 1148271137}
   m_Layer: 5
   m_Name: SoldatLouis
   m_TagString: Untagged
@@ -2120,6 +2163,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148271131}
   m_CullTransparentMesh: 0
+--- !u!114 &1148271137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148271131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25997ae6b812e64a9f32bf80a8ef01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Interaction/SB_Soldat_Interaction_Ensemble"
 --- !u!1 &1160759743
 GameObject:
   m_ObjectHideFlags: 0
@@ -2237,6 +2293,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ac14137e53f3c0d4aa01154109d4bf3f, type: 2}
   - {fileID: 11400000, guid: 2803388bd54815b41b70da19c41a6f7e, type: 2}
   - {fileID: 11400000, guid: 5803166d261dfe24ca374723c4d19035, type: 2}
+  SoundPath: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_2_Alarme_Gaz"
   blackJackGame: {fileID: 122891007}
   cardPlayers: {fileID: 1011312053}
   pocketWatchItem: {fileID: 11400000, guid: e02f68dd13cf27d468f381e1fe3736e7, type: 2}
@@ -2372,6 +2429,7 @@ GameObject:
   - component: {fileID: 1291362907}
   - component: {fileID: 1291362906}
   - component: {fileID: 1291362905}
+  - component: {fileID: 1291362909}
   m_Layer: 5
   m_Name: SoldatLouis
   m_TagString: Untagged
@@ -2492,6 +2550,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1291362903}
   m_CullTransparentMesh: 0
+--- !u!114 &1291362909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291362903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25997ae6b812e64a9f32bf80a8ef01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Interaction/SB_Soldat_Interaction_Ensemble"
 --- !u!1 &1298309260
 GameObject:
   m_ObjectHideFlags: 0
@@ -2610,6 +2681,7 @@ GameObject:
   - component: {fileID: 1302183970}
   - component: {fileID: 1302183969}
   - component: {fileID: 1302183968}
+  - component: {fileID: 1302183972}
   m_Layer: 5
   m_Name: SoldatLouis
   m_TagString: Untagged
@@ -2730,6 +2802,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302183966}
   m_CullTransparentMesh: 0
+--- !u!114 &1302183972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302183966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25997ae6b812e64a9f32bf80a8ef01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Interaction/SB_Soldat_Interaction_Ensemble"
 --- !u!1 &1312151687
 GameObject:
   m_ObjectHideFlags: 0
@@ -3144,6 +3229,7 @@ GameObject:
   - component: {fileID: 1802955829}
   - component: {fileID: 1802955828}
   - component: {fileID: 1802955827}
+  - component: {fileID: 1802955831}
   m_Layer: 5
   m_Name: SoldatMessager
   m_TagString: Untagged
@@ -3263,6 +3349,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802955825}
   m_CullTransparentMesh: 0
+--- !u!114 &1802955831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802955825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25997ae6b812e64a9f32bf80a8ef01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Interaction/SB_Soldat_Interaction_Ensemble"
 --- !u!1 &1826156100
 GameObject:
   m_ObjectHideFlags: 0
@@ -3469,6 +3568,16 @@ PrefabInstance:
       propertyPath: canvasRect
       value: 
       objectReference: {fileID: 1298309261}
+    - target: {fileID: 1392499877678547578, guid: ae69005d633445c488752f1882bc107a,
+        type: 3}
+      propertyPath: SoundPath
+      value: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_2_Event_Detection_German"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392499877884225924, guid: ae69005d633445c488752f1882bc107a,
+        type: 3}
+      propertyPath: m_Text
+      value: ENNEMI !
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae69005d633445c488752f1882bc107a, type: 3}
 --- !u!1 &1953550764
@@ -3563,6 +3672,7 @@ GameObject:
   - component: {fileID: 1971803158}
   - component: {fileID: 1971803157}
   - component: {fileID: 1971803156}
+  - component: {fileID: 1971803160}
   m_Layer: 5
   m_Name: soliderHurt
   m_TagString: Untagged
@@ -3682,6 +3792,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1971803154}
   m_CullTransparentMesh: 0
+--- !u!114 &1971803160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971803154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25997ae6b812e64a9f32bf80a8ef01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat-Blessure/SB_3_Soldat_Blessure_Ensemble"
 --- !u!1 &2138538343
 GameObject:
   m_ObjectHideFlags: 0

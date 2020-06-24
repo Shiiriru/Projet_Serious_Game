@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,9 @@ public class MapGamePawn : DragableButton
 {
 	Vector3 defaultPos;
 
-	[SerializeField] MapGamePawnCase targetCase;
+    [SerializeField] [EventRef] string SoundPath;
+
+    [SerializeField] MapGamePawnCase targetCase;
 	MapGamePawnCase currentCase;
 	bool isInCase;
 
@@ -27,7 +30,11 @@ public class MapGamePawn : DragableButton
 	private void EndMove()
 	{
 		transform.DOMove(currentCase != null ? currentCase.transform.position : defaultPos, 0.2f).SetEase(Ease.OutQuad);
-	}
+        if (CheckCorrect())
+        {
+            SoundPlayer.PlayOneShot(SoundPath);
+        }
+    }
 
 	public bool CheckCorrect()
 	{
