@@ -23,8 +23,63 @@ MonoBehaviour:
   - {fileID: 114712322923335128}
   - {fileID: 114264113429471202}
   - {fileID: 114890073171165820}
+  - {fileID: 114003564043747450}
   - {fileID: 0}
   variableSource: {fileID: 114178139625449316}
+--- !u!114 &114003564043747450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 88, y: 200}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114003564043747450}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114221284650744616}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114003564043747450}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114364292816872774}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 0
+  characterName: Poux
+  text: "Si vous voulez, on peut inclure les pigeons, apr\xE8s tout, ils subissent
+    la guerre comme nous."
+  showAdvance: 0
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 2
+  duration: 0.2
 --- !u!114 &114178139625449316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,7 +129,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114364292816872774}
+        node: {fileID: 114003564043747450}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -85,8 +140,7 @@ MonoBehaviour:
   displaySide: 0
   characterName: Poux
   text: "Tiens cap'taine ! Vous \xEAtes venu compter les poilus qui restent  dans
-    la compagnie ? On est plus tr\xE8s nombreux d\xE9sormais. Si vous voulez, on peut
-    inclure les pigeons, apr\xE8s tout, ils subissent la guerre comme nous."
+    la compagnie ? On est plus tr\xE8s nombreux d\xE9sormais."
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -216,7 +270,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 504, y: -24}
+  position: {x: 520, y: -24}
   ports:
     keys:
     - input
@@ -228,7 +282,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114221284650744616}
+        node: {fileID: 114003564043747450}
         reroutePoints: []
       _direction: 0
       _connectionType: 0

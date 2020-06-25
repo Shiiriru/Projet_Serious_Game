@@ -1,4 +1,5 @@
 ﻿using DialogSystem;
+using System.Collections;
 using UnityEngine;
 
 public class MapGame : MiniGameBase
@@ -18,23 +19,28 @@ public class MapGame : MiniGameBase
 			else
 			{
 				DialogPlayerHelper.SetDialog(dialog);
-				p.onHoverEnd += CheckMapCorrect;
+				p.Init(this);
 			}				
 		}
 	}
 
-	private void CheckMapCorrect()
+	public void CheckMapCorrect()
 	{
 		//return if one pawn isn't in the right place
 		foreach (var p in pawnList)
 		{
-			if (!p.CheckCorrect())
+			if (!p.isCorrect)
 				return;
 		}
 
 		OnGameComplete();
+		StartCoroutine(GameFinishCoroutine());
+	}
+
+	IEnumerator GameFinishCoroutine()
+	{
+		yield return new WaitForSeconds(1f);
 		DialogPlayerHelper.SetDialog(dialog);
-		DialogPlayerHelper.SetOnFinishedAction(OnClickClose);
 	}
 
 	public void OnClickClose()

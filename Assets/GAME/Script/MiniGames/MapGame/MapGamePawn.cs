@@ -14,10 +14,13 @@ public class MapGamePawn : DragableButton
 
 	[SerializeField] MapGamePawnCase targetCase;
 	MapGamePawnCase currentCase;
-	bool isInCase;
+	public bool isCorrect { get; private set; }
+
 
 	[SerializeField] Image image;
 	[SerializeField] Color validColor;
+
+	MapGame mapGame;
 
 	private void Start()
 	{
@@ -26,8 +29,15 @@ public class MapGamePawn : DragableButton
 		onHoverEnd += EndMove;
 	}
 
+	public void Init(MapGame _mapGame)
+	{
+		mapGame = _mapGame;
+	}
+
 	private void StartMove()
 	{
+		if (currentCase != null)
+			currentCase.fillCase(null);
 		currentCase = null;
 	}
 
@@ -35,22 +45,23 @@ public class MapGamePawn : DragableButton
 	{
 		transform.DOMove(currentCase != null ? currentCase.transform.position : defaultPos, 0.2f).SetEase(Ease.OutQuad);
 		SoundPlayer.PlayOneShot(SoundPath);
-		if (CheckCorrect())
-		{
-			disableMove = true;
-			image.color = validColor;
-		}
-	}
 
-	public bool CheckCorrect()
-	{
-		return currentCase == targetCase;
+		if (currentCase != null)
+		{
+			currentCase.fillCase(this);
+			if (currentCase == targetCase)
+			{
+				isCorrect = disableMove = true;
+				image.color = validColor;
+				mapGame.CheckMapCorrect();
+			}
+		}
 	}
 
 	private void OnTriggerStay2D(Collider2D collision)
 	{
 		var touchCase = collision.GetComponent<MapGamePawnCase>();
-		if (touchCase == null || currentCase == touchCase)
+		if (touchCase == null || currentCase == touchCase || currentCase.targetPawn != null)
 			return;
 
 		currentCase = touchCase;
@@ -58,7 +69,7 @@ public class MapGamePawn : DragableButton
 
 	private void OnTriggerExit2D(Collider2D collision)
 	{
-		if (collision.GetComponent<MapGamePawnCase>() == null)
+		if (collision.GetComponent<MapGamePawnCase>() == null || currentCase != collision.GetComponent<MapGamePawnCase>())
 			return;
 
 		currentCase = null;

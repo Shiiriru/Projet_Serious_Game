@@ -24,7 +24,7 @@ public class TrencheMain : SceneManagerBase
 	[SerializeField] Sprite oldMaskSprite;
 
 	//chapter 3
-	[SerializeField] CharacterBase soliderHurt;
+	[SerializeField] CharacterBase[] soliderInjured;
 
 	[SerializeField] [EventRef] string GazAlarmSound;
 	[SerializeField] [EventRef] string GazMaskSound;
@@ -56,10 +56,13 @@ public class TrencheMain : SceneManagerBase
 				spotGermanGame.onGameComplete += SpotGermanGameComplete;
 				gasFilter.gameObject.SetActive(false);
 				imageMask.gameObject.SetActive(false);
+
 				break;
 			case 2:
 				uiMain.Ambiance.Play(AmbianceTrench3);
-				soliderHurt.onDialogFinished += LaunchFinaWar;
+				foreach (var s in soliderInjured)
+					s.onDialogFinished += LaunchFinaWar;
+
 				break;
 		}
 	}
@@ -172,6 +175,9 @@ public class TrencheMain : SceneManagerBase
 	{
 		if (!(bool)DialogPlayerHelper.VariableSourceMgr.GetValue("isTalkedToLouis"))
 			return;
+
+		foreach (var c in FindObjectsOfType<CharacterBase>())
+			c.enabled = false;
 		PlayNextChapterDialog();
 	}
 }

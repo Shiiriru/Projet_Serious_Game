@@ -31,12 +31,14 @@ public class MainVariableSource : VariableSource, IMainVariableSource
 
 	//chapter 2
 	public bool isUsedNewMask;
-	public void LaunchGameSpotGerman() { }
 	public bool spotGermanFinished;
+	public void LaunchGameSpotGerman() { }
 	public void AfterGasAttack() { }
 	public void WearMask(bool newMask) { }
 
 	//chapter 3
+	public bool badgeChecked;
+	public bool badgeGived;
 }
 
 public interface IMainVariableSource

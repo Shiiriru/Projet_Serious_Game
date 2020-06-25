@@ -35,8 +35,8 @@ public class BureauxMain : SceneManagerBase
 
 		if (!commandantCalled)
 			uiMain.onChangeSceneFinished += CommandantCall;
-		else		
-			hideOtherInterctableFilter.SetActive(false);		
+		else
+			hideOtherInterctableFilter.SetActive(false);
 
 		buttonChangeScene.SetActive(commandantCalled);
 
@@ -51,13 +51,13 @@ public class BureauxMain : SceneManagerBase
 			case 0:
 				mapGame.onGameComplete += () => ActiveBoolean("MapChecked"); //on fait appel à la variable, on ne l'ajoute pas. Permet d'ajouter plusieurs actions ensemble
 				buttonPhotoVillage.onCheckedAction += () => ActiveBoolean("villagePhotoChecked");
-				inventory.onItemChanged += LetterCheck;
+				inventory.onAddItem += InventoryItemChecked;
 				break;
 			case 1:
 
 				break;
 			case 2:
-				inventory.onItemChanged += LetterCheck;
+				inventory.onAddItem += InventoryItemChecked;
 				break;
 		}
 	}
@@ -85,10 +85,12 @@ public class BureauxMain : SceneManagerBase
 		hideOtherInterctableFilter.SetActive(false);
 	}
 
-	void LetterCheck()
+	void InventoryItemChecked(ItemInfoObject item)
 	{
-		if (inventory.CheckHasObject("informationLetter_" + GameManager.chapterCount))
+		if (item.Id == "informationLetter_" + GameManager.chapterCount)
 			DialogPlayerHelper.VariableSourceMgr.SetValue("LetterChecked", true);
+		if (item.Id == "badge")
+			DialogPlayerHelper.VariableSourceMgr.SetValue("badgeChecked", true);
 	}
 
 	private void ActiveBoolean(string boolName)
