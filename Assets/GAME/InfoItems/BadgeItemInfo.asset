@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BadgeItemInfo
   m_EditorClassIdentifier: 
   Id: badge
-  name: Metaille de louis
+  name: "M\xE9daille de louis"
   itemType: 0
   imageInventory: {fileID: 21300000, guid: 9c2a324ca6b2fe34a9590ed70dbb6348, type: 3}
   imageResume: {fileID: 21300000, guid: 9c2a324ca6b2fe34a9590ed70dbb6348, type: 3}

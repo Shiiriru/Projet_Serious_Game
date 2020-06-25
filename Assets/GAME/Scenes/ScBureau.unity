@@ -1074,7 +1074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdb464d91fe42534eaf85f16e444aaf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEvt: event:/03_Scene1_Bureau/01_Sons_Objets/SA_Consultant_Journal
+  soundEvt: event:/03_Scene1_Bureau/01_Sons_Objets/SA_Consultant_Doc
   displayScreen: {fileID: 781699620}
   sprite: {fileID: 21300000, guid: 827a626e21e1fd4418feb0f6984e67a0, type: 3}
 --- !u!114 &279907855

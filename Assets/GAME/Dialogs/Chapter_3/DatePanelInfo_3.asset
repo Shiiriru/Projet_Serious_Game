@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43be7f2adcb7184cad9d4ebdd6aede1, type: 3}
   m_Name: DatePanelInfo_3
   m_EditorClassIdentifier: 
-  date: 10 septembre 1916
+  date: 25 septembre 1916
   place: "Secteur de la Somme, Haut de France,\nAvant l\u2019offensive sur Combles,\nTranch\xE9es
     du reste de la 4eme compagnie du 366eme d'Infanterie, "
   soldatCount: 90
