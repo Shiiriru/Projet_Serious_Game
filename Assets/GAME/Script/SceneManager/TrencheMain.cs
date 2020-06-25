@@ -198,6 +198,7 @@ public class TrencheMain : SceneManagerBase
 		uiMain.Ambiance.Play("song", trenchSong);
 
 		yield return new WaitForSeconds(5f);
+		uiMain.Ambiance.Stop("soliderCry", true);
 		PlayNextChapterDialog();
 	}
 }

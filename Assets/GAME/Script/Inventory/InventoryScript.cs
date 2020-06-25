@@ -39,9 +39,9 @@ public class InventoryScript : MonoBehaviour
 				if (onAddItem != null)
 					onAddItem(item);
 
-				if (onItemChanged != null)				
-					onItemChanged();		
-				
+				if (onItemChanged != null)
+					onItemChanged();
+
 				return true;
 			}
 		}
@@ -55,7 +55,7 @@ public class InventoryScript : MonoBehaviour
 		InventorySlot targetSlot = null;
 		foreach (var s in inventorySlots)
 		{
-			if (s.CurrrentInfoItem.Id == id)
+			if (s.CurrrentInfoItem != null && s.CurrrentInfoItem.Id == id)
 			{
 				targetSlot = s;
 				break;
@@ -70,7 +70,7 @@ public class InventoryScript : MonoBehaviour
 		InventorySlot targetSlot = null;
 		foreach (var s in inventorySlots)
 		{
-			if (s.CurrrentInfoItem == item)
+			if (s.CurrrentInfoItem != null && s.CurrrentInfoItem == item)
 			{
 				targetSlot = s;
 				break;
@@ -95,7 +95,7 @@ public class InventoryScript : MonoBehaviour
 
 	public void Show(bool isShow)
 	{
-		if(isShow)
+		if (isShow)
 		{
 			if (onOpen != null)
 				onOpen();

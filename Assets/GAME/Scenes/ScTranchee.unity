@@ -698,6 +698,7 @@ GameObject:
   - component: {fileID: 680043334}
   - component: {fileID: 680043332}
   - component: {fileID: 680043331}
+  - component: {fileID: 680043330}
   m_Layer: 5
   m_Name: btn
   m_TagString: Untagged
@@ -724,6 +725,19 @@ RectTransform:
   m_AnchoredPosition: {x: -519, y: 395.8}
   m_SizeDelta: {x: 450, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &680043330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680043328}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25997ae6b812e64a9f32bf80a8ef01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat-Blessure/SB_3_Soldat_Blessure_Ensemble"
 --- !u!114 &680043331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1311,6 +1325,7 @@ GameObject:
   - component: {fileID: 903001497}
   - component: {fileID: 903001495}
   - component: {fileID: 903001494}
+  - component: {fileID: 903001493}
   m_Layer: 5
   m_Name: btn (2)
   m_TagString: Untagged
@@ -1337,6 +1352,19 @@ RectTransform:
   m_AnchoredPosition: {x: 563, y: 205}
   m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &903001493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903001491}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25997ae6b812e64a9f32bf80a8ef01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat-Blessure/SB_3_Soldat_Blessure_Ensemble"
 --- !u!114 &903001494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2602,8 +2630,8 @@ MonoBehaviour:
   AmbianceTrench1: "event:/04_Scene2_Tranch\xE9e/04_Ambiance/SB_1_Ambiance_Tranch\xE9e"
   AmbianceTrench2: "event:/04_Scene2_Tranch\xE9e/04_Ambiance/SB_2_Ambiance_Tranch\xE9e"
   AmbianceTrench3: "event:/04_Scene2_Tranch\xE9e/04_Ambiance/SB_3_Ambiance_Tranch\xE9e"
-  cryingSound: 
-  trenchSong: 
+  cryingSound: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat_Pleurs"
+  trenchSong: event:/05_Scene_Fin du jeu/S_FJ_Chant Final
 --- !u!1 &1258262960
 GameObject:
   m_ObjectHideFlags: 0
@@ -3203,6 +3231,7 @@ GameObject:
   - component: {fileID: 1556001172}
   - component: {fileID: 1556001170}
   - component: {fileID: 1556001169}
+  - component: {fileID: 1556001168}
   m_Layer: 5
   m_Name: btn (1)
   m_TagString: Untagged
@@ -3229,6 +3258,19 @@ RectTransform:
   m_AnchoredPosition: {x: -183, y: 381}
   m_SizeDelta: {x: 250, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1556001168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556001166}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25997ae6b812e64a9f32bf80a8ef01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat-Blessure/SB_3_Soldat_Blessure_Ensemble"
 --- !u!114 &1556001169
 MonoBehaviour:
   m_ObjectHideFlags: 0

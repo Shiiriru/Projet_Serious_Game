@@ -13,11 +13,11 @@ public class FinalWarMain : MonoBehaviour
 	[SerializeField] DialogGraph dialogFinalWar;
 	[SerializeField] DialogGraph dialogAfterWar;
 
-    [SerializeField] [EventRef] string FinalWarAmbiance;
-    [SerializeField] [EventRef] string AfterWarAmbiance;
-    [SerializeField] [EventRef] string FinalHeadShotSound;
+	[SerializeField] [EventRef] string FinalWarAmbiance;
+	[SerializeField] [EventRef] string AfterWarAmbiance;
+	[SerializeField] [EventRef] string FinalHeadShotSound;
 
-    [SerializeField] CanvasGroup gameEndTextGroup;
+	[SerializeField] CanvasGroup gameEndTextGroup;
 	[SerializeField] SceneReference sceneMainMenu;
 	private void Start()
 	{
@@ -26,25 +26,27 @@ public class FinalWarMain : MonoBehaviour
 		DialogPlayerHelper.SetDialog(dialogFinalWar);
 		DialogPlayerHelper.SetOnFinishedAction(PlayAfterWarDialog);
 
-        //uiMain.Ambiance.Play(FinalWarAmbiance);
-    }
+		uiMain.Ambiance.Play("bg", FinalWarAmbiance);
+	}
 
 	void PlayAfterWarDialog()
 	{
 		StartCoroutine(AfterWarCoroutine());
 
-        SoundPlayer.PlayOneShot(FinalHeadShotSound);
-        //uiMain.Ambiance.Stop(true);
-    }
+		SoundPlayer.PlayOneShot(FinalHeadShotSound);
+		//uiMain.Ambiance.Stop(true);
+	}
 
 	IEnumerator AfterWarCoroutine()
 	{
-		yield return new WaitForSeconds(1f);
+		uiMain.Ambiance.Stop("bg", true);
+		yield return new WaitForSeconds(4f);
+
 		DialogPlayerHelper.SetDialog(dialogAfterWar);
 		DialogPlayerHelper.SetOnFinishedAction(EndGame);
 
-        //uiMain.Ambiance.Play(AfterWarAmbiance);
-    }
+		uiMain.Ambiance.Play("bg", AfterWarAmbiance);
+	}
 
 	void EndGame()
 	{
@@ -53,6 +55,8 @@ public class FinalWarMain : MonoBehaviour
 
 	IEnumerator EndGameCorutine()
 	{
+		uiMain.Ambiance.Stop("bg", true);
+
 		yield return new WaitForSeconds(2f);
 		gameEndTextGroup.DOFade(1, 3f);
 		yield return new WaitForSeconds(5f);
@@ -60,7 +64,5 @@ public class FinalWarMain : MonoBehaviour
 		yield return new WaitForSeconds(4f);
 		Destroy(GameObject.FindGameObjectWithTag("GameController"));
 		SceneManager.LoadScene(sceneMainMenu, LoadSceneMode.Single);
-
-        //uiMain.Ambiance.Stop(true);
-    }
+	}
 }
