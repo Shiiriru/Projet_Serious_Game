@@ -66,7 +66,7 @@ public class UIMain : MonoBehaviour
 		foregourndBg.DOColor(Color.black, 0.8f);
 		yield return new WaitWhile(() => DOTween.IsTweening(foregourndBg));
 
-		ambiance.Stop(true);
+		ambiance.Stop("bg", true);
 		yield return new WaitForSeconds(0.5f);
 
 		SceneManager.LoadScene(sceneName, LoadSceneMode.Single);

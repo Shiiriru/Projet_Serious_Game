@@ -39,6 +39,8 @@ public class MapGamePawn : DragableButton
 		if (currentCase != null)
 			currentCase.fillCase(null);
 		currentCase = null;
+
+		transform.SetAsLastSibling();
 	}
 
 	private void EndMove()
@@ -52,16 +54,21 @@ public class MapGamePawn : DragableButton
 			if (currentCase == targetCase)
 			{
 				isCorrect = disableMove = true;
+				GetComponent<Collider2D>().enabled = false;
+
 				image.color = validColor;
 				mapGame.CheckMapCorrect();
 			}
 		}
 	}
 
-	private void OnTriggerStay2D(Collider2D collision)
+	private void OnTriggerEnter2D(Collider2D collision)
 	{
+		if (isCorrect)
+			return;
+
 		var touchCase = collision.GetComponent<MapGamePawnCase>();
-		if (touchCase == null || currentCase == touchCase || currentCase.targetPawn != null)
+		if (touchCase == null || touchCase.targetPawn != null)
 			return;
 
 		currentCase = touchCase;
@@ -69,7 +76,11 @@ public class MapGamePawn : DragableButton
 
 	private void OnTriggerExit2D(Collider2D collision)
 	{
-		if (collision.GetComponent<MapGamePawnCase>() == null || currentCase != collision.GetComponent<MapGamePawnCase>())
+		if (isCorrect)
+			return;
+
+		var touchCase = collision.GetComponent<MapGamePawnCase>();
+		if (touchCase == null || currentCase != touchCase)
 			return;
 
 		currentCase = null;

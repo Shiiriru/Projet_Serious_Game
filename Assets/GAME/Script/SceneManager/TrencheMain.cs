@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class TrencheMain : SceneManagerBase
 {
+	[SerializeField] ButtonChangeScene btnChangeScene;
+
 	[SerializeField] DialogGraph[] dialogEndChapter;
 
 	[SerializeField] BlackJack blackJackGame;
@@ -29,15 +31,20 @@ public class TrencheMain : SceneManagerBase
 	[SerializeField] [EventRef] string GazAlarmSound;
 	[SerializeField] [EventRef] string GazMaskSound;
 
+
 	//Son d'ambiance
 	[SerializeField] [EventRef] string AmbianceTrench1;
 	[SerializeField] [EventRef] string AmbianceTrench2;
 	[SerializeField] [EventRef] string AmbianceTrench3;
 
+	[SerializeField] [EventRef] string cryingSound;
+	[SerializeField] [EventRef] string trenchSong;
+
 	protected override void Start()
 	{
 		base.Start();
 		uiMain.onChangeSceneFinished += () => StartCoroutine(CheckChapterFinishCoroutine());
+		btnChangeScene.Show(true);
 	}
 
 	protected override void SetupChapters()
@@ -47,19 +54,19 @@ public class TrencheMain : SceneManagerBase
 		switch (GameManager.chapterCount)
 		{
 			case 0:
-				uiMain.Ambiance.Play(AmbianceTrench1);
+				uiMain.Ambiance.Play("bg", AmbianceTrench1);
 				blackJackGame.onGameComplete += BlackJackFinished;
 
 				break;
 			case 1:
-				uiMain.Ambiance.Play(AmbianceTrench2);
+				uiMain.Ambiance.Play("bg", AmbianceTrench2);
 				spotGermanGame.onGameComplete += SpotGermanGameComplete;
 				gasFilter.gameObject.SetActive(false);
 				imageMask.gameObject.SetActive(false);
 
 				break;
 			case 2:
-				uiMain.Ambiance.Play(AmbianceTrench3);
+				uiMain.Ambiance.Play("bg", AmbianceTrench3);
 				foreach (var s in soliderInjured)
 					s.onDialogFinished += LaunchFinaWar;
 
@@ -152,15 +159,16 @@ public class TrencheMain : SceneManagerBase
 
 	public void AfterGasAttack()
 	{
+		//hide all characteres
+		foreach (var c in FindObjectsOfType<CharacterBase>())
+			c.gameObject.SetActive(false);
+		btnChangeScene.Show(false);
+
 		StartCoroutine(AfertGazAttackCoroutine());
 	}
 
 	IEnumerator AfertGazAttackCoroutine()
 	{
-		//hide all characteres
-		foreach (var c in FindObjectsOfType<CharacterBase>())
-			c.gameObject.SetActive(false);
-
 		gasFilter.DOColor(new Color(gasFilter.color.r, gasFilter.color.g, gasFilter.color.b, 0), 4f);
 		yield return new WaitWhile(() => DOTween.IsTweening(gasFilter));
 
@@ -173,11 +181,23 @@ public class TrencheMain : SceneManagerBase
 
 	private void LaunchFinaWar()
 	{
-		if (!(bool)DialogPlayerHelper.VariableSourceMgr.GetValue("isTalkedToLouis"))
+		if (!(bool)DialogPlayerHelper.VariableSourceMgr.GetValue("badgeGived"))
 			return;
 
 		foreach (var c in FindObjectsOfType<CharacterBase>())
 			c.enabled = false;
+		btnChangeScene.Show(false);
+		StartCoroutine(FinalWarCoroutine());
+	}
+
+	IEnumerator FinalWarCoroutine()
+	{
+		yield return new WaitForSeconds(1f);
+		uiMain.Ambiance.Play("soliderCry", cryingSound);
+		yield return new WaitForSeconds(3f);
+		uiMain.Ambiance.Play("song", trenchSong);
+
+		yield return new WaitForSeconds(5f);
 		PlayNextChapterDialog();
 	}
 }

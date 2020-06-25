@@ -26,7 +26,7 @@ public class FinalWarMain : MonoBehaviour
 		DialogPlayerHelper.SetDialog(dialogFinalWar);
 		DialogPlayerHelper.SetOnFinishedAction(PlayAfterWarDialog);
 
-        uiMain.Ambiance.Play(FinalWarAmbiance);
+        //uiMain.Ambiance.Play(FinalWarAmbiance);
     }
 
 	void PlayAfterWarDialog()
@@ -34,7 +34,7 @@ public class FinalWarMain : MonoBehaviour
 		StartCoroutine(AfterWarCoroutine());
 
         SoundPlayer.PlayOneShot(FinalHeadShotSound);
-        uiMain.Ambiance.Stop(true);
+        //uiMain.Ambiance.Stop(true);
     }
 
 	IEnumerator AfterWarCoroutine()
@@ -43,7 +43,7 @@ public class FinalWarMain : MonoBehaviour
 		DialogPlayerHelper.SetDialog(dialogAfterWar);
 		DialogPlayerHelper.SetOnFinishedAction(EndGame);
 
-        uiMain.Ambiance.Play(AfterWarAmbiance);
+        //uiMain.Ambiance.Play(AfterWarAmbiance);
     }
 
 	void EndGame()
@@ -61,6 +61,6 @@ public class FinalWarMain : MonoBehaviour
 		Destroy(GameObject.FindGameObjectWithTag("GameController"));
 		SceneManager.LoadScene(sceneMainMenu, LoadSceneMode.Single);
 
-        uiMain.Ambiance.Stop(true);
+        //uiMain.Ambiance.Stop(true);
     }
 }

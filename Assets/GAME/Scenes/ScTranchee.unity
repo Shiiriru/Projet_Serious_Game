@@ -2307,6 +2307,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1109279076}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1109279078 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1689324172802590227, guid: 3d0d288ca31490e4a8e7c80764576ea7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1109279076}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ca9ed3a9c4c9904799287fdd63d629a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1148271131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2566,6 +2578,7 @@ MonoBehaviour:
   - {fileID: 1047970801}
   - {fileID: 834669146}
   - {fileID: 1312151687}
+  btnChangeScene: {fileID: 1109279078}
   dialogEndChapter:
   - {fileID: 11400000, guid: ac14137e53f3c0d4aa01154109d4bf3f, type: 2}
   - {fileID: 11400000, guid: 2803388bd54815b41b70da19c41a6f7e, type: 2}
@@ -2589,6 +2602,8 @@ MonoBehaviour:
   AmbianceTrench1: "event:/04_Scene2_Tranch\xE9e/04_Ambiance/SB_1_Ambiance_Tranch\xE9e"
   AmbianceTrench2: "event:/04_Scene2_Tranch\xE9e/04_Ambiance/SB_2_Ambiance_Tranch\xE9e"
   AmbianceTrench3: "event:/04_Scene2_Tranch\xE9e/04_Ambiance/SB_3_Ambiance_Tranch\xE9e"
+  cryingSound: 
+  trenchSong: 
 --- !u!1 &1258262960
 GameObject:
   m_ObjectHideFlags: 0

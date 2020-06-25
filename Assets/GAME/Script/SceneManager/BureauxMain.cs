@@ -70,7 +70,7 @@ public class BureauxMain : SceneManagerBase
 	IEnumerator CommandantCallCoroutine()
 	{
 		yield return new WaitForSeconds(0.1f);
-		uiMain.Ambiance.Play(ambianceEvent);
+		uiMain.Ambiance.Play("bg", ambianceEvent);
 		if (!(bool)DialogPlayerHelper.VariableSourceMgr.GetValue("isCommandantCalled"))
 			phoneRingInstance.PlayEvent(phoneRingEvent);
 	}

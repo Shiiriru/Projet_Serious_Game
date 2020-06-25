@@ -10,4 +10,9 @@ public class ButtonChangeScene : ButtonBase
 		base.OnClickButton();
 		uiMain.ChangeScene(sceneRef.Name, 1);
 	}
+
+	public void Show(bool show)
+	{
+		gameObject.SetActive(show);
+	}
 }
