@@ -5,7 +5,7 @@
             <value>SB_2_Alarme_Gaz</value>
         </property>
         <property name="outputFormat">
-            <value>0</value>
+            <value>1</value>
         </property>
         <relationship name="folder">
             <destination>{1ae440f9-a903-4f5d-9f7a-901e7d58b514}</destination>
@@ -64,7 +64,7 @@
             <destination>{7805b517-9554-49b1-9fdf-9112e099c025}</destination>
         </relationship>
         <relationship name="modules">
-            <destination>{b10351db-6d28-4dce-8665-15bda0555d08}</destination>
+            <destination>{71af28d7-06c3-43bf-bc3c-026c56af9f1d}</destination>
         </relationship>
         <relationship name="mixerGroup">
             <destination>{619f2a08-2dd0-4c17-b7f3-82ca23d5ef98}</destination>
@@ -72,7 +72,7 @@
     </object>
     <object class="Timeline" id="{186c1fe2-e848-4821-b1fa-65baa5503a16}">
         <relationship name="modules">
-            <destination>{b10351db-6d28-4dce-8665-15bda0555d08}</destination>
+            <destination>{71af28d7-06c3-43bf-bc3c-026c56af9f1d}</destination>
         </relationship>
     </object>
     <object class="EventMixerMaster" id="{df6f9c7e-246e-4018-815c-6381eb274787}">
@@ -102,15 +102,15 @@
             <destination>{e0f42bc8-d64a-4ee1-b120-4040f9d304c2}</destination>
         </relationship>
     </object>
-    <object class="SingleSound" id="{b10351db-6d28-4dce-8665-15bda0555d08}">
+    <object class="SingleSound" id="{71af28d7-06c3-43bf-bc3c-026c56af9f1d}">
         <property name="length">
-            <value>2.625</value>
+            <value>6.5</value>
         </property>
         <relationship name="fadeOutCurve">
-            <destination>{5280b86c-5f46-42b6-a920-9ce5ef137e00}</destination>
+            <destination>{40c10023-96c2-4651-851f-73b75eca0e70}</destination>
         </relationship>
         <relationship name="audioFile">
-            <destination>{ae2e0c48-8ac3-4080-859e-64dc1669ec56}</destination>
+            <destination>{b6187820-e1f6-47f2-9c42-688539bcd654}</destination>
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{619f2a08-2dd0-4c17-b7f3-82ca23d5ef98}">
@@ -137,12 +137,12 @@
     </object>
     <object class="MixerBusPanner" id="{1b314e6c-a4f0-4a59-9a10-f2f72fa4a580}"/>
     <object class="MixerBusFader" id="{cc8ac079-cf0f-4c03-822b-ff7f32a4cbc1}"/>
-    <object class="FadeCurve" id="{5280b86c-5f46-42b6-a920-9ce5ef137e00}">
+    <object class="FadeCurve" id="{40c10023-96c2-4651-851f-73b75eca0e70}">
         <relationship name="startPoint">
-            <destination>{92303ff2-2fb8-4003-9f2a-11bff7f4bab1}</destination>
+            <destination>{2efd4890-0cd1-44f4-bff4-4e7059564152}</destination>
         </relationship>
         <relationship name="endPoint">
-            <destination>{39d51abf-9831-4ab5-a4ec-438b0c9cfa0d}</destination>
+            <destination>{95788bda-396e-4ff8-8953-d341d865baca}</destination>
         </relationship>
     </object>
     <object class="Automator" id="{657c7f27-967d-4d6c-9186-6a662d783427}">
@@ -161,20 +161,20 @@
     </object>
     <object class="MixerBusPanner" id="{b62d1919-9792-4123-b314-10010a004afc}"/>
     <object class="MixerBusFader" id="{28a894b3-14fe-4523-b333-160b314f2ed4}"/>
-    <object class="AutomationPoint" id="{92303ff2-2fb8-4003-9f2a-11bff7f4bab1}">
+    <object class="AutomationPoint" id="{2efd4890-0cd1-44f4-bff4-4e7059564152}">
         <property name="position">
-            <value>2</value>
+            <value>5.53125</value>
         </property>
         <property name="value">
             <value>1</value>
         </property>
         <property name="curveShape">
-            <value>0.25471893</value>
+            <value>-0.157839909</value>
         </property>
     </object>
-    <object class="AutomationPoint" id="{39d51abf-9831-4ab5-a4ec-438b0c9cfa0d}">
+    <object class="AutomationPoint" id="{95788bda-396e-4ff8-8953-d341d865baca}">
         <property name="position">
-            <value>2.625</value>
+            <value>6.5</value>
         </property>
         <property name="value">
             <value>0</value>
@@ -223,7 +223,7 @@
             <value>0</value>
         </property>
         <property name="value">
-            <value>0.699999988</value>
+            <value>1.01999998</value>
         </property>
     </object>
 </objects>
