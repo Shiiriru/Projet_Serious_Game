@@ -23,6 +23,13 @@ public class FinalWarMain : MonoBehaviour
 	{
 		uiMain = FindObjectOfType<UIMain>();
 
+		uiMain.onChangeSceneFinished += Init;
+
+		uiMain.Ambiance.Stop("song", true);
+	}
+
+	private void Init()
+	{
 		DialogPlayerHelper.SetDialog(dialogFinalWar);
 		DialogPlayerHelper.SetOnFinishedAction(PlayAfterWarDialog);
 
@@ -39,13 +46,13 @@ public class FinalWarMain : MonoBehaviour
 
 	IEnumerator AfterWarCoroutine()
 	{
-		uiMain.Ambiance.Stop("bg", true);
-		yield return new WaitForSeconds(4f);
+		uiMain.Ambiance.Stop("bg", false);
+		yield return new WaitForSeconds(8f);
+		uiMain.Ambiance.Play("bg", AfterWarAmbiance);
+		yield return new WaitForSeconds(10f);
 
 		DialogPlayerHelper.SetDialog(dialogAfterWar);
 		DialogPlayerHelper.SetOnFinishedAction(EndGame);
-
-		uiMain.Ambiance.Play("bg", AfterWarAmbiance);
 	}
 
 	void EndGame()

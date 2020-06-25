@@ -40,7 +40,7 @@ namespace DialogSystem
 
 			text.text = displayAll ? targetStr : "";
 			if (!displayAll)
-				text.DOText(targetStr, targetStr.Length * playSpeed).OnComplete(() => SetDisplayFinished(true));
+				text.DOText(targetStr, targetStr.Length * playSpeed).OnComplete(() => SetDisplayFinished(true)).SetEase(Ease.Linear);
 
 			if (autoHeight)
 				StartCoroutine(SetContentHeightCoroutine(str));

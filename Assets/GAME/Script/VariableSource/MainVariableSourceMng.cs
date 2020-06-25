@@ -127,4 +127,8 @@ public class MainVariableSourceMng : VariableSourceManager, IMainVariableSource
 		trencheMain.WearMask(newMask);
 	}
 
+	public void LaunchFinalWar()
+	{
+		trencheMain.LaunchFinalWar();
+	}
 }

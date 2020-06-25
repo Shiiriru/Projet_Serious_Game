@@ -27,18 +27,20 @@ public class TrencheMain : SceneManagerBase
 
 	//chapter 3
 	[SerializeField] CharacterBase[] soliderInjured;
+	[SerializeField] DialogGraph dialogSoliderSinging;
 
 	[SerializeField] [EventRef] string GazAlarmSound;
 	[SerializeField] [EventRef] string GazMaskSound;
 
+	[SerializeField] [EventRef] string cryingSound;
+	[SerializeField] [EventRef] string trenchSong;
 
 	//Son d'ambiance
 	[SerializeField] [EventRef] string AmbianceTrench1;
 	[SerializeField] [EventRef] string AmbianceTrench2;
 	[SerializeField] [EventRef] string AmbianceTrench3;
 
-	[SerializeField] [EventRef] string cryingSound;
-	[SerializeField] [EventRef] string trenchSong;
+
 
 	protected override void Start()
 	{
@@ -68,8 +70,7 @@ public class TrencheMain : SceneManagerBase
 			case 2:
 				uiMain.Ambiance.Play("bg", AmbianceTrench3);
 				foreach (var s in soliderInjured)
-					s.onDialogFinished += LaunchFinaWar;
-
+					s.onDialogFinished += SoliderSinging;
 				break;
 		}
 	}
@@ -179,26 +180,35 @@ public class TrencheMain : SceneManagerBase
 		DialogPlayerHelper.SetDialog(dialogAfterGas);
 	}
 
-	private void LaunchFinaWar()
+	private void SoliderSinging()
 	{
 		if (!(bool)DialogPlayerHelper.VariableSourceMgr.GetValue("badgeGived"))
 			return;
 
 		foreach (var c in FindObjectsOfType<CharacterBase>())
-			c.enabled = false;
+			c.GetComponent<Image>().raycastTarget = false;
 		btnChangeScene.Show(false);
+		StartCoroutine(SoliderSingingCoroutine());
+	}
+
+	IEnumerator SoliderSingingCoroutine()
+	{
+		yield return new WaitForSeconds(1f);
+		uiMain.Ambiance.Play("soliderCry", cryingSound);
+		yield return new WaitForSeconds(8f);
+		DialogPlayerHelper.SetDialog(dialogSoliderSinging);
+	}
+
+	public void LaunchFinalWar()
+	{
 		StartCoroutine(FinalWarCoroutine());
 	}
 
 	IEnumerator FinalWarCoroutine()
 	{
-		yield return new WaitForSeconds(1f);
-		uiMain.Ambiance.Play("soliderCry", cryingSound);
-		yield return new WaitForSeconds(3f);
 		uiMain.Ambiance.Play("song", trenchSong);
-
-		yield return new WaitForSeconds(5f);
 		uiMain.Ambiance.Stop("soliderCry", true);
+		yield return new WaitForSeconds(10f);
 		PlayNextChapterDialog();
 	}
 }

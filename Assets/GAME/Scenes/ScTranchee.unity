@@ -2625,13 +2625,15 @@ MonoBehaviour:
   - {fileID: 680043331}
   - {fileID: 1556001169}
   - {fileID: 903001494}
+  dialogSoliderSinging: {fileID: 11400000, guid: 8dc640f92841c6c43a8ef4393697e8f4,
+    type: 2}
   GazAlarmSound: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_2_Alarme_Gaz"
   GazMaskSound: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_1-2_Masque_Gaz"
+  cryingSound: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat_Pleurs"
+  trenchSong: "event:/04_Scene2_Tranch\xE9e/03_Chant/SB_3_Chant_Craonne"
   AmbianceTrench1: "event:/04_Scene2_Tranch\xE9e/04_Ambiance/SB_1_Ambiance_Tranch\xE9e"
   AmbianceTrench2: "event:/04_Scene2_Tranch\xE9e/04_Ambiance/SB_2_Ambiance_Tranch\xE9e"
   AmbianceTrench3: "event:/04_Scene2_Tranch\xE9e/04_Ambiance/SB_3_Ambiance_Tranch\xE9e"
-  cryingSound: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat_Pleurs"
-  trenchSong: "event:/04_Scene2_Tranch\xE9e/03_Chant/SB_3_Chant_Craonne"
 --- !u!1 &1258262960
 GameObject:
   m_ObjectHideFlags: 0

@@ -39,6 +39,7 @@ public class MainVariableSource : VariableSource, IMainVariableSource
 	//chapter 3
 	public bool badgeChecked;
 	public bool badgeGived;
+	public void LaunchFinalWar() { }
 }
 
 public interface IMainVariableSource
@@ -51,6 +52,7 @@ public interface IMainVariableSource
 	void SendLetter(int chapter);
 	void WearMask(bool newMask);
 	void AfterGasAttack();
+	void LaunchFinalWar();
 
 	void LoseInventoryObject(string id);
 }

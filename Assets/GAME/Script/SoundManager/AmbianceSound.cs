@@ -15,8 +15,11 @@ public class AmbianceSound : MonoBehaviour
 		if (eventList.Where(e => e.id == id).FirstOrDefault() != null)
 			evt = eventList.Where(e => e.id == id).FirstOrDefault();
 		else
+		{
 			evt = new FmodSoundEvent(id);
-
+			eventList.Add(evt);
+		}
+				
 		evt.eventInstance.PlayEvent(eventPath);
 	}
 

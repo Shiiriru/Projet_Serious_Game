@@ -187,7 +187,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  duration: 0.3
+  duration: 0.5
   isWait: 0
 --- !u!114 &114262866557328528
 MonoBehaviour:
@@ -324,7 +324,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  duration: 1.5
+  duration: 2
 --- !u!114 &114403081392853588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,7 +512,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  duration: 1.5
+  duration: 2
 --- !u!114 &114562485840527364
 MonoBehaviour:
   m_ObjectHideFlags: 0
