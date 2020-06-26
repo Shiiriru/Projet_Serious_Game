@@ -905,7 +905,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  duration: 0.3
+  duration: 0.5
   isWait: 0
   color: {r: 0.7735849, g: 0.12041653, b: 0.12041653, a: 1}
 --- !u!114 &114170432017445674

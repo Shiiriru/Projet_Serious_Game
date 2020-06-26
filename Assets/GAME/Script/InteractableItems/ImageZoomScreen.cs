@@ -29,7 +29,7 @@ public class ImageZoomScreen : MonoBehaviour
 		if ((scrollDelta > 0 && scaleContent.localScale.x < maxScaleLevel) || (scrollDelta < 0 && scaleContent.localScale.x > 1))
 		{
 			var newScale = scaleContent.localScale + new Vector3(scrollDelta, scrollDelta);
-			scaleContent.localScale = Vector3.Lerp(scaleContent.localScale, newScale, 10 * Time.deltaTime);
+			scaleContent.localScale = Vector3.Lerp(scaleContent.localScale, newScale, 0.1f);
 		}
 
 	}

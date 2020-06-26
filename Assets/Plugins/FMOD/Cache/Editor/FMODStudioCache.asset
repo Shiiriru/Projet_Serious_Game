@@ -1,0 +1,1407 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 114606202484014014}
+  - {fileID: 114038713619055854}
+  EditorEvents:
+  - {fileID: 114399168871863188}
+  - {fileID: 114964698320377276}
+  - {fileID: 114613646876013044}
+  - {fileID: 114379282180422140}
+  - {fileID: 114219000023800054}
+  - {fileID: 114347497932345694}
+  - {fileID: 114295163272040478}
+  - {fileID: 114006268465301512}
+  - {fileID: 114886216791379916}
+  - {fileID: 114575792650699752}
+  - {fileID: 114534665404672772}
+  - {fileID: 114948931615661292}
+  - {fileID: 114317951322687910}
+  - {fileID: 114711054399253210}
+  - {fileID: 114702409940118116}
+  - {fileID: 114254632132832066}
+  - {fileID: 114741098134249714}
+  - {fileID: 114182741501256900}
+  - {fileID: 114544087985898388}
+  - {fileID: 114051340713335442}
+  - {fileID: 114744620388479012}
+  - {fileID: 114166486684274580}
+  - {fileID: 114966451349951972}
+  - {fileID: 114490726358541730}
+  - {fileID: 114815089283989090}
+  - {fileID: 114685973732356042}
+  - {fileID: 114343910471204022}
+  - {fileID: 114776721541276388}
+  - {fileID: 114203232692789022}
+  - {fileID: 114880446345835994}
+  - {fileID: 114720736349017412}
+  - {fileID: 114495411970758864}
+  - {fileID: 114290489121203028}
+  - {fileID: 114284289134923414}
+  - {fileID: 114123982767664626}
+  - {fileID: 114424187250470122}
+  - {fileID: 114954510467614662}
+  - {fileID: 114364937841019550}
+  - {fileID: 114820042540614672}
+  - {fileID: 114809033016988162}
+  - {fileID: 114383760458097320}
+  - {fileID: 114623357043409886}
+  - {fileID: 114320385767684826}
+  - {fileID: 114755237304468050}
+  - {fileID: 114384526864084630}
+  - {fileID: 114440184133039370}
+  - {fileID: 114514007476333670}
+  - {fileID: 114053683071822030}
+  - {fileID: 114903104251389732}
+  - {fileID: 114228763580071676}
+  - {fileID: 114785259237338018}
+  - {fileID: 114626660151640700}
+  - {fileID: 114150353842660200}
+  - {fileID: 114440671104521264}
+  - {fileID: 114288732965014940}
+  - {fileID: 114800932307566096}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 114038713619055854}
+  StringsBanks:
+  - {fileID: 114606202484014014}
+  stringsBankWriteTime: 637286155348472243
+  cacheVersion: 3
+--- !u!114 &114006268465301512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/03_Scene1_Bureau/01_Sons_Objets/SA_Consultant_Journal
+  m_EditorClassIdentifier: 
+  Path: event:/03_Scene1_Bureau/01_Sons_Objets/SA_Consultant_Journal
+  guid: 22715db784aaf440a63c49eb33d03039
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1343
+--- !u!114 &114038713619055854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: ICAN5GD_SeriousGame_SD/Build/Desktop/Master Bank.bank
+  SubDir: 
+  lastModified: 637287286402287751
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &114051340713335442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Acceptation/SB_Soldat_Acceptation_Son1"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Acceptation/SB_Soldat_Acceptation_Son1"
+  guid: 502e40980f45a845956b5daac986b7b9
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 914
+--- !u!114 &114053683071822030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_2_Soldat_GasMask"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_2_Soldat_GasMask"
+  guid: d82f429f11059e44980e89bf250914f2
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4166
+--- !u!114 &114123982767664626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/03_Scene1_Bureau/01_Sons_Objets/SA_Telephone_Sonne
+  m_EditorClassIdentifier: 
+  Path: event:/03_Scene1_Bureau/01_Sons_Objets/SA_Telephone_Sonne
+  guid: 8391f5469fd3274bbe6d1e25d46ec0a1
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4000
+--- !u!114 &114150353842660200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/01_Son_Systeme/S_Son_Reussite
+  m_EditorClassIdentifier: 
+  Path: event:/01_Son_Systeme/S_Son_Reussite
+  guid: ee9a6350d09c3b488cd23f02acfe8c9d
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1421
+--- !u!114 &114166486684274580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/03_Scene1_Bureau/02_Ambiance/S1_AmbianceBureau
+  m_EditorClassIdentifier: 
+  Path: event:/03_Scene1_Bureau/02_Ambiance/S1_AmbianceBureau
+  guid: 5a83bbe0fb9b9847b9221d573dc342c5
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 11629
+--- !u!114 &114182741501256900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/03_Scene1_Bureau/01_Sons_Objets/SA_Consultant_Doc
+  m_EditorClassIdentifier: 
+  Path: event:/03_Scene1_Bureau/01_Sons_Objets/SA_Consultant_Doc
+  guid: 49876e2485d6cb478418d5f9ce7cabc7
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 574
+--- !u!114 &114203232692789022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat-Blessure/SB_3_Blessure_Son4"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat-Blessure/SB_3_Blessure_Son4"
+  guid: 6720d210cf78944b892fa658d5da39ac
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1093
+--- !u!114 &114219000023800054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/01_Son_Systeme/S_Interaction_Inventaire_Open
+  m_EditorClassIdentifier: 
+  Path: event:/01_Son_Systeme/S_Interaction_Inventaire_Open
+  guid: 15eb8fb3014cfd419246fccb2de94750
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 427
+--- !u!114 &114228763580071676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_1-2_Masque_Gaz"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_1-2_Masque_Gaz"
+  guid: df400b3172c15641ace79092a0274f17
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1875
+--- !u!114 &114254632132832066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/01_Son_Systeme/S_Transition_Chapitre
+  m_EditorClassIdentifier: 
+  Path: event:/01_Son_Systeme/S_Transition_Chapitre
+  guid: 3341fe97e196e540be6d6d4f9f4948d8
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 8000
+--- !u!114 &114284289134923414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat-Blessure/SB_3_Blessure_Son1"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat-Blessure/SB_3_Blessure_Son1"
+  guid: 78f505bd88e6bd4684b01df5ef1502b1
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 789
+--- !u!114 &114288732965014940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/05_Scene_Fin du jeu/S_FJ_Champ de bataille
+  m_EditorClassIdentifier: 
+  Path: event:/05_Scene_Fin du jeu/S_FJ_Champ de bataille
+  guid: f9c1e0654154d845be888df0826a8e8d
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 108808
+--- !u!114 &114290489121203028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/03_Scene1_Bureau/01_Sons_Objets/SA_Telephone_Tonalit\xE9"
+  m_EditorClassIdentifier: 
+  Path: "event:/03_Scene1_Bureau/01_Sons_Objets/SA_Telephone_Tonalit\xE9"
+  guid: 765397b992d3ac47a85da0d9c02d0f9b
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1500
+--- !u!114 &114295163272040478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/03_Scene1_Bureau/01_Sons_Objets/SA_3_Boite_Medaille
+  m_EditorClassIdentifier: 
+  Path: event:/03_Scene1_Bureau/01_Sons_Objets/SA_3_Boite_Medaille
+  guid: 2191a9c6832b9a408420d22320975a7b
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2031
+--- !u!114 &114317951322687910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_2_Event_Detection_German"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_2_Event_Detection_German"
+  guid: 2c4475a8f572a546be184232d062a54a
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3000
+--- !u!114 &114320385767684826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_1-3_Oiseau"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_1-3_Oiseau"
+  guid: b970817f9e966a4d85f3d7e3265ff68b
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1468
+--- !u!114 &114343910471204022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Interaction/SB_Interaction_Son3"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Interaction/SB_Interaction_Son3"
+  guid: 60513929d29d0446ae4a0ce7dec341b7
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 453
+--- !u!114 &114347497932345694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_3_Pelle"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_3_Pelle"
+  guid: 1bbd5c205e9c394ba9d748d309cc0b18
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1095
+--- !u!114 &114364937841019550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/05_Scene_Fin du jeu/S_FJ_Chant Final
+  m_EditorClassIdentifier: 
+  Path: event:/05_Scene_Fin du jeu/S_FJ_Chant Final
+  guid: a104b5424d2d2e4c876ec4e36469c72e
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 79782
+--- !u!114 &114379282180422140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat-Blessure/SB_3_Soldat_Blessure_Ensemble"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat-Blessure/SB_3_Soldat_Blessure_Ensemble"
+  guid: 11a995e1fa2d6b4ebd2c1c4b1f93c336
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 125
+--- !u!114 &114383760458097320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Interaction/SB_Interaction_Son4"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Interaction/SB_Interaction_Son4"
+  guid: b05a68784219f945871117a15f85d447
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 460
+--- !u!114 &114384526864084630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat-Blessure/SB_3_Blessure_Son2"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat-Blessure/SB_3_Blessure_Son2"
+  guid: c570423ec4c91240a7e38bcfcdd84f34
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 375
+--- !u!114 &114399168871863188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/02_Scene_0_Onboarding/Changement_Image
+  m_EditorClassIdentifier: 
+  Path: event:/02_Scene_0_Onboarding/Changement_Image
+  guid: 0044648248778843ba1b8f064651693b
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 738
+--- !u!114 &114424187250470122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/01_Son_Systeme/S_Int\xE9gration_Objet_Inventaire"
+  m_EditorClassIdentifier: 
+  Path: "event:/01_Son_Systeme/S_Int\xE9gration_Objet_Inventaire"
+  guid: 86fad3744bf84e49b79631bbcf2dea5b
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 907
+--- !u!114 &114440184133039370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/01_Son_Systeme/S_Affichage_EcranDate
+  m_EditorClassIdentifier: 
+  Path: event:/01_Son_Systeme/S_Affichage_EcranDate
+  guid: c5c8f493485427458f0e211c74c8f769
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1582
+--- !u!114 &114440671104521264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/01_Son_Systeme/S_Interaction_Coffre_Close
+  m_EditorClassIdentifier: 
+  Path: event:/01_Son_Systeme/S_Interaction_Coffre_Close
+  guid: ef6ef91a2f967c4186099881e64a84a8
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 625
+--- !u!114 &114490726358541730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_1_Soldat_Endormi"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_1_Soldat_Endormi"
+  guid: 5cfdd6364d70db4ab727ffc4f3f216a7
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3750
+--- !u!114 &114495411970758864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Interaction/SB_Soldat_Interaction_Ensemble"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Interaction/SB_Soldat_Interaction_Ensemble"
+  guid: 72fea90f37a59442893abbcac1bd69e9
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 125
+--- !u!114 &114514007476333670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_1_Soldat_Cartes"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_1_Soldat_Cartes"
+  guid: c7d5db7099313443bfa35b0f8e85469e
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1172
+--- !u!114 &114534665404672772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/04_Ambiance/SB_2_Ambiance_Tranch\xE9e"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/04_Ambiance/SB_2_Ambiance_Tranch\xE9e"
+  guid: 2604caa07fb4c740a1420844039f1561
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 56250
+--- !u!114 &114544087985898388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_2_Alarme_Gaz"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_2_Alarme_Gaz"
+  guid: 4fc0491e879b9a408cfab5cb785479b6
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 6500
+--- !u!114 &114575792650699752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/03_Chant/SB_3_Chant_Craonne"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/03_Chant/SB_3_Chant_Craonne"
+  guid: 2472bb7e7f93734c9f45b3e65a1e085f
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 40000
+--- !u!114 &114606202484014014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ICAN5GD_SeriousGame_SD/Build/Desktop/Master Bank.strings.bank
+  SubDir: 
+  lastModified: 637286155348472243
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 3718
+  Exists: 1
+--- !u!114 &114613646876013044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/01_Son_Systeme/S_Interaction_Coffre_Open
+  m_EditorClassIdentifier: 
+  Path: event:/01_Son_Systeme/S_Interaction_Coffre_Open
+  guid: 0a1606682b4704449fbb470f2e328ed1
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 750
+--- !u!114 &114623357043409886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat_Pleurs"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat_Pleurs"
+  guid: b0fd05199a9b4b45940346e9caee42eb
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 15500
+--- !u!114 &114626660151640700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/04_Ambiance/SB_3_Ambiance_Tranch\xE9e"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/04_Ambiance/SB_3_Ambiance_Tranch\xE9e"
+  guid: ed0a7be2986b7541acb6a2d1a84ec7a0
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 55125
+--- !u!114 &114685973732356042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_2_Event_Attaque_Gaz"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_2_Event_Attaque_Gaz"
+  guid: 5db14bf301fc334f9ec0076541a30d7d
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4203
+--- !u!114 &114702409940118116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/03_Scene1_Bureau/01_Sons_Objets/SA_2-3_Ecrit_Rapport
+  m_EditorClassIdentifier: 
+  Path: event:/03_Scene1_Bureau/01_Sons_Objets/SA_2-3_Ecrit_Rapport
+  guid: 32ad3d29f7b1104897f428442c1993ec
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1375
+--- !u!114 &114711054399253210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/01_Son_Systeme/S_Fin_Chapitre
+  m_EditorClassIdentifier: 
+  Path: event:/01_Son_Systeme/S_Fin_Chapitre
+  guid: 328fd5a99cd18346bb66d4a23cbf9cb2
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3250
+--- !u!114 &114720736349017412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/03_Scene1_Bureau/01_Sons_Objets/SA_Deploiement_Extradoc
+  m_EditorClassIdentifier: 
+  Path: event:/03_Scene1_Bureau/01_Sons_Objets/SA_Deploiement_Extradoc
+  guid: 6adbf258ffe6ee438fea53dfec215d4f
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1745
+--- !u!114 &114741098134249714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_1-3_Montre"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_1-3_Montre"
+  guid: 37d1b90cf7945c46845d10a924f28f08
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1306
+--- !u!114 &114744620388479012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/03_Scene1_Bureau/01_Sons_Objets/SA_1_Jeton_Map
+  m_EditorClassIdentifier: 
+  Path: event:/03_Scene1_Bureau/01_Sons_Objets/SA_1_Jeton_Map
+  guid: 56fe7d0b3f24a444924bfc521b258e7d
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 250
+--- !u!114 &114755237304468050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/01_Son_Systeme/S_Interaction_Inventaire_Close
+  m_EditorClassIdentifier: 
+  Path: event:/01_Son_Systeme/S_Interaction_Inventaire_Close
+  guid: b99949a4e1ce2947aba450b7da156c38
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 398
+--- !u!114 &114776721541276388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/05_Scene_Fin du jeu/S_FJ_Tir Final
+  m_EditorClassIdentifier: 
+  Path: event:/05_Scene_Fin du jeu/S_FJ_Tir Final
+  guid: 6608a13cd87fe94595609c652fe0b3c4
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2750
+--- !u!114 &114785259237338018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/04_Ambiance/SB_1_Ambiance_Tranch\xE9e"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/04_Ambiance/SB_1_Ambiance_Tranch\xE9e"
+  guid: ec8b2533e99fa84badaf7a08cf0c2e2a
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 56250
+--- !u!114 &114800932307566096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Acceptation/SB_Soldat_Acceptation_Son2"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Acceptation/SB_Soldat_Acceptation_Son2"
+  guid: fa59278d769adb4995fa0ca9194dcbef
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 860
+--- !u!114 &114809033016988162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/01_Son_Systeme/S_Reussite_Objectif
+  m_EditorClassIdentifier: 
+  Path: event:/01_Son_Systeme/S_Reussite_Objectif
+  guid: a5da37623f09da439fe8cdffc4a0536e
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
+--- !u!114 &114815089283989090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat-Blessure/SB_3_Blessure_Son3"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat-Blessure/SB_3_Blessure_Son3"
+  guid: 5d1368d95e43794592d9e41f3555684a
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 453
+--- !u!114 &114820042540614672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Refus"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Refus"
+  guid: a5599ccbe69ed74cae33339159b86a71
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 812
+--- !u!114 &114880446345835994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Acceptation/SB_Soldat_Acceptation_Ensemble"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Acceptation/SB_Soldat_Acceptation_Ensemble"
+  guid: 67f7dfe28dd51b4c8909c87e95f87845
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
+--- !u!114 &114886216791379916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/03_Scene1_Bureau/01_Sons_Objets/SA_Telephone_Decroche
+  m_EditorClassIdentifier: 
+  Path: event:/03_Scene1_Bureau/01_Sons_Objets/SA_Telephone_Decroche
+  guid: 22f685f6219f464cabfd781a3ea82d64
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 582
+--- !u!114 &114903104251389732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Interaction/SB_Interaction_Son2"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Interaction/SB_Interaction_Son2"
+  guid: de35ff8ef0abf5498ac7fa9581d47b1c
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 585
+--- !u!114 &114948931615661292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_1_Jeu_Carte"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/01_Sons_Objets/SB_1_Jeu_Carte"
+  guid: 28eba49a43f97040a680a7eeb9a711f0
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
+--- !u!114 &114954510467614662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/01_Son_Systeme/S_Interaction_Carnet
+  m_EditorClassIdentifier: 
+  Path: event:/01_Son_Systeme/S_Interaction_Carnet
+  guid: 9f7fbd8d195b2347917a7fa4bcd05c67
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 484
+--- !u!114 &114964698320377276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/01_Son_Systeme/S_Transition_Zone
+  m_EditorClassIdentifier: 
+  Path: event:/01_Son_Systeme/S_Transition_Zone
+  guid: 029c9cbd16cee4499b1a0c1af6e432fe
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
+--- !u!114 &114966451349951972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Interaction/SB_Interaction_Son1"
+  m_EditorClassIdentifier: 
+  Path: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_Soldat_Interaction/SB_Interaction_Son1"
+  guid: 5b10671144aa694bb05ecd9e5b0135dd
+  Banks:
+  - {fileID: 114038713619055854}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 648
