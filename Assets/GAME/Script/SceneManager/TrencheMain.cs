@@ -30,7 +30,6 @@ public class TrencheMain : SceneManagerBase
 	[SerializeField] DialogGraph dialogSoliderSinging;
 
 	[SerializeField] [EventRef] string GazAlarmSound;
-	[SerializeField] [EventRef] string GazMaskSound;
 
 	[SerializeField] [EventRef] string cryingSound;
 	[SerializeField] [EventRef] string trenchSong;
@@ -39,7 +38,6 @@ public class TrencheMain : SceneManagerBase
 	[SerializeField] [EventRef] string AmbianceTrench1;
 	[SerializeField] [EventRef] string AmbianceTrench2;
 	[SerializeField] [EventRef] string AmbianceTrench3;
-
 
 
 	protected override void Start()
@@ -56,19 +54,19 @@ public class TrencheMain : SceneManagerBase
 		switch (GameManager.chapterCount)
 		{
 			case 0:
-				uiMain.Ambiance.Play("bg", AmbianceTrench1);
+				SoundPlayer.PlayEvent("bg", AmbianceTrench1);
 				blackJackGame.onGameComplete += BlackJackFinished;
 
 				break;
 			case 1:
-				uiMain.Ambiance.Play("bg", AmbianceTrench2);
+				SoundPlayer.PlayEvent("bg", AmbianceTrench2);
 				spotGermanGame.onGameComplete += SpotGermanGameComplete;
 				gasFilter.gameObject.SetActive(false);
 				imageMask.gameObject.SetActive(false);
 
 				break;
 			case 2:
-				uiMain.Ambiance.Play("bg", AmbianceTrench3);
+				SoundPlayer.PlayEvent("bg", AmbianceTrench3);
 				foreach (var s in soliderInjured)
 					s.onDialogFinished += SoliderSinging;
 				break;
@@ -152,7 +150,6 @@ public class TrencheMain : SceneManagerBase
 
 	public void WearMask(bool newMask)
 	{
-		SoundPlayer.PlayOneShot(GazMaskSound);
 		if (!newMask)
 			imageMask.sprite = oldMaskSprite;
 		imageMask.gameObject.SetActive(true);
@@ -170,11 +167,12 @@ public class TrencheMain : SceneManagerBase
 
 	IEnumerator AfertGazAttackCoroutine()
 	{
-		gasFilter.DOColor(new Color(gasFilter.color.r, gasFilter.color.g, gasFilter.color.b, 0), 4f);
+		gasFilter.DOColor(new Color(gasFilter.color.r, gasFilter.color.g, gasFilter.color.b, 0), 6f).SetEase(Ease.Linear);
 		yield return new WaitWhile(() => DOTween.IsTweening(gasFilter));
 
 		gasFilter.gameObject.SetActive(false);
 		imageMask.gameObject.SetActive(false);
+		SoundPlayer.StopEvent("mask", true);
 
 		yield return new WaitForSeconds(1.5f);
 		DialogPlayerHelper.SetDialog(dialogAfterGas);
@@ -194,7 +192,7 @@ public class TrencheMain : SceneManagerBase
 	IEnumerator SoliderSingingCoroutine()
 	{
 		yield return new WaitForSeconds(1f);
-		uiMain.Ambiance.Play("soliderCry", cryingSound);
+		SoundPlayer.PlayEvent("soliderCry", cryingSound);
 		yield return new WaitForSeconds(8f);
 		DialogPlayerHelper.SetDialog(dialogSoliderSinging);
 	}
@@ -206,8 +204,8 @@ public class TrencheMain : SceneManagerBase
 
 	IEnumerator FinalWarCoroutine()
 	{
-		uiMain.Ambiance.Play("song", trenchSong);
-		uiMain.Ambiance.Stop("soliderCry", true);
+		SoundPlayer.PlayEvent("song", trenchSong);
+		SoundPlayer.StopEvent("soliderCry", true);
 		yield return new WaitForSeconds(10f);
 		PlayNextChapterDialog();
 	}

@@ -18,10 +18,12 @@ MonoBehaviour:
   - {fileID: 114352503042236588}
   - {fileID: 114392536337937070}
   - {fileID: 114480214189244390}
-  - {fileID: 114723940661614668}
   - {fileID: 114468843467328214}
   - {fileID: 114547933311158320}
   - {fileID: 114067484627857028}
+  - {fileID: 114376490395041110}
+  - {fileID: 114629009826633530}
+  - {fileID: 114234891477758410}
   - {fileID: 0}
   variableSource: {fileID: 114700773602609724}
 --- !u!114 &114067484627857028
@@ -61,7 +63,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114723940661614668}
+        node: {fileID: 114376490395041110}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -109,6 +111,52 @@ MonoBehaviour:
       _dynamic: 0
   output: {fileID: 0}
   showPlayerUIAfterDialog: 0
+--- !u!114 &114234891477758410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2930f4ae6871a4b46b84fd3536b5a2b4, type: 3}
+  m_Name: Delay
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1592, y: -152}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114234891477758410}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114629009826633530}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114234891477758410}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114352503042236588}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  duration: 9
 --- !u!114 &114352503042236588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,7 +170,7 @@ MonoBehaviour:
   m_Name: Change scene
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1192, y: -24}
+  position: {x: 1592, y: -56}
   ports:
     keys:
     - input
@@ -134,7 +182,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114723940661614668}
+        node: {fileID: 114234891477758410}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -156,6 +204,54 @@ MonoBehaviour:
     sceneName: GAME/Scenes/ScBureau
   duration: 2
   dateInfos: {fileID: 11400000, guid: ff22d2460074bfb4f83210c41f03f6d1, type: 2}
+--- !u!114 &114376490395041110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cedd4ecba5f1b5144a6cc14f350f472e, type: 3}
+  m_Name: Show Color Screen
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1199.5, y: -118.5}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114376490395041110}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114067484627857028}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114376490395041110}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114629009826633530}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  duration: 2
+  isWait: 1
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114392536337937070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,6 +475,53 @@ MonoBehaviour:
   displayAll: 0
   displaySpeed: 2
   duration: 0.3
+--- !u!114 &114629009826633530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79bcdd22abeef4c419927aaf99f7dc83, type: 3}
+  m_Name: Play Sound
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1192, y: 40}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114629009826633530}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114376490395041110}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114629009826633530}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114234891477758410}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  soundPath: event:/01_Son_Systeme/S_Transition_Chapitre
+  eventId: 
 --- !u!114 &114700773602609724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,52 +534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42e963c5726cd341894dc0532de5445, type: 3}
   m_Name: Variable Source Object
   m_EditorClassIdentifier: 
---- !u!114 &114723940661614668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2930f4ae6871a4b46b84fd3536b5a2b4, type: 3}
-  m_Name: Delay
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 1208, y: -168}
-  ports:
-    keys:
-    - input
-    - output
-    values:
-    - _fieldName: input
-      _node: {fileID: 114723940661614668}
-      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: output
-        node: {fileID: 114067484627857028}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 1
-      _dynamic: 0
-    - _fieldName: output
-      _node: {fileID: 114723940661614668}
-      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: input
-        node: {fileID: 114352503042236588}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-  input: {fileID: 0}
-  output: {fileID: 0}
-  duration: 1
 --- !u!114 &114832860851708934
 MonoBehaviour:
   m_ObjectHideFlags: 0

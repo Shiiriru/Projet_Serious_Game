@@ -22,9 +22,6 @@ public class UIMain : MonoBehaviour
 	public bool IsChangingScene { get; private set; }
 	public event System.Action onChangeSceneFinished;
 
-	[SerializeField] AmbianceSound ambiance;
-	public AmbianceSound Ambiance { get { return ambiance; } }
-
 	[SerializeField] GetItemScreen getItemScreen;
 
 	private void Awake()
@@ -64,9 +61,10 @@ public class UIMain : MonoBehaviour
 	IEnumerator ChangeSceneCoroutine(string sceneName, float time, DatePanelInfosObject dateInfos)
 	{
 		foregourndBg.DOColor(Color.black, 0.8f);
+		foregourndBg.raycastTarget = true;
 		yield return new WaitWhile(() => DOTween.IsTweening(foregourndBg));
 
-		ambiance.Stop("bg", true);
+		SoundPlayer.StopEvent("bg", true);
 		yield return new WaitForSeconds(0.5f);
 
 		SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
@@ -83,6 +81,7 @@ public class UIMain : MonoBehaviour
 
 		foregourndBg.DOColor(Color.clear, 0.8f);
 		yield return new WaitWhile(() => DOTween.IsTweening(foregourndBg));
+		foregourndBg.raycastTarget = false;
 
 		if (onChangeSceneFinished != null)
 		{

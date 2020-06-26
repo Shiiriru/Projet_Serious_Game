@@ -22,7 +22,6 @@ public class BureauxMain : SceneManagerBase
 
 	[SerializeField] GameObject photoWall;
 
-	EventInstance phoneRingInstance;
 	[SerializeField] [EventRef] string phoneRingEvent;
 
 	[SerializeField] [EventRef] string ambianceEvent;
@@ -70,14 +69,14 @@ public class BureauxMain : SceneManagerBase
 	IEnumerator CommandantCallCoroutine()
 	{
 		yield return new WaitForSeconds(0.1f);
-		uiMain.Ambiance.Play("bg", ambianceEvent);
+		SoundPlayer.PlayEvent("bg", ambianceEvent);
 		if (!(bool)DialogPlayerHelper.VariableSourceMgr.GetValue("isCommandantCalled"))
-			phoneRingInstance.PlayEvent(phoneRingEvent);
+			SoundPlayer.PlayEvent("phoneRing", phoneRingEvent);
 	}
 
 	public void AnswerCommandant()
 	{
-		phoneRingInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+		SoundPlayer.StopEvent("phoneRing", false);
 
 		DialogPlayerHelper.SetOnFinishedAction(ActiveExitButton);
 		DialogPlayerHelper.VariableSourceMgr.SetValue("isCommandantCalled", true);

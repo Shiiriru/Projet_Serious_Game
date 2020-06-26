@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using DialogSystem.Nodes;
 using XNode;
 using System.Linq;
+using System;
 
 namespace DialogSystem
 {
@@ -24,6 +25,8 @@ namespace DialogSystem
 		[SerializeField] BranchButton branchBtnPrefab;
 
 		[SerializeField] VariableSourceManager variableSourceMgr;
+
+		[SerializeField] Image colorScreen;
 
 		static DialogGraph currentDialogGraph;
 		Node currentNode;
@@ -47,11 +50,12 @@ namespace DialogSystem
 
 		void Reset()
 		{
-
+			//if (!uiMain.IsChangingScene)
+			//	displayColorScreen(false, 0, Color.black);
 			uiMain.ShowPlayerUI(false);
 			characterNameContent.Show(false, true);
 			dialogContent.Show(false, true);
-			ShowBlackBG(false);
+			ShowBlackBG(false, 0.5f);
 
 			if (cgContent != null)
 			{
@@ -169,6 +173,18 @@ namespace DialogSystem
 			else if (currentNode is CGOutNode)
 				CGOut();
 
+			else if (currentNode is ScreenFlashNode)
+				ScreenFlash();
+			else if (currentNode is ShowColorScreenNode)
+				ShowColorScreen();
+			else if (currentNode is HideColorScreenNode)
+				HideColorScreen();
+
+			else if (currentNode is PlaySoundNode)
+				PlaySound();
+			else if (currentNode is StopSoundNode)
+				StopSoundNode();
+
 			else if (currentNode is ConditionBranchNode)
 				CheckConditionBranch();
 
@@ -185,7 +201,9 @@ namespace DialogSystem
 		{
 			var node = currentNode as DialogNode;
 
-			ShowBlackBG(node.disableScene);
+			ShowBlackBG(node.disableScene, node.displayAll ? 0 : node.duration);
+
+			var doFade = !node.displayAll && node.duration > 0; 
 
 			if (string.IsNullOrEmpty(node.characterName))
 				characterNameContent.Show(false, false);
@@ -194,7 +212,7 @@ namespace DialogSystem
 				characterNameContent.SetDisplaySpeed(node.displaySpeed);
 
 				characterNameContent.SetText(node.characterName, true);
-				characterNameContent.Show(true, node.duration > 0, node.duration);
+				characterNameContent.Show(true, doFade, node.duration);
 			}
 
 			if (string.IsNullOrEmpty(node.text))
@@ -205,17 +223,17 @@ namespace DialogSystem
 				dialogContent.SetDisplaySide(node.displaySide);
 
 				dialogContent.SetText(node.text, node.displayAll);
-				dialogContent.Show(true, node.duration > 0, node.duration);
+				dialogContent.Show(true, doFade, node.duration);
 			}
 		}
 
-		void ShowBlackBG(bool show)
+		void ShowBlackBG(bool show, float duration)
 		{
 			if (blackBG.raycastTarget == show)
 				return;
 
 			DOTween.Kill(blackBG);
-			blackBG.DOColor(new Color(0, 0, 0, show ? 0.6f : 0), 0.5f);
+			blackBG.DOColor(new Color(0, 0, 0, show ? 0.6f : 0), duration);
 			blackBG.raycastTarget = show;
 		}
 
@@ -224,7 +242,7 @@ namespace DialogSystem
 			var node = currentNode as HideDialogNode;
 			characterNameContent.Show(false, node.duration > 0, node.duration);
 			dialogContent.Show(false, node.duration > 0, node.duration);
-			ShowBlackBG(false);
+			ShowBlackBG(false, node.duration);
 
 			AutoPlayNextNode(node.isWait, node.duration);
 		}
@@ -421,6 +439,62 @@ namespace DialogSystem
 			yield return new WaitForSeconds(time);
 			AutoPlayNextNode();
 			waitingCoroutine = null;
+		}
+
+		void ScreenFlash()
+		{
+			var node = currentNode as ScreenFlashNode;
+			var color = node.color;
+			colorScreen.color = new Color(color.r, color.g, color.b, 0);
+			StartCoroutine(ScreenFlashCoroutine(node.duration, color));
+
+			AutoPlayNextNode(node.isWait, node.duration + 0.1f);
+		}
+
+		IEnumerator ScreenFlashCoroutine(float duration, Color color)
+		{
+			displayColorScreen(true, 0.05f, color);
+			yield return new WaitForSeconds(0.05f + duration);
+			displayColorScreen(false, 0.05f, color);
+		}
+
+		private void ShowColorScreen()
+		{
+			var node = currentNode as ShowColorScreenNode;
+			var color = node.color;
+			displayColorScreen(true, node.duration, color);
+			AutoPlayNextNode(node.isWait, node.duration);
+		}
+
+		private void HideColorScreen()
+		{
+			var node = currentNode as HideColorScreenNode;
+			displayColorScreen(false, node.duration, colorScreen.color);
+			AutoPlayNextNode(node.isWait, node.duration);
+		}
+
+		void displayColorScreen(bool show, float duration, Color color)
+		{
+			colorScreen.raycastTarget = show;
+			colorScreen.DOColor(new Color(color.r, color.g, color.b, show ? 1 : 0), duration);
+		}
+
+		private void PlaySound()
+		{
+			var node = currentNode as PlaySoundNode;
+			if (node.eventId == null)
+				SoundPlayer.PlayOneShot(node.soundPath);
+			else
+				SoundPlayer.PlayEvent(node.eventId, node.soundPath);
+			AutoPlayNextNode();
+		}
+
+		private void StopSoundNode()
+		{
+			var node = currentNode as StopSoundNode;
+
+			SoundPlayer.StopEvent(node.eventId, node.fadeOut);
+			AutoPlayNextNode();
 		}
 	}
 }

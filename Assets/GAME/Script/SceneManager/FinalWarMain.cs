@@ -15,7 +15,6 @@ public class FinalWarMain : MonoBehaviour
 
 	[SerializeField] [EventRef] string FinalWarAmbiance;
 	[SerializeField] [EventRef] string AfterWarAmbiance;
-	[SerializeField] [EventRef] string FinalHeadShotSound;
 
 	[SerializeField] CanvasGroup gameEndTextGroup;
 	[SerializeField] SceneReference sceneMainMenu;
@@ -25,7 +24,7 @@ public class FinalWarMain : MonoBehaviour
 
 		uiMain.onChangeSceneFinished += Init;
 
-		uiMain.Ambiance.Stop("song", true);
+		SoundPlayer.StopEvent("song", true);
 	}
 
 	private void Init()
@@ -33,22 +32,18 @@ public class FinalWarMain : MonoBehaviour
 		DialogPlayerHelper.SetDialog(dialogFinalWar);
 		DialogPlayerHelper.SetOnFinishedAction(PlayAfterWarDialog);
 
-		uiMain.Ambiance.Play("bg", FinalWarAmbiance);
+		SoundPlayer.PlayEvent("bg", FinalWarAmbiance);
 	}
 
 	void PlayAfterWarDialog()
 	{
 		StartCoroutine(AfterWarCoroutine());
-
-		SoundPlayer.PlayOneShot(FinalHeadShotSound);
-		//uiMain.Ambiance.Stop(true);
 	}
 
 	IEnumerator AfterWarCoroutine()
 	{
-		uiMain.Ambiance.Stop("bg", false);
 		yield return new WaitForSeconds(8f);
-		uiMain.Ambiance.Play("bg", AfterWarAmbiance);
+		SoundPlayer.PlayEvent("bg", AfterWarAmbiance);
 		yield return new WaitForSeconds(10f);
 
 		DialogPlayerHelper.SetDialog(dialogAfterWar);
@@ -62,14 +57,13 @@ public class FinalWarMain : MonoBehaviour
 
 	IEnumerator EndGameCorutine()
 	{
-		uiMain.Ambiance.Stop("bg", true);
-
 		yield return new WaitForSeconds(2f);
 		gameEndTextGroup.DOFade(1, 3f);
 		yield return new WaitForSeconds(5f);
 		gameEndTextGroup.DOFade(0, 2f);
-		yield return new WaitForSeconds(4f);
+		yield return new WaitForSeconds(6f);
 		Destroy(GameObject.FindGameObjectWithTag("GameController"));
 		SceneManager.LoadScene(sceneMainMenu, LoadSceneMode.Single);
+		SoundPlayer.StopEvent("bg", true);
 	}
 }

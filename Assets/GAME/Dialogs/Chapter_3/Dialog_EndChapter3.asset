@@ -42,7 +42,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1048, y: 136}
+  position: {x: 1048, y: 168}
   ports:
     keys:
     - input
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1496, y: 56}
+  position: {x: 1496, y: 88}
   ports:
     keys:
     - input
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: Delay
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2360, y: 72}
+  position: {x: 2296, y: 200}
   ports:
     keys:
     - input
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Name: Change scene
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2312, y: 200}
+  position: {x: 2568, y: 184}
   ports:
     keys:
     - input
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 168, y: 184}
+  position: {x: 168, y: 216}
   ports:
     keys:
     - input
@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1896, y: 136}
+  position: {x: 1896, y: 168}
   ports:
     keys:
     - input
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 616, y: 136}
+  position: {x: 616, y: 168}
   ports:
     keys:
     - input
@@ -446,7 +446,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 168, y: -56}
+  position: {x: 168, y: -24}
   ports:
     keys:
     - input
@@ -499,7 +499,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1048, y: 328}
+  position: {x: 1048, y: 360}
   ports:
     keys:
     - input
@@ -553,7 +553,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 616, y: 328}
+  position: {x: 616, y: 360}
   ports:
     keys:
     - input
@@ -606,7 +606,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 616, y: -56}
+  position: {x: 616, y: -24}
   ports:
     keys:
     - input
@@ -659,7 +659,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1048, y: -56}
+  position: {x: 1048, y: -24}
   ports:
     keys:
     - input
@@ -713,7 +713,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1496, y: 264}
+  position: {x: 1496, y: 296}
   ports:
     keys:
     - input
