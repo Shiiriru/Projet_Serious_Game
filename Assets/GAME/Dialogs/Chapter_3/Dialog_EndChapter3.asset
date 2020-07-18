@@ -228,7 +228,7 @@ MonoBehaviour:
   scene:
     sceneAsset: {fileID: 102900000, guid: ec7e0732dd618594b8b70a6a98ba01c1, type: 3}
     sceneName: GAME/Scenes/ScFinalWar
-  duration: 2
+  duration: 5
   dateInfos: {fileID: 0}
 --- !u!114 &114389716448684692
 MonoBehaviour:

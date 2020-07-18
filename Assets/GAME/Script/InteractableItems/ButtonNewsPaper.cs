@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ButtonNewsPaper : ButtonBase
 {
-	[SerializeField] ImageZoomScreen displayScreen;
+	[SerializeField] ZoomImageScreen displayScreen;
 	[SerializeField] Sprite[] newsPaperSprites;
 	public override void OnClickButton()
 	{

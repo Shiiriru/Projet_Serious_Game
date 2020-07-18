@@ -202,7 +202,7 @@ MonoBehaviour:
   scene:
     sceneAsset: {fileID: 102900000, guid: 066a278ebcef6cb4c9da7ac79c68d47c, type: 3}
     sceneName: GAME/Scenes/ScBureau
-  duration: 2
+  duration: 5
   dateInfos: {fileID: 11400000, guid: ff22d2460074bfb4f83210c41f03f6d1, type: 2}
 --- !u!114 &114376490395041110
 MonoBehaviour:

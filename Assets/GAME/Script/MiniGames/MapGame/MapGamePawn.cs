@@ -53,10 +53,7 @@ public class MapGamePawn : DragableButton
 			currentCase.fillCase(this);
 			if (currentCase == targetCase)
 			{
-				isCorrect = disableMove = true;
-				GetComponent<Collider2D>().enabled = false;
-
-				image.color = validColor;
+				CorrectAnswer();
 				mapGame.CheckMapCorrect();
 			}
 		}
@@ -89,6 +86,13 @@ public class MapGamePawn : DragableButton
 	public void SetPosToTargetCase()
 	{
 		transform.position = targetCase.transform.position;
-		disableMove = true;
+		CorrectAnswer();
+	}
+
+	 void CorrectAnswer()
+	{
+		isCorrect = disableMove = true;
+		GetComponent<Collider2D>().enabled = false;
+		image.color = validColor;
 	}
 }

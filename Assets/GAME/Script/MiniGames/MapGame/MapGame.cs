@@ -15,7 +15,9 @@ public class MapGame : MiniGameBase
 		{
 			//auto set pawn pos
 			if (mapChecked)
+			{
 				p.SetPosToTargetCase();
+			}				
 			else
 			{
 				DialogPlayerHelper.SetDialog(dialog);

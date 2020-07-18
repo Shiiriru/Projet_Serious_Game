@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ButtonWarReport : ButtonBase
 {
-	[SerializeField] ImageZoomScreen displayScreen;
+	[SerializeField] ZoomImageScreen displayScreen;
 	[SerializeField] Sprite sprite;
 	public override void OnClickButton()
 	{
