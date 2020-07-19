@@ -20,7 +20,7 @@ public static class SoundPlayer
 		}
 	}
 
-	public static void PlayEvent(string id, string path)
+	public static void PlayEvent(string id, string path, float volume = 1)
 	{
 		try
 		{
@@ -34,6 +34,8 @@ public static class SoundPlayer
 			}
 
 			evt.eventInstance = RuntimeManager.CreateInstance(path);
+			evt.eventInstance.setVolume(volume);
+
 			evt.eventInstance.start();
 		}
 		catch

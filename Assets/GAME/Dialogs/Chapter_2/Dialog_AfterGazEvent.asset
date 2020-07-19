@@ -519,7 +519,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: Capitaine Favourier
-  text: '*Tousse* Pas tellement, j''ai la gorge en feu et j''y vois presque rien ...'
+  text: '*Tousse* Pas tellement, j''ai la gorge en feu et j''y vois presque rien
+    ...'
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -1155,6 +1156,7 @@ MonoBehaviour:
   output: {fileID: 0}
   soundPath: event:/01_Son_Systeme/S_Transition_Chapitre
   eventId: 
+  volume: 0
 --- !u!114 &114928481322859740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1200,7 +1202,7 @@ MonoBehaviour:
   scene:
     sceneAsset: {fileID: 102900000, guid: 066a278ebcef6cb4c9da7ac79c68d47c, type: 3}
     sceneName: GAME/Scenes/ScBureau
-  duration: 5
+  duration: 4
   dateInfos: {fileID: 11400000, guid: 48b847dbddee20e41962bcb18de4ecd4, type: 2}
 --- !u!114 &114955997886478168
 MonoBehaviour:

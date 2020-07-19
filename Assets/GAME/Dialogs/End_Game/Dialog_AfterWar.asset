@@ -82,8 +82,8 @@ MonoBehaviour:
   displaySide: 0
   characterName: Soldat survivant
   text: "Frapp\xE9 par une balle allemande devant le village de Combles ce 26 septembre
-    1916, en d\xE9fendant son pays, les armes \xE0 la main et \xE0 la t\xEAte de sa
-    compagnie."
+    1916, en d\xE9fendant son pays, les armes \xE0 la main et \xE0 la t\xEAte de
+    sa compagnie."
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -427,9 +427,9 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Soldat survivant
-  text: "L'offensive de la Somme sera un immense g\xE2chis. 141 jours de combats acharn\xE9s
-    pour un gain ridicule de territoire et pour un prix \xE0 payer exorbitant, et
-    ce dans tous les camps. Le g\xE9n\xE9ral y a perdu sa place et nous nos vies."
+  text: "L'offensive de la Somme sera un immense g\xE2chis. 141 jours de combats
+    acharn\xE9s pour un gain ridicule de territoire et pour un prix \xE0 payer exorbitant,
+    et ce dans tous les camps. Le g\xE9n\xE9ral y a perdu sa place et nous nos vies."
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -721,8 +721,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Soldat survivant
-  text: "Et d\xE9sormais, il est l'un d'eux, emport\xE9 par cette folie comme de nombreux
-    autres avant et malheureusement apr\xE8s lui."
+  text: "Et d\xE9sormais, il est l'un d'eux, emport\xE9 par cette folie comme de
+    nombreux autres avant et malheureusement apr\xE8s lui."
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -881,7 +881,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Soldat survivant
-  text: "En effet, le Pass\xE9 n'est rien sans le Pr\xE9sent qui \xE9coute et se souvient."
+  text: "En effet, le Pass\xE9 n'est rien sans le Pr\xE9sent qui \xE9coute et se
+    souvient."
   showAdvance: 0
   disableScene: 1
   displayAll: 0

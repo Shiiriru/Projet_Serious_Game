@@ -192,8 +192,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Poux
-  text: "Bonne journ\xE9e \xE0 vous capt'aine, et faites gaffe aux cieux; il n'y a
-    pas que des pigeons qui volent, les albatros allemands aussi !"
+  text: "Bonne journ\xE9e \xE0 vous capt'aine, et faites gaffe aux cieux; il n'y
+    a pas que des pigeons qui volent, les albatros allemands aussi !"
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -404,7 +404,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Poux
-  text: Ma foi pas grand chose, et ce n'est pas plus mal si vous voulez mon avis !
+  text: Ma foi pas grand chose, et ce n'est pas plus mal si vous voulez mon avis
+    !
   showAdvance: 0
   disableScene: 1
   displayAll: 0

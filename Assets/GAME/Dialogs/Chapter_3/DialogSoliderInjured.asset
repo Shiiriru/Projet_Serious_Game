@@ -732,10 +732,10 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Ferdinand
-  text: "On vit dans la boue, dans la crasse avec les rats et les copains morts, dans
-    la crainte des gaz, des canons fran\xE7ais qui tirent trop courts et des allemands
-    nettoyeur de tranch\xE9e ! Certains d'entre nous sont l\xE0 depuis 14 et c'est
-    toujours la m\xEAme chose !!"
+  text: "On vit dans la boue, dans la crasse avec les rats et les copains morts,
+    dans la crainte des gaz, des canons fran\xE7ais qui tirent trop courts et des
+    allemands nettoyeur de tranch\xE9e ! Certains d'entre nous sont l\xE0 depuis
+    14 et c'est toujours la m\xEAme chose !!"
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -1220,8 +1220,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: Capitaine Favourier
-  text: '... Pas la peine de me mettre cette pression en plus soldat ... J''en ai
-    vraiment pas besoin ...'
+  text: ... Pas la peine de me mettre cette pression en plus soldat ... J'en ai vraiment
+    pas besoin ...
   showAdvance: 0
   disableScene: 1
   displayAll: 0

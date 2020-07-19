@@ -20,7 +20,7 @@ public class InventorySlot : MonoBehaviour
 	{
 		CurrrentInfoItem = newItem;
 
-		icon.sprite = CurrrentInfoItem.imageResume;
+		icon.sprite = CurrrentInfoItem.imageResume != null ? CurrrentInfoItem.imageResume: CurrrentInfoItem.imageInventory;
 		icon.enabled = true;
 	}
 

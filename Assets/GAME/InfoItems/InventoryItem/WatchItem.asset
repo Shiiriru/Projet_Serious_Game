@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b66aa57d4f45fb945aef87892fd328ad, type: 3}
-  m_Name: Button_PhotoVillage
+  m_Name: WatchItem
   m_EditorClassIdentifier: 
-  Id: 
-  name: Photos
-  itemType: 2
-  imageInventory: {fileID: 0}
-  imageResume: {fileID: 21300000, guid: bc3ea8b67b8cdb84ea73a64f99cd1dba, type: 3}
-  imageWIKI: {fileID: 21300000, guid: 700440c1fe0270a4d9f94dac3e406353, type: 3}
-  textResume: {fileID: 0}
+  Id: watch
+  name: "Montre \xE0 gousset"
+  itemType: 0
+  imageInventory: {fileID: 21300000, guid: 6de486dbedf9e2542bc09bc85673e02d, type: 3}
+  imageResume: {fileID: 0}
+  imageWIKI: {fileID: 0}
+  textResume: {fileID: 4900000, guid: 3a18c027d4c703941a17eaf2e2cef7fc, type: 3}
   TexteWiki: {fileID: 0}

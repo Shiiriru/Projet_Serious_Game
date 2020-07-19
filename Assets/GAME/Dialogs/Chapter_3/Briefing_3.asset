@@ -182,7 +182,7 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: 
-  text: '... Meme moi meme ...'
+  text: ... Meme moi meme ...
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -357,8 +357,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Commandement
-  text: "Vous verrez, sur votre bureau, une m\xE9daile pour le soldat Louis. Son courage
-    au combat lui a valu la Croix de Guerre. Ca devrait aider \xE0 le requinquer."
+  text: "Vous verrez, sur votre bureau, une m\xE9daile pour le soldat Louis. Son
+    courage au combat lui a valu la Croix de Guerre. Ca devrait aider \xE0 le requinquer."
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -710,7 +710,7 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: 
-  text: '......'
+  text: ......
   showAdvance: 0
   disableScene: 1
   displayAll: 0

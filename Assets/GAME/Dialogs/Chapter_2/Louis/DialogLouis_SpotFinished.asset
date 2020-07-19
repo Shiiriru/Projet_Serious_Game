@@ -186,8 +186,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Louis
-  text: "Salaud de boche, qu'est ce qu'y voulait celui-l\xE0 ? Venir nous piquer le
-    pinard et le pain blanc ?"
+  text: "Salaud de boche, qu'est ce qu'y voulait celui-l\xE0 ? Venir nous piquer
+    le pinard et le pain blanc ?"
   showAdvance: 0
   disableScene: 1
   displayAll: 0

@@ -129,6 +129,7 @@ MonoBehaviour:
   output: {fileID: 0}
   soundPath: event:/05_Scene_Fin du jeu/S_FJ_Tir Final
   eventId: 
+  volume: 0
 --- !u!114 &114009860169979930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,8 +177,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: 
-  text: "Et o\xF9 est le soldat Vernet ?!? Il \xE9tait \xE0 mes c\xF4t\xE9s il y a
-    quelques secondes \xE0 peines ! Il se serait fait emport\xE9 par cette explosion
+  text: "Et o\xF9 est le soldat Vernet ?!? Il \xE9tait \xE0 mes c\xF4t\xE9s il y
+    a quelques secondes \xE0 peines ! Il se serait fait emport\xE9 par cette explosion
     d'obus ?"
   showAdvance: 0
   disableScene: 1
@@ -650,7 +651,7 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Louis
-  text: '... pas ...'
+  text: ... pas ...
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -3361,7 +3362,9 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: Capitaine Favourier
-  text: "RAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH !!\r\n"
+  text: 'RAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH !!
+
+'
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -3522,8 +3525,8 @@ MonoBehaviour:
   displaySide: 1
   characterName: 
   text: "Oh non, le lieutenant Poux vient de s'effondrer au sol dans la boue, lui
-    aussi il a \xE9t\xE9 touch\xE9 ! Son oiseau s'envole, pourvu que l'\xE2me du lieutenant
-    ne soit pas partit avec."
+    aussi il a \xE9t\xE9 touch\xE9 ! Son oiseau s'envole, pourvu que l'\xE2me du
+    lieutenant ne soit pas partit avec."
   showAdvance: 0
   disableScene: 1
   displayAll: 0

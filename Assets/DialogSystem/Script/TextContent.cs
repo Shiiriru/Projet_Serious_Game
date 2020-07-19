@@ -17,7 +17,9 @@ namespace DialogSystem
 
 		//for set auto height
 		[SerializeField] bool autoHeight;
-		[SerializeField] Text textContentHeight;
+		[SerializeField] protected Text textContentHeight;
+		//
+		protected bool disableAnimateHeight;
 
 		public bool isDisplayFinished { get; private set; }
 
@@ -30,7 +32,7 @@ namespace DialogSystem
 
 		public void SetDisplaySpeed(int speed)
 		{
-			playSpeed = 0.06f / speed;
+			playSpeed = 0.12f / (speed + (speed - 1) * 2f);
 		}
 
 		public void SetText(string str, bool displayAll)
@@ -50,8 +52,17 @@ namespace DialogSystem
 		{
 			textContentHeight.text = str;
 			yield return null;
+
+			var targetSize = new Vector2(rectTransform.sizeDelta.x, textContentHeight.rectTransform.sizeDelta.y + 50);
+
 			DOTween.Kill(rectTransform);
-			rectTransform.DOSizeDelta(new Vector2(rectTransform.sizeDelta.x, textContentHeight.rectTransform.sizeDelta.y + 50), 0.1f);
+			if (disableAnimateHeight)
+			{
+				rectTransform.sizeDelta = targetSize;
+				disableAnimateHeight = false;
+			}
+			else
+				rectTransform.DOSizeDelta(targetSize, 0.1f);
 		}
 
 		public void DisplayEntierStr()
@@ -69,15 +80,17 @@ namespace DialogSystem
 		public void Show(bool show, bool doFade, float fadeTime = 0.3f)
 		{
 			var alpha = show ? 1 : 0;
-			DOTween.Kill(canvasGroup);
 
-			if (canvasGroup.alpha != alpha)
-			{
-				if (doFade)
-					canvasGroup.DOFade(alpha, fadeTime).SetEase(Ease.InOutQuad);
-				else
-					canvasGroup.alpha = alpha;
-			}
+			if (canvasGroup.alpha == alpha)
+				return;
+
+			disableAnimateHeight = true;
+
+			DOTween.Kill(canvasGroup);
+			if (doFade)
+				canvasGroup.DOFade(alpha, fadeTime).SetEase(Ease.InOutQuad);
+			else
+				canvasGroup.alpha = alpha;
 		}
 
 		public bool isFading()

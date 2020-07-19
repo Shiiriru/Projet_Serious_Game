@@ -293,8 +293,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: Capitaine Favourier
-  text: "Moi aussi je suis bien content de te voir ! Toujours en vie et toujours bien
-    portant \xE0 ce que je vois. On dirait que \xE7a te r\xE9ussit bien la guerre."
+  text: "Moi aussi je suis bien content de te voir ! Toujours en vie et toujours
+    bien portant \xE0 ce que je vois. On dirait que \xE7a te r\xE9ussit bien la guerre."
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -454,9 +454,9 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Louis
-  text: "Et toi, alors ? Toujours pas grand h\xE9ros d'la Nation ? C'tait pas ce que
-    t'avais dit avant d'partir ? Tu m'diras, t'as encore l'temps hein, vu que c'te
-    fichue guerre veut pas se finir !"
+  text: "Et toi, alors ? Toujours pas grand h\xE9ros d'la Nation ? C'tait pas ce
+    que t'avais dit avant d'partir ? Tu m'diras, t'as encore l'temps hein, vu que
+    c'te fichue guerre veut pas se finir !"
   showAdvance: 0
   disableScene: 1
   displayAll: 0

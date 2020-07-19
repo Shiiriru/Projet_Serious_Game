@@ -43,6 +43,7 @@ MonoBehaviour:
   - {fileID: 114063315225300322}
   - {fileID: 114386645465186884}
   - {fileID: 114283826199934890}
+  - {fileID: 1460445451144587333}
   - {fileID: 0}
   variableSource: {fileID: 114735846283954992}
 --- !u!114 &114003861249723866
@@ -240,7 +241,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114142123012954572}
+        node: {fileID: 1460445451144587333}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -308,7 +309,7 @@ MonoBehaviour:
   m_Name: CG
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -2024, y: 40}
+  position: {x: -1912, y: 40}
   ports:
     keys:
     - input
@@ -320,7 +321,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114073350371673708}
+        node: {fileID: 1460445451144587333}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -443,7 +444,7 @@ MonoBehaviour:
   scene:
     sceneAsset: {fileID: 102900000, guid: 066a278ebcef6cb4c9da7ac79c68d47c, type: 3}
     sceneName: GAME/Scenes/ScBureau
-  duration: 2
+  duration: 4
   dateInfos: {fileID: 11400000, guid: df167f58f068fe34296427360892cf80, type: 2}
 --- !u!114 &114283826199934890
 MonoBehaviour:
@@ -458,7 +459,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -680, y: 568}
+  position: {x: -312, y: 520}
   ports:
     keys:
     - input
@@ -493,8 +494,8 @@ MonoBehaviour:
   displaySide: 1
   characterName: 
   text: "Avant de partir pour le front, on m'a demand\xE9 de poser avec la compagnie.
-    Pour la post\xE9rit\xE9 qu'ils disaient. J'appr\xE9cie beaucoup cette photo. Elle
-    repr\xE9sente bien mon \xE9tat d'esprit, j'\xE9tais \u2026"
+    Pour la post\xE9rit\xE9 qu'ils disaient. J'appr\xE9cie beaucoup cette photo.
+    Elle repr\xE9sente bien mon \xE9tat d'esprit, j'\xE9tais \u2026"
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -1072,7 +1073,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -696, y: 344}
+  position: {x: -696, y: 296}
   ports:
     keys:
     - input
@@ -1161,8 +1162,8 @@ MonoBehaviour:
   characterName: 
   text: "Officier, donc, trimbal\xE9 un peu partout, de bureaux en bureaux, je me
     retrouve deux ans plus tard dans un coin paum\xE9 de la Somme, \xE0 la t\xEAte
-    d'un groupe de pauvres bougres. En premi\xE8re ligne. Je ne sais pas quoi en penser.
-    Est-ce une bonne chose ? A vrai dire, je n'en sais rien."
+    d'un groupe de pauvres bougres. En premi\xE8re ligne. Je ne sais pas quoi en
+    penser. Est-ce une bonne chose ? A vrai dire, je n'en sais rien."
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -1216,8 +1217,8 @@ MonoBehaviour:
   displaySide: 1
   characterName: 
   text: "Le jour o\xF9 tout a bascul\xE9 : notre vie, notre destin, notre nation.
-    L'Europe toute enti\xE8re s'est embras\xE9e.\r\nIl a suffit d'un meutre dans une
-    ville perdue des Balkans pour que tout s'encha\xEEne vite."
+    L'Europe toute enti\xE8re s'est embras\xE9e.\r\nIl a suffit d'un meutre dans
+    une ville perdue des Balkans pour que tout s'encha\xEEne vite."
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -1823,7 +1824,7 @@ MonoBehaviour:
   m_Name: START
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -2376, y: 328}
+  position: {x: -2440, y: 296}
   ports:
     keys:
     - output
@@ -1842,3 +1843,51 @@ MonoBehaviour:
       _dynamic: 0
   output: {fileID: 0}
   showPlayerUIAfterDialog: 0
+--- !u!114 &1460445451144587333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79bcdd22abeef4c419927aaf99f7dc83, type: 3}
+  m_Name: Play Sound
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -2232, y: -24}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 1460445451144587333}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114073350371673708}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 1460445451144587333}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114142123012954572}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  soundPath: "event:/04_Scene2_Tranch\xE9e/04_Ambiance/SB_3_Ambiance_Tranch\xE9e"
+  eventId: bg
+  volume: 0.5

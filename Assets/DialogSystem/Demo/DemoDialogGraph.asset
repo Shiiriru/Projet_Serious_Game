@@ -327,6 +327,7 @@ MonoBehaviour:
   output: {fileID: 0}
   soundPath: event:/01_Son_Systeme/S_Son_Reussite
   eventId: 
+  volume: 0
 --- !u!114 &114441759806970504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,7 +373,7 @@ MonoBehaviour:
   m_Name: Hide Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 664, y: -312}
+  position: {x: 648, y: -184}
   ports:
     keys:
     - input
@@ -1059,10 +1060,10 @@ MonoBehaviour:
   characterName: coucou
   text: longgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
     no finsh yet :)
-  showAdvance: 0
+  showAdvance: 1
   disableScene: 1
   displayAll: 0
-  displaySpeed: 3
+  displaySpeed: 5
   duration: 0.2
 --- !u!114 &114882807348357912
 MonoBehaviour:
@@ -1133,7 +1134,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -168, y: -472}
+  position: {x: -136, y: -584}
   ports:
     keys:
     - input
@@ -1171,10 +1172,10 @@ MonoBehaviour:
   displaySide: 0
   characterName: coucou
   text: toto is badasssssssssssssssssssss
-  showAdvance: 0
+  showAdvance: 1
   disableScene: 0
   displayAll: 0
-  displaySpeed: 3
+  displaySpeed: 1
   duration: 0.2
 --- !u!114 &114983878562026484
 MonoBehaviour:
@@ -1266,7 +1267,7 @@ MonoBehaviour:
   displaySide: 0
   characterName: coucou
   text: do your choice
-  showAdvance: 0
+  showAdvance: 1
   disableScene: 1
   displayAll: 0
   displaySpeed: 3

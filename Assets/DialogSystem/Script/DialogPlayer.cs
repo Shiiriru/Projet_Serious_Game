@@ -485,7 +485,7 @@ namespace DialogSystem
 			if (node.eventId == null)
 				SoundPlayer.PlayOneShot(node.soundPath);
 			else
-				SoundPlayer.PlayEvent(node.eventId, node.soundPath);
+				SoundPlayer.PlayEvent(node.eventId, node.soundPath, node.volume);
 			AutoPlayNextNode();
 		}
 

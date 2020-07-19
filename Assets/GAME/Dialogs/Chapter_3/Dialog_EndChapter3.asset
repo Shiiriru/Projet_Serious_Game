@@ -582,8 +582,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: 
-  text: "Peur que ma vie soit emport\xE9e \xE0 n'importe quelle heure du jour ou de
-    la nuit, par la maladie, par les rats, par une balle ou un obus ..."
+  text: "Peur que ma vie soit emport\xE9e \xE0 n'importe quelle heure du jour ou
+    de la nuit, par la maladie, par les rats, par une balle ou un obus ..."
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -796,8 +796,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: 
-  text: Je dois montrer l'exemple et les mener courageusement au combat. Je n'ai plus
-    le choix, ils comptent tous sur moi ...
+  text: Je dois montrer l'exemple et les mener courageusement au combat. Je n'ai
+    plus le choix, ils comptent tous sur moi ...
   showAdvance: 0
   disableScene: 1
   displayAll: 0

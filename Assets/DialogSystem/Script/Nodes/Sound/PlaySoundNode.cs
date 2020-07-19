@@ -20,5 +20,6 @@ namespace DialogSystem.Nodes
 		[EventRef] public string soundPath;
 		//uniquement for sound event
 		public string eventId;
+		[Range(0, 1)] public float volume = 1;
 	}
 }

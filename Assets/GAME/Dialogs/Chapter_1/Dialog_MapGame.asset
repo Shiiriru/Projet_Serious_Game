@@ -267,9 +267,9 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: 
-  text: "Bon ... Il faut que je mette \xE0 jour la carte tactique en mettant les unit\xE9s
-    au bon endroit. Des indices utiles sont surement diss\xE9min\xE9s quelque part
-    dans les documents."
+  text: "Bon ... Il faut que je mette \xE0 jour la carte tactique en mettant les
+    unit\xE9s au bon endroit. Des indices utiles sont surement diss\xE9min\xE9s quelque
+    part dans les documents."
   showAdvance: 0
   disableScene: 1
   displayAll: 0

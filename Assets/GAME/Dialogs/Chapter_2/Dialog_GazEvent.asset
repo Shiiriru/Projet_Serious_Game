@@ -147,6 +147,7 @@ MonoBehaviour:
   output: {fileID: 0}
   soundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_2_Soldat_GasMask"
   eventId: mask
+  volume: 0
 --- !u!114 &114109096501823142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,6 +396,7 @@ MonoBehaviour:
   output: {fileID: 0}
   soundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_2_Soldat_GasMask"
   eventId: mask
+  volume: 0
 --- !u!114 &114235678085965298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,6 +717,7 @@ MonoBehaviour:
   output: {fileID: 0}
   soundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_2_Soldat_GasMask"
   eventId: mask
+  volume: 0
 --- !u!114 &114559903819017916
 MonoBehaviour:
   m_ObjectHideFlags: 0

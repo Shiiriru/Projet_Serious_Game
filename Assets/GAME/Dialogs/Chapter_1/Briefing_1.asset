@@ -228,8 +228,8 @@ MonoBehaviour:
   displaySide: 0
   characterName: Commandement
   text: "Nos troupes ici sont cruciales, et la bataille importante. N\xE9anmoins,
-    vous avez encore un peu de temps devant vous pour vous familiariser avec les lieux
-    et votre compagnie."
+    vous avez encore un peu de temps devant vous pour vous familiariser avec les
+    lieux et votre compagnie."
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -369,8 +369,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Commandement
-  text: "Capitaine Favourier, de la part du g\xE9n\xE9ral Huguenot, bienvenue au front
-    !"
+  text: "Capitaine Favourier, de la part du g\xE9n\xE9ral Huguenot, bienvenue au
+    front !"
   showAdvance: 0
   disableScene: 1
   displayAll: 0

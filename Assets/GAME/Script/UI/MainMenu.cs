@@ -8,7 +8,37 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
 	[SerializeField] SceneReference onBordingScene;
+
 	[SerializeField] Image blackForeground;
+	[SerializeField] CanvasGroup buttonGroup;
+	[SerializeField] Animator titleAnimator;
+
+	private void Start()
+	{
+		blackForeground.color = Color.black;
+		blackForeground.raycastTarget = true;
+
+		buttonGroup.alpha = 0;
+
+		StartCoroutine(ShowCoroutine());
+	}
+
+	IEnumerator ShowCoroutine()
+	{
+		yield return new WaitForSeconds(0.5f);
+
+		blackForeground.DOColor(Color.clear, 1f);
+		yield return new WaitForSeconds(1f);
+
+		titleAnimator.SetTrigger("show");
+		yield return new WaitForSeconds(2.5f);
+
+		buttonGroup.DOFade(1, 1.5f);
+		var btnRect = buttonGroup.GetComponent<RectTransform>();
+		btnRect.DOAnchorPos(new Vector2(btnRect.anchoredPosition.x, btnRect.anchoredPosition.y - 15), 1.5f);
+
+		blackForeground.raycastTarget = false;
+	}
 
 	public void OnClickStart()
 	{
@@ -22,7 +52,7 @@ public class MainMenu : MonoBehaviour
 		SceneManager.LoadScene(onBordingScene.Name, LoadSceneMode.Single);
 	}
 
-    public void OnClickQuit()
+	public void OnClickQuit()
 	{
 		StartCoroutine(QuitCoroutine());
 	}

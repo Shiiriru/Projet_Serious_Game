@@ -96,7 +96,7 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Louis
-  text: '...*soupir*'
+  text: ...*soupir*
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -308,7 +308,7 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: Capitaine Favourier
-  text: '... Louis ?'
+  text: ... Louis ?
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -417,7 +417,7 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: Capitaine Favourier
-  text: '...'
+  text: ...
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -524,7 +524,7 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Louis
-  text: '...'
+  text: ...
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -1285,7 +1285,7 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Louis
-  text: '... Ah ...'
+  text: ... Ah ...
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -1774,8 +1774,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Louis
-  text: Entre celles du front et celles de ma famille, j'ai pas envie d'en faire collection
-    *sourit tristrement*
+  text: Entre celles du front et celles de ma famille, j'ai pas envie d'en faire
+    collection *sourit tristrement*
   showAdvance: 0
   disableScene: 1
   displayAll: 0
