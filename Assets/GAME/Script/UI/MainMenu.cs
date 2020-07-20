@@ -37,6 +37,7 @@ public class MainMenu : MonoBehaviour
 		var btnRect = buttonGroup.GetComponent<RectTransform>();
 		btnRect.DOAnchorPos(new Vector2(btnRect.anchoredPosition.x, btnRect.anchoredPosition.y - 15), 1.5f);
 
+		yield return new WaitForSeconds(1f);
 		blackForeground.raycastTarget = false;
 	}
 
