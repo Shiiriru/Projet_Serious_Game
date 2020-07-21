@@ -115,7 +115,7 @@ namespace DialogSystem
 			if (waitingCoroutine != null || !(currentNode is DialogNode) || dialogContent.isFading())
 				return;
 
-			if (Input.GetMouseButtonDown(0))
+			if (Input.GetButtonDown("Fire1"))
 			{
 				if (dialogContent.isDisplayFinished)
 					AutoPlayNextNode();

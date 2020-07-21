@@ -13,8 +13,12 @@ public class MainMenu : MonoBehaviour
 	[SerializeField] CanvasGroup buttonGroup;
 	[SerializeField] Animator titleAnimator;
 
+	[SerializeField] UISystem uiSystem;
+
 	private void Start()
 	{
+		uiSystem.OnClickClose();
+
 		blackForeground.color = Color.black;
 		blackForeground.raycastTarget = true;
 
@@ -27,8 +31,8 @@ public class MainMenu : MonoBehaviour
 	{
 		yield return new WaitForSeconds(0.5f);
 
-		blackForeground.DOColor(Color.clear, 1f);
-		yield return new WaitForSeconds(1f);
+		blackForeground.DOColor(Color.clear, 2f);
+		yield return new WaitForSeconds(2f);
 
 		titleAnimator.SetTrigger("show");
 		yield return new WaitForSeconds(2.5f);
@@ -51,6 +55,11 @@ public class MainMenu : MonoBehaviour
 		ShowForeGround();
 		yield return new WaitForSeconds(1.5f);
 		SceneManager.LoadScene(onBordingScene.Name, LoadSceneMode.Single);
+	}
+
+	public void OnClickOption()
+	{
+		uiSystem.Open(UISystem.Page.Options);
 	}
 
 	public void OnClickQuit()
