@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BureauSprites
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 2f8ec29bfd56cbc45a0585c3923ab0c4, type: 3}
+    totalSpriteSurfaceArea: 13663522
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 3b3ec15010bf8064fab6e12066ed788c, type: 3}
+  - {fileID: 21300000, guid: 6ac95f60e1d69af40af58dba9e3b28fe, type: 3}
+  - {fileID: 21300000, guid: 122f92c1c224e184ea52c53cf20cf090, type: 3}
+  - {fileID: 21300000, guid: 4f4870d246477e144ae1386c31ec4803, type: 3}
+  - {fileID: 21300000, guid: ecc6f9157dcf80e41a6532df7a7d0bdb, type: 3}
+  - {fileID: 21300000, guid: bc3ea8b67b8cdb84ea73a64f99cd1dba, type: 3}
+  - {fileID: 21300000, guid: 1811a0d6013160842abda8ca181c42f4, type: 3}
+  - {fileID: 21300000, guid: 6908e449ee2d2904ebe604735e41499d, type: 3}
+  - {fileID: 21300000, guid: 6db44b4ac1dee5b40b7491a6271ab220, type: 3}
+  - {fileID: 21300000, guid: 2062810b774de544a9e4c2fd09577867, type: 3}
+  - {fileID: 21300000, guid: e74490cb1a9152f4090a503edef34204, type: 3}
+  - {fileID: 21300000, guid: e166facb734110c42986ba0b670e719d, type: 3}
+  - {fileID: 21300000, guid: 9c2a324ca6b2fe34a9590ed70dbb6348, type: 3}
+  - {fileID: 21300000, guid: ac83a9ac045ed6342898c1f4d6464c87, type: 3}
+  - {fileID: 21300000, guid: 63304f1deb9b35d4d82a8f278bc8ffe9, type: 3}
+  - {fileID: 21300000, guid: de070c8dfe143794aa3f30e2742c2ece, type: 3}
+  - {fileID: 21300000, guid: 008f019e055bce34f804a6b97c138b41, type: 3}
+  - {fileID: 21300000, guid: 329794aeb04784b4e893d54d632e4b4e, type: 3}
+  - {fileID: 21300000, guid: 2dfae75fce4f3634baa7eb17550a887b, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Rapport_de_Bataille_2
+  - T_photo_paper_cool
+  - bureaux_doc
+  - Rapport_de_Bataille_1
+  - JournalTranchee_3
+  - T_Photo_village
+  - JournalTranchee_1
+  - T_photo_paper_happy
+  - bureaux_cigarette
+  - bureaux_journal
+  - bureaux_lettre
+  - bureaux_map
+  - bureau_badge
+  - bureaux_phone
+  - T_wall
+  - bureaux_photos
+  - JournalTranchee_2
+  - bureaux
+  - bureaux_objects
+  m_Tag: BureauSprites
+  m_IsVariant: 0

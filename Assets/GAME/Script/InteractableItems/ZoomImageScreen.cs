@@ -16,6 +16,7 @@ public class ZoomImageScreen : MonoBehaviour
 	{
 		gameObject.SetActive(true);
 		image.sprite = sprite;
+		zoomContent.localScale = Vector3.one;
 	}
 
 	public void Close()

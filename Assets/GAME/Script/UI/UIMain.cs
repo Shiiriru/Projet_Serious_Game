@@ -46,6 +46,7 @@ public class UIMain : MonoBehaviour
 	void OnSceneLoadGetCamera(Scene scene, LoadSceneMode mode)
 	{
 		SceneManager.SetActiveScene(scene);
+
 		var cam = FindObjectOfType<Camera>();
 		canvas.worldCamera = cam;
 	}

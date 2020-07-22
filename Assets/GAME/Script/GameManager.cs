@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-
 using System;
+using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
 	const string OptionFileName = "/Option.dat";
 
 	public static OptionData optionData = new OptionData();
-
 	public static int chapterCount = 0;
+
+	EventSystem eventSystem;
 
 	private void Awake()
 	{
@@ -20,6 +22,30 @@ public class GameManager : MonoBehaviour
 		LoadData();
 
 		SetResolution(optionData.screenWidth, false);
+	}
+
+	private void OnEnable()
+	{
+		SceneManager.sceneLoaded += OnSceneLoaded;
+	}
+
+	private void OnDestroy()
+	{
+		SceneManager.sceneLoaded -= OnSceneLoaded;
+	}
+
+	private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
+	{
+		eventSystem = FindObjectOfType<EventSystem>();
+	}
+
+	private void LateUpdate()
+	{
+		if (eventSystem == null)
+			return;
+
+		if (eventSystem.currentSelectedGameObject != null)
+			eventSystem.SetSelectedGameObject(null);
 	}
 
 	public static void SetResolution(int width, bool save = true)
@@ -32,7 +58,10 @@ public class GameManager : MonoBehaviour
 		if (width == 0)
 			Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true);
 		else
-			Screen.SetResolution(width, width / (16 / 9), false);
+		{
+			var height = Mathf.RoundToInt(width / (16f / 9f));
+			Screen.SetResolution(width, height, false);
+		}
 
 		if (save)
 			SaveData();

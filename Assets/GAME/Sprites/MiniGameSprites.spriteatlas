@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MiniGameSprites
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 4da194c01b79f8d46965734bffe6f530, type: 3}
+    totalSpriteSurfaceArea: 4197382
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 1ce73860aae26f84f8ea963955e7e698, type: 3}
+  - {fileID: 21300000, guid: 7fe22770bd4722a45be1b390fdadddfb, type: 3}
+  - {fileID: 21300000, guid: 5580624172b412e48aa4998ef7a21664, type: 3}
+  - {fileID: 21300000, guid: 89193ca1e78f3434ebc2fe183268f769, type: 3}
+  - {fileID: 21300000, guid: 522e88b1ac2448e48a6ab6d33942ad82, type: 3}
+  - {fileID: 21300000, guid: f718a713479285248845748e3a73c74f, type: 3}
+  - {fileID: 21300000, guid: 1304b69398265ef49b22dd79893f40b4, type: 3}
+  - {fileID: 21300000, guid: 570d5ca3f4890914b873c1445de66148, type: 3}
+  - {fileID: 21300000, guid: b0d85ac581644bd448e30d994646f5b4, type: 3}
+  - {fileID: 21300000, guid: 332e48b8f55771f48bc5e515c8e6c867, type: 3}
+  - {fileID: 21300000, guid: 35ba4fda20d443549be33fed45e5b4b9, type: 3}
+  - {fileID: 21300000, guid: 38bc42fbad330a04da9d7978e8b3c14d, type: 3}
+  - {fileID: 21300000, guid: a156661cde20d1c458da1852e8abf6bd, type: 3}
+  - {fileID: 21300000, guid: 1ca6b13c3f7943b49b10c722de075743, type: 3}
+  - {fileID: 21300000, guid: 13df443ce4128b843bc7ca4b4e0c0fe9, type: 3}
+  - {fileID: 21300000, guid: c69362ac352947c48b1f1a8648503931, type: 3}
+  - {fileID: 21300000, guid: 7aa110ae1dab32746a486d9dc8d3c9ba, type: 3}
+  - {fileID: 21300000, guid: 8c6be9ae70ab8ad49bbc8d9388045bc7, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - T-poker_9
+  - T-poker_12
+  - T-poker_13
+  - T-poker_5
+  - T-poker_11
+  - T-poker_1
+  - T-poker_8
+  - DeployMap_PlaceHolder
+  - spot_minigame_bg
+  - T-poker_6
+  - T-poker_3
+  - T-poker_7
+  - spot_minigame_target
+  - CarteSomme_vide
+  - T-poker_2
+  - T_cardBack
+  - T-poker_4
+  - T-poker_10
+  m_Tag: MiniGameSprites
+  m_IsVariant: 0

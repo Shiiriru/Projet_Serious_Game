@@ -22,6 +22,7 @@ namespace DialogSystem
 		protected bool disableAnimateHeight;
 
 		public bool isDisplayFinished { get; private set; }
+		Coroutine displayCoroutine;
 
 		private void Awake()
 		{
@@ -86,6 +87,15 @@ namespace DialogSystem
 
 			disableAnimateHeight = true;
 
+			if (displayCoroutine != null)
+				StopCoroutine(displayCoroutine);
+			displayCoroutine = StartCoroutine(DisplayCorou(alpha, doFade, fadeTime));
+		}
+
+		//avoid flash bug
+		IEnumerator DisplayCorou(float alpha, bool doFade, float fadeTime)
+		{
+			yield return new WaitForSeconds(0.01f);
 			DOTween.Kill(canvasGroup);
 			if (doFade)
 				canvasGroup.DOFade(alpha, fadeTime).SetEase(Ease.InOutQuad);

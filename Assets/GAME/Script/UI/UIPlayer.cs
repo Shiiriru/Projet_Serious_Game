@@ -45,11 +45,6 @@ public class UIPlayer : MonoBehaviour
 	public void OnClickOpenInventory()
 	{
 		isBagOpend = !isBagOpend;
-		OpenInventory(isBagOpend);
-	}
-
-	public void OpenInventory(bool b)
-	{
 		inventory.Show(isBagOpend);
 		SoundPlayer.PlayOneShot(isBagOpend ? openInventoryEvt : closeInventoryEvt);
 	}
@@ -78,6 +73,7 @@ public class UIPlayer : MonoBehaviour
 		animator.SetBool("show", isShow);
 		if (!isShow)
 		{
+			isBagOpend = false;
 			inventory.Show(isShow);
 			CloseFicheTemplate();
 			HidePhoto();

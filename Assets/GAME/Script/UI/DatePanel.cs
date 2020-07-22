@@ -49,7 +49,7 @@ public class DatePanel : MonoBehaviour
 		{
 			soldatCount = soldatCount + (soldatCount < targetInfo.soldatCount ? 1 : -1);
 			textSoldatCount.text = $"Soldats en vie : {soldatCount}";
-			yield return null;
+			yield return new WaitForSeconds(0.01f);
 		}
 
 		yield return new WaitForSeconds(displayTime);

@@ -97,13 +97,11 @@ public class InventoryScript : MonoBehaviour
 	{
 		if (isShow)
 		{
-			if (onOpen != null)
-				onOpen();
+			onOpen.Invoke();
 		}
 		else
 		{
-			if (onClose != null)
-				onClose();
+			onClose.Invoke();
 		}
 
 		gameObject.SetActive(isShow);

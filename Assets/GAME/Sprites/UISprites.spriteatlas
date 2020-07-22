@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UISprites
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 0a2d9a5207f2b374e803515f54736360, type: 3}
+    - {fileID: 102900000, guid: f1b4867599ff7474aac366cf0b843412, type: 3}
+    totalSpriteSurfaceArea: 4649872
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 1a443eb0d1693a34bba6dd895ec654ea, type: 3}
+  - {fileID: 21300000, guid: e55c8001433edd549912d066a0cefa30, type: 3}
+  - {fileID: 21300000, guid: edb2c991cbe0a3241802426af56a215a, type: 3}
+  - {fileID: 21300000, guid: e0a3ecd1598886e40ad217d2aec0af78, type: 3}
+  - {fileID: 21300000, guid: f6e28f12226cd874195467de3c572ec5, type: 3}
+  - {fileID: 21300000, guid: c964ac32d4b33f14883f56a900d4ff23, type: 3}
+  - {fileID: 21300000, guid: fc605d52877d70e499f62a89169057bb, type: 3}
+  - {fileID: 21300000, guid: 9f86b3d27747c0e409a91ede25d5b77a, type: 3}
+  - {fileID: 21300000, guid: 3b5ff1138e6b71f4fb3c5aabffc98a48, type: 3}
+  - {fileID: 21300000, guid: 71697df3659d71e44a9bd88ab10a4f1d, type: 3}
+  - {fileID: 21300000, guid: f5520cb474e45c347b2219da18ecc055, type: 3}
+  - {fileID: 21300000, guid: b5528ac5f53d00d488bed9aaaee9e19d, type: 3}
+  - {fileID: 21300000, guid: 2828f6c8fa3a3054f9c244fe64faad91, type: 3}
+  - {fileID: 21300000, guid: 1252ee09e99358c4c933888543d2fcc2, type: 3}
+  - {fileID: 21300000, guid: 2526895a3a1467b459af328d2aafc93e, type: 3}
+  - {fileID: 21300000, guid: a76ecb7b977e7184e8c851f17bd5af68, type: 3}
+  - {fileID: 21300000, guid: 7fba19fc010a47b4686055918a7852a3, type: 3}
+  - {fileID: 21300000, guid: b82a8d3d118897842b69b375584b5a9b, type: 3}
+  - {fileID: 21300000, guid: 9028562eaac7c094a83a7e8b32308c7e, type: 3}
+  - {fileID: 21300000, guid: aeb7c0bf69a91774e9d34d9ef2f0ee1f, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - T_round
+  - Icons_Note_CloseUI
+  - T_sliderBtn
+  - T_rain
+  - FicheTemplate_back
+  - FicheTemplate_front
+  - T_blood
+  - Bouton_Fiche_Wiki
+  - T_zoomIn
+  - Icons_Note_OpenUI
+  - Icons_Bag_Open
+  - Bouton_Fiche_Back
+  - T_zoomOut
+  - Bouton_Fiche_MapDeploy
+  - FicheTemplate_button
+  - Bouton_Fiche_Phone
+  - T_inventorySlot
+  - T_arrow
+  - Icons_Bag_Close
+  - MainMenu
+  m_Tag: UISprites
+  m_IsVariant: 0

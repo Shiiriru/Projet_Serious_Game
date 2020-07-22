@@ -482,7 +482,7 @@ namespace DialogSystem
 		private void PlaySound()
 		{
 			var node = currentNode as PlaySoundNode;
-			if (node.eventId == null)
+			if (string.IsNullOrEmpty(node.eventId))
 				SoundPlayer.PlayOneShot(node.soundPath);
 			else
 				SoundPlayer.PlayEvent(node.eventId, node.soundPath, node.volume);
