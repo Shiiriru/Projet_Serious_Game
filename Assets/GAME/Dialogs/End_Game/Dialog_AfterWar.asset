@@ -526,7 +526,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -152, y: -56}
+  position: {x: -168, y: -168}
   ports:
     keys:
     - input
@@ -561,7 +561,7 @@ MonoBehaviour:
   displaySide: 0
   characterName: Soldat survivant
   text: Et c'est ainsi que finit l'histoire de mon capitaine.
-  showAdvance: 0
+  showAdvance: 1
   disableScene: 1
   displayAll: 0
   displaySpeed: 3

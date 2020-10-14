@@ -16,8 +16,7 @@ public class FinalWarMain : MonoBehaviour
 	[SerializeField] [EventRef] string FinalWarAmbiance;
 	[SerializeField] [EventRef] string AfterWarAmbiance;
 
-	[SerializeField] CanvasGroup gameEndTextGroup;
-	[SerializeField] SceneReference sceneMainMenu;
+	[SerializeField] SceneReference sceneCredit;
 	private void Start()
 	{
 		uiMain = FindObjectOfType<UIMain>();
@@ -52,18 +51,7 @@ public class FinalWarMain : MonoBehaviour
 
 	void EndGame()
 	{
-		StartCoroutine(EndGameCorutine());
-	}
-
-	IEnumerator EndGameCorutine()
-	{
-		yield return new WaitForSeconds(2f);
-		gameEndTextGroup.DOFade(1, 3f);
-		yield return new WaitForSeconds(5f);
-		gameEndTextGroup.DOFade(0, 2f);
-		yield return new WaitForSeconds(6f);
 		Destroy(GameObject.FindGameObjectWithTag("GameController"));
-		SceneManager.LoadScene(sceneMainMenu, LoadSceneMode.Single);
-		SoundPlayer.StopEvent("bg", true);
+		SceneManager.LoadScene(sceneCredit, LoadSceneMode.Single);
 	}
 }
