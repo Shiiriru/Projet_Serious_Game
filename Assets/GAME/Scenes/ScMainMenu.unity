@@ -6899,6 +6899,7 @@ MonoBehaviour:
   buttonGroup: {fileID: 855616887}
   titleAnimator: {fileID: 454130149}
   uiSystem: {fileID: 268666076}
+  MenuAmbianceEvent: event:/06_Menu jeu/SB_MJ_Musique
 --- !u!114 &861109691
 MonoBehaviour:
   m_ObjectHideFlags: 0

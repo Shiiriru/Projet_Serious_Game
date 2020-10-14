@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="EventFolder" id="{656c1e2c-0a7c-43d8-9974-301340aaa61b}">
+        <property name="name">
+            <value>S_FJ_Impact soldats</value>
+        </property>
+        <relationship name="folder">
+            <destination>{16004487-e362-422d-a97f-570524850ce7}</destination>
+        </relationship>
+    </object>
+</objects>

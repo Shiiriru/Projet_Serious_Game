@@ -1,4 +1,6 @@
 ﻿using DG.Tweening;
+using FMOD.Studio;
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +17,11 @@ public class MainMenu : MonoBehaviour
 
 	[SerializeField] UISystem uiSystem;
 
-	private void Start()
+    [SerializeField] [EventRef] string MenuAmbianceEvent;
+
+    FMOD.Studio.EventInstance MenuState;
+
+    private void Start()
 	{
 		uiSystem.OnClickClose();
 
@@ -25,7 +31,11 @@ public class MainMenu : MonoBehaviour
 		buttonGroup.alpha = 0;
 
 		StartCoroutine(ShowCoroutine());
-	}
+
+        MenuState = FMODUnity.RuntimeManager.CreateInstance(MenuAmbianceEvent);
+        MenuState.start();
+
+    }
 
 	IEnumerator ShowCoroutine()
 	{
@@ -48,19 +58,20 @@ public class MainMenu : MonoBehaviour
 	public void OnClickStart()
 	{
 		StartCoroutine(GameStartCoroutine());
-	}
+        MenuState.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
 
 	IEnumerator GameStartCoroutine()
 	{
 		ShowForeGround();
 		yield return new WaitForSeconds(1.5f);
 		SceneManager.LoadScene(onBordingScene.Name, LoadSceneMode.Single);
-	}
+    }
 
 	public void OnClickOption()
 	{
 		uiSystem.Open(UISystem.Page.Options);
-	}
+    }
 
 	public void OnClickQuit()
 	{

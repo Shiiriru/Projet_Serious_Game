@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{6de66ec0-b8d3-45f0-b48a-cd9ee9202364}">
+        <property name="assetPath">
+            <value>Foley Cloth Rustle SOUND Effect.mp3</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>2.8212244897959184</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{f43c76cb-9b2b-49fc-8569-5370f4c211b2}</destination>
+        </relationship>
+    </object>
+</objects>

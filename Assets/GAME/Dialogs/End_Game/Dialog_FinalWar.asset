@@ -1,5 +1,101 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7536352793546647562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79bcdd22abeef4c419927aaf99f7dc83, type: 3}
+  m_Name: Play Sound
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 4184, y: 280}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: -7536352793546647562}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114503304524621092}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: -7536352793546647562}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114520581611782308}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  soundPath: event:/05_Scene_Fin du jeu/S_FJ_Impact soldats/S_FJ_Impact soldats_Total
+  eventId: 
+  volume: 1
+--- !u!114 &-7218939270312097386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79bcdd22abeef4c419927aaf99f7dc83, type: 3}
+  m_Name: Play Sound
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 104, y: 184}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: -7218939270312097386}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114115542570404440}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: -7218939270312097386}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114744205225852508}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  soundPath: event:/05_Scene_Fin du jeu/S_FJ_Impact soldats/S_FJ_Impact soldats_Total
+  eventId: 
+  volume: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,6 +176,10 @@ MonoBehaviour:
   - {fileID: 114652360378816670}
   - {fileID: 114157132116193000}
   - {fileID: 114789550799942844}
+  - {fileID: -7218939270312097386}
+  - {fileID: 7238503169112478601}
+  - {fileID: 5085800757283254047}
+  - {fileID: -7536352793546647562}
   - {fileID: 0}
   variableSource: {fileID: 114573644158395328}
 --- !u!114 &114004650820983772
@@ -488,7 +588,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114744205225852508}
+        node: {fileID: -7218939270312097386}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -510,7 +610,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 4152, y: 792}
+  position: {x: 4168, y: 888}
   ports:
     keys:
     - input
@@ -1029,7 +1129,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 4152, y: 984}
+  position: {x: 4168, y: 1080}
   ports:
     keys:
     - input
@@ -1388,7 +1488,7 @@ MonoBehaviour:
   m_Name: Hide Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 88, y: 840}
+  position: {x: 104, y: 920}
   ports:
     keys:
     - input
@@ -1435,7 +1535,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 136, y: 472}
+  position: {x: 152, y: 552}
   ports:
     keys:
     - input
@@ -1489,7 +1589,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 4168, y: 616}
+  position: {x: 4184, y: 712}
   ports:
     keys:
     - input
@@ -1542,7 +1642,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 4168, y: 424}
+  position: {x: 4184, y: 520}
   ports:
     keys:
     - input
@@ -1709,7 +1809,7 @@ MonoBehaviour:
   m_Name: Flash
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1288, y: 344}
+  position: {x: 1448, y: 360}
   ports:
     keys:
     - input
@@ -1721,7 +1821,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114472730739782792}
+        node: {fileID: 7238503169112478601}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -1781,7 +1881,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114453698160192490}
+        node: {fileID: 5085800757283254047}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -1991,7 +2091,7 @@ MonoBehaviour:
   m_Name: Flash
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2872, y: 120}
+  position: {x: 3096, y: 120}
   ports:
     keys:
     - input
@@ -2003,7 +2103,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114408060233198500}
+        node: {fileID: 5085800757283254047}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -2063,7 +2163,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114404517330380350}
+        node: {fileID: 7238503169112478601}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -2117,7 +2217,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114520581611782308}
+        node: {fileID: -7536352793546647562}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -2139,7 +2239,7 @@ MonoBehaviour:
   m_Name: Flash
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 4232, y: 296}
+  position: {x: 4264, y: 392}
   ports:
     keys:
     - input
@@ -2151,7 +2251,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114503304524621092}
+        node: {fileID: -7536352793546647562}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -2187,7 +2287,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 120, y: 952}
+  position: {x: 136, y: 1032}
   ports:
     keys:
     - input
@@ -2240,7 +2340,7 @@ MonoBehaviour:
   m_Name: Delay
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 344, y: 1128}
+  position: {x: 360, y: 1208}
   ports:
     keys:
     - input
@@ -2889,7 +2989,7 @@ MonoBehaviour:
   m_Name: Flash
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 184, y: 120}
+  position: {x: 424, y: 184}
   ports:
     keys:
     - input
@@ -2901,7 +3001,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114115542570404440}
+        node: {fileID: -7218939270312097386}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -3037,7 +3137,7 @@ MonoBehaviour:
   m_Name: Delay
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 312, y: 856}
+  position: {x: 328, y: 936}
   ports:
     keys:
     - input
@@ -3545,7 +3645,7 @@ MonoBehaviour:
   m_Name: Hide Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 120, y: 1128}
+  position: {x: 136, y: 1208}
   ports:
     keys:
     - input
@@ -3796,7 +3896,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 136, y: 648}
+  position: {x: 152, y: 728}
   ports:
     keys:
     - input
@@ -3903,7 +4003,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 152, y: 264}
+  position: {x: 168, y: 344}
   ports:
     keys:
     - input
@@ -3943,3 +4043,99 @@ MonoBehaviour:
   displayAll: 1
   displaySpeed: 3
   duration: 0.2
+--- !u!114 &5085800757283254047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79bcdd22abeef4c419927aaf99f7dc83, type: 3}
+  m_Name: Play Sound
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 2776, y: 120}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 5085800757283254047}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114408060233198500}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 5085800757283254047}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114453698160192490}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  soundPath: event:/05_Scene_Fin du jeu/S_FJ_Impact soldats/S_FJ_Impact soldats_Total
+  eventId: 
+  volume: 1
+--- !u!114 &7238503169112478601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79bcdd22abeef4c419927aaf99f7dc83, type: 3}
+  m_Name: Play Sound
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1128, y: 360}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 7238503169112478601}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114472730739782792}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 7238503169112478601}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114404517330380350}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  soundPath: event:/05_Scene_Fin du jeu/S_FJ_Impact soldats/S_FJ_Impact soldats_Total
+  eventId: 
+  volume: 1
