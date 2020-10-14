@@ -44,10 +44,11 @@ SpriteAtlas:
     packables:
     - {fileID: 102900000, guid: 0a2d9a5207f2b374e803515f54736360, type: 3}
     - {fileID: 102900000, guid: f1b4867599ff7474aac366cf0b843412, type: 3}
-    totalSpriteSurfaceArea: 4649872
+    totalSpriteSurfaceArea: 8808736
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: d72f37007c7d3be40a5bf2ab232d1efb, type: 3}
   - {fileID: 21300000, guid: 1a443eb0d1693a34bba6dd895ec654ea, type: 3}
   - {fileID: 21300000, guid: e55c8001433edd549912d066a0cefa30, type: 3}
   - {fileID: 21300000, guid: edb2c991cbe0a3241802426af56a215a, type: 3}
@@ -60,15 +61,18 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 71697df3659d71e44a9bd88ab10a4f1d, type: 3}
   - {fileID: 21300000, guid: f5520cb474e45c347b2219da18ecc055, type: 3}
   - {fileID: 21300000, guid: b5528ac5f53d00d488bed9aaaee9e19d, type: 3}
+  - {fileID: 21300000, guid: 65077e86fb007bf45ac18975d6a5cf85, type: 3}
   - {fileID: 21300000, guid: 2828f6c8fa3a3054f9c244fe64faad91, type: 3}
+  - {fileID: 21300000, guid: ddfe48e876b49ff42916112c559beb4b, type: 3}
   - {fileID: 21300000, guid: 1252ee09e99358c4c933888543d2fcc2, type: 3}
   - {fileID: 21300000, guid: 2526895a3a1467b459af328d2aafc93e, type: 3}
   - {fileID: 21300000, guid: a76ecb7b977e7184e8c851f17bd5af68, type: 3}
   - {fileID: 21300000, guid: 7fba19fc010a47b4686055918a7852a3, type: 3}
   - {fileID: 21300000, guid: b82a8d3d118897842b69b375584b5a9b, type: 3}
+  - {fileID: 21300000, guid: 5b421e6d06353c64892e291ac8eb03e0, type: 3}
   - {fileID: 21300000, guid: 9028562eaac7c094a83a7e8b32308c7e, type: 3}
-  - {fileID: 21300000, guid: aeb7c0bf69a91774e9d34d9ef2f0ee1f, type: 3}
   m_PackedSpriteNamesToIndex:
+  - T_wind0
   - T_round
   - Icons_Note_CloseUI
   - T_sliderBtn
@@ -81,13 +85,15 @@ SpriteAtlas:
   - Icons_Note_OpenUI
   - Icons_Bag_Open
   - Bouton_Fiche_Back
+  - T_wind1
   - T_zoomOut
+  - T_foreground
   - Bouton_Fiche_MapDeploy
   - FicheTemplate_button
   - Bouton_Fiche_Phone
   - T_inventorySlot
   - T_arrow
+  - T_soldat
   - Icons_Bag_Close
-  - MainMenu
   m_Tag: UISprites
   m_IsVariant: 0

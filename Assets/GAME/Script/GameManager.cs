@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
 		LoadData();
 
 		SetResolution(optionData.screenWidth, false);
+		Application.targetFrameRate = 90;
 	}
 
 	private void OnEnable()

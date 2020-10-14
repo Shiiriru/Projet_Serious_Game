@@ -46,12 +46,6 @@ namespace Shaders
 		// Use this for initialization
 		void Start()
 		{
-			if (SystemInfo.supportsImageEffects == false)
-			{
-				enabled = false;
-				return;
-			}
-
 			if (oldFilmShader != null && oldFilmShader.isSupported == false)
 			{
 				enabled = false;
