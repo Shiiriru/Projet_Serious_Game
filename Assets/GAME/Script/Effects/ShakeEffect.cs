@@ -24,6 +24,7 @@ namespace effect
 
 		void Shake()
 		{
+			transform.DOShakeScale(duration, strength / 110, frequence/10, Degree, fadeOut: loop ? false : fadeOut);
 			transform.DOShakePosition(duration, strength, frequence, Degree, fadeOut: loop ? false : fadeOut)
 				.OnComplete(() =>
 				{

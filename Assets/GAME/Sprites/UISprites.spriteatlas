@@ -44,7 +44,7 @@ SpriteAtlas:
     packables:
     - {fileID: 102900000, guid: 0a2d9a5207f2b374e803515f54736360, type: 3}
     - {fileID: 102900000, guid: f1b4867599ff7474aac366cf0b843412, type: 3}
-    totalSpriteSurfaceArea: 8808736
+    totalSpriteSurfaceArea: 9207584
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -66,6 +66,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: ddfe48e876b49ff42916112c559beb4b, type: 3}
   - {fileID: 21300000, guid: 1252ee09e99358c4c933888543d2fcc2, type: 3}
   - {fileID: 21300000, guid: 2526895a3a1467b459af328d2aafc93e, type: 3}
+  - {fileID: 21300000, guid: 2c2bb84b54e51bf49886484f1650b268, type: 3}
   - {fileID: 21300000, guid: a76ecb7b977e7184e8c851f17bd5af68, type: 3}
   - {fileID: 21300000, guid: 7fba19fc010a47b4686055918a7852a3, type: 3}
   - {fileID: 21300000, guid: b82a8d3d118897842b69b375584b5a9b, type: 3}
@@ -90,6 +91,7 @@ SpriteAtlas:
   - T_foreground
   - Bouton_Fiche_MapDeploy
   - FicheTemplate_button
+  - ICAN_Logo
   - Bouton_Fiche_Phone
   - T_inventorySlot
   - T_arrow

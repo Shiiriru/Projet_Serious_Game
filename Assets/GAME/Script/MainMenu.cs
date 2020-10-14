@@ -17,11 +17,9 @@ public class MainMenu : MonoBehaviour
 
 	[SerializeField] UISystem uiSystem;
 
-    [SerializeField] [EventRef] string MenuAmbianceEvent;
+	[SerializeField] [EventRef] string MenuAmbianceEvent;
 
-    FMOD.Studio.EventInstance MenuState;
-
-    private void Start()
+	private void Start()
 	{
 		uiSystem.OnClickClose();
 
@@ -31,15 +29,14 @@ public class MainMenu : MonoBehaviour
 		buttonGroup.alpha = 0;
 
 		StartCoroutine(ShowCoroutine());
-
-        MenuState = FMODUnity.RuntimeManager.CreateInstance(MenuAmbianceEvent);
-        MenuState.start();
-
-    }
+	}
 
 	IEnumerator ShowCoroutine()
 	{
 		yield return new WaitForSeconds(0.5f);
+
+		SoundPlayer.PlayEvent("bg", MenuAmbianceEvent);
+		yield return new WaitForSeconds(2f);
 
 		blackForeground.DOColor(Color.clear, 2f);
 		yield return new WaitForSeconds(2f);
@@ -58,20 +55,20 @@ public class MainMenu : MonoBehaviour
 	public void OnClickStart()
 	{
 		StartCoroutine(GameStartCoroutine());
-        MenuState.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-    }
+		SoundPlayer.StopEvent("bg", true);
+	}
 
 	IEnumerator GameStartCoroutine()
 	{
 		ShowForeGround();
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(2f);
 		SceneManager.LoadScene(onBordingScene.Name, LoadSceneMode.Single);
-    }
+	}
 
 	public void OnClickOption()
 	{
 		uiSystem.Open(UISystem.Page.Options);
-    }
+	}
 
 	public void OnClickQuit()
 	{
