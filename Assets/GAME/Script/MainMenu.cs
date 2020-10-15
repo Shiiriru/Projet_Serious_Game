@@ -18,8 +18,9 @@ public class MainMenu : MonoBehaviour
 	[SerializeField] UISystem uiSystem;
 
 	[SerializeField] [EventRef] string MenuAmbianceEvent;
+    [SerializeField] [EventRef] string WeatherEvent;
 
-	private void Start()
+    private void Start()
 	{
 		uiSystem.OnClickClose();
 
@@ -36,7 +37,8 @@ public class MainMenu : MonoBehaviour
 		yield return new WaitForSeconds(0.5f);
 
 		SoundPlayer.PlayEvent("bg", MenuAmbianceEvent);
-		yield return new WaitForSeconds(2f);
+        SoundPlayer.PlayEvent("rain", WeatherEvent);
+        yield return new WaitForSeconds(2f);
 
 		blackForeground.DOColor(Color.clear, 2f);
 		yield return new WaitForSeconds(2f);
@@ -56,7 +58,8 @@ public class MainMenu : MonoBehaviour
 	{
 		StartCoroutine(GameStartCoroutine());
 		SoundPlayer.StopEvent("bg", true);
-	}
+        SoundPlayer.StopEvent("rain", true);
+    }
 
 	IEnumerator GameStartCoroutine()
 	{

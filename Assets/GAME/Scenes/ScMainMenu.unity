@@ -9187,7 +9187,8 @@ MonoBehaviour:
   buttonGroup: {fileID: 855616887}
   titleAnimator: {fileID: 1546276886}
   uiSystem: {fileID: 268666076}
-  MenuAmbianceEvent: event:/06_Menu jeu/SB_MJ_Musique
+  MenuAmbianceEvent: event:/06_Menu jeu/SB_MJ_Musique_Melodie
+  WeatherEvent: event:/06_Menu jeu/SB_MJ_Musique_Pluie
 --- !u!4 &1951274740
 Transform:
   m_ObjectHideFlags: 0
