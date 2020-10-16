@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eafacef6301bdec41a6974a0a1872911, type: 3}
-  m_Name: DialogOnboarding
+  m_Name: DialogOnboarding_1
   m_EditorClassIdentifier: 
   nodes:
   - {fileID: 114991483842800956}
@@ -1107,7 +1107,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: 
-  text: "Tiens, j'ai retrouv\xE9 \xE7a !"
+  text: "Je me rappelle encore de la premi\xE8re fois o\xF9 j'ai rencontr\xE9 ma
+    companie. C'\xE9tait \xE0 Paris, juste avant notre d\xE9part pour le front ..."
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -1487,7 +1488,7 @@ MonoBehaviour:
   branchs:
   - text: Fier, content de partir au front
     onSelect:
-      vType: 5
+      vType: 0
       variable:
         vType: 0
         valueStr: 
@@ -1501,7 +1502,7 @@ MonoBehaviour:
           valueStr: 0
   - text: "S\xE9rieux, montrant l'exemple"
     onSelect:
-      vType: 5
+      vType: 0
       variable:
         vType: 0
         valueStr: 
