@@ -20,17 +20,38 @@ public class CreditScreen : MonoBehaviour
 	[SerializeField] CreditObject[] creditList;
 
 	Coroutine playCoroutine;
+	bool passCredit;
 
 	private void Start()
 	{
 		blackForeground.color = Color.clear;
-		playCoroutine = StartCoroutine(StartCreditCoroutine());
+		StartCoroutine(StartCreditCoroutine());
+	}
+
+	private void Update()
+	{
+		if (passCredit || playCoroutine == null)
+			return;
+
+		if (Input.GetButtonDown("Fire1"))
+		{
+			passCredit = true;
+			StopCoroutine(playCoroutine);
+			playCoroutine = StartCoroutine(PassCreditCoroutine());
+		}
 	}
 
 	IEnumerator StartCreditCoroutine()
 	{
 		yield return new WaitForSeconds(4f);
 		PlayCredit();
+	}
+
+	IEnumerator PassCreditCoroutine()
+	{
+		blackForeground.DOColor(Color.black, 2f);
+		yield return new WaitForSeconds(3f);
+		SceneManager.LoadScene(mainMenuScene.Name, LoadSceneMode.Single);
 	}
 
 	IEnumerator EndCreditCoroutine()

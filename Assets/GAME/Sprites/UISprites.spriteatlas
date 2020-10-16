@@ -44,7 +44,7 @@ SpriteAtlas:
     packables:
     - {fileID: 102900000, guid: 0a2d9a5207f2b374e803515f54736360, type: 3}
     - {fileID: 102900000, guid: f1b4867599ff7474aac366cf0b843412, type: 3}
-    totalSpriteSurfaceArea: 9207584
+    totalSpriteSurfaceArea: 9261344
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -71,6 +71,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 7fba19fc010a47b4686055918a7852a3, type: 3}
   - {fileID: 21300000, guid: b82a8d3d118897842b69b375584b5a9b, type: 3}
   - {fileID: 21300000, guid: 5b421e6d06353c64892e291ac8eb03e0, type: 3}
+  - {fileID: 21300000, guid: 6b975ffda95aeeb45a8fae473c18f8d1, type: 3}
   - {fileID: 21300000, guid: 9028562eaac7c094a83a7e8b32308c7e, type: 3}
   m_PackedSpriteNamesToIndex:
   - T_wind0
@@ -96,6 +97,7 @@ SpriteAtlas:
   - T_inventorySlot
   - T_arrow
   - T_soldat
+  - dragonbox_logo
   - Icons_Bag_Close
   m_Tag: UISprites
   m_IsVariant: 0

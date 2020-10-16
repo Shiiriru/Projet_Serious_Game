@@ -85,7 +85,7 @@ MonoBehaviour:
     1916, en d\xE9fendant son pays, les armes \xE0 la main et \xE0 la t\xEAte de
     sa compagnie."
   showAdvance: 0
-  disableScene: 1
+  disableScene: 0
   displayAll: 0
   displaySpeed: 3
   duration: 0.3
@@ -138,7 +138,7 @@ MonoBehaviour:
   characterName: Soldat survivant
   text: "Et tout \xE7a pour quoi ?"
   showAdvance: 0
-  disableScene: 1
+  disableScene: 0
   displayAll: 0
   displaySpeed: 3
   duration: 0.3
@@ -376,7 +376,7 @@ MonoBehaviour:
     de garder en m\xE9moire ceux qui se sont battus durant ce conflit, issus de tous
     horizons."
   showAdvance: 0
-  disableScene: 1
+  disableScene: 0
   displayAll: 0
   displaySpeed: 3
   duration: 0.3
@@ -431,7 +431,7 @@ MonoBehaviour:
     acharn\xE9s pour un gain ridicule de territoire et pour un prix \xE0 payer exorbitant,
     et ce dans tous les camps. Le g\xE9n\xE9ral y a perdu sa place et nous nos vies."
   showAdvance: 0
-  disableScene: 1
+  disableScene: 0
   displayAll: 0
   displaySpeed: 3
   duration: 0.3
@@ -562,7 +562,7 @@ MonoBehaviour:
   characterName: Soldat survivant
   text: Et c'est ainsi que finit l'histoire de mon capitaine.
   showAdvance: 1
-  disableScene: 1
+  disableScene: 0
   displayAll: 0
   displaySpeed: 3
   duration: 0.3
@@ -617,7 +617,7 @@ MonoBehaviour:
     plateau de P\xE9ronne. Notre compagnie est pratiquement d\xE9cim\xE9e, nos soldats
     sont tous morts."
   showAdvance: 0
-  disableScene: 1
+  disableScene: 0
   displayAll: 0
   displaySpeed: 3
   duration: 0.3
@@ -670,7 +670,7 @@ MonoBehaviour:
   characterName: Soldat survivant
   text: Pour rien.
   showAdvance: 0
-  disableScene: 1
+  disableScene: 0
   displayAll: 0
   displaySpeed: 3
   duration: 0.3
@@ -724,7 +724,7 @@ MonoBehaviour:
   text: "Et d\xE9sormais, il est l'un d'eux, emport\xE9 par cette folie comme de
     nombreux autres avant et malheureusement apr\xE8s lui."
   showAdvance: 0
-  disableScene: 1
+  disableScene: 0
   displayAll: 0
   displaySpeed: 3
   duration: 0.3
@@ -777,7 +777,7 @@ MonoBehaviour:
   characterName: Soldat survivant
   text: Lui aussi.
   showAdvance: 0
-  disableScene: 1
+  disableScene: 0
   displayAll: 0
   displaySpeed: 3
   duration: 0.3
@@ -830,7 +830,7 @@ MonoBehaviour:
   characterName: Soldat survivant
   text: L'Histoire vous appartient.
   showAdvance: 1
-  disableScene: 1
+  disableScene: 0
   displayAll: 0
   displaySpeed: 1
   duration: 0.3
@@ -884,7 +884,7 @@ MonoBehaviour:
   text: "En effet, le Pass\xE9 n'est rien sans le Pr\xE9sent qui \xE9coute et se
     souvient."
   showAdvance: 0
-  disableScene: 1
+  disableScene: 0
   displayAll: 0
   displaySpeed: 3
   duration: 0.3
@@ -984,7 +984,7 @@ MonoBehaviour:
   characterName: Soldat survivant
   text: "Vous avez la meilleure part, car s'il appartient d\xE9sormais \xE0 l'Histoire."
   showAdvance: 0
-  disableScene: 1
+  disableScene: 0
   displayAll: 0
   displaySpeed: 3
   duration: 0.3
@@ -1038,7 +1038,7 @@ MonoBehaviour:
   text: "Cette bataille fera en tout 443 070 morts et plus de 616 473 bless\xE9s,
     mutili\xE9s et disparus."
   showAdvance: 0
-  disableScene: 1
+  disableScene: 0
   displayAll: 0
   displaySpeed: 3
   duration: 0.3
