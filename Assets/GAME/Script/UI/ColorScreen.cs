@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,9 @@ public class ColorScreen : MonoBehaviour
 {
 	Image img;
 	Coroutine flashCoroutine;
+
+	public Color CurrentColor { get { return img.color; } }
+
 	// Start is called before the first frame update
 	void Awake()
 	{
@@ -22,12 +26,16 @@ public class ColorScreen : MonoBehaviour
 		img.color = color;
 	}
 
-	public void Show(Color color, float duration)
+	public void Show(Color color, float duration, bool resetColor)
 	{
 		if (duration <= 0)
 			SetColor(color);
 		else
+		{
+			if (resetColor)
+				SetColor(new Color(color.r, color.g, color.b, 0));
 			ChangeColor(color, duration, true);
+		}
 	}
 
 	public void Hide(float duration)
@@ -52,8 +60,7 @@ public class ColorScreen : MonoBehaviour
 
 	IEnumerator ScreenFlashCoroutine(float duration, Color color)
 	{
-		SetColor(new Color(color.r, color.g, color.b, 0));
-		Show(new Color(color.r, color.g, color.b, 1), 0.05f);
+		Show(new Color(color.r, color.g, color.b, 1), 0.05f, true);
 		yield return new WaitForSeconds(0.05f + duration);
 		Hide(0.05f);
 		yield return new WaitForSeconds(0.05f);

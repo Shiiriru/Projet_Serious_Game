@@ -3,7 +3,7 @@ using UnityEditor;
 
 namespace DialogSystem.Nodes
 {
-	[CreateNodeMenu("Image/Show Color Screen")]
+	[CreateNodeMenu("Image/Color Screen/Show")]
 	[NodeWidth(250)]
 	[NodeTint("#00ccff")]
 	public class ShowColorScreenNode : DurationNodeBase
@@ -16,5 +16,7 @@ namespace DialogSystem.Nodes
 		}
 
 		public Color color;
+		//reset color to the same color base as changing color
+		public bool resetColor = true;
 	}
 }

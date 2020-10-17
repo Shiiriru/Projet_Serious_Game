@@ -3,7 +3,7 @@ using UnityEditor;
 
 namespace DialogSystem.Nodes
 {
-	[CreateNodeMenu("Image/Hide Color Screen")]
+	[CreateNodeMenu("Image/Color Screen/Hide")]
 	[NodeTint("#00ccff")]
 	public class HideColorScreenNode : DurationNodeBase
 	{

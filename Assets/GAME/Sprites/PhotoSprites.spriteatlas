@@ -31,7 +31,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 48483686b50f4894d8748d4c1ba8cdbb, type: 3}
-    totalSpriteSurfaceArea: 2777521
+    totalSpriteSurfaceArea: 4385641
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -40,6 +40,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 0caf58d30c173a64396537642391c2af, type: 3}
   - {fileID: 21300000, guid: 0ec610e6f0cde3041acbf54f021de84e, type: 3}
   - {fileID: 21300000, guid: cb33477ae33d30442a59e900c2d4b90d, type: 3}
+  - {fileID: 21300000, guid: a63d8cfe3b47df34d999041ee980ff46, type: 3}
   - {fileID: 21300000, guid: 72d0854fc39296640b680f38830cc82b, type: 3}
   - {fileID: 21300000, guid: d41066af3c8ef9548b31060817d86ce5, type: 3}
   m_PackedSpriteNamesToIndex:
@@ -48,6 +49,7 @@ SpriteAtlas:
   - Photo_1914
   - Photo_map
   - Photo_Telephone
+  - T_pariscity
   - Photo_archive_Gaz
   - Photo_1916
   m_Tag: PhotoSprites

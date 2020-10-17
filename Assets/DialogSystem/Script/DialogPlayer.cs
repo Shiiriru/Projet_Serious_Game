@@ -168,6 +168,8 @@ namespace DialogSystem
 				HideDialog();
 			else if (currentNode is BranchsNode)
 				ShowBranch();
+			else if (currentNode is ChangeDialogGraphNode)
+				SetDialog((currentNode as ChangeDialogGraphNode).dialogGraph);
 
 			else if (currentNode is CGNode)
 				CGIn();
@@ -477,7 +479,7 @@ namespace DialogSystem
 		private void ShowColorScreen()
 		{
 			var node = currentNode as ShowColorScreenNode;
-			colorScreen.Show(node.color, node.duration);
+			colorScreen.Show(node.color, node.duration, node.resetColor);
 			AutoPlayNextNode(node.isWait, node.duration);
 		}
 

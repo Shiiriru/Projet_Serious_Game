@@ -14,7 +14,9 @@ namespace DialogSystem.Nodes
 
 			EditorGUILayout.PropertyField(serializedObject.FindProperty("color"));
 			DrawDurationField();
-			EditorGUILayout.PropertyField(serializedObject.FindProperty("isWait"));
+
+			EditorGUILayout.PropertyField(serializedObject.FindProperty("resetColor"));
+			EditorGUILayout.PropertyField(serializedObject.FindProperty("isWait")); 
 
 			serializedObject.ApplyModifiedProperties();
 		}

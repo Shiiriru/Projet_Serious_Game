@@ -3,7 +3,7 @@ using UnityEditor;
 
 namespace DialogSystem.Nodes
 {
-	[CreateNodeMenu("Image/Screen Flash")]
+	[CreateNodeMenu("Image/Color Screen/Flash")]
 	[NodeTint("#00ccff")]
 	public class ScreenFlashNode : DurationNodeBase
 	{

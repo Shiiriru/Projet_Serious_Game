@@ -63,7 +63,7 @@ public class UIMain : MonoBehaviour
 
 	IEnumerator ChangeSceneCoroutine(string sceneName, float time, DatePanelInfosObject dateInfos)
 	{
-		foregourndBg.Show(Color.black, 0.8f);
+		foregourndBg.Show(Color.black, 0.8f, foregourndBg.CurrentColor.a == 0);
 		yield return new WaitForSeconds(0.8f);
 
 		SoundPlayer.StopEvent("bg", true);
