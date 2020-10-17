@@ -1108,7 +1108,7 @@ MonoBehaviour:
   output: {fileID: 0}
   duration: 2
   isWait: 1
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0, g: 0, b: 0, a: 1}
   resetColor: 1
 --- !u!114 &114903872247450530
 MonoBehaviour:

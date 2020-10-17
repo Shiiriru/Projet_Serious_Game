@@ -1337,7 +1337,7 @@ MonoBehaviour:
   m_Name: Delay
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -424, y: 24}
+  position: {x: -440, y: -24}
   ports:
     keys:
     - input
@@ -2044,7 +2044,7 @@ MonoBehaviour:
   m_Name: CG
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -168, y: -8}
+  position: {x: -216, y: -72}
   ports:
     keys:
     - input
