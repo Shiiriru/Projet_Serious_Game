@@ -13,10 +13,10 @@ namespace DialogSystem.Demo
 	{
 		SoldatVariableSource source = new SoldatVariableSource();
 
-		//private void Start()
-		//{
-		//	source.activeChoice1 = true;
-		//}
+		private void Start()
+		{
+			source.activeChoice1 = true;
+		}
 
 		#region Values function
 		public override FieldInfo[] GetSourceFieldInfo()

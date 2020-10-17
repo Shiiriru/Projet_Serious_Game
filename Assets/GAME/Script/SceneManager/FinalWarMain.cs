@@ -22,8 +22,6 @@ public class FinalWarMain : MonoBehaviour
 		uiMain = FindObjectOfType<UIMain>();
 
 		uiMain.onChangeSceneFinished += Init;
-
-		SoundPlayer.StopEvent("song", true);
 	}
 
 	private void Init()

@@ -13,6 +13,7 @@ namespace DialogSystem
 	public class DialogPlayer : MonoBehaviour
 	{
 		[SerializeField] UIMain uiMain;
+		[SerializeField] ComicManager comicManager;
 
 		[SerializeField] Image blackBG;
 		[SerializeField] TextContent characterNameContent;
@@ -106,10 +107,10 @@ namespace DialogSystem
 			if (!isPLaying)
 				return;
 
-			MouseController();
+			MouseControl();
 		}
 
-		private void MouseController()
+		private void MouseControl()
 		{
 			//cannot pass dialog when has branch
 			if (waitingCoroutine != null || !(currentNode is DialogNode) || dialogContent.isFading())
@@ -185,6 +186,9 @@ namespace DialogSystem
 			else if (currentNode is StopSoundNode)
 				StopSoundNode();
 
+			else if (currentNode is ShowComicNode)
+				ShowComic();
+
 			else if (currentNode is ConditionBranchNode)
 				CheckConditionBranch();
 
@@ -194,7 +198,6 @@ namespace DialogSystem
 				ChangeScene();
 			else if (currentNode is RunMethodNode)
 				RunMethodOrVariable((currentNode as RunMethodNode).variableMethod, true);
-
 		}
 
 		void PlayDialogItem()
@@ -203,7 +206,7 @@ namespace DialogSystem
 
 			ShowBlackBG(node.disableScene, node.displayAll ? 0 : node.duration);
 
-			var doFade = !node.displayAll && node.duration > 0; 
+			var doFade = !node.displayAll && node.duration > 0;
 
 			if (string.IsNullOrEmpty(node.characterName))
 				characterNameContent.Show(false, false);
@@ -395,8 +398,8 @@ namespace DialogSystem
 
 		void DoDelay()
 		{
-			var item = currentNode as DelayNode;
-			waitingCoroutine = StartCoroutine(WaitingCorou(item.duration));
+			var node = currentNode as DelayNode;
+			waitingCoroutine = StartCoroutine(WaitingCorou(node.duration));
 		}
 
 		void ChangeScene()
@@ -426,6 +429,21 @@ namespace DialogSystem
 					break;
 				}
 			}
+		}
+
+		private void ShowComic()
+		{
+			var node = currentNode as ShowComicNode;
+
+			var prefab = node.comicPrefab;
+			if (prefab == null)
+			{
+				AutoPlayNextNode();
+				return;
+			}
+
+			comicManager.ShowComic(prefab.GetComponent<ComicController>(), node.index, node.duration);
+			AutoPlayNextNode(node.isWait, node.duration);
 		}
 
 		public void SetVariableSourceManger(VariableSourceManager mgr)

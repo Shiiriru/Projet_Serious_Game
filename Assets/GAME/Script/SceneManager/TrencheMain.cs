@@ -31,9 +31,6 @@ public class TrencheMain : SceneManagerBase
 
 	[SerializeField] [EventRef] string GazAlarmSound;
 
-	[SerializeField] [EventRef] string cryingSound;
-	[SerializeField] [EventRef] string trenchSong;
-
 	//Son d'ambiance
 	[SerializeField] [EventRef] string AmbianceTrench1;
 	[SerializeField] [EventRef] string AmbianceTrench2;
@@ -186,27 +183,11 @@ public class TrencheMain : SceneManagerBase
 		foreach (var c in FindObjectsOfType<CharacterBase>())
 			c.GetComponent<Image>().raycastTarget = false;
 		btnChangeScene.Show(false);
-		StartCoroutine(SoliderSingingCoroutine());
-	}
-
-	IEnumerator SoliderSingingCoroutine()
-	{
-		yield return new WaitForSeconds(1f);
-		SoundPlayer.PlayEvent("soliderCry", cryingSound);
-		yield return new WaitForSeconds(8f);
 		DialogPlayerHelper.SetDialog(dialogSoliderSinging);
 	}
 
 	public void LaunchFinalWar()
 	{
-		StartCoroutine(FinalWarCoroutine());
-	}
-
-	IEnumerator FinalWarCoroutine()
-	{
-		SoundPlayer.PlayEvent("song", trenchSong);
-		SoundPlayer.StopEvent("soliderCry", true);
-		yield return new WaitForSeconds(10f);
 		PlayNextChapterDialog();
 	}
 }

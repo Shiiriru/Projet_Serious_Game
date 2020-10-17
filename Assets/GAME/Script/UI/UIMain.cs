@@ -9,6 +9,8 @@ using FMODUnity;
 [RequireComponent(typeof(Canvas))]
 public class UIMain : MonoBehaviour
 {
+	[SerializeField] ComicManager comicManager;
+
 	[SerializeField] Image foregourndBg;
 	[SerializeField] DatePanel datePanel;
 
@@ -23,6 +25,7 @@ public class UIMain : MonoBehaviour
 	public event System.Action onChangeSceneFinished;
 
 	[SerializeField] GetItemScreen getItemScreen;
+	[SerializeField] Transform comicParent;
 
 	private void Awake()
 	{
@@ -67,7 +70,7 @@ public class UIMain : MonoBehaviour
 
 		SoundPlayer.StopEvent("bg", true);
 		yield return new WaitForSeconds(0.5f);
-
+		comicManager.Clear();
 		SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
 
 		if (dateInfos != null)

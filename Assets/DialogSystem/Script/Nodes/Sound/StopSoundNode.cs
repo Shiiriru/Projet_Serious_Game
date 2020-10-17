@@ -16,6 +16,6 @@ namespace DialogSystem.Nodes
 		}
 
 		public string eventId;
-		public bool fadeOut;
+		public bool fadeOut = true;
 	}
 }

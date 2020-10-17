@@ -6,6 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
