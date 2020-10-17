@@ -11,7 +11,7 @@ public class UIMain : MonoBehaviour
 {
 	[SerializeField] ComicManager comicManager;
 
-	[SerializeField] Image foregourndBg;
+	[SerializeField] ColorScreen foregourndBg;
 	[SerializeField] DatePanel datePanel;
 
 	Canvas canvas;
@@ -30,7 +30,6 @@ public class UIMain : MonoBehaviour
 	private void Awake()
 	{
 		canvas = GetComponent<Canvas>();
-		foregourndBg.color = Color.clear;
 
 		uiPlayer.Inventory.onAddItem += ShowGetItemScreen;
 		getItemScreen.Close();
@@ -64,9 +63,8 @@ public class UIMain : MonoBehaviour
 
 	IEnumerator ChangeSceneCoroutine(string sceneName, float time, DatePanelInfosObject dateInfos)
 	{
-		foregourndBg.DOColor(Color.black, 0.8f);
-		foregourndBg.raycastTarget = true;
-		yield return new WaitWhile(() => DOTween.IsTweening(foregourndBg));
+		foregourndBg.Show(Color.black, 0.8f);
+		yield return new WaitForSeconds(0.8f);
 
 		SoundPlayer.StopEvent("bg", true);
 		yield return new WaitForSeconds(0.5f);
@@ -83,9 +81,8 @@ public class UIMain : MonoBehaviour
 			yield return new WaitForSeconds(time);
 		}
 
-		foregourndBg.DOColor(Color.clear, 0.8f);
-		yield return new WaitWhile(() => DOTween.IsTweening(foregourndBg));
-		foregourndBg.raycastTarget = false;
+		foregourndBg.Hide(0.8f);
+		yield return new WaitForSeconds(0.8f);
 
 		if (onChangeSceneFinished != null)
 		{

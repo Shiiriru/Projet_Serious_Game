@@ -4,14 +4,14 @@ using UnityEngine;
 
 namespace DialogSystem.Nodes
 {
-	[CustomNodeEditor(typeof(ShowComicNode))]
-	public class ShowComicEditor : DialogNodeEditorBase
+	[CustomNodeEditor(typeof(HideComicNode))]
+	public class HideComicEditor : DialogNodeEditorBase
 	{
-		ShowComicNode graph;
+		HideComicNode graph;
 
 		public override void OnCreate()
 		{
-			graph = target as ShowComicNode;
+			graph = target as HideComicNode;
 			base.OnCreate();
 		}
 
@@ -21,7 +21,7 @@ namespace DialogSystem.Nodes
 			DrawPorts();
 
 			EditorGUILayout.PropertyField(serializedObject.FindProperty("comicPrefab"));
-			if (graph.comicPrefab != null && graph.comicPrefab.GetComponent<ComicController>() == null)	
+			if (graph.comicPrefab != null && graph.comicPrefab.GetComponent<ComicController>() == null)
 				graph.comicPrefab = null;
 
 			if (graph.comicPrefab != null)
@@ -30,7 +30,9 @@ namespace DialogSystem.Nodes
 				for (int i = 0; i < graph.comicPrefab.GetComponent<ComicController>().ComicList.Length; i++)
 					indexList.Add(i.ToString());
 
-				graph.index = EditorGUILayout.Popup("index", graph.index, indexList.ToArray());
+				EditorGUILayout.PropertyField(serializedObject.FindProperty("hideAll"));
+				if (!graph.hideAll)
+					graph.index = EditorGUILayout.Popup("index", graph.index, indexList.ToArray());
 
 				DrawDurationField();
 				EditorGUILayout.PropertyField(serializedObject.FindProperty("isWait"));

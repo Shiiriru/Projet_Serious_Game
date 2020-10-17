@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DialogSystem.Nodes
 {
-    [CreateNodeMenu("Image/Show Comic")]
+    [CreateNodeMenu("Image/Comic/Show")]
     [NodeWidth(250)]
     [NodeTint("#00ccff")]
     public class ShowComicNode : DurationNodeBase

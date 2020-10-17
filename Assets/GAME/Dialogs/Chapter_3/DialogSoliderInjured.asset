@@ -225,6 +225,7 @@ MonoBehaviour:
   - {fileID: 114290935490643822}
   - {fileID: -1233269769312478116}
   - {fileID: 4581310985841511200}
+  - {fileID: 5664632476807130493}
   - {fileID: 0}
   variableSource: {fileID: 114212070592026810}
 --- !u!114 &114014928409132172
@@ -294,7 +295,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2584, y: -360}
+  position: {x: 3112, y: -680}
   ports:
     keys:
     - input
@@ -677,7 +678,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 3000, y: -632}
+  position: {x: 3096, y: -472}
   ports:
     keys:
     - input
@@ -784,7 +785,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 3432, y: -120}
+  position: {x: 3496, y: -104}
   ports:
     keys:
     - input
@@ -819,10 +820,10 @@ MonoBehaviour:
   displaySide: 0
   characterName: Ferdinand
   text: Oh mon dieu ... mon dieu ...
-  showAdvance: 0
+  showAdvance: 1
   disableScene: 1
   displayAll: 0
-  displaySpeed: 1
+  displaySpeed: 2
   duration: 0.2
 --- !u!114 &114395228469434622
 MonoBehaviour:
@@ -1109,7 +1110,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2584, y: -552}
+  position: {x: 2648, y: -264}
   ports:
     keys:
     - input
@@ -1121,7 +1122,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114826478282345510}
+        node: {fileID: 5664632476807130493}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -1144,10 +1145,10 @@ MonoBehaviour:
   displaySide: 0
   characterName: Ferdinand
   text: On s'en fout de la perm' !!
-  showAdvance: 0
+  showAdvance: 1
   disableScene: 1
-  displayAll: 0
-  displaySpeed: 3
+  displayAll: 1
+  displaySpeed: 5
   duration: 0.2
 --- !u!114 &114737209902076266
 MonoBehaviour:
@@ -1269,7 +1270,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2584, y: -744}
+  position: {x: 2648, y: -696}
   ports:
     keys:
     - input
@@ -1293,7 +1294,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114678509594633674}
+        node: {fileID: 5664632476807130493}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -1304,12 +1305,11 @@ MonoBehaviour:
   displaySide: 1
   characterName: Capitaine Favourier
   text: "Ecoutez, je vous promet que c'est la derni\xE8re attaque ! Ensuite ce ...
-    c'est fini et on se retire d'ici. Je vous demande de me suivre juste une derni\xE8re
-    fois. Apres tout le monde aura le droit \xE0 une permission de ..."
+    c'est fini et on se retire d'ici."
   showAdvance: 0
   disableScene: 1
   displayAll: 0
-  displaySpeed: 1
+  displaySpeed: 3
   duration: 0.2
 --- !u!114 &114832027915364816
 MonoBehaviour:
@@ -1378,7 +1378,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 3016, y: -408}
+  position: {x: 3080, y: -248}
   ports:
     keys:
     - input
@@ -1519,7 +1519,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2616, y: 56}
+  position: {x: 2664, y: 120}
   ports:
     keys:
     - input
@@ -1558,4 +1558,58 @@ MonoBehaviour:
   disableScene: 1
   displayAll: 0
   displaySpeed: 1
+  duration: 0.2
+--- !u!114 &5664632476807130493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 2632, y: -488}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 5664632476807130493}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114826478282345510}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 5664632476807130493}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114678509594633674}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 1
+  characterName: Capitaine Favourier
+  text: "Je vous demande de me suivre juste une derni\xE8re fois. Apres tout le monde
+    aura le droit \xE0 une permission de ..."
+  showAdvance: 0
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
   duration: 0.2

@@ -28,8 +28,7 @@ MonoBehaviour:
   - {fileID: 114542204930780730}
   - {fileID: 114242153943294360}
   - {fileID: 114143249458689556}
-  - {fileID: 2622538624526288830}
-  - {fileID: 1225730319405658011}
+  - {fileID: 6595740524703480562}
   - {fileID: 0}
   variableSource: {fileID: 114647803991876338}
 --- !u!114 &114143249458689556
@@ -301,7 +300,10 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 1225730319405658011}
+        node: {fileID: 0}
+        reroutePoints: []
+      - fieldName: output
+        node: {fileID: 114934195877291502}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -348,7 +350,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 2622538624526288830}
+        node: {fileID: 6595740524703480562}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -841,7 +843,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -488, y: -520}
+  position: {x: -680, y: -200}
   ports:
     keys:
     - input
@@ -853,7 +855,10 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 2622538624526288830}
+        node: {fileID: 0}
+        reroutePoints: []
+      - fieldName: output
+        node: {fileID: 6595740524703480562}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -865,7 +870,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 1225730319405658011}
+        node: {fileID: 114242153943294360}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -997,7 +1002,7 @@ MonoBehaviour:
   m_Name: Show Comic
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -776, y: -376}
+  position: {x: -824, y: -232}
   ports:
     keys:
     - input
@@ -1009,7 +1014,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114441759806970504}
+        node: {fileID: 0}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -1034,3 +1039,51 @@ MonoBehaviour:
   comicPrefab: {fileID: 3074016360852540121, guid: 4b1217f6a7f691b4daa371d4da7f53f9,
     type: 3}
   index: 0
+--- !u!114 &6595740524703480562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cedd4ecba5f1b5144a6cc14f350f472e, type: 3}
+  m_Name: Show Color Screen
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -625.8301, y: -455.28998}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 6595740524703480562}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114441759806970504}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 6595740524703480562}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114934195877291502}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  duration: 5
+  isWait: 1
+  color: {r: 0, g: 0, b: 0, a: 1}

@@ -4,6 +4,7 @@ using UnityEditor;
 namespace DialogSystem.Nodes
 {
 	[CreateNodeMenu("Image/Show Color Screen")]
+	[NodeWidth(250)]
 	[NodeTint("#00ccff")]
 	public class ShowColorScreenNode : DurationNodeBase
 	{

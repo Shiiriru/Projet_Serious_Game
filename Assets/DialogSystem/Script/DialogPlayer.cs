@@ -27,7 +27,7 @@ namespace DialogSystem
 
 		[SerializeField] VariableSourceManager variableSourceMgr;
 
-		[SerializeField] Image colorScreen;
+		[SerializeField] ColorScreen colorScreen;
 
 		static DialogGraph currentDialogGraph;
 		Node currentNode;
@@ -146,7 +146,7 @@ namespace DialogSystem
 		void AutoPlayNextNode(bool wait, float duration)
 		{
 			if (wait)
-				waitingCoroutine = StartCoroutine(WaitingCorou(duration));
+				Waiting(duration);
 			else
 				AutoPlayNextNode();
 		}
@@ -399,7 +399,7 @@ namespace DialogSystem
 		void DoDelay()
 		{
 			var node = currentNode as DelayNode;
-			waitingCoroutine = StartCoroutine(WaitingCorou(node.duration));
+			Waiting(node.duration);
 		}
 
 		void ChangeScene()
@@ -452,6 +452,13 @@ namespace DialogSystem
 			DialogPlayerHelper.SetVariableSourceMgr(variableSourceMgr);
 		}
 
+		void Waiting(float duration)
+		{
+			if (waitingCoroutine != null)
+				StopCoroutine(waitingCoroutine);
+			waitingCoroutine = StartCoroutine(WaitingCorou(duration));
+		}
+
 		IEnumerator WaitingCorou(float time)
 		{
 			yield return new WaitForSeconds(time);
@@ -462,39 +469,23 @@ namespace DialogSystem
 		void ScreenFlash()
 		{
 			var node = currentNode as ScreenFlashNode;
-			var color = node.color;
-			colorScreen.color = new Color(color.r, color.g, color.b, 0);
-			StartCoroutine(ScreenFlashCoroutine(node.duration, color));
+			colorScreen.Flash(node.duration, node.color);
 
 			AutoPlayNextNode(node.isWait, node.duration + 0.1f);
-		}
-
-		IEnumerator ScreenFlashCoroutine(float duration, Color color)
-		{
-			displayColorScreen(true, 0.05f, color);
-			yield return new WaitForSeconds(0.05f + duration);
-			displayColorScreen(false, 0.05f, color);
 		}
 
 		private void ShowColorScreen()
 		{
 			var node = currentNode as ShowColorScreenNode;
-			var color = node.color;
-			displayColorScreen(true, node.duration, color);
+			colorScreen.Show(node.color, node.duration);
 			AutoPlayNextNode(node.isWait, node.duration);
 		}
 
 		private void HideColorScreen()
 		{
 			var node = currentNode as HideColorScreenNode;
-			displayColorScreen(false, node.duration, colorScreen.color);
+			colorScreen.Hide(node.duration);
 			AutoPlayNextNode(node.isWait, node.duration);
-		}
-
-		void displayColorScreen(bool show, float duration, Color color)
-		{
-			colorScreen.raycastTarget = show;
-			colorScreen.DOColor(new Color(color.r, color.g, color.b, show ? 1 : 0), duration);
 		}
 
 		private void PlaySound()

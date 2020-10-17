@@ -42,8 +42,9 @@ namespace DialogSystem
 			{
 				comic.SetActive(true);
 				var img = comic.GetComponent<Image>();
-				img.color = new Color(1, 1, 1, 0);
-				img.DOColor(Color.white, duration);
+				var c = img.color;
+				img.color = new Color(c.r, c.g, c.b, 0);
+				img.DOColor(new Color(c.r, c.g, c.b, 1), duration);
 			}
 		}
 
@@ -53,7 +54,11 @@ namespace DialogSystem
 			if (comic.GetComponent<CanvasGroup>() != null)
 				comic.GetComponent<CanvasGroup>().DOFade(0, duration).OnComplete(Hide);
 			else if (comic.GetComponent<Image>() != null)
-				comic.GetComponent<Image>().DOColor(new Color(1, 1, 1, 0), duration).OnComplete(Hide);
+			{
+				var img = comic.GetComponent<Image>();
+				var c = img.color;
+				img.DOColor(new Color(c.r, c.g, c.b, 0), duration).OnComplete(Hide);
+			}
 
 			void Hide()
 			{

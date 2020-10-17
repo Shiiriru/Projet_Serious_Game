@@ -44,7 +44,7 @@ TagManager:
   - name: PlayerUI
     uniqueID: 1262920533
     locked: 0
-  - name: beforeDialog
+  - name: BeforeDialog
     uniqueID: 1813704019
     locked: 0
   - name: Dialog
