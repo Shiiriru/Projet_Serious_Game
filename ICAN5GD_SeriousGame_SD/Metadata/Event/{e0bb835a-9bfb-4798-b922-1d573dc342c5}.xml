@@ -290,7 +290,7 @@
             <value>0.042011551790527527</value>
         </property>
         <property name="value">
-            <value>-30</value>
+            <value>-25</value>
         </property>
     </object>
     <object class="Automator" id="{5681c83c-b068-45cb-b4a4-107453a4e8ba}">
@@ -306,7 +306,7 @@
             <value>0</value>
         </property>
         <property name="value">
-            <value>-30</value>
+            <value>-25</value>
         </property>
     </object>
     <object class="AutomationCurve" id="{7972c4da-3199-44ef-b1f5-a53768308e27}">
