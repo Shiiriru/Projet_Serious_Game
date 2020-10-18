@@ -43,7 +43,7 @@ public class SpotGermanGame : MiniGameBase
 
 		if (Input.GetMouseButtonDown(0))
 			if (spot.SpotedTarget != null)
-				FnishGame();
+				FnishGame(true);
 	}
 
 	void ScrollMap()
@@ -74,7 +74,7 @@ public class SpotGermanGame : MiniGameBase
 					Vector2.Lerp(ambianceRect.anchoredPosition, ambianceRect.anchoredPosition + (left ? Vector2.right : Vector2.left), moveSpeed * Time.deltaTime);
 	}
 
-	public override void FnishGame()
+	public override void FnishGame(bool b)
 	{
 		if (gameFinished)
 			return;

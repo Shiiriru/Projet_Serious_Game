@@ -9,8 +9,8 @@ using UnityEngine;
 
 public class BureauxMain : SceneManagerBase
 {
+	[SerializeField] ButtonTelephone telephone;
 	[SerializeField] MapGame mapGame;
-	[SerializeField] InfoItemBouton BoutonLetter;
 	[SerializeField] ButtonBase buttonPhotoVillage;
 
 	[SerializeField] GameObject buttonChangeScene;
@@ -71,11 +71,15 @@ public class BureauxMain : SceneManagerBase
 		yield return new WaitForSeconds(0.1f);
 		SoundPlayer.PlayEvent("bg", ambianceEvent);
 		if (!(bool)DialogPlayerHelper.VariableSourceMgr.GetValue("isCommandantCalled"))
+		{
+			telephone.ShakeEffect.StartShake();
 			SoundPlayer.PlayEvent("phoneRing", phoneRingEvent);
+		}
 	}
 
 	public void AnswerCommandant()
 	{
+		telephone.ShakeEffect.StopShake();
 		SoundPlayer.StopEvent("phoneRing", false);
 
 		DialogPlayerHelper.SetOnFinishedAction(ActiveExitButton);

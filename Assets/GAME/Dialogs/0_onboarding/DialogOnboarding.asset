@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hide CG
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -40, y: 136}
+  position: {x: -40, y: -8}
   ports:
     keys:
     - input
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: Hide Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -248, y: 136}
+  position: {x: -264, y: -8}
   ports:
     keys:
     - input
@@ -72,7 +72,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: -2608318850614976719}
+        node: {fileID: 114596655729629326}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: Stop Sound
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -216, y: 8}
+  position: {x: -200, y: 232}
   ports:
     keys:
     - input
@@ -119,7 +119,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114596655729629326}
+        node: {fileID: 1915739923544536701}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: -7688968958340605917}
+        node: {fileID: -1378102559040948159}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -166,7 +166,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 1915739923544536701}
+        node: {fileID: -2608318850614976719}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -992,7 +992,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: -2608318850614976719}
+        node: {fileID: -7688968958340605917}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -1510,7 +1510,7 @@ MonoBehaviour:
   m_Name: Delay
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -168, y: 264}
+  position: {x: -184, y: 120}
   ports:
     keys:
     - input
@@ -1534,7 +1534,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: -1378102559040948159}
+        node: {fileID: -2608318850614976719}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -1556,7 +1556,7 @@ MonoBehaviour:
   m_Name: Change DialogGraph
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 168, y: 232}
+  position: {x: 424, y: 216}
   ports:
     keys:
     - input

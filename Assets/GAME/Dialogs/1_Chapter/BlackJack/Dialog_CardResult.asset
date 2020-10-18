@@ -21,6 +21,7 @@ MonoBehaviour:
   - {fileID: 114241176806723940}
   - {fileID: 114415287910541044}
   - {fileID: 0}
+  - {fileID: 6489283285801643877}
   variableSource: {fileID: 114161093363272342}
 --- !u!114 &114060540473410770
 MonoBehaviour:
@@ -211,7 +212,10 @@ MonoBehaviour:
       _node: {fileID: 114245459138922048}
       _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: input
+        node: {fileID: 6489283285801643877}
+        reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
@@ -220,8 +224,7 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 0
   characterName: Touvenel
-  text: "Hehehe dommage pour vous mon capitaine ! Je penserais \xE0 vous quand je
-    boirai un coup \xE0 Paris avec cet argent !"
+  text: Hehehe dommage pour vous mon capitaine !
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -438,6 +441,57 @@ MonoBehaviour:
   displaySide: 0
   characterName: Touvenel
   text: Bravo mon capitaine, j'avoue que vous m'avez bien eu !
+  showAdvance: 0
+  disableScene: 1
+  displayAll: 0
+  displaySpeed: 3
+  duration: 0.2
+--- !u!114 &6489283285801643877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 776, y: 152}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 6489283285801643877}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114245459138922048}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 6489283285801643877}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  displaySide: 0
+  characterName: Touvenel
+  text: "Je penserais \xE0 vous quand je boirai un coup \xE0 Paris avec cet argent
+    !"
   showAdvance: 0
   disableScene: 1
   displayAll: 0

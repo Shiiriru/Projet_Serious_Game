@@ -3,26 +3,27 @@ using UnityEditor;
 
 public class MiniGameBase : MonoBehaviour
 {
+	public bool HasWon { get; protected set; }
 	public event System.Action onGameComplete;
 
 	protected bool gameFinished;
 
 	public virtual void Launch()
 	{
+		HasWon = false;
 		gameFinished = false;
 		gameObject.SetActive(true);
 	}
 
-	public virtual void FnishGame()
+	public virtual void FnishGame(bool b)
 	{
+		HasWon = b;
 		gameFinished = true;
-		if (onGameComplete != null)
-			onGameComplete();
+		OnGameComplete();
 	}
 
 	public void OnGameComplete()
 	{
-		if (onGameComplete != null)
-			onGameComplete();
+		onGameComplete.Invoke();
 	}
 }

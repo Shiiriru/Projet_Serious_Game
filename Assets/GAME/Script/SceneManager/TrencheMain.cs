@@ -53,7 +53,6 @@ public class TrencheMain : SceneManagerBase
 			case 0:
 				SoundPlayer.PlayEvent("bg", AmbianceTrench1);
 				blackJackGame.onGameComplete += BlackJackFinished;
-
 				break;
 			case 1:
 				SoundPlayer.PlayEvent("bg", AmbianceTrench2);
@@ -122,7 +121,9 @@ public class TrencheMain : SceneManagerBase
 
 	private void BlackJackFinished()
 	{
+		DialogPlayerHelper.VariableSourceMgr.SetValue("CardGameWon", blackJackGame.HasWon);
 		cardPlayers.LaunchResultDialog();
+		blackJackGame.onGameComplete -= BlackJackFinished;
 	}
 
 	public void LaunchSpotGerman()
@@ -133,6 +134,7 @@ public class TrencheMain : SceneManagerBase
 	private void SpotGermanGameComplete()
 	{
 		spotGermanLouis.SpotFinish();
+		spotGermanGame.onGameComplete -= SpotGermanGameComplete;
 	}
 
 	public void LootWatch()

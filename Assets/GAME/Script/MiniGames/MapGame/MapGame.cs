@@ -43,7 +43,7 @@ public class MapGame : MiniGameBase
 
 	IEnumerator GameFinishCoroutine()
 	{
-		yield return new WaitForSeconds(0.3f);
+		yield return new WaitForSeconds(0.1f);
 		SoundPlayer.PlayOneShot(completeEvt);
 		yield return new WaitForSeconds(1f);
 		DialogPlayerHelper.SetDialog(dialog);

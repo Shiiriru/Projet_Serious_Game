@@ -834,7 +834,7 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   displaySide: 1
-  characterName: Capitaine Favourier
+  characterName: 
   text: "Si je ne sais pas \xE0 qui parler, cela ne me sert \xE0 rien de t\xE9l\xE9phoner
     ..."
   showAdvance: 0

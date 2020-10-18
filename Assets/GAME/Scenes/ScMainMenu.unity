@@ -1356,6 +1356,8 @@ MonoBehaviour:
   Degree: 360
   fadeOut: 0
   loop: 1
+  isRotate: 0
+  isScale: 1
 --- !u!114 &596988612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1627,6 +1629,8 @@ MonoBehaviour:
   Degree: 360
   fadeOut: 0
   loop: 1
+  isRotate: 0
+  isScale: 1
 --- !u!114 &680164890
 MonoBehaviour:
   m_ObjectHideFlags: 0

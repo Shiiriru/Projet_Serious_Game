@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class BlackJack : MiniGameBase
 {
-	Animator animator;
+	[SerializeField] BlackJackAnimation blackJackAnim;
 
 	[SerializeField] BlackJackCard cardPrefab;
 	List<BlackJackCard> shownCardList = new List<BlackJackCard>();
@@ -18,17 +18,7 @@ public class BlackJack : MiniGameBase
 	List<BlackJackCard> playerCards = new List<BlackJackCard>();
 	List<BlackJackCard> aiCards = new List<BlackJackCard>();
 
-	[SerializeField] GameObject logoWin;
-	[SerializeField] GameObject logoLose;
-
-	[SerializeField] GameObject buttonFinish;
-
 	[SerializeField] [EventRef] string launchGameSoundPath;
-
-	private void Awake()
-	{
-		animator = GetComponent<Animator>();
-	}
 
 	public override void Launch()
 	{
@@ -43,11 +33,14 @@ public class BlackJack : MiniGameBase
 		playerCards.Clear();
 		aiCards.Clear();
 
-		logoWin.SetActive(false);
-		logoLose.SetActive(false);
-		buttonFinish.SetActive(false);
+		blackJackAnim.onAnimationFinished -= OnGameComplete;
+		blackJackAnim.onAnimationFinished += OnShow;
+		blackJackAnim.LaunchGame();
+	}
 
-		animator.SetBool("show_buttons", true);
+	private void OnShow()
+	{
+		blackJackAnim.onAnimationFinished -= OnShow;
 		StartCoroutine(LaunchGameCoroutine());
 	}
 
@@ -66,14 +59,14 @@ public class BlackJack : MiniGameBase
 			}
 	}
 
-	void AddCard(bool playerAdd, bool show, bool check = true)
+	void AddCard(bool playerAdd, bool displayToFace, bool check = true)
 	{
 		var card = Instantiate(cardPrefab);
 		card.Init();
 
 		shownCardList.Add(card);
 
-		card.Show(show);
+		card.Show(displayToFace);
 		var space = card.RectTransform.sizeDelta.x / 1.2f;
 		card.transform.SetParent(playerAdd ? playerDeck : aiDeck, false);
 		card.RectTransform.anchoredPosition =
@@ -87,8 +80,16 @@ public class BlackJack : MiniGameBase
 
 	public void OnClickHitCard()
 	{
+		if (gameFinished)
+			return;
+
 		AddCard(true, true);
 		AIHitCard();
+	}
+
+	public void OnClickEndGame()
+	{
+		FnishGame(true);
 	}
 
 	int GetPoints(List<BlackJackCard> cards)
@@ -126,7 +127,7 @@ public class BlackJack : MiniGameBase
 	{
 		var totalPoints = GetPoints(cards);
 		if (totalPoints >= 21)
-			FnishGame();
+			FnishGame(true);
 	}
 
 	void AIHitCard()
@@ -148,12 +149,11 @@ public class BlackJack : MiniGameBase
 			AddCard(false, false);
 	}
 
-	public override void FnishGame()
+	public override void FnishGame(bool b)
 	{
 		if (gameFinished)
 			return;
 
-		animator.SetBool("show_buttons", false);
 		StartCoroutine(EndGameCoroutine());
 		gameFinished = true;
 	}
@@ -162,8 +162,6 @@ public class BlackJack : MiniGameBase
 	{
 		var aiPoint = GetPoints(aiCards);
 		var playerPoint = GetPoints(playerCards);
-
-		bool win = false;
 
 		if (playerPoint <= 21)
 		{
@@ -180,28 +178,21 @@ public class BlackJack : MiniGameBase
 			aiPoint = GetPoints(aiCards);
 			//over point
 			if (aiPoint > 21)
-				win = true;
+				HasWon = true;
 			else
-				win = playerPoint > aiPoint;
+				HasWon = playerPoint > aiPoint;
 		}
-		DialogPlayerHelper.VariableSourceMgr.SetValue("CardGameWon", win);
 
 		yield return null;
 		foreach (var c in aiCards)
 			c.Show(true);
 
-		if (win)
-			logoWin.SetActive(true);
-		else
-			logoLose.SetActive(true);
-
-		yield return new WaitForSeconds(2);
-		buttonFinish.SetActive(true);
+		blackJackAnim.GameFinished(HasWon);
 	}
 
 	public void OnClickClose()
 	{
-		OnGameComplete();
-		gameObject.SetActive(false);
+		blackJackAnim.onAnimationFinished += OnGameComplete;
+		blackJackAnim.CloseGame();
 	}
 }
