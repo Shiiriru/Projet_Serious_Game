@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 7144449976434125398}
   - component: {fileID: 462377774866265403}
   - component: {fileID: 4395278611240800911}
-  - component: {fileID: 4956503807031633404}
-  - component: {fileID: 7787728253841298354}
   m_Layer: 5
   m_Name: telephone
   m_TagString: Untagged
@@ -76,70 +74,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4956503807031633404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 167364608500018673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.94509804, g: 0.78431374, b: 0.42352942, a: 1}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_SelectedColor: {r: 0.94509804, g: 0.78431374, b: 0.42352942, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Highlighted
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 4395278611240800911}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &7787728253841298354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 167364608500018673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dced5840904b1b94c8d8fcfeb307bf5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundEvt: event:/03_Scene1_Bureau/01_Sons_Objets/SA_Telephone_Decroche
-  Infoitem: {fileID: 11400000, guid: f43e9d9e2fc254a429814b7953908776, type: 2}
-  customActionSprite: {fileID: 21300000, guid: a76ecb7b977e7184e8c851f17bd5af68, type: 3}
-  sceneBereaux: {fileID: 0}
-  phoneCallDialog: {fileID: 11400000, guid: 462772484f296504eb68e53a3f5ac9ce, type: 2}
-  commandantBrefingDialog:
-  - {fileID: 11400000, guid: c1c4903437d2b7a49aa509e088122118, type: 2}
-  - {fileID: 11400000, guid: 672cc3714f0c9ad4498fa7c45f5f8db9, type: 2}
-  - {fileID: 11400000, guid: 4644ff355f6837145820ec7a23cb1398, type: 2}
 --- !u!1 &947500962241587452
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,8 +476,6 @@ GameObject:
   - component: {fileID: 8832850843425496394}
   - component: {fileID: 5204882512559850193}
   - component: {fileID: 6104400931187928860}
-  - component: {fileID: 9008707994500909579}
-  - component: {fileID: 3759023755277375590}
   m_Layer: 5
   m_Name: newsPaper
   m_TagString: Untagged
@@ -607,67 +539,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &9008707994500909579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1837372198964079173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.94509804, g: 0.78431374, b: 0.42352942, a: 1}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_SelectedColor: {r: 0.94509804, g: 0.78431374, b: 0.42352942, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Highlighted
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 6104400931187928860}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &3759023755277375590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1837372198964079173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0aa1ab237e4ae84e8c5f70274e8e31b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundEvt: event:/03_Scene1_Bureau/01_Sons_Objets/SA_Consultant_Journal
-  displayScreen: {fileID: 0}
-  newsPaperSprites:
-  - {fileID: 21300000, guid: 1811a0d6013160842abda8ca181c42f4, type: 3}
-  - {fileID: 21300000, guid: 008f019e055bce34f804a6b97c138b41, type: 3}
-  - {fileID: 21300000, guid: ecc6f9157dcf80e41a6532df7a7d0bdb, type: 3}
 --- !u!1 &2009389243998099339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,7 +1568,7 @@ RectTransform:
   m_GameObject: {fileID: 3186286738687510101}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.00008, y: 1.00008, z: 1.00008}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7992700017932808912}
   m_RootOrder: 5
@@ -1755,8 +1626,6 @@ GameObject:
   - component: {fileID: 6770654444058756197}
   - component: {fileID: 2275010941348827112}
   - component: {fileID: 2860278505028256090}
-  - component: {fileID: 6253376988926391811}
-  - component: {fileID: 9121588319380784486}
   m_Layer: 5
   m_Name: map
   m_TagString: Untagged
@@ -1820,65 +1689,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6253376988926391811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3347102488415339946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.94509804, g: 0.78431374, b: 0.42352942, a: 1}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_SelectedColor: {r: 0.94509804, g: 0.78431374, b: 0.42352942, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Highlighted
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 2860278505028256090}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &9121588319380784486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3347102488415339946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 267d09368d7cb8b42833128faa19d5be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundEvt: event:/03_Scene1_Bureau/01_Sons_Objets/SA_Consultant_Journal
-  Infoitem: {fileID: 11400000, guid: 3a689c858c8a97d438b0b8070bacd8df, type: 2}
-  customActionSprite: {fileID: 21300000, guid: 1252ee09e99358c4c933888543d2fcc2, type: 3}
-  mapGame: {fileID: 0}
 --- !u!1 &3437471551989876651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1940,9 +1750,6 @@ GameObject:
   - component: {fileID: 2821559726948441401}
   - component: {fileID: 1185086278099946172}
   - component: {fileID: 870385087456020622}
-  - component: {fileID: 2432109311680002982}
-  - component: {fileID: 6122589882300068967}
-  - component: {fileID: 4230240994682117950}
   m_Layer: 5
   m_Name: SoldatLouis
   m_TagString: Untagged
@@ -2006,76 +1813,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2432109311680002982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3471917740972067649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 0.69411767, g: 0.79607844, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.94509804, g: 0.78431374, b: 0.42352942, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.94509804, g: 0.78431374, b: 0.42352942, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Highlighted
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 870385087456020622}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &6122589882300068967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3471917740972067649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 699ebe19c6b798840848ab9340df908d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialog: {fileID: 11400000, guid: 401d6730055165443b3db9b3cd40429d, type: 2}
-  dialogSpotFinish: {fileID: 11400000, guid: 464e0443694fdeb4d838eb4de95af1b3, type: 2}
---- !u!114 &4230240994682117950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3471917740972067649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f25997ae6b812e64a9f32bf80a8ef01e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SoundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_3_Soldat-Blessure/SB_3_Soldat_Blessure_Ensemble"
 --- !u!1 &3571797699797896746
 GameObject:
   m_ObjectHideFlags: 0
@@ -2161,7 +1898,6 @@ GameObject:
   - component: {fileID: 4917804387213989562}
   - component: {fileID: 8242026873633527294}
   - component: {fileID: 4092029608431408154}
-  - component: {fileID: 7678328396936763380}
   m_Layer: 5
   m_Name: photos
   m_TagString: Untagged
@@ -2225,60 +1961,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7678328396936763380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3833171393226819989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.94509804, g: 0.78431374, b: 0.42352942, a: 1}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_SelectedColor: {r: 0.94509804, g: 0.78431374, b: 0.42352942, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Highlighted
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 4092029608431408154}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OnClickShowPhotoWall
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!1 &4041066979576077937
 GameObject:
   m_ObjectHideFlags: 0
@@ -2686,8 +2368,6 @@ GameObject:
   - component: {fileID: 2078604429730066273}
   - component: {fileID: 3128472049297795642}
   - component: {fileID: 4422117150959289075}
-  - component: {fileID: 7855452997478951041}
-  - component: {fileID: 5851778984464703988}
   m_Layer: 5
   m_Name: lettre
   m_TagString: Untagged
@@ -2751,64 +2431,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7855452997478951041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5743309843176247359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.94509804, g: 0.78431374, b: 0.42352942, a: 1}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_SelectedColor: {r: 0.94509804, g: 0.78431374, b: 0.42352942, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Highlighted
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 4422117150959289075}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &5851778984464703988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5743309843176247359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae3e868bd47614341bc06cdb17f6ccda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundEvt: event:/03_Scene1_Bureau/01_Sons_Objets/SA_Consultant_Doc
-  itemInfo: {fileID: 11400000, guid: aaa6465ece84ff946b5ca562397a7594, type: 2}
-  disableObject: 1
 --- !u!1 &6672955318821916106
 GameObject:
   m_ObjectHideFlags: 0
@@ -2968,9 +2590,6 @@ GameObject:
   - component: {fileID: 6360031901732212744}
   - component: {fileID: 1998014718539839074}
   - component: {fileID: 3488819349868668515}
-  - component: {fileID: 2009458506196746341}
-  - component: {fileID: 146267147683468911}
-  - component: {fileID: 2316433654194680299}
   m_Layer: 5
   m_Name: SoldatDormir
   m_TagString: Untagged
@@ -3034,72 +2653,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2009458506196746341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8122159244553593073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 0.69411767, g: 0.79607844, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.94509804, g: 0.78431374, b: 0.42352942, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.94509804, g: 0.78431374, b: 0.42352942, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Highlighted
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 3488819349868668515}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &146267147683468911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8122159244553593073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8985667500ba2f4381ff322fb807cdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialog: {fileID: 0}
---- !u!114 &2316433654194680299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8122159244553593073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f25997ae6b812e64a9f32bf80a8ef01e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SoundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_1_Soldat_Endormi"
