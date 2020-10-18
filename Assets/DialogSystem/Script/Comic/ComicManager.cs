@@ -43,4 +43,26 @@ public class ComicManager : MonoBehaviour
 
 		controller.ShowComicObject(index, duration);
 	}
+
+	public void HideComic(string name, int index, float duration)
+	{
+		ComicController controller = null;
+
+		foreach (var c in controllers)
+		{
+			if (c.gameObject.name == name)
+			{
+				controller = c.GetComponent<ComicController>();
+				break;
+			}
+		}
+
+		if (controller == null)
+			return;
+
+		if (index < 0)
+			controller.HideAll(duration);
+		else
+			controller.HideComicObject(index, duration);
+	}
 }

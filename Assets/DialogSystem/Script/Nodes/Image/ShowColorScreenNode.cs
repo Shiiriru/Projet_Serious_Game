@@ -15,7 +15,7 @@ namespace DialogSystem.Nodes
 			base.Init();
 		}
 
-		public Color color;
+		public Color color = Color.black;
 		//reset color to the same color base as changing color
 		public bool resetColor = true;
 	}

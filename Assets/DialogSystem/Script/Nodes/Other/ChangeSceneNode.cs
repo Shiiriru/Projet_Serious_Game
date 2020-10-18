@@ -16,6 +16,8 @@ namespace DialogSystem.Nodes
 		}
 
 		public SceneReference scene;
+		public bool doTransition = true;
+
 		public float duration;
 		public DatePanelInfosObject dateInfos;
 	}

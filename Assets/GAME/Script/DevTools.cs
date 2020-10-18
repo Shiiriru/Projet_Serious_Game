@@ -37,17 +37,17 @@ public class DevTools : MonoBehaviour
 		switch (GameManager.chapterCount)
 		{
 			case 0:
-				uiMain.ChangeScene(scBureau.Name, 0);
+				uiMain.ChangeScene(scBureau.Name, 0, false);
 				break;
 			case 1:
 				varSource.MaskChecked = true;
-				uiMain.ChangeScene(scBureau.Name, 0);
+				uiMain.ChangeScene(scBureau.Name, 0, false);
 				break;
 			case 2:
-				uiMain.ChangeScene(scBureau.Name, 0);
+				uiMain.ChangeScene(scBureau.Name, 0, false);
 				break;
 			case 3:
-				uiMain.ChangeScene(scFinal.Name, 0);
+				uiMain.ChangeScene(scFinal.Name, 0, false);
 				break;
 		}
 	}

@@ -9,12 +9,12 @@ using UnityEngine.UI;
 
 public class CreditScreen : MonoBehaviour
 {
+	UIMain uiMain;
 	[SerializeField] SceneReference mainMenuScene;
 
 	[SerializeField] Image blackForeground;
 	[SerializeField] CanvasGroup canvansFin;
 
-	[SerializeField] [EventRef] string musicPath;
 	int creditStep = -1;
 
 	[SerializeField] CreditObject[] creditList;
@@ -22,10 +22,12 @@ public class CreditScreen : MonoBehaviour
 	Coroutine playCoroutine;
 	bool passCredit;
 
-	private void Start()
+	private void Awake()
 	{
 		blackForeground.color = Color.clear;
-		StartCoroutine(StartCreditCoroutine());
+
+		uiMain = FindObjectOfType<UIMain>();
+		uiMain.onChangeSceneFinished += StartCredit;
 	}
 
 	private void Update()
@@ -41,30 +43,37 @@ public class CreditScreen : MonoBehaviour
 		}
 	}
 
+	private void StartCredit()
+	{
+		StartCoroutine(StartCreditCoroutine());
+	}
+
 	IEnumerator StartCreditCoroutine()
 	{
-		yield return new WaitForSeconds(4f);
+		yield return new WaitForSeconds(10f);
+		Destroy(GameObject.FindGameObjectWithTag("GameController"));
 		PlayCredit();
 	}
 
 	IEnumerator PassCreditCoroutine()
 	{
 		blackForeground.DOColor(Color.black, 2f);
+		SoundPlayer.StopEvent("bg", true);
 		yield return new WaitForSeconds(3f);
 		SceneManager.LoadScene(mainMenuScene.Name, LoadSceneMode.Single);
 	}
 
 	IEnumerator EndCreditCoroutine()
 	{
-		yield return new WaitForSeconds(1f);
-		canvansFin.DOFade(1, 3f);
+		yield return new WaitForSeconds(2.5f);
+		canvansFin.DOFade(1, 4f);
 		yield return new WaitForSeconds(5f);
+		canvansFin.DOFade(0, 3f);
+		yield return new WaitForSeconds(5f);
+		
 		SoundPlayer.StopEvent("bg", true);
-		canvansFin.DOFade(0, 2f);
-
-		yield return new WaitForSeconds(4f);
 		blackForeground.color = Color.black;
-		yield return new WaitForSeconds(3f);
+		yield return new WaitForSeconds(2);
 		SceneManager.LoadScene(mainMenuScene, LoadSceneMode.Single);
 	}
 

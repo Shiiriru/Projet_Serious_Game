@@ -53,12 +53,36 @@ public class UIMain : MonoBehaviour
 		canvas.worldCamera = cam;
 	}
 
-	public void ChangeScene(string sceneName, float time, DatePanelInfosObject dateInfos = null)
+	public void ChangeScene(string sceneName, float time, bool doTransition = true, DatePanelInfosObject dateInfos = null)
 	{
 		if (IsChangingScene)
 			return;
 		IsChangingScene = true;
-		StartCoroutine(ChangeSceneCoroutine(sceneName, time, dateInfos));
+
+		if (doTransition)
+			StartCoroutine(ChangeSceneCoroutine(sceneName, time, dateInfos));
+		else
+		{
+			SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+			SceneManager.sceneLoaded += SceneLoaded;
+		}
+	}
+
+	private void SceneLoaded(Scene arg0, LoadSceneMode arg1)
+	{
+		StartCoroutine(SceneLoadedCoroutine());
+	}
+
+	IEnumerator SceneLoadedCoroutine()
+	{
+		yield return new WaitForSeconds(0.05f);
+		if (onChangeSceneFinished != null)
+		{
+			onChangeSceneFinished();
+			onChangeSceneFinished = null;
+		}
+		IsChangingScene = false;
+		SceneManager.sceneLoaded -= SceneLoaded;
 	}
 
 	IEnumerator ChangeSceneCoroutine(string sceneName, float time, DatePanelInfosObject dateInfos)

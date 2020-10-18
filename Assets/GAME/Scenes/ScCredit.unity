@@ -1134,6 +1134,7 @@ MonoBehaviour:
   mainMenuScene:
     sceneAsset: {fileID: 102900000, guid: 2de5cd7b896f5074ab7c2c013a489135, type: 3}
     sceneName: GAME/Scenes/ScMainMenu
+  endingMusic: event:/05_Scene_Fin du jeu/S_FJ_Chant Final
   blackForeground: {fileID: 1094808624}
   canvansFin: {fileID: 933746818}
   musicPath: event:/05_Scene_Fin du jeu/S_FJ_Chant Final

@@ -849,6 +849,7 @@ MonoBehaviour:
   scene:
     sceneAsset: {fileID: 0}
     sceneName: 
+  doTransition: 1
   duration: 0
   dateInfos: {fileID: 0}
 --- !u!114 &114556976993201166

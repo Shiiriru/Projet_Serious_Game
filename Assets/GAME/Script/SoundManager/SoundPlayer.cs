@@ -38,9 +38,10 @@ public static class SoundPlayer
 
 			evt.eventInstance.start();
 		}
-		catch
+		catch(System.Exception e)
 		{
 			Debug.LogError("Can not create a event for " + path);
+			Debug.LogError(e);
 		}
 	}
 

@@ -80,7 +80,7 @@ namespace DialogSystem
 			if (currentDialogGraph == null)
 				return;
 
-			Reset();
+			//Reset();
 			isPLaying = true;
 			currentNode = null;
 			AutoPlayNextNode();
@@ -190,6 +190,8 @@ namespace DialogSystem
 
 			else if (currentNode is ShowComicNode)
 				ShowComic();
+			else if (currentNode is HideComicNode)
+				HideComic();
 
 			else if (currentNode is ConditionBranchNode)
 				CheckConditionBranch();
@@ -408,7 +410,7 @@ namespace DialogSystem
 		{
 			var node = currentNode as ChangeSceneNode;
 			Reset();
-			uiMain.ChangeScene(node.scene.Name, node.duration, node.dateInfos);
+			uiMain.ChangeScene(node.scene.Name, node.duration, node.doTransition, node.dateInfos);
 		}
 
 		private void CheckConditionBranch()
@@ -445,6 +447,20 @@ namespace DialogSystem
 			}
 
 			comicManager.ShowComic(prefab.GetComponent<ComicController>(), node.index, node.duration);
+			AutoPlayNextNode(node.isWait, node.duration);
+		}
+
+		private void HideComic()
+		{
+			var node = currentNode as HideComicNode;
+			var prefab = node.comicPrefab;
+			if (prefab == null)
+			{
+				AutoPlayNextNode();
+				return;
+			}
+
+			comicManager.HideComic(prefab.name, node.hideAll ? -1 : node.index, node.duration);
 			AutoPlayNextNode(node.isWait, node.duration);
 		}
 

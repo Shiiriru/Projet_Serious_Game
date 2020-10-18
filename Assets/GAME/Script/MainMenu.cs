@@ -34,10 +34,10 @@ public class MainMenu : MonoBehaviour
 
 	IEnumerator ShowCoroutine()
 	{
-		yield return new WaitForSeconds(0.5f);
-
+		SoundPlayer.PlayEvent("rain", WeatherEvent);
+		yield return new WaitForSeconds(1f);
 		SoundPlayer.PlayEvent("bg", MenuAmbianceEvent);
-        SoundPlayer.PlayEvent("rain", WeatherEvent);
+
         yield return new WaitForSeconds(2f);
 
 		blackForeground.DOColor(Color.clear, 2f);
@@ -57,13 +57,14 @@ public class MainMenu : MonoBehaviour
 	public void OnClickStart()
 	{
 		StartCoroutine(GameStartCoroutine());
-		SoundPlayer.StopEvent("bg", true);
-        SoundPlayer.StopEvent("rain", true);
     }
 
 	IEnumerator GameStartCoroutine()
 	{
+		SoundPlayer.StopEvent("bg", true);
 		ShowForeGround();
+		yield return new WaitForSeconds(2f);
+		SoundPlayer.StopEvent("rain", true);
 		yield return new WaitForSeconds(2f);
 		SceneManager.LoadScene(onBordingScene.Name, LoadSceneMode.Single);
 	}
@@ -81,6 +82,8 @@ public class MainMenu : MonoBehaviour
 	IEnumerator QuitCoroutine()
 	{
 		ShowForeGround();
+		SoundPlayer.StopEvent("bg", true);
+		SoundPlayer.StopEvent("rain", true);
 		yield return new WaitForSeconds(1.5f);
 		Application.Quit();
 	}
