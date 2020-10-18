@@ -145,7 +145,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  soundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_2_Soldat_GasMask"
+  soundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_2_Soldat_GasMask_Bad/SB_2_Soldat_GasMask_Bad"
   eventId: mask
   volume: 1
 --- !u!114 &114109096501823142
@@ -715,7 +715,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  soundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_2_Soldat_GasMask_V2"
+  soundPath: "event:/04_Scene2_Tranch\xE9e/02_Voix/SB_2_Soldat_GasMask_Bad/SB_2_Soldat_GasMask_Bad"
   eventId: mask
   volume: 1
 --- !u!114 &114559903819017916
