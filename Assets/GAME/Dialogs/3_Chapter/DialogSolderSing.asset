@@ -92,7 +92,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  duration: 7
+  duration: 10
 --- !u!114 &-1485088540853739047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +191,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  duration: 2
+  duration: 3
   isWait: 0
 --- !u!114 &11400000
 MonoBehaviour:
@@ -926,7 +926,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  duration: 6
+  duration: 7
   isWait: 0
   color: {r: 0, g: 0, b: 0, a: 1}
   resetColor: 1
@@ -1093,7 +1093,7 @@ MonoBehaviour:
   m_Name: Stop Sound
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 168, y: 216}
+  position: {x: 168, y: 232}
   ports:
     keys:
     - input
@@ -1269,7 +1269,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  duration: 10
+  duration: 12
 --- !u!114 &8706338784921325958
 MonoBehaviour:
   m_ObjectHideFlags: 0

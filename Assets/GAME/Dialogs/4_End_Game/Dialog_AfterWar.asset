@@ -537,7 +537,7 @@ MonoBehaviour:
   m_Name: Delay
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1272, y: 312}
+  position: {x: 1272, y: 264}
   ports:
     keys:
     - input
@@ -918,7 +918,7 @@ MonoBehaviour:
   disableScene: 0
   displayAll: 0
   displaySpeed: 3
-  duration: 0.3
+  duration: 0.8
 --- !u!114 &114782365551294244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1039,7 +1039,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1080, y: 440}
+  position: {x: 1080, y: 392}
   ports:
     keys:
     - input
@@ -1078,7 +1078,7 @@ MonoBehaviour:
   disableScene: 0
   displayAll: 0
   displaySpeed: 1
-  duration: 0.3
+  duration: 0.8
 --- !u!114 &114855466250559452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1146,7 +1146,7 @@ MonoBehaviour:
   m_Name: Hide Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1048, y: 296}
+  position: {x: 1048, y: 264}
   ports:
     keys:
     - input
@@ -1193,7 +1193,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1080, y: 104}
+  position: {x: 1080, y: 56}
   ports:
     keys:
     - input
@@ -1231,8 +1231,8 @@ MonoBehaviour:
   showAdvance: 0
   disableScene: 0
   displayAll: 0
-  displaySpeed: 3
-  duration: 0.3
+  displaySpeed: 4
+  duration: 0.5
 --- !u!114 &114975998957191162
 MonoBehaviour:
   m_ObjectHideFlags: 0

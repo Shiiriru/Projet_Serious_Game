@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: Play Sound
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 104, y: 184}
+  position: {x: 104, y: 216}
   ports:
     keys:
     - input
@@ -426,6 +426,7 @@ MonoBehaviour:
   - {fileID: -5327276798733719057}
   - {fileID: -676046682261872910}
   - {fileID: 3891974911942098944}
+  - {fileID: 3108479366762547232}
   - {fileID: 0}
   variableSource: {fileID: 114573644158395328}
 --- !u!114 &114009860169979930
@@ -762,7 +763,7 @@ MonoBehaviour:
   m_Name: Delay
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 344, y: 8}
+  position: {x: 392, y: 120}
   ports:
     keys:
     - input
@@ -1486,7 +1487,7 @@ MonoBehaviour:
   m_Name: Delay
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -424, y: 88}
+  position: {x: -376, y: 56}
   ports:
     keys:
     - input
@@ -2193,7 +2194,7 @@ MonoBehaviour:
   m_Name: CG
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -200, y: 56}
+  position: {x: -392, y: 152}
   ports:
     keys:
     - input
@@ -2217,7 +2218,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114960126545816358}
+        node: {fileID: 3108479366762547232}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -2226,8 +2227,8 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   sprite: {fileID: 21300000, guid: d41066af3c8ef9548b31060817d86ce5, type: 3}
-  duration: 0.2
-  isWait: 1
+  duration: 0.1
+  isWait: 0
 --- !u!114 &114453698160192490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2641,7 +2642,7 @@ MonoBehaviour:
   m_Name: Hide Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 120, y: 8}
+  position: {x: 168, y: 104}
   ports:
     keys:
     - input
@@ -3045,7 +3046,7 @@ MonoBehaviour:
   m_Name: Flash
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 424, y: 184}
+  position: {x: 424, y: 216}
   ports:
     keys:
     - input
@@ -3961,7 +3962,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 152, y: -232}
+  position: {x: 184, y: -184}
   ports:
     keys:
     - input
@@ -3973,7 +3974,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114439911403360272}
+        node: {fileID: 3108479366762547232}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -3997,11 +3998,11 @@ MonoBehaviour:
   characterName: Capitaine Favourier
   text: EN AVANT LES GARS ! COURAGE ! ON Y EST PRESQUE ! MAINTENEZ LA PRESSION ET
     ON LES AURA !
-  showAdvance: 0
+  showAdvance: 1
   disableScene: 1
   displayAll: 0
   displaySpeed: 3
-  duration: 0
+  duration: 0.1
 --- !u!114 &114966618576772598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4055,6 +4056,54 @@ MonoBehaviour:
   displayAll: 1
   displaySpeed: 3
   duration: 0.2
+--- !u!114 &3108479366762547232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c57aa22148e994d8d44f2c932993b7, type: 3}
+  m_Name: Flash
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -120, y: 40}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 3108479366762547232}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114439911403360272}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 3108479366762547232}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114960126545816358}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  duration: 0.1
+  isWait: 1
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &3891974911942098944
 MonoBehaviour:
   m_ObjectHideFlags: 0

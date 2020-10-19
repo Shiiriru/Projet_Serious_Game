@@ -9,7 +9,6 @@ using UnityEngine.UI;
 
 public class CreditScreen : MonoBehaviour
 {
-	UIMain uiMain;
 	[SerializeField] SceneReference mainMenuScene;
 
 	[SerializeField] Image blackForeground;
@@ -23,13 +22,10 @@ public class CreditScreen : MonoBehaviour
 	Coroutine playCoroutine;
 	bool passCredit;
 
-	private void Awake()
+	private void Start()
 	{
 		blackForeground.color = Color.clear;
-
 		StartCredit();
-		//uiMain = FindObjectOfType<UIMain>();
-		//uiMain.onChangeSceneFinished += StartCredit;
 	}
 
 	private void Update()
@@ -52,6 +48,7 @@ public class CreditScreen : MonoBehaviour
 
 	IEnumerator StartCreditCoroutine()
 	{
+		yield return new WaitForSeconds(0.2f);
 		SoundPlayer.PlayEvent("bg", musicPath);
 		yield return new WaitForSeconds(2f);
 		Destroy(GameObject.FindGameObjectWithTag("GameController"));
