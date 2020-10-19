@@ -1554,6 +1554,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1298309261}
     m_Modifications:
+    - target: {fileID: 1689324172802590227, guid: 3d0d288ca31490e4a8e7c80764576ea7,
+        type: 3}
+      propertyPath: soundEvt
+      value: event:/01_Son_Systeme/S_Transition_Zone
+      objectReference: {fileID: 0}
     - target: {fileID: 8073669276924928432, guid: 3d0d288ca31490e4a8e7c80764576ea7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3399,6 +3404,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168310739325166027, guid: 2259ee7583db19c49803e819e3789aac,
+        type: 3}
+      propertyPath: m_Text
+      value: PERDU !
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168310740733624925, guid: 2259ee7583db19c49803e819e3789aac,
+        type: 3}
+      propertyPath: m_Text
+      value: VICTOIRE !
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2259ee7583db19c49803e819e3789aac, type: 3}

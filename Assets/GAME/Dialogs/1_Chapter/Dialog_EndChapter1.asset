@@ -156,7 +156,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  duration: 9
+  duration: 7
 --- !u!114 &114352503042236588
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -131,7 +131,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: -1378102559040948159}
+        node: {fileID: 5336208408790397730}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -141,59 +141,6 @@ MonoBehaviour:
   output: {fileID: 0}
   eventId: bg
   fadeOut: 1
---- !u!114 &-1378102559040948159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
-  m_Name: Dialog
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -248, y: 376}
-  ports:
-    keys:
-    - input
-    - output
-    values:
-    - _fieldName: input
-      _node: {fileID: -1378102559040948159}
-      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: output
-        node: {fileID: -2608318850614976719}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 1
-      _dynamic: 0
-    - _fieldName: output
-      _node: {fileID: -1378102559040948159}
-      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: input
-        node: {fileID: 5336208408790397730}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-  input: {fileID: 0}
-  output: {fileID: 0}
-  displaySide: 1
-  characterName: 
-  text: "Tiens, j'ai retrouv\xE9 \xE7a !"
-  showAdvance: 0
-  disableScene: 1
-  displayAll: 0
-  displaySpeed: 3
-  duration: 0.3
 --- !u!114 &-1093447700855928672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,7 +222,6 @@ MonoBehaviour:
   - {fileID: 114386645465186884}
   - {fileID: 1460445451144587333}
   - {fileID: 5336208408790397730}
-  - {fileID: -1378102559040948159}
   - {fileID: -7793955128115268580}
   - {fileID: -1093447700855928672}
   - {fileID: -2608318850614976719}
@@ -1556,7 +1502,7 @@ MonoBehaviour:
   m_Name: Change DialogGraph
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 424, y: 216}
+  position: {x: 136, y: 232}
   ports:
     keys:
     - input
@@ -1568,7 +1514,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: -1378102559040948159}
+        node: {fileID: -2608318850614976719}
         reroutePoints: []
       _direction: 0
       _connectionType: 0

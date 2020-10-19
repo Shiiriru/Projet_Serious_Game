@@ -78,6 +78,9 @@
         </relationship>
     </object>
     <object class="EventMixerMaster" id="{66d6f1c9-7ad6-4967-ab70-f44f90a7098f}">
+        <relationship name="modulators">
+            <destination>{b3e436b3-da50-473d-84e1-493ab516beac}</destination>
+        </relationship>
         <relationship name="effectChain">
             <destination>{51d8079c-bae3-42d8-af47-c591b1af4cc3}</destination>
         </relationship>
@@ -146,6 +149,14 @@
         <relationship name="markerTrack">
             <destination>{263d5a0d-5727-46b1-9760-0f71f55bbb13}</destination>
         </relationship>
+    </object>
+    <object class="ADSRModulator" id="{b3e436b3-da50-473d-84e1-493ab516beac}">
+        <property name="nameOfPropertyBeingModulated">
+            <value>volume</value>
+        </property>
+        <property name="initialValue">
+            <value>-80</value>
+        </property>
     </object>
     <object class="MixerBusEffectChain" id="{51d8079c-bae3-42d8-af47-c591b1af4cc3}">
         <relationship name="effects">
@@ -229,17 +240,17 @@
             <destination>{1297f0a7-4120-4ffc-8dd1-729f949168e9}</destination>
         </relationship>
         <relationship name="automationPoints">
-            <destination>{fc631645-540f-42df-b598-56a5a5a9a214}</destination>
+            <destination>{8854d422-7a2c-481e-88f9-4167ceedc801}</destination>
         </relationship>
     </object>
     <object class="MixerBusFader" id="{5f9029b9-9a96-4b57-8c64-582a1965546c}"/>
     <object class="SFXReverbEffect" id="{94cda6c0-0443-4bf7-b0d7-45a6ed282171}"/>
-    <object class="AutomationPoint" id="{fc631645-540f-42df-b598-56a5a5a9a214}">
+    <object class="AutomationPoint" id="{8854d422-7a2c-481e-88f9-4167ceedc801}">
         <property name="position">
             <value>0</value>
         </property>
         <property name="value">
-            <value>-29</value>
+            <value>-36</value>
         </property>
     </object>
 </objects>
