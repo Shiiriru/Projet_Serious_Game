@@ -24,7 +24,6 @@ MonoBehaviour:
   - {fileID: 34354290651689884}
   - {fileID: 3471407571390418882}
   - {fileID: 6100690552781009263}
-  - {fileID: 3273884273368161837}
   - {fileID: 5796096882509121019}
   - {fileID: 4980051288627734013}
   - {fileID: 0}
@@ -658,59 +657,6 @@ MonoBehaviour:
   displayAll: 0
   displaySpeed: 3
   duration: 0.2
---- !u!114 &3273884273368161837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554dfd1c21f265a4b847c5a5bced46df, type: 3}
-  m_Name: Dialog
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 1128, y: 808}
-  ports:
-    keys:
-    - input
-    - output
-    values:
-    - _fieldName: input
-      _node: {fileID: 3273884273368161837}
-      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: output
-        node: {fileID: 6100690552781009263}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 1
-      _dynamic: 0
-    - _fieldName: output
-      _node: {fileID: 3273884273368161837}
-      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: input
-        node: {fileID: 5796096882509121019}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-  input: {fileID: 0}
-  output: {fileID: 0}
-  displaySide: 1
-  characterName: 
-  text: "Si je d\xE9cide de s'arr\xEAter, en disant \xAB Je reste ! \xBB."
-  showAdvance: 0
-  disableScene: 1
-  displayAll: 0
-  displaySpeed: 3
-  duration: 0.2
 --- !u!114 &3471407571390418882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -758,8 +704,8 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: 
-  text: "Si un joueur parvient \xE0 avoir un score sup\xE9rieur \xE0 l'autre tout
-    en d\xE9passant pas 21 alors celui-ci a gagn\xE9."
+  text: "Si je veux une nouvelle carte, je dois l'annoncer en disant \xAB Carte !
+    \xBB. Si je ne veux pas plus de cartes, je dis \xAB Je reste ! \xBB."
   showAdvance: 0
   disableScene: 1
   displayAll: 0
@@ -844,7 +790,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 3273884273368161837}
+        node: {fileID: 6100690552781009263}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -885,7 +831,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1128, y: 616}
+  position: {x: 1128, y: 648}
   ports:
     keys:
     - input
@@ -909,7 +855,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 3273884273368161837}
+        node: {fileID: 5796096882509121019}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -919,8 +865,9 @@ MonoBehaviour:
   output: {fileID: 0}
   displaySide: 1
   characterName: 
-  text: "Si je veux une carte, je dois l'annoncer en disant \xAB Carte ! \xBB. Mais
-    si apr\xE8s le tirage d'une carte, il a d\xE9pass\xE9 21, je perde. "
+  text: "Si un joueur parvient \xE0 avoir un score sup\xE9rieur \xE0 l'autre  alors
+    celui-ci a gagn\xE9. Cependant, si apr\xE8s le tirage d'une carte, le total d\xE9passe
+    21, j'ai perdu."
   showAdvance: 0
   disableScene: 1
   displayAll: 0
