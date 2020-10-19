@@ -13,6 +13,8 @@ public class SplashScreen : MonoBehaviour
 
 	[SerializeField] Image icanLogo;
 
+	string titleText0;
+	string titleText1;
 	[SerializeField] Text title0;
 	[SerializeField] Text title1;
 
@@ -22,6 +24,9 @@ public class SplashScreen : MonoBehaviour
 	void Start()
 	{
 		icanLogo.color = new Color(1, 1, 1, 0);
+
+		titleText0 = title0.text;
+		titleText1 = title1.text;
 		title0.text = "";
 		title1.text = "";
 
@@ -42,9 +47,9 @@ public class SplashScreen : MonoBehaviour
 		canPass = true;
 		yield return new WaitForSeconds(3f);
 
-		title0.DOText("CYRILLE ET SIJIA", 1.5f).SetEase(Ease.Linear);
+		title0.DOText(titleText0, 1.5f).SetEase(Ease.Linear);
 		yield return new WaitForSeconds(1.8f);
-		title1.DOText("PRESENTE", 0.5f).SetEase(Ease.Linear);
+		title1.DOText(titleText1, 0.5f).SetEase(Ease.Linear);
 
 		yield return new WaitForSeconds(2f);
 
