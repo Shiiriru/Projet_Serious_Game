@@ -18,6 +18,7 @@ public class CreditScreen : MonoBehaviour
 	int creditStep = -1;
 
 	[SerializeField] CreditObject[] creditList;
+	[SerializeField] [EventRef] string musicPath;
 
 	Coroutine playCoroutine;
 	bool passCredit;
@@ -26,8 +27,9 @@ public class CreditScreen : MonoBehaviour
 	{
 		blackForeground.color = Color.clear;
 
-		uiMain = FindObjectOfType<UIMain>();
-		uiMain.onChangeSceneFinished += StartCredit;
+		StartCredit();
+		//uiMain = FindObjectOfType<UIMain>();
+		//uiMain.onChangeSceneFinished += StartCredit;
 	}
 
 	private void Update()
@@ -50,7 +52,8 @@ public class CreditScreen : MonoBehaviour
 
 	IEnumerator StartCreditCoroutine()
 	{
-		yield return new WaitForSeconds(10f);
+		SoundPlayer.PlayEvent("bg", musicPath);
+		yield return new WaitForSeconds(2f);
 		Destroy(GameObject.FindGameObjectWithTag("GameController"));
 		PlayCredit();
 	}
@@ -66,14 +69,14 @@ public class CreditScreen : MonoBehaviour
 	IEnumerator EndCreditCoroutine()
 	{
 		yield return new WaitForSeconds(2.5f);
-		canvansFin.DOFade(1, 4f);
+		canvansFin.alpha = 1;
 		yield return new WaitForSeconds(5f);
-		canvansFin.DOFade(0, 3f);
-		yield return new WaitForSeconds(5f);
-		
+		canvansFin.alpha = 0;
+		yield return new WaitForSeconds(2f);
+
 		SoundPlayer.StopEvent("bg", true);
 		blackForeground.color = Color.black;
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(4);
 		SceneManager.LoadScene(mainMenuScene, LoadSceneMode.Single);
 	}
 
@@ -93,8 +96,7 @@ public class CreditScreen : MonoBehaviour
 		var credit = creditList[creditStep];
 		credit.onPlayFinished += PlayCredit;
 
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(2.5f);
 		credit.Play();
 	}
-
 }

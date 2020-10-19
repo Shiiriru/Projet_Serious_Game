@@ -24,10 +24,9 @@ public class CreditObject : MonoBehaviour
 
 	IEnumerator PlayCoroutine()
 	{
-		canvasGroup.DOFade(1, 1f);
-		yield return new WaitForSeconds(showTime + 1f);
-		canvasGroup.DOFade(0, 1f);
-		yield return new WaitForSeconds(1f);
+		canvasGroup.alpha = 1;
+		yield return new WaitForSeconds(showTime);
+		canvasGroup.alpha = 0;
 		onPlayFinished.Invoke();
 	}
 }

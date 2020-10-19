@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9078367168621866079
+--- !u!114 &-8678382578821158688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,35 +9,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79bcdd22abeef4c419927aaf99f7dc83, type: 3}
-  m_Name: Play Sound
+  m_Script: {fileID: 11500000, guid: 2930f4ae6871a4b46b84fd3536b5a2b4, type: 3}
+  m_Name: Delay
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1544, y: 440}
+  position: {x: 1608, y: 200}
   ports:
     keys:
     - input
     - output
     values:
     - _fieldName: input
-      _node: {fileID: -9078367168621866079}
+      _node: {fileID: -8678382578821158688}
       _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: -3702575392714878406}
+        node: {fileID: 114328263906279578}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 1
       _dynamic: 0
     - _fieldName: output
-      _node: {fileID: -9078367168621866079}
+      _node: {fileID: -8678382578821158688}
       _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: -5031431443440347521}
+        node: {fileID: -3702575392714878406}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -45,9 +45,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  soundPath: "event:/05_Scene_Fin du jeu/Chanson_g\xE9n\xE9rique"
-  eventId: bg
-  volume: 1
+  duration: 4
 --- !u!114 &-8614355875845281225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,7 +59,7 @@ MonoBehaviour:
   m_Name: Play Sound
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -664, y: 40}
+  position: {x: -632, y: -168}
   ports:
     keys:
     - input
@@ -73,7 +71,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: -6765990331401393974}
+        node: {fileID: 114425058686077120}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -85,7 +83,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114562485840527364}
+        node: {fileID: -6765990331401393974}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -109,7 +107,7 @@ MonoBehaviour:
   m_Name: Delay
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -616, y: -72}
+  position: {x: -584, y: -8}
   ports:
     keys:
     - input
@@ -121,7 +119,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114425058686077120}
+        node: {fileID: -8614355875845281225}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -133,7 +131,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: -8614355875845281225}
+        node: {fileID: 114562485840527364}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -141,7 +139,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  duration: 2
+  duration: 8
 --- !u!114 &-5031431443440347521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +153,7 @@ MonoBehaviour:
   m_Name: Delay
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1896, y: 536}
+  position: {x: 1608, y: 424}
   ports:
     keys:
     - input
@@ -167,7 +165,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: -9078367168621866079}
+        node: {fileID: -3702575392714878406}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -187,7 +185,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  duration: 2
+  duration: 3
 --- !u!114 &-3702575392714878406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +199,7 @@ MonoBehaviour:
   m_Name: Stop Sound
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1592, y: 328}
+  position: {x: 1592, y: 312}
   ports:
     keys:
     - input
@@ -213,7 +211,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 2600591979059799122}
+        node: {fileID: -8678382578821158688}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -225,7 +223,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: -9078367168621866079}
+        node: {fileID: -5031431443440347521}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -316,12 +314,13 @@ MonoBehaviour:
   - {fileID: 114402021340952836}
   - {fileID: 114328263906279578}
   - {fileID: -906128621581083120}
-  - {fileID: -9078367168621866079}
-  - {fileID: 2600591979059799122}
   - {fileID: -5031431443440347521}
   - {fileID: -6765990331401393974}
   - {fileID: -8614355875845281225}
   - {fileID: -3702575392714878406}
+  - {fileID: 7792330201737047028}
+  - {fileID: 1272142859332471979}
+  - {fileID: -8678382578821158688}
   variableSource: {fileID: 0}
 --- !u!114 &114097342056825530
 MonoBehaviour:
@@ -491,7 +490,7 @@ MonoBehaviour:
   m_Name: Hide Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1592, y: 120}
+  position: {x: 1608, y: 104}
   ports:
     keys:
     - input
@@ -515,7 +514,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 2600591979059799122}
+        node: {fileID: -8678382578821158688}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -538,7 +537,7 @@ MonoBehaviour:
   m_Name: Delay
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1272, y: 232}
+  position: {x: 1272, y: 312}
   ports:
     keys:
     - input
@@ -705,7 +704,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: -6765990331401393974}
+        node: {fileID: -8614355875845281225}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -784,7 +783,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: -8614355875845281225}
+        node: {fileID: -6765990331401393974}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -1040,7 +1039,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1080, y: 360}
+  position: {x: 1080, y: 440}
   ports:
     keys:
     - input
@@ -1093,7 +1092,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1080, y: -200}
+  position: {x: 1080, y: -248}
   ports:
     keys:
     - input
@@ -1117,7 +1116,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114931706606753120}
+        node: {fileID: 7792330201737047028}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -1147,7 +1146,7 @@ MonoBehaviour:
   m_Name: Hide Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1048, y: 216}
+  position: {x: 1048, y: 296}
   ports:
     keys:
     - input
@@ -1194,7 +1193,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1080, y: 24}
+  position: {x: 1080, y: 104}
   ports:
     keys:
     - input
@@ -1206,7 +1205,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114855466250559452}
+        node: {fileID: 1272142859332471979}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -1288,7 +1287,7 @@ MonoBehaviour:
   displayAll: 0
   displaySpeed: 3
   duration: 0.3
---- !u!114 &2600591979059799122
+--- !u!114 &1272142859332471979
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1301,31 +1300,31 @@ MonoBehaviour:
   m_Name: Delay
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1608, y: 232}
+  position: {x: 1288, y: -24}
   ports:
     keys:
     - input
     - output
     values:
     - _fieldName: input
-      _node: {fileID: 2600591979059799122}
+      _node: {fileID: 1272142859332471979}
       _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114328263906279578}
+        node: {fileID: 7792330201737047028}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 1
       _dynamic: 0
     - _fieldName: output
-      _node: {fileID: 2600591979059799122}
+      _node: {fileID: 1272142859332471979}
       _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: -3702575392714878406}
+        node: {fileID: 114931706606753120}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -1333,4 +1332,51 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  duration: 1
+  duration: 2
+--- !u!114 &7792330201737047028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78982d8afce1464f8b7583d40ddf74e, type: 3}
+  m_Name: Hide Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1064, y: -40}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 7792330201737047028}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114855466250559452}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 7792330201737047028}
+      _typeQualifiedName: DialogSystem.Nodes.DialogNodeBase, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 1272142859332471979}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  duration: 0.5
+  isWait: 0
